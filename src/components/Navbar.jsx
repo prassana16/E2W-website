@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // For hamburger and close icons
-
+import logo from '../../public/icon-384x384.png'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +13,8 @@ const Navbar = () => {
     <nav className="bg-[#004C4C] shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Right Title */}
-        <div className="text-2xl font-bold text-[#F7F2E7]">
+        <div className="flex justify-center items-center text-2xl font-bold text-[#F7F2E7]">
+          <img src={logo} alt="" className='w-10'/>
           Easy2Work
         </div>
 

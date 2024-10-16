@@ -3,6 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { IoIosArrowUp } from 'react-icons/io'; // Up arrow icon
 import { BsWhatsapp } from 'react-icons/bs'; // WhatsApp icon
 import { IoCall } from 'react-icons/io5'; // Phone icon
+import logo from '../../public/icon-384x384.png'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -22,12 +23,17 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         {/* Footer Top: Links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Column 1: Company Info */}
+          {/* Column 1: Company Info with Address and Logo */}
           <div>
+            {/* Company Logo */}
+            <div className="flex">
+            <img src={logo} alt="" className='w-8 h-8'/>
             <h4 className="text-lg font-semibold mb-4">Easy2Work</h4>
-            <p className="text-sm">
+            </div>
+            <p className="text-sm mb-2">
               We make it easy for you to manage your business with simple and efficient tools.
             </p>
+
           </div>
 
           {/* Column 2: Links */}
@@ -35,17 +41,17 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
+                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
+                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
+                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Contact Us
                 </a>
               </li>
@@ -54,25 +60,26 @@ const Footer = () => {
 
           {/* Column 3: Support */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Support</h4>
+            <h4 className="text-lg font-semibold mb-4">Contact info</h4>
             <ul>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
-                  Help Center
+                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
+                <p className="text-sm">
+              <strong>Address:</strong> 123 Business St, Suite 100, City, Country
+            </p>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
-                  Privacy Policy
+                <a href="https://wa.me/9566031113" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
+                <p className="text-sm">
+              <strong>Phone:</strong> +91 9566031113 {/* Replace with actual phone number */}
+            </p>
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50] p-1 rounded">
-                  Terms of Service
-                </a>
-              </li>
+              
             </ul>
           </div>
+          
 
           {/* Column 4: Social Media */}
           <div>
