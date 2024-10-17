@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
 
-    - name: Build React App
+    - name: Build React App      
       run: |
         npm install --force
         CI=false npm run build
