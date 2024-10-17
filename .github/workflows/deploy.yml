@@ -25,5 +25,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: '/'  # Replace with the destination directory on your server
-        local-dir: './build/'  # Path to your build directory
+        local-dir: './dist/'  # Path to your build directory
         exclude: '.github,node_modules'  # Exclude any additional directories not needed in deployment
