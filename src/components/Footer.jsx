@@ -65,7 +65,7 @@ const Footer = () => {
               <li>
                 <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
                 <p className="text-sm">
-              <strong>Address:</strong> 123 Business St, Suite 100, City, Country
+              <strong>Address:</strong> 32, 3rd Cross Street, Diagonally, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020
             </p>
                 </a>
               </li>
