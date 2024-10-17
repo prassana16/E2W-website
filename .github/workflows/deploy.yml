@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master  # Change this to your deployment branch if needed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Build React App
+      run: |
+        npm install --force
+        CI=false npm run build
+
+    - name: Deploy via FTP/SFTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: '/'  # Replace with the destination directory on your server
+        local-dir: './build/'  # Path to your build directory
+        exclude: '.github,node_modules'  # Exclude any additional directories not needed in deployment
