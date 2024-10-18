@@ -4,6 +4,7 @@ import { IoIosArrowUp } from 'react-icons/io'; // Up arrow icon
 import { BsWhatsapp } from 'react-icons/bs'; // WhatsApp icon
 import { IoCall } from 'react-icons/io5'; // Phone icon
 import logo from '../../public/icon-384x384.png'
+import top from '../assets/images/paagetop.png'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -19,8 +20,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#004C4C] text-[#F7F2E7] py-8 relative">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[#00264c] text-[#F7F2E7]  relative">
+      <img src={top} alt="" className='w-full'/>
+      <div className="container mx-auto px-4 py-8">
         {/* Footer Top: Links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1: Company Info with Address and Logo */}

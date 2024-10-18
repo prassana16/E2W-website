@@ -8,7 +8,7 @@ const ClientManager = () => {
       triggerOnce: true,
       threshold: 0.2,
     });
-  
+   
     return (
       <section ref={ref} className="bg-[white] py-16">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">

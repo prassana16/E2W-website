@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* In src/index.css or src/App.css */
+@font-face {
+    font-family: 'Destine';
+    src: url('src/fonts/DestinePersonalUseRegular-6YAev.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Mauline';
+    src: url('src/fonts/Mauline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
