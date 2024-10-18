@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Destine: ['Destine', 'monospace'], // Replace 'monospace' with a fallback font if needed
-        Mauline: ['Mauline', 'monospace'], // Replace 'monospace' with a fallback font if needed
+        Destine: ['Destine', 'serif'], // Replace 'serif' with a fallback font if needed
+        Mauline: ['Mauline', 'serif'], // Replace 'serif' with a fallback font if needed
       },
     },
   },

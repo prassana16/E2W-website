@@ -11,7 +11,7 @@ const Banner = () => {
         {/* Animated Heading */}
         <div className="flex flex-col items-center space-y-6 md:space-y-10 md:mx-16 pb-8">
           <motion.h1
-            className="text-6xl lg:text-9xl font-bold mb-4 text-left font-Destine w-full "
+            className="text-4xl lg:text-9xl font-bold mb-4 text-left font-Destine w-full "
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -19,7 +19,7 @@ const Banner = () => {
             Discussion
           </motion.h1>
           <motion.h1
-            className="text-6xl lg:text-9xl font-bold mb-4 text-right font-Destine w-full "
+            className="text-4xl lg:text-9xl font-bold mb-4 text-right font-Destine w-full "
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
