@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import rateManagerImage from '../assets/images/Business Proposal (2).png'; // Path to the uploaded image
+import rateManagerImage from '../assets/images/ModuleImages/e2wRatemanager.png'; // Path to the uploaded image
 
 const RateManager = () => {
     // Intersection observer hook to trigger animation when the section is in view
@@ -11,7 +11,7 @@ const RateManager = () => {
     });
   
     return (
-      <section ref={ref} className="bg-[white] py-16">
+      <section ref={ref} className="bg-[#00264c] py-16">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           
           {/* Left Side: Content */}
@@ -21,13 +21,13 @@ const RateManager = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}} // Animate when in view
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold text-[#004C4C] mb-4">
+            <h2 className="text-3xl font-bold text-[#F7F2E7] mb-4">
               Rate Manager
             </h2>
-            <p className="text-[#2C2C2C] text-lg mb-6">
+            <p className="text-[#F7F2E7] text-lg mb-6">
               The Rate Manager module is designed to simplify rate management with its user-friendly interface. It allows businesses to search rates, set slab-wise pricing, and define service duration for different campaigns or products with ease.
             </p>
-            <ul className="list-disc ml-6 text-[#2C2C2C]">
+            <ul className="list-disc ml-6 text-[#F7F2E7]">
               <li>Quick search for pricing details</li>
               <li>Slab-wise pricing for customizable campaigns</li>
               <li>Flexible service duration settings</li>
@@ -37,7 +37,7 @@ const RateManager = () => {
           {/* Right Side: Image */}
           <motion.div 
             className="md:w-1/2 flex justify-center mt-8 md:mt-0"
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: -100 }}
             animate={inView ? { opacity: 1, x: 0 } : {}} // Animate when in view
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -45,9 +45,7 @@ const RateManager = () => {
           </motion.div>
   
         </div>
-        <div className="flex justify-center items-center pt-16">
-        <div className="p-[1px] w-full bg-[#004C4C]"></div><div className="p-[1px] w-full bg-[#004C4C]"></div>
-      </div>
+        
       </section>
     );
   };

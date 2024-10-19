@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import clientManagerImage from '../assets/images/Business Proposal.png'; // Path to the uploaded image
+import clientManagerImage from '../assets/images/ModuleImages/e2wClient.png'; // Path to the uploaded image
 
 const ClientManager = () => {
     const { ref, inView } = useInView({
@@ -10,7 +10,7 @@ const ClientManager = () => {
     });
    
     return (
-      <section ref={ref} className="bg-[white] py-16">
+      <section ref={ref} className="bg-[#00264c] py-16">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           
           {/* Left Side: Content */}
@@ -20,11 +20,11 @@ const ClientManager = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold text-[#004C4C] mb-4">Client Manager</h2>
-            <p className="text-[#2C2C2C] text-lg mb-6">
+            <h2 className="text-3xl font-bold text-[#fceecf] mb-4">Client Manager</h2>
+            <p className="text-[#F7F2E7] text-lg mb-6">
               Our Client Manager helps businesses manage client data efficiently with lead source capture, easy client search, and secure cloud storage.
             </p>
-            <ul className="list-disc ml-6 text-[#2C2C2C]">
+            <ul className="list-disc ml-6 text-[#F7F2E7]">
               <li>Customized lead source capture</li>
               <li>Easy client search functionality</li>
               <li>Secure data storage at cloud</li>
@@ -34,7 +34,7 @@ const ClientManager = () => {
           {/* Right Side: Image */}
           <motion.div 
             className="md:w-1/2 flex justify-center mt-8 md:mt-0"
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: -100 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -42,9 +42,7 @@ const ClientManager = () => {
           </motion.div>
   
         </div>
-        <div className="flex justify-center items-center pt-16">
-        <div className="p-[1px] w-full bg-[#004C4C]"></div><div className="p-[1px] w-full bg-[#004C4C]"></div>
-      </div>
+       
       </section>
     );
   };

@@ -3,21 +3,19 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Intro from './components/Intro';
-import About from './components/About';
-import ClientManager from './components/ClientManager';
-import QuoteSender from './components/QuoteSender';
-import RateManager from './components/RateManager';
+import Features from './components/Features';
+import Faq from './components/Faq';
+
 function App() {
   return (
     <div>
       <Navbar />
       <Banner />
       <Intro />
-      <About />
-      <ClientManager />
-      <QuoteSender />
-      <RateManager />
+      <Features  />
+      <Faq />
       <Footer />
+      
 
     </div>
   );

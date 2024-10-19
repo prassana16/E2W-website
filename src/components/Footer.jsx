@@ -43,12 +43,12 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
+                <a href="/" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
+                <a href="#features" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Features
                 </a>
               </li>
