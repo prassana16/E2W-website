@@ -72,7 +72,7 @@ function Features() {
       </h2>
       
       {/* Pagination */}
-      <div className='text-[#F7F2E7] text-lg text-center mb-24 flex items-center gap-2 justify-center'>
+      <div className='text-[#F7F2E7] text-lg text-center mb-3 md:mb-24 flex items-center gap-2 justify-center'>
         <button onClick={handlePrev} disabled={currentPage === 1}>
           <IoIosArrowDropleftCircle className={`${currentPage === 1 ? 'opacity-50' : ''}`} />
         </button>
