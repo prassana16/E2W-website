@@ -48,6 +48,7 @@ const Banner = () => {
         </motion.p>
 
         {/* Animated Button */}
+        <a href="https://wa.me/9566031113">
         <motion.button
           className="bg-[#F7F2E7] text-[#00264c] font-semibold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-[#FF7F50] hover:text-[#F7F2E7] transition duration-300"
           initial={{ scale: 0.8 }}
@@ -56,6 +57,7 @@ const Banner = () => {
         >
           Get Started
         </motion.button>
+        </a>
       </div>
       
       {/* Bottom Image */}

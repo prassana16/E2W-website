@@ -26,26 +26,26 @@ const Navbar = () => {
         {/* Left Menu Items (Hidden on mobile, shown on larger screens) */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a href="#" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+            <a href="/" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
               Home
             </a>
           </li>
           <li>
-            <a href="#" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+            <a href="#features" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
               Features
             </a>
           </li>
           <li>
-            <a href="#" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+            <a href="https://wa.me/9566031113" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
               Contact Us
             </a>
           </li>
         </ul>
         
         {/* Book Demo Button (Shown on larger screens) */}
-        <a href="#" className="hidden md:flex justify-center items-center text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+        {/* <a href="https://wa.me/9566031113" className="hidden md:flex justify-center items-center text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
           Book Demo <BsBoxArrowUpRight className='ml-1'/>
-        </a>
+        </a> */}
 
         {/* Hamburger Menu Icon (Hidden on larger screens) */}
         <div className="md:hidden flex items-center">
@@ -67,17 +67,17 @@ const Navbar = () => {
       >
         <ul className="flex flex-col space-y-6 mt-10 px-6">
           <li>
-            <a href="" className='text-lg text-[#ffff] flex items-center ' ><RiHome5Line className='mr-2'/>Home</a>
+            <a href="/" className='text-lg text-[#ffff] flex items-center ' ><RiHome5Line className='mr-2'/>Home</a>
           </li>
           <li>
-            <a href="" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Features</a>
+            <a href="#features" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Features</a>
           </li>
           <li>
-            <a href="" className='text-lg text-[#ffff] flex items-center ' ><MdSupportAgent className='mr-2' />ContactUs</a>
+            <a href="https://wa.me/9566031113" className='text-lg text-[#ffff] flex items-center ' ><MdSupportAgent className='mr-2' />ContactUs</a>
           </li>
-          <li>
+          {/* <li>
             <a href="" className='text-lg text-[#ffff] flex items-center ' ><BsBoxArrowUpRight className='mr-2'/>Book Demo</a>
-          </li>
+          </li> */}
 
 
         </ul>

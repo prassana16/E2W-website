@@ -11,7 +11,7 @@ import { IoIosArrowDropleftCircle } from "react-icons/io";
 function Features() {
   const [currentPage, setCurrentPage] = useState(1); // Track the current page
   const scrollRef = useRef(null); // Ref to access the scrollable section
-  const totalPages = 11; // Total number of sections
+  const totalPages = 4; // Total number of sections
 
   // Function to handle right arrow click (move to the next section)
   const handleNext = () => {

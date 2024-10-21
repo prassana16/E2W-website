@@ -2,7 +2,9 @@ import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Social icons
 import { IoIosArrowUp } from 'react-icons/io'; // Up arrow icon
 import { BsWhatsapp } from 'react-icons/bs'; // WhatsApp icon
-import { IoCall } from 'react-icons/io5'; // Phone icon
+import { IoCall } from 'react-icons/io5'; 
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaYoutube } from "react-icons/fa";// Phone icon
 import logo from '../../public/icon-384x384.png'
 import top from '../assets/images/paagetop.png'
 
@@ -53,7 +55,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700]  p-1 rounded">
+                <a href="https://wa.me/9566031113" className="text-sm hover:text-[#FFD700]  p-1 rounded">
                   Contact Us
                 </a>
               </li>
@@ -64,16 +66,30 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact info</h4>
             <ul>
+              
               <li>
-                <a href="#" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
-                <p className="text-sm">
+                <a href="https://maps.app.goo.gl/iPVwCYA3zkgCykvJ6" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
+                <p className="text-sm mb-2">
               <strong>Address:</strong> 32, 3rd Cross Street, Diagonally, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020
             </p>
                 </a>
+                <li>
+              <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11014.63542433299!2d80.2516293!3d13.0026267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267104b2e6ab9%3A0x50d624131e47e020!2sBaleen%20Media!5e1!3m2!1sen!2sin!4v1729500729930!5m2!1sen!2sin"
+        width="150"
+        height="150"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+              </li>
+
+                
               </li>
               <li>
-                <a href="https://wa.me/9566031113" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded">
-                <p className="text-sm">
+                <a href="https://wa.me/9566031113" className="text-sm hover:text-[#FFD700] hover:bg-[#FF7F50]  rounded ">
+                <p className="text-sm mt-4">
               <strong>Phone:</strong> +91 9566031113 {/* Replace with actual phone number */}
             </p>
                 </a>
@@ -87,17 +103,17 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-[#FFD700]">
+              <a href="https://www.facebook.com/baleenmedia" className="hover:text-[#FFD700]">
                 <FaFacebook className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-[#FFD700]">
-                <FaTwitter className="w-6 h-6" />
+              <a href="https://www.youtube.com/@baleenmedia" className="hover:text-[#FFD700]">
+                <FaYoutube className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-[#FFD700]">
+              <a href="https://www.instagram.com/baleen.media" className="hover:text-[#FFD700]">
                 <FaInstagram className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-[#FFD700]">
-                <FaLinkedin className="w-6 h-6" />
+              <a href="https://wa.me/9566031113" className="hover:text-[#FFD700]">
+                <IoLogoWhatsapp className="w-6 h-6" />
               </a>
             </div>
           </div>

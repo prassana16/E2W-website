@@ -4,7 +4,7 @@ import mobileMockup from '../assets/images/ModuleImages/e2wAbout.png'; // Path t
 
 const About = () => {
   return (
-    <section className="bg-[#00264c] py-16">
+    <section className="bg-[#00264c] py-16" id='features'>
       
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
         
