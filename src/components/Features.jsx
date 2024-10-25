@@ -7,7 +7,7 @@ import FinanceManager from './FinanceManager';
 import OrderManager from './OrderManager';
 import FinanceReport from './FinanceReport';
 import OrderReport from './OrderReport';
-import Consultant from './consultant';
+import Consultant from './Consultant';
 import RateValidation from './RateValidation';
 import PaymentMilestone from './PaymentMilestone';
 import btm from '../assets/images/pagebtm.png';
