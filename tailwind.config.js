@@ -9,6 +9,8 @@ export default {
       fontFamily: {
         Destine: ['Destine', 'serif'], // Replace 'serif' with a fallback font if needed
         Mauline: ['Mauline', 'serif'], // Replace 'serif' with a fallback font if needed
+        Tinos: ['Tinos','sans'],
+        RozhaOne:['RozhaOne','serif']
       },
     },
   },

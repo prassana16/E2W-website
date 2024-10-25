@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Intro from './components/Intro';
 import Features from './components/Features';
+import Testimonials from './components/Testimonials';
+import OurClients from './components/OurClients';
 import Faq from './components/Faq';
 
 function App() {
@@ -13,8 +15,10 @@ function App() {
       <Banner />
       <Intro />
       <Features  />
+      <Testimonials />
+      <OurClients />
       <Faq />
-      <Footer />
+      <Footer />  
       
 
     </div>

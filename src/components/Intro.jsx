@@ -14,7 +14,7 @@ const Intro = () => {
   return (
     <section className="bg-[#F7F2E7] py-16 font-mono">
       <div className="flex flex-col items-center justify-center mt-2 px-4">
-        <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-bold'>
+        <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-Tinos'>
           Fully Customisable & Accessible Components
         </h2>
 

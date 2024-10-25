@@ -10,22 +10,29 @@ const Banner = () => {
         
         {/* Animated Heading */}
         <div className="flex flex-col items-center space-y-6 md:space-y-10 md:mx-16 pb-8">
+          <div className="flex ">
+          <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
           <motion.h1
-            className="text-5xl lg:text-9xl font-bold mb-4 text-left font-Destine w-full "
+            className="text-5xl lg:text-9xl  mb-4 text-left font-RozhaOne font-thin w-full "
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Discussion
+            Empower 
           </motion.h1>
+          </div>
+          <div className="flex ">
+            
           <motion.h1
-            className="text-5xl lg:text-9xl font-bold mb-4 text-right font-Destine w-full "
+            className="text-5xl lg:text-9xl  mb-4 text-right font-RozhaOne font-thin w-full "
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Resolution
+            Productivity
           </motion.h1>
+          <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          </div>
         </div>
 
         {/* ---------------Image Section--------------- */}
@@ -44,7 +51,7 @@ const Banner = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          "Empowering businesses to streamline daily operations and boost productivity, one task at a time."
+          "Empowering businesses to streamline daily operations and boost productivity."
         </motion.p>
 
         {/* Animated Button */}

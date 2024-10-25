@@ -34,8 +34,9 @@ const Faq = () => {
   return (
     <section className="bg-[#F7F2E7] py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl text-center font-bold text-[#00264c] mb-8">
-          Frequently Asked Questions
+       
+        <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16 ">
+        Frequently Asked Questions
         </h2>
 
         <div className="space-y-6">
@@ -58,7 +59,7 @@ const Faq = () => {
               </div>
 
               {activeIndex === index && (
-                <p className="mt-4 text-[#00264c] text-base md:text-lg">
+                <p className="mt-4 text-[#00264c] text-base md:text-lg font-mono">
                   {faq.answer}
                 </p>
               )}

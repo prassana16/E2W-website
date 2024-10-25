@@ -16,3 +16,15 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'Tinos';
+    src: url('src/fonts/Tinos-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'RozhaOne';
+    src: url('src/fonts/RozhaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
