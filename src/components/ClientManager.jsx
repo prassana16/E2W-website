@@ -20,11 +20,11 @@ const ClientManager = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold text-[#fceecf] mb-4">Client Manager</h2>
-            <p className="text-[#F7F2E7] text-lg mb-6">
+            <h2 className="text-3xl font-Tinos text-[#fceecf] mb-4">Client Manager</h2>
+            <p className="text-[#F7F2E7] text-lg mb-6 font-mono">
               Our Client Manager helps businesses manage client data efficiently with lead source capture, easy client search, and secure cloud storage.
             </p>
-            <ul className="list-disc ml-16 md:ml-6 text-left text-[#F7F2E7]">
+            <ul className="list-disc ml-16 md:ml-6 text-left text-[#F7F2E7] font-mono">
               <li>Customized lead source capture</li>
               <li>Easy client search functionality</li>
               <li>Secure data storage at cloud</li>

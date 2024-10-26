@@ -18,10 +18,11 @@ function Testimonials() {
       <RiStarSFill />
       <RiStarSFill />
       </div>
-      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Teena Grace</h3>
+      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Grace Scans</h3>
       <p className="font-mono mt-4 mb-3 text-base font-thin md:font-medium">
         I had an excellent experience with Baleen Media for brand promotion. Their team's dedication and attention to detail made the entire process smooth and efficient. Highly recommend!
       </p>
+      <p className='text-right mb-3'>-Teena Grace</p>
     </div>
     
     <div className="px-5 rounded-xl border border-[#00264c] border-r-4 border-b-4 drop-shadow-md">
@@ -32,10 +33,11 @@ function Testimonials() {
       <RiStarSFill />
       <RiStarSFill />
       </div>
-      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Teena Grace</h3>
+      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Baleen Media</h3>
       <p className="font-mono mt-4 mb-3 text-base font-thin md:font-medium">
         I had an excellent experience with Baleen Media for brand promotion. Their team's dedication and attention to detail made the entire process smooth and efficient. Highly recommend!
       </p>
+      <p className='text-right mb-3'>-Leenah Grace</p>
     </div>
   </div>
 

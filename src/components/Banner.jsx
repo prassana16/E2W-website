@@ -10,8 +10,8 @@ const Banner = () => {
         
         {/* Animated Heading */}
         <div className="flex flex-col items-center space-y-6 md:space-y-10 md:mx-16 pb-8">
-          <div className="flex ">
-          <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+          
+          
           <motion.h1
             className="text-5xl lg:text-9xl  mb-4 text-left font-RozhaOne font-thin w-full "
             initial={{ y: -50, opacity: 0 }}
@@ -20,8 +20,8 @@ const Banner = () => {
           >
             Empower 
           </motion.h1>
-          </div>
-          <div className="flex ">
+          
+          
             
           <motion.h1
             className="text-5xl lg:text-9xl  mb-4 text-right font-RozhaOne font-thin w-full "
@@ -31,8 +31,8 @@ const Banner = () => {
           >
             Productivity
           </motion.h1>
-          <p >Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-          </div>
+          
+          
         </div>
 
         {/* ---------------Image Section--------------- */}
@@ -68,28 +68,28 @@ const Banner = () => {
       </div>
       <div className="flex items-center ">
         <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[9px] "></div>
         </div>
         <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[9px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[9px] "></div>
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[9px] "></div>
         </div>
       </div>
       {/* Bottom Image */}

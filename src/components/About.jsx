@@ -15,10 +15,10 @@ const About = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-[#fceecf] mb-4">
+          <h2 className="text-3xl font-Tinos text-[#fceecf] mb-4">
             About Easy2Work
           </h2>
-          <p className="text-[#F7F2E7] text-lg mb-6">
+          <p className="text-[#F7F2E7] text-lg mb-6 font-mono">
             Easy2Work is an all-in-one workflow management system designed to optimize business processes and streamline daily operations. Customization is our value-add. It provides an intuitive interface for managing clients, handling rate cards, processing orders, and governing financial transactions.
           </p>
         </motion.div>

@@ -20,11 +20,11 @@ const OrderReport = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#fceecf] mb-4 text-center md:text-left">Order Report</h2>
-<p className="text-[#F7F2E7] text-lg md:text-xl mb-6 text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-Tinos text-[#fceecf] mb-4 text-center md:text-left">Order Report</h2>
+<p className="text-[#F7F2E7] text-lg md:text-xl mb-6 text-center md:text-left font-mono">
   The Order Report provides businesses with detailed insights into order tracking, fulfillment, and performance analysis, helping to streamline operations and optimize customer satisfaction.
 </p>
-<ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2">
+<ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2 font-mono">
   <li>Real-time order tracking and updates</li>
   <li>Detailed fulfillment and shipping reports</li>
   <li>Comprehensive performance analysis for order management</li>
