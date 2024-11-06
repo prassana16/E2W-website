@@ -20,8 +20,8 @@ const PaymentMilestone = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold text-[#fceecf] mb-4">Payment Milestones</h2>
-<p className="text-[#F7F2E7] text-lg mb-6">
+            <h2 className="text-3xl font-Tinos text-[#fceecf] mb-4">Payment Milestones</h2>
+<p className="text-[#F7F2E7] font-mono text-lg mb-6">
   Our Payment Manager offers a streamlined approach to track Payment milestones, ensuring timely delivery and effective communication across teams.
 </p>
 <ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7]">

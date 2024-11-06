@@ -20,8 +20,8 @@ const Consultant = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#fceecf] mb-4 text-center md:text-left">Consultant Manager</h2>
-<p className="text-[#F7F2E7] text-lg md:text-xl mb-6 text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-Tinos text-[#fceecf] mb-4 text-center md:text-left">Consultant Manager</h2>
+<p className="text-[#F7F2E7] font-mono text-lg md:text-xl mb-6 text-center md:text-left">
   The Consultant Manager enables businesses to efficiently manage consultant engagements, track performance, and streamline communication for better collaboration and results.
 </p>
 <ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2">

@@ -71,15 +71,41 @@ function Features() {
   return (
     <div className="bg-[#00264c]" id='features'>
       {/* Top Image */}
-      <img src={top} alt="" className="w-full" />
+      {/* <img src={top} alt="" className="w-full" /> */}
+      <div className="flex items-center ">
+        <div className="w-1/2 items-center justify-center flex flex-col">
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
+        </div>
+        <div className="w-1/2 items-center justify-center flex flex-col">
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
+        </div>
+      </div>
       
       {/* Title */}
-      <h2 className='text-2xl md:text-5xl text-[#F7F2E7] text-center  font-Tinos mt-12'>
-        Features
-      </h2>
+      <h2 className="text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos pt-11 ">
+    Features
+  </h2>
       
       {/* Pagination */}
-      <div className='text-[#F7F2E7] text-lg text-center mb-3 md:mb-12 flex items-center gap-2 justify-center'>
+      <div className='text-[#F7F2E7] text-lg text-center mb flex items-center gap-2 justify-center'>
         <button onClick={handlePrev} disabled={currentPage === 1}>
           <IoIosArrowDropleftCircle className={`${currentPage === 1 ? 'opacity-50' : ''}`} />
         </button>
@@ -131,8 +157,35 @@ function Features() {
         
       </div>
 
+      <div className="flex items-center ">
+        <div className="w-1/2 items-center justify-center flex flex-col">
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
+        </div>
+        <div className="w-1/2 items-center justify-center flex flex-col">
+        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
+        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
+        </div>
+      </div>
+
       {/* Bottom Image */}
-      <img src={btm} alt="" className="w-full" />
+      {/* <img src={btm} alt="" className="w-full" /> */}
     </div>
   );
 }
