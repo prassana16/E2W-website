@@ -21,11 +21,7 @@ const FinanceManager = () => {
             transition={{ duration: 0.8 }}
           >
            <h2 className="text-3xl md:text-4xl font-Tinos text-[#fceecf] mb-4 text-center md:text-left">Finance Manager</h2>
-<<<<<<< HEAD
 <p className="text-[#F7F2E7] font-mono text-lg md:text-xl mb-6 text-center md:text-left">
-=======
-<p className="text-[#F7F2E7] text-lg md:text-xl mb-6 text-center md:text-left font-mono">
->>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
   The Finance Manager empowers businesses to efficiently manage client data with features like customized lead source tracking, quick client search, and secure cloud storage for peace of mind.
 </p>
 <ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2 font-mono">

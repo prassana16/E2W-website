@@ -21,11 +21,7 @@ const ClientManager = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-Tinos text-[#fceecf] mb-4">Client Manager</h2>
-<<<<<<< HEAD
             <p className="text-[#F7F2E7] font-mono text-lg mb-6">
-=======
-            <p className="text-[#F7F2E7] text-lg mb-6 font-mono">
->>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
               Our Client Manager helps businesses manage client data efficiently with lead source capture, easy client search, and secure cloud storage.
             </p>
             <ul className="list-disc ml-16 md:ml-6 text-left text-[#F7F2E7] font-mono">

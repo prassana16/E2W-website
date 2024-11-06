@@ -12,11 +12,7 @@ const cardVariants = {
 
 const Intro = () => {
   return (
-<<<<<<< HEAD
     <section className="bg-[#F7F2E7] py-16 md:py-52  font-mono">
-=======
-    <section className="bg-[#F7F2E7] py-16 md:py-48 font-mono">
->>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
       <div className="flex flex-col items-center justify-center mt-2 px-4">
         <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-Tinos'>
           Fully Customisable & Accessible Components
