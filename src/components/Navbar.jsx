@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // For hamburger and close icons
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { RiHome5Line } from "react-icons/ri";
+<<<<<<< HEAD
 import { VscFileCode } from "react-icons/vsc";
+=======
+>>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
 import { MdFeaturedPlayList, MdSupportAgent, MdExpandMore } from "react-icons/md";
 import logo from '../../public/icon-384x384.png';
 
@@ -39,7 +42,11 @@ const Navbar = () => {
           {/* Service Dropdown */}
           <li className="relative">
             <button onClick={toggleServiceDropdown} className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300 flex items-center">
+<<<<<<< HEAD
             Services <MdExpandMore className="ml-1" />
+=======
+              Services <MdExpandMore className="ml-1" />
+>>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
             </button>
             {isServiceOpen && (
               <ul className="absolute top-full left-0 mt-2 w-48 bg-[#00264c] shadow-lg rounded">
@@ -91,7 +98,11 @@ const Navbar = () => {
           </li>
           {/* Service Dropdown for Mobile */}
           <li className="text-lg text-[#ffff] flex items-center" onClick={toggleServiceDropdown}>
+<<<<<<< HEAD
           <VscFileCode className='mr-2'/> Services <MdExpandMore className='ml-2' />
+=======
+            Services <MdExpandMore className='ml-2' />
+>>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
           </li>
           {isServiceOpen && (
             <ul className="ml-6 space-y-4">

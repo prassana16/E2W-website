@@ -21,10 +21,14 @@ const RateValidation = () => {
             transition={{ duration: 0.8 }}
           >
            <h2 className="text-3xl md:text-4xl font-Tinos text-[#fceecf] mb-4 text-center md:text-left">Rate Validation</h2>
+<<<<<<< HEAD
 <p className="text-[#F7F2E7] font-mono text-lg md:text-xl mb-6 text-center md:text-left">
+=======
+<p className="text-[#F7F2E7] text-lg md:text-xl mb-6 text-center md:text-left font-mono">
+>>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
   The Rate Validation feature ensures that your pricing is consistent, competitive, and accurate across all platforms, helping businesses maintain financial accuracy and compliance.
 </p>
-<ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2">
+<ul className="list-disc ml-8 md:ml-6 text-left text-[#F7F2E7] space-y-2 font-mono">
   <li>Automated checks for rate consistency</li>
   <li>Custom validation rules for services and products</li>
   <li>Integration with financial and billing systems</li>

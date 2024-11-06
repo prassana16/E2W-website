@@ -11,6 +11,8 @@ const Banner = () => {
         {/* Animated Heading */}
         <div className="flex flex-col items-center space-y-6 md:space-y-10 md:mx-16 pb-8">
           
+          
+          
          
           <motion.h1
             className="text-5xl lg:text-9xl  mb-4 text-left font-RozhaOne font-thin w-full "

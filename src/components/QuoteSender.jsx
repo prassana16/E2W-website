@@ -21,13 +21,20 @@ const QuoteSender = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}} // Animate when in view
             transition={{ duration: 0.8 }}
           >
+<<<<<<< HEAD
             <h2 className="text-3xl md:text-4xl font-Tinos text-[#fceecf] mb-4">
               Quote Sender
             </h2>
             <p className="text-[#F7F2E7] font-mono text-lg mb-6">
+=======
+            <h2 className="text-3xl font-Tinos text-[#F7F2E7] mb-4">
+              Quote Sender
+            </h2>
+            <p className="text-[#F7F2E7] text-lg mb-6 font-mono">
+>>>>>>> 6131c8b18e9cb06b96c7ec784121d8de1bc3e7ea
               The Quote Sender tool simplifies the process of creating and sending quotes with dynamic margin adjustments, slab-wise pricing, and the ability to download quotes seamlessly.
             </p>
-            <ul className="list-disc ml-6 text-[#F7F2E7]">
+            <ul className="list-disc ml-6 text-[#F7F2E7] font-mono">
               <li>Quick search for products and services</li>
               <li>Dynamic margin settings for flexible pricing</li>
               <li>Downloadable quotes for client convenience</li>

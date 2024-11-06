@@ -3,7 +3,12 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 import { IoIosArrowUp } from 'react-icons/io';
 import { BsWhatsapp } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { IoIosArrowUp } from 'react-icons/io';
+import { BsWhatsapp } from 'react-icons/bs';
+import { IoCall } from 'react-icons/io5';
 import { IoLogoWhatsapp } from "react-icons/io";
+import logo from '../../public/icon-384x384.png';
 import logo from '../../public/icon-384x384.png';
 
 const Footer = () => {
@@ -13,9 +18,11 @@ const Footer = () => {
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/9566031113', '_blank');
+    window.open('https://wa.me/9566031113', '_blank');
   };
 
   const handleCall = () => {
+    window.open('tel:+919566031113');
     window.open('tel:+919566031113');
   };
 
@@ -69,21 +76,30 @@ const Footer = () => {
         {/* Footer Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 text-center md:text-left">
           {/* Quick Links */}
+        {/* Footer Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 text-center md:text-left">
+          {/* Quick Links */}
           <div>
+            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-3">
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <a href="/" className="hover:text-[#FFD700] transition duration-200">Home</a>
+                <a href="/" className="hover:text-[#FFD700] transition duration-200">Home</a>
               </li>
               <li>
                 <a href="#features" className="hover:text-[#FFD700] transition duration-200">Features</a>
+                <a href="#features" className="hover:text-[#FFD700] transition duration-200">Features</a>
               </li>
               <li>
+                <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">Contact Us</a>
                 <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">Contact Us</a>
               </li>
             </ul>
           </div>
 
+          {/* Contact Information */}
           {/* Contact Information */}
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
@@ -95,7 +111,18 @@ const Footer = () => {
                 Phone: <a href="tel:+919566031113">+91 9566031113</a>
               </p>
             </address>
+            <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
+            <address className="not-italic space-y-3">
+              <p className="text-sm hover:text-[#FFD700] transition duration-200">
+                32, 3rd Cross Street, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020
+              </p>
+              <p className="text-sm hover:text-[#FFD700] transition duration-200">
+                Phone: <a href="tel:+919566031113">+91 9566031113</a>
+              </p>
+            </address>
           </div>
+
+          {/* Social Media Links */}
 
           {/* Social Media Links */}
           <div>
@@ -111,6 +138,7 @@ const Footer = () => {
                 <FaInstagram className="w-6 h-6" />
               </a>
               <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">
+              <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">
                 <IoLogoWhatsapp className="w-6 h-6" />
               </a>
             </div>
@@ -119,28 +147,35 @@ const Footer = () => {
 
         {/* Bottom Divider */}
         <div className="border-t border-[#FFD700] pt-4 text-center">
+        {/* Bottom Divider */}
+        <div className="border-t border-[#FFD700] pt-4 text-center">
           <p>&copy; {new Date().getFullYear()} Easy2Work. All rights reserved.</p>
         </div>
       </div>
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-8 left-8 z-50">
+      <div className="fixed bottom-8 left-8 z-50">
         <button 
           onClick={scrollToTop} 
+          className="bg-[#004C4C] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
           className="bg-[#004C4C] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
         >
           <IoIosArrowUp className="text-white w-6 h-6" />
         </button>
       </div>
       <div className="fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
+      <div className="fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
         <button 
           onClick={handleWhatsApp} 
+          className="bg-[#25D366] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-green-700 transition duration-300"
           className="bg-[#25D366] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-green-700 transition duration-300"
         >
           <BsWhatsapp className="text-white w-6 h-6" />
         </button>
         <button 
           onClick={handleCall} 
+          className="bg-[#007BFF] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300"
           className="bg-[#007BFF] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300"
         >
           <IoCall className="text-white w-6 h-6" />
