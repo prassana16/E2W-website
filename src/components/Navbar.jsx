@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // For hamburger and close icons
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { RiHome5Line } from "react-icons/ri";
@@ -21,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#00264c] shadow-md">
+    <nav className="bg-[#00264c] shadow-md flex flex-col">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Right Title */}
         <div className="flex justify-center items-center text-2xl font-bold text-[#F7F2E7]">
@@ -114,6 +115,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      
+      
 
       {/* Overlay for when menu is open */}
       {isOpen && (
@@ -122,6 +125,8 @@ const Navbar = () => {
           onClick={toggleMenu}
         ></div>
       )}
+
+      
     </nav>
   );
 };

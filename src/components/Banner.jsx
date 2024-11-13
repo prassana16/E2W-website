@@ -9,7 +9,7 @@ const Banner = () => {
   const slides = [
     {
       title: 'Welcome to Easy2Work India',
-      description: 'Empowering businesses with cutting-edge IT solutions.',
+      description: 'we are collabrating with high quality professionals across the worlds.',
       image: ItCompanyImage,
     },
     {
@@ -50,12 +50,13 @@ const Banner = () => {
   };
 
   return (
-    <section className="bg-[#00264c] text-[#F7F2E7] pt-16">
-      <div className="py-10 relative">
+    <section className="bg-[#00264c] text-[#fceecf] pt-16 bg-[radial-gradient(ellipse_at_center,_#013469,_#00264c)]"
+>
+      
         {/* Slide Wrapper */}
         <AnimatePresence initial={false}>
           <motion.div
-            className="flex justify-center items-center"
+            className="flex justify-center items-center py-7"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
@@ -73,7 +74,7 @@ const Banner = () => {
                   {slides[currentSlide].title}
                 </motion.h2>
                 <motion.p
-                  className="text-lg md:text-xl text-[#F7F2E7] opacity-70"
+                  className="text-lg md:text-xl text-[#fceecf] opacity-70"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
@@ -112,7 +113,7 @@ const Banner = () => {
             &#8250;
           </button>
         </div>
-      </div>
+      
 
       {/* Decorative Stripes */}
       <div className="flex items-center justify-center mt-16 z-10">
