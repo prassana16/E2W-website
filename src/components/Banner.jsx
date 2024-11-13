@@ -11,34 +11,40 @@ import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 const Banner = () => {
   const slides = [
     {
-      title: 'Welcome to Easy2Work India',
+      title: 'Welcome to Easy2Work ',
       description: 'we are collabrating with high quality professionals across the world.',
       image: ItCompanyImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
     {
       title: 'Website Development',
       description: 'Crafting responsive and dynamic websites that enhance user engagement and drive business growth.',
       image: WebsiteImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
     {
       title: 'Web Development',
       description: 'Creating responsive and interactive web applications that elevate user experience, streamline workflows, and accelerate business growth.',
       image: WebDevImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
     {
       title: 'Mobile App Development',
       description: 'Developing cross-platform mobile apps with seamless user experiences and innovative functionalities.',
       image: SoftwareDevImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
     {
       title: 'Cloud Native Application Development',
       description: 'Building scalable, resilient applications that leverage the full power of cloud-native technologies.',
       image: CloudImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
     {
       title: 'SEO Services',
       description: 'Optimizing your presence online with SEO strategies and digital marketing campaigns.',
       image: SeoImage,
+      bgColor:'radial-gradient(ellipse at center, #003f81, #001831)',
     },
   ];
 
@@ -63,7 +69,8 @@ const Banner = () => {
   };
 
   return (
-    <section className="bg-[#00264c] text-[#fceecf] pt-16 bg-[radial-gradient(ellipse_at_center,_#013469,_#00264c)]"
+    <section className=" text-[#fceecf] pt-16 "
+    style={{ background: slides[currentSlide].bgColor }}
 >
       
         {/* Slide Wrapper */}
@@ -97,11 +104,11 @@ const Banner = () => {
               </div>
 
               {/* Right Side Image */}
-              <div className="relative md:w-1/2 mt-8 md:mt-0">
+              <div className="relative md:w-1/2  mt-8 md:mt-0">
                 <motion.img
                   src={slides[currentSlide].image}
                   alt="Slide Image"
-                  className="w-full max-w-md rounded-lg"
+                  className="w-full max-w-md  rounded-lg"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.2 }}

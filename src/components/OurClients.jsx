@@ -2,11 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Gracescans from '../assets/images/Grace-Scans.png';
 import Baleen from '../assets/images/thumbnail.png';
-import Clients from '../assets/images/seobanner2.png' 
+import Clients from '../assets/images/clients.png' 
 
 function OurClients() {
   return (
-    <section className='bg-[#1d004c]  flex flex-col items-center justify-center'>
+    <section className='bg-[#110035]  flex flex-col items-center justify-center'>
       {/* Decorative Animated Lines */}
     <div className="w-full flex   ">
       {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (

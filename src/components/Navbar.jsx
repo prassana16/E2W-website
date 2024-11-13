@@ -22,14 +22,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#00264c] shadow-md flex flex-col">
+    <nav className="bg-[#001831] shadow-md flex flex-col">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Right Title */}
         <div className="flex justify-center items-center text-2xl font-bold text-[#F7F2E7]">
           <img src={logo} alt="Logo" className='w-10'/>
           Easy2Work
         </div>
-
+{/* bg-[#110035] */}
         {/* Left Menu Items (Hidden on mobile, shown on larger screens) */}
         <ul className="hidden md:flex space-x-6">
           <li>

@@ -20,7 +20,7 @@ function Testimonials() {
       </div>
       <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Grace Scans</h3>
       <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
-        I had an excellent experience with Baleen Media for brand promotion. Their team's dedication and attention to detail made the entire process smooth and efficient. Highly recommend!
+      "Easy2Work has elevated our operations and streamlined the complexities we face daily. The team is attentive, adaptive, and incredibly skilled at creating solutions that meet our needs while driving efficiency. With Easy2Work’s revenue-sharing model, we feel more like partners than clients, motivated to grow together. Their platform has empowered us to scale seamlessly, and we look forward to many more successful years of collaboration."
       </p>
       <p className='text-right mb-3'>- Teena Grace</p>
     </div>
@@ -35,7 +35,7 @@ function Testimonials() {
       </div>
       <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Baleen Media</h3>
       <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
-        I had an excellent experience with Baleen Media for brand promotion. Their team's dedication and attention to detail made the entire process smooth and efficient. Highly recommend!
+      "Collaborating with Easy2Work has been transformative for Baleen Media. Their intuitive approach to workflow management and emphasis on streamlined operations have allowed us to focus on our core strengths while seeing impressive results. The revenue-sharing model has been particularly advantageous, ensuring mutual growth with every milestone we reach. Easy2Work’s commitment to innovation and client success is unmatched, and we’re excited to continue this rewarding partnership."
       </p>
       <p className='text-right mb-3'>- Leenah Grace</p>
     </div>
