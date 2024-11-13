@@ -14,6 +14,7 @@ import btm from '../assets/images/pagebtm.png';
 import top from '../assets/images/paagetop.png';
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { motion } from 'framer-motion';
 
 function Features() {
   const [currentPage, setCurrentPage] = useState(1); // Track the current page
@@ -70,38 +71,28 @@ function Features() {
 
   return (
     <div className="bg-[#00264c]" id='features'>
-      {/* Top Image */}
-      {/* <img src={top} alt="" className="w-full" /> */}
-      <div className="flex items-center ">
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        </div>
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        </div>
-      </div>
+       {/* Decorative Animated Lines */}
+    <div className="w-full flex   ">
+      {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
+        <motion.div
+          key={i}
+          className={`bg-[#F7F2E7] h-[2px] w-full `}
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: [1,2,4,6,8,10,12,12,10,8,6,4,2,1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            delay: i * 0.2,
+          }}
+        />
+      ))}
+      
+    </div>
       
       {/* Title */}
       <h2 className="text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos pt-11 ">
-    Features
+    Our Product
   </h2>
       
       {/* Pagination */}
@@ -157,32 +148,24 @@ function Features() {
         
       </div>
 
-      <div className="flex items-center ">
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        </div>
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        </div>
-      </div>
+      {/* Decorative Animated Lines */}
+    <div className="w-full flex  mt-24 ">
+      {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
+        <motion.div
+          key={i}
+          className={`bg-[#F7F2E7] h-[2px] w-full `}
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: [1,2,4,6,8,10,12,12,10,8,6,4,2,1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            delay: i * 0.2,
+          }}
+        />
+      ))}
+      
+    </div>
 
       
       {/* <img src={btm} alt="" className="w-full" /> */}

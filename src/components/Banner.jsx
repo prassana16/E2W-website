@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import WebDevImage from '../assets/images/websitebanner2.png';
-import SoftwareDevImage from '../assets/images/softwarebanner2.png';
-import SeoImage from '../assets/images/seobanner2.png';
+import WebDevImage from '../assets/images/webdev.png';
+import SoftwareDevImage from '../assets/images/mobileapp.png';
+import SeoImage from '../assets/images/seobanner3.png';
 import ItCompanyImage from '../assets/images/bannerimg.png';
+import CloudImage from '../assets/images/cloudbanner.png';
+import WebsiteImage from '../assets/images/websitedev.png'
 import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 
 const Banner = () => {
@@ -14,17 +16,27 @@ const Banner = () => {
       image: ItCompanyImage,
     },
     {
+      title: 'Website Development',
+      description: 'Crafting responsive and dynamic websites that enhance user engagement and drive business growth.',
+      image: WebsiteImage,
+    },
+    {
       title: 'Web Development',
-      description: 'Building responsive and scalable websites with the latest technologies.',
+      description: 'Creating responsive and interactive web applications that elevate user experience, streamline workflows, and accelerate business growth.',
       image: WebDevImage,
     },
     {
-      title: 'Software Development',
-      description: 'Custom software solutions designed to streamline your business operations.',
+      title: 'Mobile App Development',
+      description: 'Developing cross-platform mobile apps with seamless user experiences and innovative functionalities.',
       image: SoftwareDevImage,
     },
     {
-      title: 'SEO & Digital Marketing',
+      title: 'Cloud Native Application Development',
+      description: 'Building scalable, resilient applications that leverage the full power of cloud-native technologies.',
+      image: CloudImage,
+    },
+    {
+      title: 'SEO Services',
       description: 'Optimizing your presence online with SEO strategies and digital marketing campaigns.',
       image: SeoImage,
     },
@@ -85,7 +97,7 @@ const Banner = () => {
               </div>
 
               {/* Right Side Image */}
-              <div className="md:w-1/2 mt-8 md:mt-0">
+              <div className="relative md:w-1/2 mt-8 md:mt-0">
                 <motion.img
                   src={slides[currentSlide].image}
                   alt="Slide Image"
@@ -100,50 +112,40 @@ const Banner = () => {
         </AnimatePresence>
 
         {/* Controls */}
-        <div className="absolute gap-5 md:gap-0 md:bottom-1/2 left-0 right-0 flex justify-center md:justify-between items-center z-10">
+        <div className="absolute gap-5  left-0 right-0 flex justify-center  items-center z-10">
           <button
             onClick={handlePrev}
-            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-l-lg md:rounded-l-none md:rounded-r-2xl bg-[#F7F2E7] shadow-md transition"
+            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-l-lg  bg-[#F7F2E7] shadow-md transition"
           >
             <IoIosArrowBack />
           </button>
           <button
             onClick={handleNext}
-            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-r-lg md:rounded-r-none md:rounded-l-2xl bg-[#F7F2E7] shadow-md transition"
+            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-r-lg  bg-[#F7F2E7] shadow-md transition"
           >
             <IoIosArrowForward />
           </button>
         </div>
       
 
-      {/* Decorative Stripes */}
-      <div className="flex items-center justify-center mt-16 z-10">
-        {/* Left Decorative Stripes */}
-        <div className="w-1/2 flex flex-col items-center ">
-          {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((width, i) => (
-            <motion.div
-              key={i}
-              className="bg-[#F7F2E7] h-[3px] md:h-[8px]"
-              initial={{ width: '0%' }}
-              animate={{ width: `${width}%` }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            />
-          ))}
-        </div>
-
-        {/* Right Decorative Stripes */}
-        <div className="w-1/2 flex flex-col items-center">
-          {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((width, i) => (
-            <motion.div
-              key={i + 10}
-              className="bg-[#F7F2E7] h-[3px] md:h-[8px]"
-              initial={{ width: '0%' }}
-              animate={{ width: `${width}%` }}
-              transition={{ duration: 0.5, delay: (i + 10) * 0.1 }}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Decorative Animated Lines */}
+    <div className="w-full flex  mt-24 ">
+      {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
+        <motion.div
+          key={i}
+          className={`bg-[#F7F2E7] h-[2px] w-full `}
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: [1,2,4,6,8,10,12,12,10,8,6,4,2,1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 1,
+            delay: i * 0.2,
+          }}
+        />
+      ))}
+      
+    </div>
     </section>
   );
 };

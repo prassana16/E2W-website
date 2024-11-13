@@ -48,10 +48,16 @@ const Navbar = () => {
                   <a href="#website-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Website Development</a>
                 </li>
                 <li>
-                  <a href="#software-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Software Product Development</a>
+                  <a href="#website-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Web Development</a>
                 </li>
                 <li>
-                  <a href="#seo-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">SEO Development</a>
+                  <a href="#software-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Mobile App Development</a>
+                </li>
+                <li>
+                  <a href="#seo-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">SEO Service</a>
+                </li>
+                <li>
+                  <a href="#seo-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Cloud  Application development</a>
                 </li>
               </ul>
             )}
@@ -100,10 +106,16 @@ const Navbar = () => {
                 <a href="#website-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Website Development</a>
               </li>
               <li>
-                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Software Product Development</a>
+                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Web Development</a>
               </li>
               <li>
-                <a href="#seo-development" className="text-[#F7F2E7] hover:text-[#FFD700]">SEO Development</a>
+                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Mobile App Development</a>
+              </li>
+              <li>
+                <a href="#seo-development" className="text-[#F7F2E7] hover:text-[#FFD700]">SEO Service</a>
+              </li>
+              <li>
+                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Cloud native application Development</a>
               </li>
             </ul>
           )}
