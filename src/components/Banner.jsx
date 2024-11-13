@@ -4,12 +4,13 @@ import WebDevImage from '../assets/images/websitebanner2.png';
 import SoftwareDevImage from '../assets/images/softwarebanner2.png';
 import SeoImage from '../assets/images/seobanner2.png';
 import ItCompanyImage from '../assets/images/bannerimg.png';
+import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 
 const Banner = () => {
   const slides = [
     {
       title: 'Welcome to Easy2Work India',
-      description: 'we are collabrating with high quality professionals across the worlds.',
+      description: 'we are collabrating with high quality professionals across the world.',
       image: ItCompanyImage,
     },
     {
@@ -99,18 +100,18 @@ const Banner = () => {
         </AnimatePresence>
 
         {/* Controls */}
-        <div className="absolute bottom-1/2 md:bottom-1/2 left-0 right-0 flex justify-between items-center z-10">
+        <div className="absolute gap-5 md:gap-0 md:bottom-1/2 left-0 right-0 flex justify-center md:justify-between items-center z-10">
           <button
             onClick={handlePrev}
-            className="text-[#00264c] p-2 md:p-3 font-bold text-2xl rounded-r-lg md:rounded-r-2xl bg-[#F7F2E7] shadow-md transition"
+            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-l-lg md:rounded-l-none md:rounded-r-2xl bg-[#F7F2E7] shadow-md transition"
           >
-            &#8249;
+            <IoIosArrowBack />
           </button>
           <button
             onClick={handleNext}
-            className="text-[#00264c] p-2 md:p-3 font-bold text-2xl rounded-l-lg md:rounded-l-2xl bg-[#F7F2E7] shadow-md transition"
+            className="text-[#00264c] p-1 md:p-3 font-bold text-2xl rounded-r-lg md:rounded-r-none md:rounded-l-2xl bg-[#F7F2E7] shadow-md transition"
           >
-            &#8250;
+            <IoIosArrowForward />
           </button>
         </div>
       
