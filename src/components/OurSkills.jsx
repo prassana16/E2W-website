@@ -12,6 +12,7 @@ import { SiMysql } from "react-icons/si";
 import { FaFigma } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
 import { SiCsharp } from "react-icons/si";
+import bg from '../assets/images/bgvect3.png'
 
 const skills = [
   { name: 'React.js', icon: <FaReact className="text-[#61DBFB]" /> },
@@ -31,11 +32,12 @@ const skills = [
 function OurSkills() {
   return (
     <section className='bg-[#F7F2E7] py-16 flex flex-col items-center justify-center'>
-      <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">
+        <img src={bg} alt="" className='absolute w-full opacity-15 h-2/3' />
+      <h2 className="relative text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">
         Our Skills
       </h2>
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 "
+        className="relative grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

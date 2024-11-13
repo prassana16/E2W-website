@@ -2,6 +2,7 @@ import { section } from 'framer-motion/client'
 import React from 'react'
 import { RiStarSFill } from "react-icons/ri";
 
+
 function Testimonials() {
   return (
     <section className=" bg-[#F7F2E7] py-16 flex flex-col items-center justify-center px-3">

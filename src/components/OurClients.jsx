@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Gracescans from '../assets/images/Grace-Scans.png';
 import Baleen from '../assets/images/thumbnail.png';
 import Clients from '../assets/images/clients.png' 
-
+import bg from '../assets/images/bgvect2.png'
 function OurClients() {
   return (
     <section className='bg-[#110035]  flex flex-col items-center justify-center'>
@@ -25,18 +25,18 @@ function OurClients() {
       ))}
       
     </div>
-    <h2 className="text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos mb-16 pt-16">
+    <h2 className="relative text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos mb-16 pt-16">
       Our Clients
     </h2>
-    
+    <img src={bg} alt="" className='absolute w-full opacity-5 h-1/3' />
     {/* Description of Revenue Sharing Model */}
-    <p className="text-center px-6 md:px-0 max-w-4xl font-mono text-sm md:text-lg text-[#F7F2E7] mb-12">
+    <p className="relative text-center px-6 md:px-0 max-w-4xl font-mono text-sm md:text-lg text-[#F7F2E7] mb-12">
       Through revenue-sharing partnerships, Easy2Work collaborates with clients like Grace Scans and Baleen Media to generate sustainable growth and mutual profit. This model allows each party to benefit from performance-based income, aligning goals and fostering scalable business success.
     </p>
 
     {/* Client Cards */}
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 px-4 md:px-0"
+      className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 px-4 md:px-0"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -66,7 +66,7 @@ function OurClients() {
 
     {/* How Revenue-Sharing Works */}
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 rounded-lg shadow-md mt-14">
+<div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 p-8 rounded-lg shadow-md mt-14">
   {/* Content */}
   <div className="flex flex-col space-y-6">
     <h3 className="text-lg md:text-3xl font-Tinos text-[#F7F2E7]">How Revenue-Sharing Works</h3>
