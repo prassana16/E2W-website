@@ -4,7 +4,7 @@ import { IoIosArrowUp } from 'react-icons/io';
 import { BsWhatsapp } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
 import { IoLogoWhatsapp } from "react-icons/io";
-import logo from '../../public/icon-384x384.png';
+import logo from '/icon-384x384.png';
 
 const Footer = () => {
   const scrollToTop = () => {

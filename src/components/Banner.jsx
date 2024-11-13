@@ -1,101 +1,143 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import btm from '../assets/images/pagebtm.png';
-import Bimg from '../assets/images/bannerimg.png';
+import WebDevImage from '../assets/images/websitebanner2.png';
+import SoftwareDevImage from '../assets/images/softwarebanner2.png';
+import SeoImage from '../assets/images/seobanner2.png';
+import ItCompanyImage from '../assets/images/bannerimg.png';
 
 const Banner = () => {
+  const slides = [
+    {
+      title: 'Welcome to Easy2Work India',
+      description: 'Empowering businesses with cutting-edge IT solutions.',
+      image: ItCompanyImage,
+    },
+    {
+      title: 'Web Development',
+      description: 'Building responsive and scalable websites with the latest technologies.',
+      image: WebDevImage,
+    },
+    {
+      title: 'Software Development',
+      description: 'Custom software solutions designed to streamline your business operations.',
+      image: SoftwareDevImage,
+    },
+    {
+      title: 'SEO & Digital Marketing',
+      description: 'Optimizing your presence online with SEO strategies and digital marketing campaigns.',
+      image: SeoImage,
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Change slide automatically every  seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Change slide on button click
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1 ) % slides.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <section className="bg-[#00264c] text-[#F7F2E7] md:pt-16">
-      <div className="container mx-auto px-4 py-12 md:py-20 text-center font-mono">
-        
-        {/* Animated Heading */}
-        <div className="flex flex-col items-center space-y-6 md:space-y-10 md:mx-16 pb-8">
-          
-          
-          
-         
-          <motion.h1
-            className="text-5xl lg:text-9xl  mb-4 text-left font-RozhaOne font-thin w-full "
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Empower 
-          </motion.h1>
-          
-          
-            
-          <motion.h1
-            className="text-5xl lg:text-9xl  mb-4 text-right font-RozhaOne font-thin w-full "
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Productivity
-          </motion.h1>
-         
-      
-        </div>
+    <section className=" bg-[#00264c] text-[#F7F2E7] pt-16">
+      {/* Slide Wrapper */}
+      <motion.div
+        className="flex justify-center items-center"
+        key={currentSlide}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 100 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className=" flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto px-4">
+          {/* Left Side Content */}
+          <div className="flex flex-col items-start space-y-4 md:w-1/2">
+            <motion.h2
+              className="text-3xl md:text-5xl font-RozhaOne font-light"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              {slides[currentSlide].title}
+            </motion.h2>
+            <motion.p
+              className="text-lg md:text-xl text-[#F7F2E7] opacity-70"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {slides[currentSlide].description}
+            </motion.p>
+          </div>
 
-        {/* ---------------Image Section--------------- */}
-        <div className="flex items-center justify-center my-6">
-          <img
-            src={Bimg}
-            alt="Banner Image"
-            className="w-full max-w-sm md:max-w-lg lg:max-w-2xl"
+          {/* Right Side Image */}
+          <div className="md:w-1/2 mt-8 md:mt-0">
+            <motion.img
+              src={slides[currentSlide].image}
+              alt="Slide Image"
+              className="w-full max-w-md rounded-lg "
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2 }}
+            />
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Controls */}
+      <div className="absolute bottom-1/2 md:bottom-1/2 left-0 right-0 flex justify-between items-center  z-10">
+        <button
+          onClick={handlePrev}
+          className=" text-[#00264c] p-2 md:p-3 font-bold text-2xl rounded-r-lg md:rounded-r-2xl bg-[#F7F2E7]   shadow-md  transition"
+        >
+          &#8249;
+        </button>
+        <button
+          onClick={handleNext}
+          className=" text-[#00264c] p-2 md:p-3 font-bold text-2xl rounded-l-lg md:rounded-l-2xl bg-[#F7F2E7]    shadow-md  transition"
+        >
+          &#8250;
+        </button>
+      </div>
+
+      <div className=" flex items-center justify-center mt-16 z-10">
+      {/* Left Decorative Stripes */}
+      <div className="w-1/2 flex flex-col items-center ">
+        {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((width, i) => (
+          <motion.div
+            key={i}
+            className="bg-[#F7F2E7] h-[3px] md:h-[8px]"
+            initial={{ width: '0%' }}
+            animate={{ width: `${width}%` }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
           />
-        </div>
-
-        {/* Animated Paragraph */}
-        <motion.p
-          className="text-sm md:text-lg lg:text-xl mb-8 text-white max-w-xl mx-auto"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          "Empowering businesses to streamline daily operations and boost productivity."
-        </motion.p>
-
-        {/* Animated Button */}
-        <a href="https://wa.me/9566031113">
-        <motion.button
-          className="bg-[#F7F2E7] text-[#00264c] font-semibold py-3 px-6 md:py-4 md:px-8 rounded-full shadow-lg hover:bg-[#FF7F50] hover:text-[#F7F2E7] transition duration-300"
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.3, delay: 0.4 }}
-        >
-          Get Started
-        </motion.button>
-        </a>
+        ))}
       </div>
-      <div className="flex items-center ">
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        </div>
-        <div className="w-1/2 items-center justify-center flex flex-col">
-        <div className="bg-[#F7F2E7] w-[10%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[20%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[30%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[40%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[50%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[60%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[70%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[80%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[90%] h-[3px] md:h-[8px] "></div>
-        <div className="bg-[#F7F2E7] w-[100%] h-[3px] md:h-[8px] "></div>
-        </div>
+
+      {/* Right Decorative Stripes */}
+      <div className=" w-1/2 flex flex-col items-center ">
+        {[10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((width, i) => (
+          <motion.div
+            key={i + 10}
+            className="bg-[#F7F2E7] h-[3px] md:h-[8px]"
+            initial={{ width: '0%' }}
+            animate={{ width: `${width}%` }}
+            transition={{ duration: 0.5, delay: (i + 10) * 0.1 }}
+          />
+        ))}
       </div>
-      {/* Bottom Image */}
-      {/* <img src={btm} alt="Bottom Image" className="w-full" /> */}
+    </div>
     </section>
   );
 };

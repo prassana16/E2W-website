@@ -4,7 +4,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import { RiHome5Line } from "react-icons/ri";
 import { VscFileCode } from "react-icons/vsc";
 import { MdFeaturedPlayList, MdSupportAgent, MdExpandMore } from "react-icons/md";
-import logo from '../../public/icon-384x384.png';
+import logo from '/icon-384x384.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
