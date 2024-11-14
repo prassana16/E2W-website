@@ -5,6 +5,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
 import { IoLogoWhatsapp } from "react-icons/io";
 import logo from '/icon-384x384.png';
+import { motion } from 'framer-motion';  
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,12 +22,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#00264c] text-[#F7F2E7] relative">
-      <div className="flex items-center">
-        <div className="w-full gap-12 flex">
-          {[...Array(30)].map((_, index) => (
-            <div key={index} className="bg-[#F7F2E7] h-[10px] w-[3px] md:w-[80px]"></div>
-          ))}
-        </div>
+      {/* Decorative Animated Lines */}
+      <div className="w-full flex">
+        {[...Array(26)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`bg-[#F7F2E7] h-[2px] w-full`}
+            initial={{ scaleY: 1 }}
+            animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 1,
+              delay: i * 0.2,
+            }}
+          />
+        ))}
       </div>
       
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8 space-y-8 pt-10">

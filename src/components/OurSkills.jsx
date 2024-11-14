@@ -1,18 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa6";
-import { SiRedux } from "react-icons/si";
+import { FaReact, FaGitAlt, FaFigma, FaNodeJs } from "react-icons/fa";
+import { SiNextdotjs, SiRedux, SiMicrosoftazure, SiAzuredevops, SiPhp, SiMysql, SiCsharp } from "react-icons/si";
 import { DiDotnet } from "react-icons/di";
-import { SiMicrosoftazure } from "react-icons/si";
-import { SiAzuredevops } from "react-icons/si";
-import { SiPhp } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
-import { FaFigma } from "react-icons/fa";
-import { FaGitAlt } from "react-icons/fa";
-import { SiCsharp } from "react-icons/si";
-import bg from '../assets/images/bgvect3.png'
+import bg from '../assets/images/bgvect3.png';
 
 const skills = [
   { name: 'React.js', icon: <FaReact className="text-[#61DBFB]" /> },
@@ -31,13 +22,21 @@ const skills = [
 
 function OurSkills() {
   return (
-    <section className='bg-[#F7F2E7] py-16 flex flex-col items-center justify-center'>
-        <img src={bg} alt="" className='absolute w-full opacity-15 h-2/3' />
+    <section className='relative bg-[#F7F2E7] py-16 flex flex-col items-center justify-center overflow-hidden'>
+      {/* Background image with blending */}
+      <img
+  src={bg}
+  alt=""
+  className='absolute w-full inset-0 h-full object-cover mix-blend-color-burn opacity-15'
+  style={{ zIndex: 1 }}
+/>
+      
       <h2 className="relative text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">
         Our Skills
       </h2>
+      
       <motion.div
-        className="relative grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 "
+        className="relative grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -45,7 +44,7 @@ function OurSkills() {
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center text-center  p-3 rounded-3xl border border-gray-300 hover:bg-gray-100"
+            className="relative flex flex-col items-center text-center p-3 rounded-3xl border border-gray-300 hover:bg-gray-100"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -54,37 +53,6 @@ function OurSkills() {
           </motion.div>
         ))}
       </motion.div>
-      {/* Decorative Lines */}
-      <div className="w-full flex justify-center mt-24 space-x-1">
-  {[8, 7, 6, 5, 4, 3, 2, 1].map((width, i) => (
-    <motion.div
-      key={i}
-      className={`bg-[#00264c] h-[2px] w-${width}`}
-      initial={{ scaleY: 1 }}
-      animate={{ scaleY: [1, 2, 1] }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        repeatDelay: 0.2,
-        delay: i * 0.1,
-      }}
-    />
-  ))}
-  {[2, 3, 4, 5, 6, 7, 8].map((width, i) => (
-    <motion.div
-      key={i + 8}
-      className={`bg-[#00264c] h-[2px] w-${width}`}
-      initial={{ scaleY: 1 }}
-      animate={{ scaleY: [1, 2, 1] }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        repeatDelay: 0.2,
-        delay: (i + 8) * 0.1,
-      }}
-    />
-  ))}
-</div>
     </section>
   );
 }

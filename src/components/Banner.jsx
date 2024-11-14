@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import WebDevImage from '../assets/images/webdev.png';
-import SoftwareDevImage from '../assets/images/mobileapp.png';
-import SeoImage from '../assets/images/seobanner3.png';
+import WebDevImage from '../assets/images/webdev2.png';
+import SoftwareDevImage from '../assets/images/mobileapp2.png';
+import SeoImage from '../assets/images/seobanner4.png';
 import ItCompanyImage from '../assets/images/bannerimg.png';
-import CloudImage from '../assets/images/cloudbanner.png';
-import WebsiteImage from '../assets/images/websitedev.png'
+import CloudImage from '../assets/images/cloudbanner3.png';
+import WebsiteImage from '../assets/images/websitedev2.png'
 import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 
 const Banner = () => {

@@ -6,7 +6,7 @@ import Clients from '../assets/images/clients.png'
 import bg from '../assets/images/bgvect2.png'
 function OurClients() {
   return (
-    <section className='bg-[#110035]  flex flex-col items-center justify-center'>
+    <section className='  flex flex-col items-center justify-center'style={{ background: 'radial-gradient(ellipse at center, #2a0081, #0a0031)' }}>
       {/* Decorative Animated Lines */}
     <div className="w-full flex   ">
       {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
@@ -28,7 +28,7 @@ function OurClients() {
     <h2 className="relative text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos mb-16 pt-16">
       Our Clients
     </h2>
-    <img src={bg} alt="" className='absolute w-full opacity-5 h-1/3' />
+    
     {/* Description of Revenue Sharing Model */}
     <p className="relative text-center px-6 md:px-0 max-w-4xl font-mono text-sm md:text-lg text-[#F7F2E7] mb-12">
       Through revenue-sharing partnerships, Easy2Work collaborates with clients like Grace Scans and Baleen Media to generate sustainable growth and mutual profit. This model allows each party to benefit from performance-based income, aligning goals and fostering scalable business success.
