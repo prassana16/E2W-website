@@ -6,6 +6,7 @@ import { RiHome5Line } from "react-icons/ri";
 import { VscFileCode } from "react-icons/vsc";
 import { MdFeaturedPlayList, MdSupportAgent, MdExpandMore } from "react-icons/md";
 import logo from '/icon-384x384.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,6 +69,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
+          <Link to="/Blogs" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+            Blogs
+          </Link>
+          </li>
+          <li>
             <a href="https://wa.me/9566031113" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
               Contact Us
             </a>
@@ -121,6 +127,9 @@ const Navbar = () => {
           )}
           <li>
             <a href="#features" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Features</a>
+          </li>
+          <li>
+            <Link to="/Blogs" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Blogs</Link>
           </li>
           <li>
             <a href="https://wa.me/9566031113" className='text-lg text-[#ffff] flex items-center ' ><MdSupportAgent className='mr-2' />Contact Us</a>
