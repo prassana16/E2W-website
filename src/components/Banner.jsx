@@ -7,8 +7,7 @@ import ItCompanyImage from '../assets/images/bannerimg.png';
 import CloudImage from '../assets/images/cloudbanner3.png';
 import WebsiteImage from '../assets/images/websitedev2.png';
 import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
-import WebsiteImage from '../assets/images/websitedev2.png';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 
 
 const Banner = () => {
