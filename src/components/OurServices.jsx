@@ -52,7 +52,7 @@ const services = [
 
 function OurServices() {
   return (
-    <section className=' flex flex-col items-center justify-center px-5' style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}>
+    <section className=' flex flex-col items-center justify-center ' style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}>
       {/* Decorative Animated Lines */}
       <div className="w-full flex">
         {[...Array(26)].map((_, i) => (
@@ -76,7 +76,7 @@ function OurServices() {
       </h2>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 px-4 md:px-0"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 px-4 md:px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -84,13 +84,13 @@ function OurServices() {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center p-6 bg-[#eeeaf2] rounded-3xl border border-gray-300 shadow-md hover:bg-gradient-to-r hover:from-[#3e275132] hover:to-[#ffffff81] transition-all duration-500 ease-in-out"
+            className="flex flex-col items-center p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md hover:bg-gradient-to-r hover:from-[#22162c00] hover:to-[#ffffff1f] transition-all duration-500 ease-in-out"
           >
             <div className="text-6xl mb-6">{service.icon}</div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-[#00264c] mb-4">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#ffffff] mb-4">
               {service.name}
             </h3>
-            <p className="text-center text-base md:text-lg text-gray-700">
+            <p className="text-center text-base md:text-lg text-[#f8ebcf]">
               {service.description}
             </p>
           </motion.div>

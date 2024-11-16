@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // For hamburger and close icons
-import { BsBoxArrowUpRight } from "react-icons/bs";
+
 import { RiHome5Line } from "react-icons/ri";
 import { VscFileCode } from "react-icons/vsc";
 import { MdFeaturedPlayList, MdSupportAgent, MdExpandMore } from "react-icons/md";
@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#001831] shadow-md flex flex-col">
+    <nav className=" bg-[#001831] shadow-md flex flex-col">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Right Title */}
         <div className="flex justify-center items-center text-2xl font-bold text-[#F7F2E7]">
@@ -43,7 +43,7 @@ const Navbar = () => {
             Services <MdExpandMore className="ml-1" />
             </button>
             {isServiceOpen && (
-              <ul className="absolute top-full left-0 mt-2 w-48 bg-[#00264c] shadow-lg rounded">
+              <ul className="absolute  mt-2 w-48 bg-[#00264c] shadow-lg rounded">
                 <li>
                   <a href="#website-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Website Development</a>
                 </li>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
+
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -33,7 +34,9 @@ const Faq = () => {
 
   return (
     <section className="bg-[#F7F2E7] py-16">
-      <div className="container mx-auto px-4">
+      
+      <div className=" container mx-auto px-4">
+        
        
         <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16 ">
         Frequently Asked Questions

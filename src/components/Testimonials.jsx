@@ -11,20 +11,7 @@ function Testimonials() {
   </h2>
 
   <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16  ">
-    <div className="px-5 rounded-xl border border-[#00264c] drop-shadow-md border-r-4 border-b-4">
-      <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
-      <RiStarSFill />
-      <RiStarSFill />
-      <RiStarSFill />
-      <RiStarSFill />
-      <RiStarSFill />
-      </div>
-      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Grace Scans</h3>
-      <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
-      "Easy2Work has elevated our operations and streamlined the complexities we face daily. The team is attentive, adaptive, and incredibly skilled at creating solutions that meet our needs while driving efficiency. With Easy2Work’s revenue-sharing model, we feel more like partners than clients, motivated to grow together. Their platform has empowered us to scale seamlessly, and we look forward to many more successful years of collaboration."
-      </p>
-      <p className='text-right mb-3'>- Teena Grace</p>
-    </div>
+    
     
     <div className="px-5 rounded-xl border border-[#00264c] border-r-4 border-b-4 drop-shadow-md">
       <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
@@ -38,7 +25,22 @@ function Testimonials() {
       <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
       "Collaborating with Easy2Work has been transformative for Baleen Media. Their intuitive approach to workflow management and emphasis on streamlined operations have allowed us to focus on our core strengths while seeing impressive results. The revenue-sharing model has been particularly advantageous, ensuring mutual growth with every milestone we reach. Easy2Work’s commitment to innovation and client success is unmatched, and we’re excited to continue this rewarding partnership."
       </p>
-      <p className='text-right mb-3'>- Leenah Grace</p>
+      
+    </div>
+
+    <div className="px-5 rounded-xl border border-[#00264c] drop-shadow-md border-r-4 border-b-4">
+      <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
+      <RiStarSFill />
+      <RiStarSFill />
+      <RiStarSFill />
+      <RiStarSFill />
+      <RiStarSFill />
+      </div>
+      <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Grace Scans</h3>
+      <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
+      "Easy2Work has elevated our operations and streamlined the complexities we face daily. The team is attentive, adaptive, and incredibly skilled at creating solutions that meet our needs while driving efficiency. With Easy2Work’s revenue-sharing model, we feel more like partners than clients, motivated to grow together. Their platform has empowered us to scale seamlessly, and we look forward to many more successful years of collaboration."
+      </p>
+      
     </div>
   </div>
 

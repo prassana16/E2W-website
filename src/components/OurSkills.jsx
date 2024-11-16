@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaGitAlt, FaFigma, FaNodeJs } from "react-icons/fa";
-import { SiNextdotjs, SiRedux, SiMicrosoftazure, SiAzuredevops, SiPhp, SiMysql, SiCsharp } from "react-icons/si";
+import { FaReact, FaGitAlt, FaFigma, FaNodeJs, FaLaravel } from "react-icons/fa";
+import { SiNextdotjs, SiRedux, SiMicrosoftazure, SiAzuredevops, SiPhp, SiMysql, SiCsharp, SiTensorflow } from "react-icons/si";
 import { DiDotnet } from "react-icons/di";
-import bg from '../assets/images/bgvect3.png';
+import { SiExpress } from "react-icons/si";
+import bg from '../assets/images/bgvect.png';
 
 const skills = [
   { name: 'React.js', icon: <FaReact className="text-[#61DBFB]" /> },
@@ -18,6 +19,9 @@ const skills = [
   { name: 'Git', icon: <FaGitAlt className="text-[#F05032]" /> },
   { name: 'ASP.NET', icon: <DiDotnet className="text-[#2b3cd4]" /> },
   { name: 'C#', icon: <SiCsharp className="text-[#178600]" /> },
+  { name: 'Laravel', icon: <FaLaravel className="text-[#ff6232]" /> },
+  { name: 'Express.js', icon: <SiExpress className="text-[#050505]" /> },
+  { name: 'Tensorflow', icon: <SiTensorflow className="text-[#ffca37]" /> },
 ];
 
 function OurSkills() {
@@ -36,7 +40,7 @@ function OurSkills() {
       </h2>
       
       <motion.div
-        className="relative grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16"
+        className="relative grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
