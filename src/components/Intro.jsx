@@ -12,14 +12,14 @@ const cardVariants = {
 
 const Intro = () => {
   return (
-    <section className="bg-[#F7F2E7] py-16 md:py-52  font-mono">
-      <div className="flex flex-col items-center justify-center mt-2 px-4">
+    <section className="bg-[#F7F2E7] py-16 md:py-20  font-mono">
+      <div className="flex flex-col items-center justify-center mt-4 px-4">
         <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-Tinos'>
           Fully Customisable & Accessible Components
         </h2>
 
        {/* Cards container */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 md:mt-24">
   
   {/* Card 1: Optionated */}
   <motion.div 
@@ -110,8 +110,20 @@ const Intro = () => {
   </motion.div>
   
 </div>
+<div className="bg-[#00264c] h-[1px] mt-32 w-8"></div>
+  <div className="bg-[#00264c] h-[2px]  w-2/3 "></div>
+  <div className="bg-[#00264c] h-[2px]  w-8"></div>
+  <div className="bg-[#00264c] h-[2px]  w-7"></div>
+  <div className="bg-[#00264c] h-[2px]  w-6"></div>
+  <div className="bg-[#00264c] h-[2px]  w-5"></div>
+  <div className="bg-[#00264c] h-[2px]  w-4"></div>
+  <div className="bg-[#00264c] h-[2px]  w-3"></div>
+  <div className="bg-[#00264c] h-[2px]  w-2"></div>
+  <div className="bg-[#00264c] h-[2px]  w-1"></div>
 
       </div>
+      
+
     </section>
   );
 };

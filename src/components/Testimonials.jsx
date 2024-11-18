@@ -22,8 +22,8 @@ function Testimonials() {
       <RiStarSFill />
       </div>
       <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Baleen Media</h3>
-      <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
-      "Collaborating with Easy2Work has been transformative for Baleen Media. Their intuitive approach to workflow management and emphasis on streamlined operations have allowed us to focus on our core strengths while seeing impressive results. The revenue-sharing model has been particularly advantageous, ensuring mutual growth with every milestone we reach. Easy2Work’s commitment to innovation and client success is unmatched, and we’re excited to continue this rewarding partnership."
+      <p className="font-mono mt-4 mb-2 text-base font-thin md:font-medium p-1 pb-3">
+      Easy2Work has transformed our workflow at Baleen Media, enabling us to focus on our strengths and achieve impressive results. Their revenue-sharing model has driven mutual growth, and their dedication to innovation and client success makes this partnership truly rewarding. The platform's user-friendly design and adaptable features have made it an indispensable tool in our operations.
       </p>
       
     </div>
@@ -37,8 +37,8 @@ function Testimonials() {
       <RiStarSFill />
       </div>
       <h3 className="font-sans font-semibold text-2xl md:text-3xl ">Grace Scans</h3>
-      <p className="font-mono mt-4 mb-1 text-base font-thin md:font-medium">
-      "Easy2Work has elevated our operations and streamlined the complexities we face daily. The team is attentive, adaptive, and incredibly skilled at creating solutions that meet our needs while driving efficiency. With Easy2Work’s revenue-sharing model, we feel more like partners than clients, motivated to grow together. Their platform has empowered us to scale seamlessly, and we look forward to many more successful years of collaboration."
+      <p className="font-mono mt-4 mb-2 text-base font-thin md:font-medium p-1 pb-3 ">
+      Working with Easy2Work has transformed how we manage our daily operations. Their solutions are not only efficient but also customized to our needs. The revenue-sharing model fosters a real partnership, aligning our goals for shared growth. Their platform has enabled us to scale confidently, and we look forward to building on this successful collaboration.
       </p>
       
     </div>

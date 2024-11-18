@@ -12,18 +12,16 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/9566031113', '_blank');
-  };
+  
 
   const handleCall = () => {
     window.open('tel:+919566031113');
   };
 
   return (
-    <footer className="bg-[#00264c] text-[#F7F2E7] relative">
+    <footer className="bg-[#00264c] text-[#F7F2E7] relative ">
       {/* Decorative Animated Lines */}
-      <div className="w-full flex">
+      {/* <div className="w-full flex">
         {[...Array(26)].map((_, i) => (
           <motion.div
             key={i}
@@ -38,13 +36,13 @@ const Footer = () => {
             }}
           />
         ))}
-      </div>
+      </div> */}
       
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8 space-y-8 pt-10">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img src={logo} alt="Easy2Work Logo" className="w-12 mb-3" />
           <h4 className="text-2xl font-semibold mb-2">Easy2Work</h4>
-          <p className="text-sm md:text-base max-w-sm">
+          <p className="text-sm md:text-base max-w-sm ">
             Simplify and manage your business processes with our efficient and user-friendly tools.
           </p>
         </div>
@@ -54,13 +52,13 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="hover:text-[#FFD700] transition duration-200">Home</a>
+                <a href="/" className="hover:text-[#f8d996] transition duration-200">Home</a>
               </li>
               <li>
-                <a href="#features" className="hover:text-[#FFD700] transition duration-200">Features</a>
+                <a href="#features" className="hover:text-[#f8d996] transition duration-200">Features</a>
               </li>
               <li>
-                <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">Contact Us</a>
+                <a href="https://wa.me/9600878113" className="hover:text-[#f8d996] transition duration-200">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -68,11 +66,11 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
             <address className="not-italic space-y-3">
-              <p className="text-sm hover:text-[#FFD700] transition duration-200">
+              <p className="text-sm hover:text-[#f8d996] transition duration-200">
                 32, 3rd Cross Street, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020
               </p>
-              <p className="text-sm hover:text-[#FFD700] transition duration-200">
-                Phone: <a href="tel:+919566031113">+91 9566031113</a>
+              <p className="text-sm hover:text-[#f8d996] transition duration-200">
+                Phone: <a href="tel:+919600878113">+91 96008 78113</a>
               </p>
             </address>
           </div>
@@ -80,23 +78,19 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4 justify-center md:justify-start">
-              <a href="https://www.facebook.com/baleenmedia" className="hover:text-[#FFD700] transition duration-200">
-                <FaFacebook className="w-6 h-6" />
-              </a>
-              <a href="https://www.youtube.com/@baleenmedia" className="hover:text-[#FFD700] transition duration-200">
-                <FaYoutube className="w-6 h-6" />
-              </a>
-              <a href="https://www.instagram.com/baleen.media" className="hover:text-[#FFD700] transition duration-200">
+              
+              
+              <a href="https://www.instagram.com/easy2workindia/?igsh=Zjhpa2Z4eWh0M2dj" target='_blank' className="hover:text-[#f8d996] transition duration-200">
                 <FaInstagram className="w-6 h-6" />
               </a>
-              <a href="https://wa.me/9566031113" className="hover:text-[#FFD700] transition duration-200">
-                <IoLogoWhatsapp className="w-6 h-6" />
+              <a href="https://www.linkedin.com/company/easy2work-india/posts/?feedView=all" target='_blank' className="hover:text-[#f8d996] transition duration-200">
+                <FaLinkedin className="w-6 h-6" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-[#FFD700] pt-4 text-center">
+        <div className="border-t border-[#f8d996] pt-4 text-center">
           <p>&copy; {new Date().getFullYear()} Easy2Work. All rights reserved.</p>
         </div>
       </div>
@@ -111,20 +105,7 @@ const Footer = () => {
         </button>
       </div>
       
-      <div className="fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
-        <button 
-          onClick={handleWhatsApp} 
-          className="bg-[#25D366] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-green-700 transition duration-300"
-        >
-          <BsWhatsapp className="text-white w-6 h-6" />
-        </button>
-        <button 
-          onClick={handleCall} 
-          className="bg-[#007BFF] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300"
-        >
-          <IoCall className="text-white w-6 h-6" />
-        </button>
-      </div>
+      
     </footer>
   );
 };

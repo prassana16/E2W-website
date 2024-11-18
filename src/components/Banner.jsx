@@ -6,9 +6,7 @@ import SeoImage from '../assets/images/seobanner4.png';
 import ItCompanyImage from '../assets/images/bannerimg.png';
 import CloudImage from '../assets/images/cloudbanner3.png';
 import WebsiteImage from '../assets/images/websitedev2.png';
-import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
-
-
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Banner = () => {
   const slides = [
@@ -49,7 +47,6 @@ const Banner = () => {
       bgColor: 'radial-gradient(ellipse at center, #003f81, #001831)',
     },
   ];
-  
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -58,7 +55,7 @@ const Banner = () => {
     if (!isPaused) {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 7000);
+      }, 5000);
 
       return () => clearInterval(interval);
     }
@@ -78,85 +75,54 @@ const Banner = () => {
 
   return (
     <section
-      className="text-[#fceecf] h-full md:pt-16 "
+      className=" min-h-screen flex flex-col justify-center items-center gap-52"
       style={{ background: slides[currentSlide].bgColor }}
       onClick={togglePause}
       onTouchStart={togglePause}
     >
-      
+      <div className="text-[#fceecf]  flex flex-col justify-center items-center ">
       <AnimatePresence initial={false}>
         <motion.div
-          className="flex justify-center items-center py-5 md:py-12"
+          className="flex flex-col md:flex-row justify-center items-center w-full max-w-screen-xl py-5 md:py-12 gap-11 md:gap-0"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-center max-w-screen-xl  ">
-            <div className="flex flex-col items-start gap-4 md:w-1/2  p-5 ">
-              <motion.h2
-                className="text-2xl md:text-5xl font-RozhaOne font-light"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                {slides[currentSlide].title}
-              </motion.h2>
-              <motion.p
-                className="text-base md:text-xl text-[#fceecf] opacity-70"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                {slides[currentSlide].description}
-              </motion.p>
-            </div>
+          <div className="flex flex-col items-center md:items-start gap-4 md:w-1/2 p-5 text-center md:text-left">
+            <motion.h2
+              className="text-3xl md:text-5xl font-RozhaOne font-light"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              {slides[currentSlide].title}
+            </motion.h2>
+            <motion.p
+              className="text-base md:text-xl text-[#fceecf] opacity-70"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {slides[currentSlide].description}
+            </motion.p>
+          </div>
 
-            <div className="relative md:w-1/2  mt-8 md:mt-0">
-              <motion.img
-                src={slides[currentSlide].image}
-                alt="Slide Image"
-                className="w-full max-w-md rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.2 }}
-              />
-            </div>
+          <div className="relative md:w-1/2 mt-8 md:mt-0 flex justify-center">
+            <motion.img
+              src={slides[currentSlide].image}
+              alt="Slide Image"
+              className="w-full max-w-md rounded-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2 }}
+            />
           </div>
         </motion.div>
       </AnimatePresence>
-
-      <div className="absolute gap-5 left-0 right-0 flex justify-center items-center z-10">
-        <button
-          onClick={handlePrev}
-          className="text-[#000000] p-1 md:p-3 font-bold text-2xl rounded-l-lg hover:bg-[#fce0ae] shadow-md transition"
-        >
-          <IoIosArrowBack />
-        </button>
-        <button
-          onClick={handleNext}
-          className="text-[#000000] p-1 md:p-3 font-bold text-2xl rounded-r-lg hover:bg-[#fce0ae]  shadow-md transition"
-        >
-          <IoIosArrowForward />
-        </button>
       </div>
 
-      <div className="w-full flex mt-24">
-        {Array.from({ length: 26 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="bg-[#F7F2E7] h-[2px] w-full"
-            initial={{ scaleY: 1 }}
-            animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 1,
-              delay: i * 0.2,
-            }}
-          />
-        ))}
-      </div>
+      
     </section>
   );
 };

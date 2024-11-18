@@ -1,86 +1,79 @@
 import React, { useState } from 'react';
-
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // For hamburger and close icons
-
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { RiHome5Line } from "react-icons/ri";
+import { MdExpandMore, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md";
 import { VscFileCode } from "react-icons/vsc";
-import { MdFeaturedPlayList, MdSupportAgent, MdExpandMore } from "react-icons/md";
 import logo from '/icon-384x384.png';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
 
-  // Toggle the mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setIsServiceOpen(false);
   };
 
-  // Toggle the "Service" dropdown
   const toggleServiceDropdown = () => {
     setIsServiceOpen(!isServiceOpen);
   };
 
   return (
-    <nav className=" bg-[#001831] shadow-md flex flex-col">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Right Title */}
-        <div className="flex justify-center items-center text-2xl font-bold text-[#F7F2E7]">
-          <img src={logo} alt="Logo" className='w-10'/>
+    <nav className="bg-[#001831] shadow-md p-4 flex flex-col">
+      <div className="container mx-auto flex justify-between items-center">
+        
+        {/* Logo */}
+        <div className="flex items-center text-2xl font-bold text-[#F7F2E7]">
+          <img src={logo} alt="Logo" className="w-10" />
           Easy2Work
         </div>
-{/* bg-[#110035] */}
-        {/* Left Menu Items (Hidden on mobile, shown on larger screens) */}
+        
+        {/* Menu Items */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a href="/" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
-              Home
+            <a href="/" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300 flex items-center">
+              <RiHome5Line className="mr-1" /> Home
             </a>
           </li>
+
           {/* Service Dropdown */}
           <li className="relative">
             <button onClick={toggleServiceDropdown} className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300 flex items-center">
-            Services <MdExpandMore className="ml-1" />
+              Services <MdExpandMore className="ml-1" />
             </button>
+
             {isServiceOpen && (
-              <ul className="absolute  mt-2 w-48 bg-[#00264c] shadow-lg rounded">
-                <li>
-                  <a href="#website-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Website Development</a>
-                </li>
-                <li>
-                  <a href="#website-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Web Development</a>
-                </li>
-                <li>
-                  <a href="#software-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Mobile App Development</a>
-                </li>
-                <li>
-                  <a href="#seo-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">SEO Service</a>
-                </li>
-                <li>
-                  <a href="#seo-development" className="block px-4 py-2 text-[#F7F2E7] hover:bg-[#003366]">Cloud  Application development</a>
-                </li>
+              <ul className="absolute mt-2 w-64 rounded-lg shadow-lg bg-gradient-to-r from-[#00264c] to-[#001831] overflow-hidden z-50">
+                {services.map((service, index) => (
+                  <li key={index} className="flex items-center px-4 py-3 hover:bg-[#003366] cursor-pointer transition duration-300">
+                    <a href={service.path} className="flex items-center text-white font-semibold">
+                      <span className="text-lg text-[#FFD700] mr-2">{service.icon}</span>
+                      {service.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
+
           <li>
-            <a href="#features" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
-              Features
+            <a href="#features" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300 flex items-center">
+              <MdFeaturedPlayList className="mr-1" /> Features
             </a>
           </li>
           <li>
-          <Link to="/Blogs" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
-            Blogs
-          </Link>
+            <a href="/Blogs" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
+              Blogs
+            </a>
           </li>
           <li>
-            <a href="https://wa.me/9566031113" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300">
-              Contact Us
+            <a href="https://wa.me/9566031113" className="text-[#F7F2E7] hover:text-[#FFD700] transition duration-300 flex items-center">
+              <MdSupportAgent className="mr-1" /> Contact Us
             </a>
           </li>
         </ul>
-        
-        {/* Hamburger Menu Icon (Hidden on larger screens) */}
+
+        {/* Hamburger Menu Icon for Mobile */}
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu}>
             {isOpen ? (
@@ -93,63 +86,60 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#00264c] shadow-lg z-50 transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
-        <ul className="flex flex-col space-y-6 mt-10 px-6">
-          <li>
-            <a href="/" className='text-lg text-[#ffff] flex items-center ' ><RiHome5Line className='mr-2'/>Home</a>
-          </li>
-          {/* Service Dropdown for Mobile */}
-          <li className="text-lg text-[#ffff] flex items-center" onClick={toggleServiceDropdown}>
-          <VscFileCode className='mr-2'/> Services <MdExpandMore className='ml-2' />
-          </li>
-          {isServiceOpen && (
-            <ul className="ml-6 space-y-4">
-              <li>
-                <a href="#website-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Website Development</a>
-              </li>
-              <li>
-                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Web Development</a>
-              </li>
-              <li>
-                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Mobile App Development</a>
-              </li>
-              <li>
-                <a href="#seo-development" className="text-[#F7F2E7] hover:text-[#FFD700]">SEO Service</a>
-              </li>
-              <li>
-                <a href="#software-development" className="text-[#F7F2E7] hover:text-[#FFD700]">Cloud native application Development</a>
-              </li>
-            </ul>
-          )}
-          <li>
-            <a href="#features" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Features</a>
-          </li>
-          <li>
-            <Link to="/Blogs" className='text-lg text-[#ffff] flex items-center ' ><MdFeaturedPlayList className='mr-2'/>Blogs</Link>
-          </li>
-          <li>
-            <a href="https://wa.me/9566031113" className='text-lg text-[#ffff] flex items-center ' ><MdSupportAgent className='mr-2' />Contact Us</a>
-          </li>
-        </ul>
-      </div>
-      
-      
-
-      {/* Overlay for when menu is open */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 z-40 transition-opacity duration-300"
-          onClick={toggleMenu}
-        ></div>
+        <div className="fixed top-0 left-0 h-full w-64 bg-[#00264c] shadow-lg z-50 transition-transform duration-300 ease-in-out">
+          <ul className="flex flex-col space-y-6 mt-10 px-6">
+            <li>
+              <a href="/" className="text-lg text-[#ffff] flex items-center">
+                <RiHome5Line className="mr-2" /> Home
+              </a>
+            </li>
+            <li className="text-lg text-[#ffff] flex items-center" onClick={toggleServiceDropdown}>
+              <VscFileCode className="mr-2" /> Services <MdExpandMore className="ml-2" />
+            </li>
+            {isServiceOpen && (
+              <ul className="ml-6 space-y-4">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <a href={service.path} className="text-[#F7F2E7] hover:bg-[#003366] px-4 py-2 rounded block">
+                      {service.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <li>
+              <a href="#features" className="text-lg text-[#ffff] flex items-center">
+                <MdFeaturedPlayList className="mr-2" /> Features
+              </a>
+            </li>
+            <li>
+              <a href="/Blogs" className="text-lg text-[#ffff] flex items-center">
+                <MdFeaturedPlayList className="mr-2" /> Blogs
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/9566031113" className="text-lg text-[#ffff] flex items-center">
+                <MdSupportAgent className="mr-2" /> Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
       )}
-
-      
     </nav>
   );
 };
+
+// Services Array with Icons and Paths
+const services = [
+  { name: 'Website Development', icon: <VscFileCode />, path: '/WebsiteDevelopment' },
+  { name: 'Mobile App Development', icon: <VscFileCode />, path: '/MobileAppDevelopment' },
+  { name: 'SEO Services', icon: <VscFileCode />, path: '/SEOServices' },
+  { name: 'Cloud Application Development', icon: <VscFileCode />, path: '/CloudNativeAppDevelopment' },
+  { name: 'SaaS Solutions', icon: <VscFileCode />, path: '/SaaSDevelopment' },
+  { name: 'UI/UX Design', icon: <VscFileCode />, path: '/UIUXDesign' },
+  { name: 'Quality Assurance', icon: <VscFileCode />, path: '/QualityAssurance' },
+  { name: 'Staff Augmentation', icon: <VscFileCode />, path: '/StaffAugmentation' }
+];
 
 export default Navbar;
