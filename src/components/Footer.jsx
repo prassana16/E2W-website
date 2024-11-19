@@ -99,9 +99,9 @@ const Footer = () => {
       <div className="fixed bottom-8 left-8 z-50">
         <button 
           onClick={scrollToTop} 
-          className="bg-[#004C4C] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
+          className="bg-[#fceecf] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
         >
-          <IoIosArrowUp className="text-white w-6 h-6" />
+          <IoIosArrowUp className="text-[#2f1375] w-6 h-6" />
         </button>
       </div>
       

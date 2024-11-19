@@ -99,7 +99,7 @@ const Banner = () => {
               {slides[currentSlide].title}
             </motion.h2>
             <motion.p
-              className="text-base md:text-xl text-[#fceecf] opacity-70"
+              className="text-base md:text-2xl text-[#fceecf] opacity-70"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
