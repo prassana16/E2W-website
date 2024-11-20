@@ -44,7 +44,7 @@ const ContactPopup = () => {
     <div className={`fixed ${isOpen ? 'inset-0 flex items-center justify-center' : 'bottom-4 right-4'} z-50`}>
       {isOpen ? (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-transform duration-300">
-          <div className="bg-white p-6 rounded-lg w-80 shadow-lg relative text-[#022b54]">
+          <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg w-80 relative text-[#022b54]">
             <button
               onClick={togglePopup}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
@@ -53,7 +53,7 @@ const ContactPopup = () => {
             </button>
             <h3 className="text-xl font-semibold text-center mb-4">Enquire Now</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex items-center bg-[#f4f4f4] p-2 rounded">
+              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
                 <AiOutlineUser className="text-[#FFD700] mr-2" />
                 <input
                   type="text"
@@ -65,7 +65,7 @@ const ContactPopup = () => {
                   className="bg-transparent outline-none text-[#022b54] w-full"
                 />
               </div>
-              <div className="flex items-center bg-[#f4f4f4] p-2 rounded">
+              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
                 <AiOutlineMail className="text-[#FFD700] mr-2" />
                 <input
                   type="email"
@@ -77,7 +77,7 @@ const ContactPopup = () => {
                   className="bg-transparent outline-none text-[#022b54] w-full"
                 />
               </div>
-              <div className="flex items-center bg-[#f4f4f4] p-2 rounded">
+              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
                 <AiOutlinePhone className="text-[#FFD700] mr-2" />
                 <input
                   type="tel"
@@ -89,8 +89,8 @@ const ContactPopup = () => {
                   className="bg-transparent outline-none text-[#022b54] w-full"
                 />
               </div>
-              <div className="flex items-start bg-[#f4f4f4] p-2 rounded">
-                <MdOutlineMessage className="text-[#FFD700] mr-2" />
+              <div className="flex items-start  bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
+                <MdOutlineMessage className="text-[#FFD700] mr-2 mt-1" />
                 <textarea
                   name="message"
                   placeholder="Your Message"

@@ -10,6 +10,7 @@ import OurClients from './components/OurClients';
 import OurSkills from './components/OurSkills';
 import OurServices from './components/OurServices';
 import Faq from './components/Faq';
+import AboutPWA from './components/AboutPWA';
 import ContactPopup from './components/ContactPopup';
 import ContactForm from './components/ContactUs';
 // services
@@ -40,6 +41,7 @@ function App() {
             <Testimonials />
             <Features />
             <Intro />
+            <AboutPWA />
             <Faq />
             <ContactPopup />
           </>
