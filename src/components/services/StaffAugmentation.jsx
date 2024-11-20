@@ -1,91 +1,137 @@
-import React from 'react';
-import { FaUsers } from "react-icons/fa"; // Icon representing team and collaboration
-import { motion } from 'framer-motion';
+import React from "react";
+import { FaUsers } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const StaffAugmentation = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#d1e0fc] to-[#4a90e2] py-16 px-4 md:px-16 font-mono">
-      <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
+    <section className="min-h-screen bg-gradient-to-br from-[#d1e0fc] to-[#4a90e2] py-16 px-6">
+      <div className="max-w-screen-xl mx-auto flex flex-col items-center text-center">
         
-        {/* Icon and Intro Section */}
-        <motion.div 
-          className="text-6xl text-[#333] mb-6 md:mb-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="text-6xl text-[#030303] mb-6"
         >
-          <FaUsers /> {/* Staff augmentation icon */}
+          <FaUsers />
         </motion.div>
-        
-        <div>
-          {/* Header */}
-          <h2 className="text-4xl font-semibold text-[#333] mb-4">Staff Augmentation</h2>
-          <p className="text-lg text-[#fff] leading-relaxed">
-            Staff augmentation helps you scale your team with skilled professionals, allowing flexibility and speed without the long-term commitment of hiring full-time employees. Our experts integrate seamlessly with your in-house team to boost productivity and meet project goals.
-          </p>
-          
-          {/* Key Benefits */}
-          <div className="mt-10 space-y-6">
-            <h3 className="text-2xl font-semibold text-[#333]">Key Benefits of Staff Augmentation:</h3>
-            <ul className="list-disc list-inside text-[#fff] text-lg leading-relaxed">
-              <li>Access to specialized skills on demand</li>
-              <li>Scalable solutions that grow with your business needs</li>
-              <li>Reduced overhead costs compared to full-time hiring</li>
-              <li>Quick adaptation to project requirements</li>
-              <li>Enhanced productivity with a flexible workforce</li>
-            </ul>
-          </div>
-          
-          {/* Image Section */}
-          <div className="mt-8">
-            <img
-              src="path/to/staff-augmentation-image.jpg" // Replace with actual path
-              alt="Staff Augmentation"
-              className="w-full rounded-lg shadow-lg"
-            />
-          </div>
-          
-          {/* Expertise and Skillsets */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-semibold text-[#333]">Our Areas of Expertise</h3>
-            <p className="text-lg text-[#fff] mt-4 leading-relaxed">
-              Our staff augmentation services cover a broad range of expertise, allowing us to match professionals with your unique needs:
-            </p>
-            <ul className="list-disc list-inside text-[#fff] text-lg mt-6 space-y-4">
-              <li><strong>Software Development:</strong> From frontend to backend, we provide developers proficient in various tech stacks.</li>
-              <li><strong>Project Management:</strong> Skilled project managers ensure smooth project execution and timely delivery.</li>
-              <li><strong>Quality Assurance:</strong> QA professionals focus on maintaining high standards with manual and automated testing.</li>
-              <li><strong>UI/UX Design:</strong> Designers who prioritize user experience and create intuitive interfaces.</li>
-              <li><strong>Data Analysis:</strong> Data scientists and analysts who turn data into actionable insights.</li>
-            </ul>
-          </div>
+        <h1 className="text-4xl md:text-5xl font-bold text-black">
+          Staff Augmentation
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-balck max-w-3xl">
+          Enhance your team with skilled professionals to meet project demands and business goals efficiently.
+        </p>
 
-          {/* Trends in Staff Augmentation */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-semibold text-[#333]">Current Trends in Staff Augmentation</h3>
-            <p className="text-lg text-[#fff] mt-4 leading-relaxed">
-              As businesses seek agility, the staff augmentation model continues to evolve to meet dynamic market demands. Here are some key trends:
-            </p>
-            <ul className="list-disc list-inside text-[#fff] text-lg mt-6 space-y-4">
-              <li><strong>Remote Collaboration:</strong> Virtual teams are now the norm, allowing businesses to source talent globally.</li>
-              <li><strong>On-Demand Staffing:</strong> Companies are increasingly hiring specialists for specific project phases.</li>
-              <li><strong>Long-Term Partnerships:</strong> Many organizations are forming ongoing relationships with augmentation firms for reliable talent supply.</li>
-              <li><strong>Blended Teams:</strong> A mix of in-house and augmented staff improves knowledge transfer and project alignment.</li>
-              <li><strong>Specialized Skills Demand:</strong> Demand for niche skills, such as cloud engineering and data science, is growing significantly.</li>
-            </ul>
-          </div>
-          
-          {/* Call-to-Action */}
-          <div className="mt-20">
-            <h3 className="text-3xl font-semibold text-[#333]">Ready to Enhance Your Team's Capabilities?</h3>
-            <p className="text-lg text-[#fff] mt-4 leading-relaxed">
-              Partner with us to augment your team with skilled professionals ready to drive your projects forward. Contact us to discuss your staffing needs and let us help you scale effectively.
-            </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#4a90e2] transition duration-300 ease-in-out">
-              Contact Us
-            </button>
+        {/* Key Benefits Section */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3, duration: 0.6 }}
+  className=" mt-12"
+>
+  <div className=" bg-gradient-to-br from-[#ffffff] to-[#d1e0fc] backdrop-blur-xl border border-[#4a90e2]/30 shadow-xl rounded-2xl p-8 md:p-10 relative overflow-hidden">
+    
+    {/* Decorative Element */}
+    <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-[#b7fbff] to-[#d399ff] rounded-2xl blur-xl"></div>
+
+    {/* Content */}
+    <div className="relative z-10 text-start md:text-center">
+      <h3 className="text-3xl font-bold text-[#4a90e2] text-center mb-6">
+        Why Choose Us?
+      </h3>
+      <ul className="space-y-4 text-lg text-gray-700">
+        <li className="flex items-center">
+          <div className="w-4 h-4 bg-[#4a90e2] rounded-full mr-3"></div>
+          Access to specialized skills on demand
+        </li>
+        <li className="flex items-center">
+          <div className="w-4 h-4 bg-[#4a90e2] rounded-full mr-3"></div>
+          Flexible workforce that scales with your needs
+        </li>
+        <li className="flex items-center">
+          <div className="w-4 h-4 bg-[#4a90e2] rounded-full mr-3"></div>
+          Reduced overhead and hiring time
+        </li>
+        <li className="flex items-center">
+          <div className="w-4 h-4 bg-[#4a90e2] rounded-full mr-3"></div>
+          Seamless integration with your in-house team
+        </li>
+        <li className="flex items-center">
+          <div className="w-4 h-4 bg-[#4a90e2] rounded-full mr-3"></div>
+          Enhanced productivity and efficiency
+        </li>
+      </ul>
+    </div>
+  </div>
+</motion.div>
+
+
+        {/* Expertise Section */}
+        <div className="mt-16 max-w-screen-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            Our Areas of Expertise
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-left ">
+            {[
+              {
+                title: "Software Development",
+                description: "Frontend, backend, and full-stack developers proficient in modern tech stacks.",
+              },
+              {
+                title: "Project Management",
+                description: "Experienced managers to streamline workflows and ensure timely deliveries.",
+              },
+              {
+                title: "Quality Assurance",
+                description: "Manual and automated testing experts to maintain high standards.",
+              },
+              {
+                title: "UI/UX Design",
+                description: "Creative designers focused on user-centric and visually engaging interfaces.",
+              },
+              {
+                title: "Data Analysis",
+                description: "Data experts who turn raw data into actionable insights for informed decisions.",
+              },
+              {
+                title: "Cloud Specialists",
+                description: "Cloud engineers to manage scalable and secure cloud solutions.",
+              },
+            ].map((expertise, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.2 }}
+                className="  bg-gradient-to-br from-[#ffffff] to-[#d1e0fc] backdrop-blur-xl border border-[#4a90e2]/30 shadow-xl rounded-2xl p-6"
+              >
+                <h3 className="text-xl font-bold text-[#4a90e2]">
+                  {expertise.title}
+                </h3>
+                <p className="mt-2 text-gray-600">{expertise.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        {/* Call-to-Action Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="mt-20"
+        >
+          <h3 className="text-3xl md:text-4xl font-bold text-white">
+            Ready to Augment Your Team?
+          </h3>
+          <p className="mt-4 text-lg md:text-xl text-white max-w-3xl mx-auto">
+            Let’s discuss your staffing requirements and provide you with the right professionals to scale your team effectively.
+          </p>
+          <button className="mt-8 px-8 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#8fe132] transition duration-300 ease-in-out">
+            Contact Us
+          </button>
+        </motion.div>
       </div>
     </section>
   );

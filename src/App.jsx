@@ -41,6 +41,7 @@ function App() {
             <Features />
             <Intro />
             <Faq />
+            <ContactPopup />
           </>
         } />
         <Route path="/Blogs" element={<Blogs />} />
@@ -56,7 +57,7 @@ function App() {
         <Route path="/StaffAugmentation" element={<StaffAugmentation/>} />
         <Route path="/ContactForm" element={<ContactForm/>} />
       </Routes>
-      <ContactPopup />
+      
       <Footer />
     </Router>
   );

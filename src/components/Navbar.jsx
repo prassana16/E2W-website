@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { RiHome5Line } from "react-icons/ri";
 import { MdExpandMore, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md";
-import { IoSettingsOutline, IoBookOutline } from "react-icons/io5";
+import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers } from "react-icons/fa";
 import { VscFileCode } from "react-icons/vsc";
 import logo from '/icon-384x384.png';
 
@@ -114,19 +114,19 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Services Modal */}
-        {isServiceModalOpen && (
+        {/* // Services Modal */}
+         {isServiceModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50" onClick={closeServiceModal}>
             <div className="bg-[#00264c] w-96 p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
               <button className="absolute top-3 right-3 text-[#F7F2E7]" onClick={closeServiceModal}>
                 <AiOutlineClose className="w-6 h-6" />
               </button>
-              <h2 className="text-2xl font-bold text-[#F7F2E7] mb-4">Our Services</h2>
+              <h2 className="text-3xl font-bold text-[#F7F2E7] mb-4">Our Services</h2>
               <ul className="space-y-4">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="text-[#FFD700] mr-2">{service.icon}</span>
-                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline">
+                    <span className="mr-2">{service.icon}</span>
+                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline text-xl">
                       {service.name}
                     </a>
                   </li>
@@ -135,59 +135,61 @@ const Navbar = () => {
             </div>
           </div>
         )}
+
       </nav>
 
-      {/* Contact Bar */}
-      {isContactBarOpen && (
-        <div className="bg-[#022b54] text-[#F7F2E7] p-4 flex flex-col md:flex-row justify-between items-center shadow-md">
-          <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 items-center">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="bg-[#ffffff] p-2 rounded-md text-[#000000] outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Name"
-              className="bg-[#ffffff] p-2 rounded-md text-[#000000] outline-none"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="bg-[#ffffff] p-2 rounded-md text-[#000000] outline-none"
-            />
-          </div>
-          <div className="flex items-center space-x-4 mt-2 md:mt-0">
-            <button className="bg-[#FFD700] text-[#022b54] px-4 py-2 rounded-md font-semibold">
-              Enquire
-            </button>
-            <button onClick={toggleContactBar} className="text-[#F7F2E7]">
-              <AiOutlineClose className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Button to toggle the Contact Bar */}
-      {!isContactBarOpen && (
-        <button onClick={toggleContactBar} className="bg-[#FFD700] text-[#022b54] px-4 py-2 font-semibold w-full text-center">
-          Open Enquiry Form
-        </button>
-      )}
+      
     </>
   );
 };
 
 // Services Array with Icons and Paths
 const services = [
-  { name: 'Website Development', icon: <VscFileCode />, path: '/WebsiteDevelopment' },
-  { name: 'Mobile App Development', icon: <VscFileCode />, path: '/MobileAppDevelopment' },
-  { name: 'SEO Services', icon: <VscFileCode />, path: '/SEOServices' },
-  { name: 'Cloud Application Development', icon: <VscFileCode />, path: '/CloudNativeAppDevelopment' },
-  { name: 'SaaS Solutions', icon: <VscFileCode />, path: '/SaaSDevelopment' },
-  { name: 'UI/UX Design', icon: <VscFileCode />, path: '/UIUXDesign' },
-  { name: 'Quality Assurance', icon: <VscFileCode />, path: '/QualityAssurance' },
-  { name: 'Staff Augmentation', icon: <VscFileCode />, path: '/StaffAugmentation' }
+  {
+    name: 'Web Application Development',
+    icon: <FaGlobe className="text-[#28c836]" />,
+    path: '/WebAppDevelopment'
+  },
+  {
+    name: 'Website Development',
+    icon: <FaLaptopCode className="text-[#cf2929]" />,
+    path: '/WebsiteDevelopment'
+  },
+  {
+    name: 'Mobile App Development',
+    icon: <FaMobile className="text-[#ff5f2e]" />,
+    path: '/MobileAppDevelopment'
+  },
+  {
+    name: 'SEO Services',
+    icon: <FaSearch className="text-[#2445ff]" />,
+    path: '/SEOServices'
+  },
+  {
+    name: 'Cloud Native Application Development',
+    icon: <FaCloud className="text-[#ffca2a]" />,
+    path: '/CloudNativeAppDevelopment'
+  },
+  {
+    name: 'SaaS (Software as a Service)',
+    icon: <FaCogs className="text-[#c6dcef]" />,
+    path: '/SaaSDevelopment'
+  },
+  {
+    name: 'UI/UX Design',
+    icon: <FaPalette className="text-[#8037ff]" />,
+    path: '/UIUXDesign'
+  },
+  {
+    name: 'Quality Assurance',
+    icon: <FaCheckCircle className="text-[#8fe132]" />,
+    path: '/QualityAssurance'
+  },
+  {
+    name: 'Staff Augmentation',
+    icon: <FaUsers className="text-[#4863fd]" />,
+    path: '/StaffAugmentation'
+  },
 ];
 
 export default Navbar;
