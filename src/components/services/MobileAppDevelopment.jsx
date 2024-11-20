@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 
 const MobileAppDevelopment = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#f2bdad] to-[#ff5f2e] py-16 px-4 md:px-16 font-mono">
+    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#FFB84D] via-[#FF7F32] to-[#FF5F2E] py-16 px-4 font-mono">
+
       <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
         
         {/* Icon and Intro Section */}

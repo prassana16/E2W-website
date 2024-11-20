@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlinePhone, AiOutlineUser } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
