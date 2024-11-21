@@ -38,9 +38,9 @@ function AboutPWA() {
   {/* Left Column */}
   <motion.div
     className="flex flex-col items-center justify-center p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full  "
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
+    initial={{ opacity: 0, y: -100, x:-100 }}
+    whileInView={{ opacity: 1, y: 0, x:0 }}
+    transition={{ duration: 1.5 }}
   >
     <div className="text-6xl mb-4">
       <FaRocket className="text-[#28c836]" />
@@ -68,9 +68,9 @@ function AboutPWA() {
     <motion.div
       className="w-full items-center flex flex-col p-6 md:p-9 "
      
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 100,x:100 }}
+      whileInView={{ opacity: 1, y: 0,x:0 }}
+      transition={{ duration: 1.5 }}
     >
       <img src={gif} alt="" className='w-full overflow-hidden  '/>
       <button
