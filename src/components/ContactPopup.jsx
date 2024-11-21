@@ -44,17 +44,17 @@ const ContactPopup = () => {
     <div className={`fixed ${isOpen ? 'inset-0 flex items-center justify-center' : 'bottom-4 right-4'} z-50`}>
       {isOpen ? (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-transform duration-300">
-          <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg w-80 relative text-[#022b54]">
+          <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg w-[90%] sm:w-96 md:w-[28rem] relative text-[#022b54]">
             <button
               onClick={togglePopup}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
             >
               <AiOutlineClose size={24} />
             </button>
-            <h3 className="text-xl font-semibold text-center mb-4">Enquire Now</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-center mb-4">Enquire Now</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlineUser className="text-[#FFD700] mr-2" />
+                <AiOutlineUser className="text-[#FFD700] mr-2 text-lg md:text-xl" />
                 <input
                   type="text"
                   name="name"
@@ -62,11 +62,11 @@ const ContactPopup = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full"
+                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
                 />
               </div>
               <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlineMail className="text-[#FFD700] mr-2" />
+                <AiOutlineMail className="text-[#FFD700] mr-2 text-lg md:text-xl" />
                 <input
                   type="email"
                   name="email"
@@ -74,11 +74,11 @@ const ContactPopup = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full"
+                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
                 />
               </div>
               <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlinePhone className="text-[#FFD700] mr-2" />
+                <AiOutlinePhone className="text-[#FFD700] mr-2 text-lg md:text-xl" />
                 <input
                   type="tel"
                   name="phone"
@@ -86,34 +86,34 @@ const ContactPopup = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full"
+                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
                 />
               </div>
-              <div className="flex items-start  bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <MdOutlineMessage className="text-[#FFD700] mr-2 mt-1" />
+              <div className="flex items-start bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
+                <MdOutlineMessage className="text-[#FFD700] mr-2 mt-1 text-lg md:text-xl" />
                 <textarea
                   name="message"
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full h-24 resize-none"
+                  className="bg-transparent outline-none text-[#022b54] w-full h-24 resize-none text-sm md:text-base"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300"
+                className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
               >
                 Submit
               </button>
-              {formStatus && <p className="text-center text-green-600 mt-2">{formStatus}</p>}
+              {formStatus && <p className="text-center text-green-600 mt-2 text-sm md:text-base">{formStatus}</p>}
             </form>
           </div>
         </div>
       ) : (
         <button
           onClick={togglePopup}
-          className="bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300"
+          className="fixed bottom-4 right-4 bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
         >
           Enquire
         </button>
