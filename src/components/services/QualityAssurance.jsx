@@ -21,7 +21,7 @@ const QualityAssurance = () => {
       </div>
 
       {/* Features Section */}
-      <div className="grid grid-cols-1  gap-10 max-w-screen-lg mx-auto mt-16 p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg ">
+      <div className="grid grid-cols-1  gap-10 max-w-screen-lg mx-auto mt-16 p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg ">
         {/* Feature List */}
         <div>
           <h2 className="text-3xl font-semibold mb-6 text-black ">Why Choose Our QA Services?</h2>

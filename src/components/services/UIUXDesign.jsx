@@ -26,7 +26,7 @@ const UIUXDesign = () => {
 
           {/* Key Features Section */}
           <div className="grid grid-cols-1  gap-8">
-            <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
+            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
               <h3 className="text-2xl font-semibold text-[#333]">Key Aspects of Our UI/UX Design Process:</h3>
               <ul className="list-disc list-inside text-[#191919] text-lg leading-relaxed">
                 <li>Research-driven approach to understand user needs</li>
@@ -37,7 +37,7 @@ const UIUXDesign = () => {
               </ul>
             </div>
 
-            <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
+            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
               <h3 className="text-2xl font-semibold text-[#333]">Current Trends in UI/UX Design</h3>
               <p className="text-lg text-[#191919] leading-relaxed">
                 The field of UI/UX design is constantly evolving. Staying updated with the latest trends helps create designs that feel modern and intuitive. Here are the key trends currently shaping the industry:
@@ -51,7 +51,7 @@ const UIUXDesign = () => {
               </ul>
             </div>
 
-            <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
+            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
               <h3 className="text-2xl font-semibold text-[#333]">Future Trends in UI/UX Design</h3>
               <p className="text-lg text-[#191919] leading-relaxed">
                 As user expectations evolve, so will UI/UX design. Anticipating future trends can help you stay ahead and deliver engaging experiences:
@@ -67,7 +67,7 @@ const UIUXDesign = () => {
           </div>
 
           {/* Call-to-Action Section */}
-          <div className="mt-16 p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg">
+          <div className="mt-16 p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg">
             <h3 className="text-3xl font-semibold text-[#333]">Ready to Elevate Your Digital Presence with Outstanding UI/UX?</h3>
             <p className="text-lg text-[#191919] mt-4 leading-relaxed">
               Our team specializes in creating intuitive, engaging, and visually appealing user interfaces. Let’s work together to craft an experience that not only meets but exceeds user expectations.

@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#022b54] p-8 rounded-lg shadow-lg text-[#F7F2E7] w-full md:w-2/3 lg:w-1/2 mx-auto my-10">
+    <div className="flex flex-col items-center bg-[#022b54] p-8 rounded-lg shadow-lg text-[#F7F2E7] w-[95%] md:w-2/3 lg:w-1/2 mx-auto my-10">
       <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
       <p className="text-lg text-center mb-8">We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.</p>
 
