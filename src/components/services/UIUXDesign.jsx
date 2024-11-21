@@ -72,7 +72,7 @@ const UIUXDesign = () => {
             <p className="text-lg text-[#191919] mt-4 leading-relaxed">
               Our team specializes in creating intuitive, engaging, and visually appealing user interfaces. Let’s work together to craft an experience that not only meets but exceeds user expectations.
             </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#ff471a] transition duration-300 ease-in-out">
+            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#8037ff] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </div>

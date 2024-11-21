@@ -7,7 +7,7 @@ const services = [
     name: 'Web Application Development',
     description: 'Building responsive and interactive web applications that cater to your business needs.',
     icon: <FaGlobe className="text-[#28c836]" />,
-    path: '/WebApplicationDevelopment'
+    path: '/WebAppDevelopment'
   },
   {
     name: 'Website Development',

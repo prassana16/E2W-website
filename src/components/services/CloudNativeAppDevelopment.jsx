@@ -73,7 +73,7 @@ const CloudNativeAppDevelopment = () => {
             <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
               Whether you’re looking to migrate to the cloud or build a new cloud-native application, our team of experts is here to help. Let’s discuss how we can design solutions that drive innovation and business growth in a cloud-first world.
             </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#ff471a] transition duration-300 ease-in-out">
+            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#ffca2a] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </div>

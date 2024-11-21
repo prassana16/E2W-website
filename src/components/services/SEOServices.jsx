@@ -73,7 +73,7 @@ const SEOServices = () => {
             <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
               Our SEO experts are ready to help your business rise above the competition. Get in touch with us to start optimizing your website for higher search engine rankings and increased organic traffic.
             </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#ff471a] transition duration-300 ease-in-out">
+            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#80C4E9] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </div>

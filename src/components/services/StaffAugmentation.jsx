@@ -128,7 +128,7 @@ const StaffAugmentation = () => {
           <p className="mt-4 text-lg md:text-xl text-white max-w-3xl mx-auto">
             Let’s discuss your staffing requirements and provide you with the right professionals to scale your team effectively.
           </p>
-          <button className="mt-8 px-8 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#8fe132] transition duration-300 ease-in-out">
+          <button className="mt-8 px-8 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#4a90e2] transition duration-300 ease-in-out">
             Contact Us
           </button>
         </motion.div>

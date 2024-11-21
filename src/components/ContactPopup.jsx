@@ -1,6 +1,6 @@
 // src/components/ContactPopup.js
 import React, { useState } from 'react';
-// import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 import { AiOutlineClose, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
 
