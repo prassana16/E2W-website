@@ -26,7 +26,10 @@ import StaffAugmentation from './components/services/StaffAugmentation';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
-
+// new components
+import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
+import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
+import { HeroScrollDemo } from './components/HeroScrollDemo';
 function App() {
   return (
     <Router>
@@ -34,8 +37,9 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            <Banner />
-            <OurServices />
+          <BackgroundBoxesDemo />
+          <AppleCardsCarouselDemo />
+          <HeroScrollDemo /> 
             <OurSkills />
             <OurClients />
             <Testimonials />
