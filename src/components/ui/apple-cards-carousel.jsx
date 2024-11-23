@@ -12,7 +12,6 @@ import React, {
   import { IoCloseCircleSharp } from "react-icons/io5";
 import { cn } from "../../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "../../assets/images/bannerbg.png";
 import { useOutsideClick } from "../hooks/use-outside-click";
 
 export const CarouselContext = createContext({
@@ -185,7 +184,7 @@ export const Card = ({
             exit={{ opacity: 0 }}
             ref={containerRef}
             layoutId={layout ? `card-${card.title}` : undefined}
-            className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative">
+            className="max-w-4xl mx-auto bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10  font-sans relative">
             <button
               className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
               onClick={handleClose}>
@@ -193,15 +192,15 @@ export const Card = ({
             </button>
             <motion.p
               layoutId={layout ? `category-${card.title}` : undefined}
-              className="text-base font-medium text-black dark:text-white">
+              className="text-lg md:text-2xl font-medium text-black dark:text-white">
               {card.category}
             </motion.p>
             <motion.p
               layoutId={layout ? `title-${card.title}` : undefined}
-              className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white">
+              className="text-2xl md:text-5xl font-semibold text-neutral-100 mt-4 dark:text-white">
               {card.title}
             </motion.p>
-            <div className="py-10">{card.content}</div>
+            <div className="py-10 ">{card.content}</div>
           </motion.div>
         </div>
       )}

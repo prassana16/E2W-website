@@ -1,13 +1,20 @@
 // src/components/ContactPopup.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { AiOutlineClose, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
 
 const ContactPopup = () => {
-  const [isOpen, setIsOpen] = useState(true); // Form starts open by default
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', services: [] });
   const [formStatus, setFormStatus] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Automatically open popup after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setIsOpen(true), 10000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -15,8 +22,18 @@ const ContactPopup = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+
+    if (type === 'checkbox') {
+      setFormData((prev) => ({
+        ...prev,
+        services: checked
+          ? [...prev.services, value]
+          : prev.services.filter((service) => service !== value),
+      }));
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -31,7 +48,7 @@ const ContactPopup = () => {
     .then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
       setFormStatus('Thank you! Your message has been sent.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '', services: [] });
       setTimeout(() => setIsOpen(false), 2000); // Close after success message
     })
     .catch((err) => {
@@ -62,7 +79,7 @@ const ContactPopup = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
+                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
                 />
               </div>
               <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
@@ -74,7 +91,7 @@ const ContactPopup = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
+                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
                 />
               </div>
               <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
@@ -86,7 +103,7 @@ const ContactPopup = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full text-sm md:text-base"
+                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
                 />
               </div>
               <div className="flex items-start bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
@@ -97,16 +114,52 @@ const ContactPopup = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-transparent outline-none text-[#022b54] w-full h-24 resize-none text-sm md:text-base"
+                  className="bg-transparent outline-none text-gray-100 w-full h-20 resize-none text-xs md:text-sm "
                 ></textarea>
               </div>
+              <div className="bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
+  <button
+    type="button"
+    onClick={() => setShowDropdown(!showDropdown)}
+    className="w-full text-center text-gray-100 py-1 md:py-2 rounded font-semibold hover:bg-black transition duration-300 md:text-sm"
+  >
+    Select Services
+  </button>
+  {showDropdown && (
+    <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
+      {[
+        "Web Application Development",
+        "Website Development",
+        "Mobile App Development",
+        "SEO Services",
+        "Cloud App Development",
+        "SaaS",
+        "UI/UX Development",
+        "Quality Assurance",
+        "Staff Augmentation"
+      ].map((service, index) => (
+        <label key={index} className="flex items-center text-sm ">
+          <input
+            type="checkbox"
+            name="services"
+            value={service}
+            onChange={handleChange}
+            checked={formData.services.includes(service)}
+            className="mr-2"
+          />
+          {service}
+        </label>
+      ))}
+    </div>
+  )}
+</div>
               <button
                 type="submit"
-                className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
+                className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300 text-sm "
               >
                 Submit
               </button>
-              {formStatus && <p className="text-center text-green-600 mt-2 text-sm md:text-base">{formStatus}</p>}
+              {formStatus && <p className="text-center text-green-600 mt-2 text-sm ">{formStatus}</p>}
             </form>
           </div>
         </div>

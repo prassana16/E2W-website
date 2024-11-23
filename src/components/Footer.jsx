@@ -96,12 +96,12 @@ const Footer = () => {
       </div>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 left-8 z-50">
+      <div className="fixed bottom-2 left-2 z-50">
         <button 
           onClick={scrollToTop} 
-          className="bg-[#fceecf] rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
+          className="bg-[#fceecf] rounded-full md:w-12 w-6 md:h-12 h-6 flex items-center justify-center shadow-lg hover:bg-black transition duration-300"
         >
-          <IoIosArrowUp className="text-[#2f1375] w-6 h-6" />
+          <IoIosArrowUp className="text-[#2f1375] w-3 md:w-6 md:h-6 h-3" />
         </button>
       </div>
       

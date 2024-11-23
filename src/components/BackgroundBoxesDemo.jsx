@@ -6,35 +6,27 @@ import { TypewriterEffect } from "./ui/typewriter-effect";
 
 export function BackgroundBoxesDemo() {
     const words = [
+       
+        
         {
-          text: "Build",
-        },
-        {
-          text: "awesome",
-        },
-        {
-          text: "apps",
-        },
-        {
-          text: "with",
-        },
-        {
-          text: "Aceternity.",
-          className: "text-blue-500 dark:text-blue-500",
+          text: "Easy2Work.",
+          className: "text-2xl md:text-6xl text-purple-200  "
         },
       ];
   return (
     (<div
-      className="h-[80vh] relative w-full overflow-hidden bg-[#6c0081] flex flex-col items-center justify-center ">
+      className="h-[100vh]  relative w-full overflow-hidden bg-[#000000] flex flex-col items-center justify-center " style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}>
       <div
-        className="absolute inset-0 w-full h-full bg-[#001831] z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        className="absolute inset-0 w-full h-full bg-[#000000] z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       <Boxes />
-      <h1 className={cn("md:text-6xl text-xl font-bold text-white relative z-20 ")}>
-        WELCOME TO EASY2WORK INDIA
+      
+      <h1 className={cn("md:text-6xl text-2xl font-bold text-white  relative z-20 flex items-center gap-2 md:gap-4")}>
+        welocome to <TypewriterEffect words={words}   />
+      
       </h1>
       
-      <p className="text-center  mt-2 text-neutral-300 relative z-20">
-      EMPOWER | ENGAGE | EXCEL
+      <p className="text-center text-xs md:text-lg mt-4 text-neutral-300 relative z-20 ">
+      We are collaborating with high quality professionals across Singapore and the rest of the world.  
       </p>
     </div>)
   );

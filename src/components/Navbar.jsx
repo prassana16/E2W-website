@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#022b54] p-4 flex flex-col sticky top-0 z-50 shadow-xl">
+      <nav className="bg-[#001831] p-4 flex flex-col sticky top-0 z-50 shadow-xl">
         <div className="container mx-auto flex justify-between items-center">
           
           {/* Logo */}

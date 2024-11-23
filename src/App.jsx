@@ -23,6 +23,8 @@ import SaaSDevelopment from './components/services/SaaSDevelopment';
 import UIUXDesign from './components/services/UIUXDesign';
 import QualityAssurance from './components/services/QualityAssurance';
 import StaffAugmentation from './components/services/StaffAugmentation';
+// new service page components
+import { FlipWordswebsite } from './components/FlipWordswebsite';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
@@ -30,6 +32,7 @@ import ArticleContent from "./components/ArticleContent";
 import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
 import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
+import { E2wProduct } from './components/E2wProduct';
 function App() {
   return (
     <Router>
@@ -40,10 +43,10 @@ function App() {
           <BackgroundBoxesDemo />
           <AppleCardsCarouselDemo />
           <HeroScrollDemo /> 
-            <OurSkills />
+          <E2wProduct />
             <OurClients />
             <Testimonials />
-            <Features />
+            
             <Intro />
             <AboutPWA />
             <Faq />
@@ -54,7 +57,11 @@ function App() {
         <Route path="/article/:id" element={<ArticleContent />} />
         <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>} />
         <Route path="/WebAppDevelopment" element={<WebAppDevelopment/>} />
-        <Route path="/WebsiteDevelopment" element={<WebsiteDevelopment/>} />
+        {/* website dev page */}
+        <Route path="/WebsiteDevelopment" element={<>
+          <FlipWordswebsite />
+          <WebsiteDevelopment/>
+          </> } />
         <Route path="/SEOServices" element={<SEOServices/>} />
         <Route path="/CloudNativeAppDevelopment" element={<CloudNativeAppDevelopment/>} />
         <Route path="/SaaSDevelopment" element={<SaaSDevelopment/>} />

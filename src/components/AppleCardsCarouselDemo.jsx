@@ -1,5 +1,5 @@
 "use client";
-import Image from "../assets/images/seobanner2.png";
+import { Button } from "./ui/moving-border";
 import React from "react";
 import { Carousel, Card } from "./ui/apple-cards-carousel";
 import WebDevImage from '../assets/images/uiux-service-card.jpg';
@@ -31,164 +31,130 @@ export function AppleCardsCarouselDemo() {
 }
 
 const DummyContentWebApp = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center ">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Web Application Development.
         </span>{" "}
         We develop efficient web applications tailored to your business needs, enhancing productivity and enabling seamless workflow. Our solutions are scalable and built with the latest technologies to ensure performance and reliability.
       </p>
-      <img
-        src={WebDevImage}
-        alt="Web Application Development"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/WebAppDevelopment"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
+      
     </div>
   );
   
   const DummyContentWebsite = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Website Development.
         </span>{" "}
         We specialize in creating responsive, modern websites that drive engagement and provide an exceptional user experience. From small businesses to large enterprises, we tailor each site to reflect your brand's identity.
       </p>
-      <img
-        src={webapp}
-        alt="Website Development"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/WebsiteDevelopment"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
+      
     </div>
   );
   
   const DummyContentMobileApp = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Mobile App Development.
         </span>{" "}
         Our mobile applications are designed to be user-friendly and innovative. We bring your ideas to life on both iOS and Android platforms, ensuring a consistent experience across devices.
       </p>
-      <img
-        src={mobile}
-        alt="Mobile App Development"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/MobileAppDevelopment"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentSEO = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           SEO Services.
         </span>{" "}
         We optimize your website for search engines to increase visibility and attract more traffic. Our SEO strategies ensure higher rankings on Google and improved engagement with your audience.
       </p>
-      <img
-        src={seo}
-        alt="SEO Services"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/SEOServices"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentCloud = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Cloud Native Application Development.
         </span>{" "}
         We build cloud-native applications that are highly scalable and secure, utilizing cloud infrastructure to support business growth and efficiency.
       </p>
-      <img
-        src={cloud}
-        alt="Cloud Native Application Development"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/CloudNativeAppDevelopment"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentSaaS = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           SaaS Solutions.
         </span>{" "}
         Our SaaS services help you harness cloud-based software solutions, enabling seamless integration and continuous updates to support your business needs.
       </p>
-      <img
-        src={saas}
-        alt="SaaS Solutions"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/SaaSDevelopment"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentUIUX = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           UI/UX Design.
         </span>{" "}
         Our UI/UX design services focus on creating intuitive interfaces and smooth user experiences. We help your product stand out with designs that are both functional and visually appealing.
       </p>
-      <img
-        src={uiux}
-        alt="UI/UX Design"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/UIUXDesign"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentQA = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Quality Assurance.
         </span>{" "}
         Our QA services ensure that your application is bug-free and performs flawlessly. We perform rigorous testing across multiple devices and platforms to ensure user satisfaction.
       </p>
-      <img
-        src={quality}
-        alt="Quality Assurance"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/QualityAssurance"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   
   const DummyContentStaffAugmentation = () => (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+    <div className="bg-[#45166b] dark:bg-neutral-800 p-4 md:p-8 rounded-3xl  flex flex-col items-center">
+      <p className="text-neutral-200 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto mb-5">
+        <span className="font-bold text-neutral-100 dark:text-neutral-200">
           Staff Augmentation.
         </span>{" "}
         Our staff augmentation services help you expand your IT team with skilled professionals, ensuring your project is completed efficiently and on time.
       </p>
-      <img
-        src={staff}
-        alt="Staff Augmentation"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-      />
+      <a href="/StaffAugmentation"><Button className="text-xl bg-white text-black" >
+        Learn more
+      </Button></a>
     </div>
   );
   

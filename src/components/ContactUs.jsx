@@ -1,4 +1,3 @@
-// ContactUs.jsx
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlinePhone, AiOutlineUser } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
@@ -9,32 +8,42 @@ const ContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    services: []
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value, type, checked } = e.target;
+
+    if (type === 'checkbox') {
+      setFormData((prevData) => ({
+        ...prevData,
+        services: checked
+          ? [...prevData.services, value]
+          : prevData.services.filter((service) => service !== value),
+      }));
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs.send(
-      'service_yq1c62d', // replace with your EmailJS service ID
-      'template_t1rxszr', // replace with your EmailJS template ID
+      'service_yq1c62d',
+      'template_t1rxszr',
       {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message
+        ...formData,
+        services: formData.services.join(', '),
       },
-      'ywtm-2mqEWbpTQIux' // replace with your EmailJS user ID
+      'ywtm-2mqEWbpTQIux'
     )
     .then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
@@ -110,6 +119,33 @@ const ContactForm = () => {
               required
               className="bg-transparent outline-none text-[#F7F2E7] w-full h-24 resize-none"
             ></textarea>
+          </div>
+
+          <div className="bg-[#001d3a] rounded-md p-3">
+            <button
+              type="button"
+              onClick={() => setShowDropdown(!showDropdown)}
+              className="w-full text-center text-[#FFD700] py-2 rounded font-semibold hover:bg-[#002f5a] transition duration-300"
+            >
+              Select Services
+            </button>
+            {showDropdown && (
+              <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
+                {["Web Application Development", "Website Development", "Mobile App Development", "SEO Services", "Cloud App Development", "SaaS", "UI/UX Development", "Quality Assurance", "Staff Augmentation"].map((service, index) => (
+                  <label key={index} className="flex items-center text-sm md:text-base">
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={service}
+                      onChange={handleChange}
+                      checked={formData.services.includes(service)}
+                      className="mr-2"
+                    />
+                    {service}
+                  </label>
+                ))}
+              </div>
+            )}
           </div>
 
           <button type="submit" className="bg-[#FFD700] text-[#022b54] w-full py-3 rounded-md font-semibold hover:bg-[#ffcc00] transition duration-300">
