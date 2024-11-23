@@ -2,6 +2,16 @@
 import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import mobileMockup from '../assets/images/ModuleImages/e2wAbout.png';
+import clientManagerImage from '../assets/images/ModuleImages/e2wClient.png';
+import consultantImage from '../assets/images/ModuleImages/e2wCounsultant.png';
+import FinanceManagerImage from '../assets/images/ModuleImages/e2wFinance.png';
+import FinanceReportImage from '../assets/images/ModuleImages/e2wFinanceReport.png';
+import OrderManagerImage from '../assets/images/ModuleImages/e2wOrder.png';
+import OrderReportImage from '../assets/images/ModuleImages/e2wOrderReport.png';
+import PaymentMilestoneImage from '../assets/images/ModuleImages/e2wpayment.png';
+import quoteSenderImage from '../assets/images/ModuleImages/e2wQuote.png';
+import rateManagerImage from '../assets/images/ModuleImages/e2wRatemanager.png';
+import RateValidationImage from '../assets/images/ModuleImages/e2wRatevalid.png';
 
 const content = [
   {
@@ -9,9 +19,13 @@ const content = [
     description:
       "Easy2Work is an all-in-one workflow management system designed to optimize business processes and streamline daily operations. Customization is our value-add. It provides an intuitive interface for managing clients, handling rate cards, processing orders, and governing financial transactions.",
     content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={mobileMockup}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
     ),
   },
@@ -22,7 +36,7 @@ const content = [
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <img
-          src={mobileMockup}
+          src={clientManagerImage}
           width={300}
           height={300}
           className="h-full w-full object-cover"
@@ -36,9 +50,13 @@ const content = [
     description:
       "The Quote Sender tool simplifies the process of creating and sending quotes with dynamic margin adjustments, slab-wise pricing, and the ability to download quotes seamlessly.",
     content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={quoteSenderImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
     ),
   },
@@ -47,9 +65,13 @@ const content = [
     description:
       "The Rate Manager module is designed to simplify rate management with its user-friendly interface. It allows businesses to search rates, set slab-wise pricing, and define service duration for different campaigns or products with ease.",
     content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={rateManagerImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
     ),
   },
@@ -58,16 +80,126 @@ const content = [
     description:
       "The Finance Manager empowers businesses to efficiently manage client data with features like customized lead source tracking, quick client search, and secure cloud storage for peace of mind.",
     content: (
-      <div
-        className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={FinanceManagerImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
       </div>
     ),
   },
+  {
+    title: "Order Manager",
+    description:
+      "The Order Manager simplifies the way businesses handle orders, from tracking lead sources to organizing client information with fast search capabilities and secure cloud storage.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={OrderManagerImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Finance Report",
+    description:
+      "The Finance Report feature provides businesses with real-time financial insights, offering detailed breakdowns of revenue, expenses, and performance metrics to ensure efficient financial management.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={FinanceReportImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Order Report",
+    description:
+      "The Order Report provides businesses with detailed insights into order tracking, fulfillment, and performance analysis, helping to streamline operations and optimize customer satisfaction.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={OrderReportImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Consultant Manager",
+    description:
+      "The Consultant Manager enables businesses to efficiently manage consultant engagements, track performance, and streamline communication for better collaboration and results.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={consultantImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Rate Validation",
+    description:
+      "The Rate Validation feature ensures that your pricing is consistent, competitive, and accurate across all platforms, helping businesses maintain financial accuracy and compliance.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={RateValidationImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Payment Milestones",
+    description:
+      "Our Payment Manager offers a streamlined approach to track Payment milestones, ensuring timely delivery and effective communication across teams.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={PaymentMilestoneImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  {
+    title: "Payment Milestones",
+    description:
+      "Our Payment Manager offers a streamlined approach to track Payment milestones, ensuring timely delivery and effective communication across teams.",
+    content: (
+        <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src={PaymentMilestoneImage}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo" />
+      </div>
+    ),
+  },
+  
 ];
 export function E2wProduct() {
   return (
-    (<div className="">
+    (<div className="h-[100vh]">
       <StickyScroll content={content} />
     </div>)
   );
