@@ -3,7 +3,7 @@ import { FlipWords } from "./ui/flip-words";
 import { BackgroundLines } from "./ui/background-lines";
 import { cn } from "../../lib/utils";
 
-export function FlipWordswebsite() {
+export function FlipWordsseo() {
   const words = ["better", "cute", "beautiful", "modern"];
 
   return (
@@ -11,9 +11,9 @@ export function FlipWordswebsite() {
       
       <h2
         className="absolute text-2xl md:text-6xl mx-auto  text-neutral-100   font-bold  ">
-        Build
+        We provide
         <FlipWords words={words} className={cn("bg-white bg-opacity-80 backdrop-blur-lg rounded-md border border-purple-400 shadow-lg text-center ml-3 p-1 uppercase")}/> <br />
-        websites with EASY2WORK
+         Seo service for your Websites.
       </h2>
       
     </BackgroundLines>)

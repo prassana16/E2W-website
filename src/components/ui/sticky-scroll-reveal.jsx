@@ -8,7 +8,7 @@ export const StickyScroll = ({
   content,
   contentClassName
 }) => {
-  const [activeCard, setActiveCard] = React.useState(0);
+  const [activeCard, setActiveCard] = useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     container: ref,
@@ -43,22 +43,23 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      animate={{
-        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-        transition: { duration: 0.8, ease: "easeInOut" }
+      style={{
+        background: 'radial-gradient(ellipse at center, #6c008100, #6c008100)'
       }}
+      
       className="h-[100vh] overflow-y-auto flex justify-between md:justify-around relative space-x-1 md:space-x-10 p-4 md:p-10"
       ref={ref}
     >
-      <div className="flex items-start px-4">
+      
+      <div className="flex items-start px-4 py-10">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <motion.div
               key={item.title + index}
-              className="my-20"
+              className="my-32"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{
-                opacity: activeCard === index ? 1 : 0.3,
+                opacity: activeCard === index ? 2 : 0.3,
                 scale: activeCard === index ? 1 : 0.95,
                 transition: { duration: 0.5 }
               }}
@@ -68,18 +69,17 @@ export const StickyScroll = ({
               >
                 {item.title}
               </motion.h2>
-              <motion.p className="text-sm md:text-lg lg:text-xl text-slate-300 max-w-sm mt-10">
+              <motion.p className="text-sm md:text-lg lg:text-xl text-slate-300 max-w-sm mt-2">
                 {item.description}
               </motion.p>
             </motion.div>
           ))}
-          <div className="h-40" />
+          <div className="h-40" /> {/* Ensure enough padding for the last content */}
         </div>
       </div>
       <div
-        style={{ background: backgroundGradient }}
         className={cn(
-          "block h-80 w-96 md:w-[50%] md:h-96 rounded-lg shadow-lg bg-white sticky top-28 overflow-hidden",
+          "block h-80 w-96 md:w-[50%] md:h-96 rounded-lg shadow-lg bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >

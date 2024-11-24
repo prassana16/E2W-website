@@ -25,6 +25,14 @@ import QualityAssurance from './components/services/QualityAssurance';
 import StaffAugmentation from './components/services/StaffAugmentation';
 // new service page components
 import { FlipWordswebsite } from './components/FlipWordswebsite';
+import { FlipWordswebapp } from './components/Flipwordsebapp';
+import { FlipWordssaas } from './components/Flipwordssaas';
+import { FlipWordsmobile } from './components/Flipwordsmobile';
+import { FlipWordsseo } from './components/Flipwordsseo';
+import { FlipWordsquality } from './components/Flipwordsquality';
+import { FlipWordsstaff } from './components/Flipwordsstaff';
+import { FlipWordsui } from './components/Flipwordsui';
+import { FlipWordscloud } from './components/Flipwordscloud';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
@@ -44,31 +52,56 @@ function App() {
           <AppleCardsCarouselDemo />
           <HeroScrollDemo /> 
           <E2wProduct />
+          <Intro />
+          <AboutPWA />
             <OurClients />
             <Testimonials />
-            
-            <Intro />
-            <AboutPWA />
             <Faq />
             <ContactPopup />
           </>
         } />
+        {/* blog page */}
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/article/:id" element={<ArticleContent />} />
-        <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment/>} />
-        <Route path="/WebAppDevelopment" element={<WebAppDevelopment/>} />
+        {/* mobile app dev page */}
+        <Route path="/MobileAppDevelopment" element={<>
+          <FlipWordsmobile />
+        <MobileAppDevelopment/></>} />
+        {/* web app dev page */}
+        <Route path="/WebAppDevelopment" element={<>
+          <FlipWordswebapp />
+        <WebAppDevelopment/></>} />
         {/* website dev page */}
         <Route path="/WebsiteDevelopment" element={<>
           <FlipWordswebsite />
           <WebsiteDevelopment/>
           </> } />
-        <Route path="/SEOServices" element={<SEOServices/>} />
-        <Route path="/CloudNativeAppDevelopment" element={<CloudNativeAppDevelopment/>} />
-        <Route path="/SaaSDevelopment" element={<SaaSDevelopment/>} />
-        <Route path="/UIUXDesign" element={<UIUXDesign/>} />
-        <Route path="/QualityAssurance" element={<QualityAssurance/>} />
-        <Route path="/StaffAugmentation" element={<StaffAugmentation/>} />
-        <Route path="/ContactForm" element={<ContactForm/>} />
+          {/* seo dev page */}
+        <Route path="/SEOServices" element={<>
+          <FlipWordsseo />
+        <SEOServices/></>} />
+        {/* cloud dev page */}
+        <Route path="/CloudNativeAppDevelopment" element={<>
+          <FlipWordscloud />
+        <CloudNativeAppDevelopment/></>} />
+        {/* saas dev page */}
+        <Route path="/SaaSDevelopment" element={<>
+          <FlipWordssaas />
+        <SaaSDevelopment/></>} />
+        {/* uiux dev page */}
+        <Route path="/UIUXDesign" element={<>
+          <FlipWordsui />
+        <UIUXDesign/></>} />
+        {/* quality dev page */}
+        <Route path="/QualityAssurance" element={<>
+          <FlipWordsquality />
+        <QualityAssurance/></>} />
+        {/* staff aug dev page */}
+        <Route path="/StaffAugmentation" element={<>
+          <FlipWordsstaff />
+        <StaffAugmentation/></>} />
+        {/* contact us page */}
+        <Route path="/ContactForm" element={<><ContactForm/></>} />
       </Routes>
       
       <Footer />

@@ -24,7 +24,7 @@ const content = [
           src={mobileMockup}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -39,7 +39,7 @@ const content = [
           src={clientManagerImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -55,7 +55,7 @@ const content = [
           src={quoteSenderImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -70,7 +70,7 @@ const content = [
           src={rateManagerImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -85,7 +85,7 @@ const content = [
           src={FinanceManagerImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -100,7 +100,7 @@ const content = [
           src={OrderManagerImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -115,7 +115,7 @@ const content = [
           src={FinanceReportImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -130,7 +130,7 @@ const content = [
           src={OrderReportImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -145,7 +145,7 @@ const content = [
           src={consultantImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -160,7 +160,7 @@ const content = [
           src={RateValidationImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -175,7 +175,7 @@ const content = [
           src={PaymentMilestoneImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -190,7 +190,7 @@ const content = [
           src={PaymentMilestoneImage}
           width={300}
           height={300}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           alt="linear board demo" />
       </div>
     ),
@@ -198,9 +198,15 @@ const content = [
   
 ];
 export function E2wProduct() {
-  return (
-    (<div className="h-[100vh]">
+  return (<div className="w-full h-full py-20 " style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}>
+    <h2
+        className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold  text-neutral-100 dark:text-neutral-200 font-sans mb-4 md:mb-10"
+      >
+        Our Workflow Management Tools.
+      </h2>
+    <div className="h-[100vh]">
       <StickyScroll content={content} />
-    </div>)
+    </div>
+    </div>
   );
 }
