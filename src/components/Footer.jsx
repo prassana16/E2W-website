@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#00264c] text-[#F7F2E7] relative ">
+    <footer className="bg-[#59247f] text-[#F7F2E7] relative ">
       {/* Decorative Animated Lines */}
       {/* <div className="w-full flex">
         {[...Array(26)].map((_, i) => (
