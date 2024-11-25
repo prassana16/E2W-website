@@ -12,12 +12,12 @@ export const StickyScroll = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     container: ref,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end end"], // Adjusted offset to ensure full scroll reveals last content
   });
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const cardsBreakpoints = content.map((_, index) => index / cardLength);
+    const cardsBreakpoints = content.map((_, index) => index / (cardLength - 1)); // Adjusted for last item accuracy
     const closestBreakpointIndex = cardsBreakpoints.reduce((acc, breakpoint, index) => {
       const distance = Math.abs(latest - breakpoint);
       if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
@@ -46,11 +46,9 @@ export const StickyScroll = ({
       style={{
         background: 'radial-gradient(ellipse at center, #6c008100, #6c008100)'
       }}
-      
       className="h-[100vh] overflow-y-auto flex justify-between md:justify-around relative space-x-1 md:space-x-10 p-4 md:p-10"
       ref={ref}
     >
-      
       <div className="flex items-start px-4 py-10">
         <div className="max-w-2xl">
           {content.map((item, index) => (
@@ -59,7 +57,7 @@ export const StickyScroll = ({
               className="my-32"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{
-                opacity: activeCard === index ? 2 : 0.3,
+                opacity: activeCard === index ? 1 : 0.3, // Adjusted opacity for active card
                 scale: activeCard === index ? 1 : 0.95,
                 transition: { duration: 0.5 }
               }}
@@ -74,7 +72,7 @@ export const StickyScroll = ({
               </motion.p>
             </motion.div>
           ))}
-          <div className="h-40" /> {/* Ensure enough padding for the last content */}
+          <div className="h-96" /> {/* Increased height for padding at end */}
         </div>
       </div>
       <div

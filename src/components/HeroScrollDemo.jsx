@@ -3,10 +3,12 @@ import React from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 import poster from "../assets/images/skills-poster.png";
 import Mobileposter from "../assets/images/skills-poster-mobile.png";
+import { SparklesCore } from "./ui/sparkles";
 
 export function HeroScrollDemo() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden ">
+      
       <ContainerScroll
         titleComponent={
           <>
@@ -19,6 +21,7 @@ export function HeroScrollDemo() {
           </>
         }
       >
+        
         <picture>
           <source media="(max-width: 768px)" srcSet={Mobileposter} />
           <source media="(min-width: 769px)" srcSet={poster} />
@@ -32,6 +35,7 @@ export function HeroScrollDemo() {
           />
         </picture>
       </ContainerScroll>
+      
       
     </div>
   );

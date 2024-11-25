@@ -41,6 +41,7 @@ import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
 import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
 import { E2wProduct } from './components/E2wProduct';
+import { ClientSlider } from './components/ClientsSlider';
 function App() {
   return (
     <Router>
@@ -54,6 +55,7 @@ function App() {
           <E2wProduct />
           <Intro />
           <AboutPWA />
+          <ClientSlider />
             <OurClients />
             <Testimonials />
             <Faq />

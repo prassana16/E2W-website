@@ -21,7 +21,7 @@ export function BackgroundBoxesDemo() {
       <Boxes />
       
       <h1 className={cn("md:text-6xl text-2xl font-bold text-white  relative z-20 flex items-center gap-2 md:gap-4")}>
-        welocome to <TypewriterEffect words={words}   />
+        Welcome to <TypewriterEffect words={words}   />
       
       </h1>
       

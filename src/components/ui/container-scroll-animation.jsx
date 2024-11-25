@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { SparklesCore } from "./sparkles";
 
 export const ContainerScroll = ({
   titleComponent,
@@ -35,8 +36,19 @@ export const ContainerScroll = ({
     (<div
       className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
       ref={containerRef}>
+        <div className="w-full absolute inset-0 h-[60rem] md:h-[80rem] ">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#000000"
+        />
+      </div>
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-10 md:py-40 w-full relative "
         style={{
           perspective: "1000px",
         }}>

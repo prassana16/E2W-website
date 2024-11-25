@@ -181,20 +181,11 @@ const content = [
     ),
   },
   {
-    title: "Payment Milestones",
+    title: "Conclusion",
     description:
-      "Our Payment Manager offers a streamlined approach to track Payment milestones, ensuring timely delivery and effective communication across teams.",
-    content: (
-        <div className="h-full w-full  flex items-center justify-center text-white">
-        <img
-          src={PaymentMilestoneImage}
-          width={300}
-          height={300}
-          className="h-full w-full object-contain"
-          alt="linear board demo" />
-      </div>
-    ),
-  },
+      "EasyToWork Workflow Management Software is designed to simplify and enhance business operations, offering customizable solutions that drive efficiency, improve team communication, and ensure timely project milestones. With EasyToWork, businesses can manage workflows seamlessly, ensuring all tasks, payments, and communications are optimized for maximum productivity.",
+    
+},
   
 ];
 export function E2wProduct() {

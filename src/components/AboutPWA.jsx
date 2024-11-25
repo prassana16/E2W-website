@@ -33,58 +33,81 @@ function AboutPWA() {
         Progressive Web Applications (PWA)
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-6 w-full">
-
-  {/* Left Column */}
-  <motion.div
-    className="flex flex-col items-center justify-center p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full  "
-    initial={{ opacity: 0, y: -100  }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.5 }}
-  >
-    <div className="text-6xl mb-4">
-      <FaRocket className="text-[#28c836]" />
-    </div>
-    <div className="text-center">
-      <h3 className="text-2xl md:text-3xl font-semibold text-[#ffffff] mb-6">
-        What is a Progressive Web Application (PWA)?
-      </h3>
-      <p className="text-base md:text-lg text-[#f8ebcf] mb-4">
-        A Progressive Web Application (PWA) combines the best features of web and mobile apps, offering fast, reliable, and engaging experiences directly in a browser.
-      </p>
-      <h3 className="text-2xl md:text-3xl font-semibold text-[#ffffff] mb-6">
-        Our Expertise in PWAs
-      </h3>
-      <p className="text-base md:text-lg text-[#f8ebcf] mb-4">
-        We predicted the rise of PWAs early and have developed several successful products using this technology. Our PWAs offer superior performance, reliability, and user experience.Progressive Web Applications are the future of web experiences, blending the best of web and mobile worlds. Contact us to explore how PWAs can revolutionize your business.
-      </p>
-    </div>
-  </motion.div>
-
-  {/* Right Column */}
-  <div className="flex flex-col items-center w-full  gap-6">
-    
-    {/* Image Card */}
-    <motion.div
-      className="w-full items-center flex flex-col p-6 md:p-9 "
-     
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.5 }}
-    >
-      <img src={gif} alt="" className='w-full overflow-hidden  '/>
-      <button
-        className="mt-4 px-6 flex items-center justify-center gap-2 py-3 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-md transition-all duration-300 ease-in-out"
+      {/* Expertise Card */}
+      <motion.div
+        className="w-full flex flex-col items-center justify-center p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg text-center mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
       >
-        Learn More About PWA <AiFillCaretRight className='text-2xl'/>
-      </button>
-    </motion.div>
-    
-    
-  </div>
-  
-</div>
+        <h3 className="text-3xl md:text-4xl font-semibold text-[#ffffff] mb-6 ">
+          Why Choose Us for Your PWA Development
+        </h3>
+        <p className="text-base md:text-lg text-[#f8ebcf] mb-4 max-w-4xl">
+          Our company has established itself as a leader in Progressive Web Application technology, 
+          backed by years of experience and a portfolio of successful PWA projects. From retail 
+          to enterprise solutions, we have built and optimized PWAs that deliver lightning-fast 
+          performance, reliable offline access, and engaging user experiences that feel as seamless 
+          as native apps.
+        </p>
+        <p className="text-base md:text-lg text-[#f8ebcf] mb-4 max-w-4xl">
+          Leveraging our deep expertise in web technologies, we customize every PWA to meet 
+          unique client needs, ensuring accessibility, smooth navigation, and exceptional 
+          performance across devices. Our commitment to innovation means we stay on the cutting 
+          edge of PWA advancements, bringing you the best in scalability, speed, and user engagement.
+        </p>
+      </motion.div>
 
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-6 w-full">
+        {/* Left Column */}
+        <motion.div
+          className="flex flex-col items-center justify-center p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full"
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+        >
+          <div className="text-6xl mb-4">
+            <FaRocket className="text-[#28c836]" />
+          </div>
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#ffffff] mb-6">
+              What is a Progressive Web Application (PWA)?
+            </h3>
+            <p className="text-base md:text-lg text-[#f8ebcf] mb-4">
+              A Progressive Web Application (PWA) combines the best features of web and mobile apps, 
+              offering fast, reliable, and engaging experiences directly in a browser.
+            </p>
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#ffffff] mb-6">
+              Our Expertise in PWAs
+            </h3>
+            <p className="text-base md:text-lg text-[#f8ebcf] mb-4">
+              We anticipated the rise of PWAs early and have developed numerous successful products 
+              using this technology. Our PWAs offer superior performance, reliability, and user 
+              experience. Progressive Web Applications are the future of web experiences, blending 
+              the best of web and mobile worlds. Contact us to explore how PWAs can revolutionize 
+              your business.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Right Column */}
+        <div className="flex flex-col items-center w-full gap-6">
+          {/* Image Card */}
+          <motion.div
+            className="w-full items-center flex flex-col p-6 md:p-9"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            <img src={gif} alt="PWA illustration" className="w-full overflow-hidden" />
+            <button
+              className="mt-4 px-6 flex items-center justify-center gap-2 py-3 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-md transition-all duration-300 ease-in-out"
+            >
+              Learn More About PWA <AiFillCaretRight className="text-2xl" />
+            </button>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Decorative Animated Lines */}
       <div className="w-full flex mt-24">
