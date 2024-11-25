@@ -35,7 +35,7 @@ function AboutPWA() {
 
       {/* Expertise Card */}
       <motion.div
-        className="w-full flex flex-col items-center justify-center p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg text-center mb-12"
+        className="w-[95%] flex flex-col items-center justify-center p-8  bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg text-center mb-12"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
@@ -100,11 +100,11 @@ function AboutPWA() {
             transition={{ duration: 1.5 }}
           >
             <img src={gif} alt="PWA illustration" className="w-full overflow-hidden" />
-            <button
+            {/* <button
               className="mt-4 px-6 flex items-center justify-center gap-2 py-3 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-md transition-all duration-300 ease-in-out"
             >
               Learn More About PWA <AiFillCaretRight className="text-2xl" />
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </div>
