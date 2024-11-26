@@ -13,11 +13,12 @@ function Testimonials() {
         
         {/* Testimonial Card: Baleen Media */}
         <motion.div
-          className="px-5 rounded-xl border border-[#00264c] border-r-4 border-b-4 drop-shadow-md"
+          className="px-5 rounded-xl border border-[#000000] border-r-4 border-b-4 drop-shadow-md text-neutral-100"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: false  }}
+          style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
         >
           <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
             <RiStarSFill />
@@ -34,11 +35,12 @@ function Testimonials() {
 
         {/* Testimonial Card: Grace Scans */}
         <motion.div
-          className="px-5 rounded-xl border border-[#00264c] drop-shadow-md border-r-4 border-b-4"
+          className="px-5 rounded-xl border border-[#000000] drop-shadow-md text-neutral-100 border-r-4 border-b-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false }}
+          style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
         >
           <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
             <RiStarSFill />
