@@ -14,7 +14,7 @@ export function ClientSlider() {
         </h2>
       
       {/* Cards Container */}
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         {testimonials.map((item, index) => (
           <motion.div
             key={index}
