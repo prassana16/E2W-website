@@ -85,7 +85,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="fixed top-0 left-0 h-full w-64 bg-[#00264c] shadow-lg z-50 transition-transform duration-300 ease-in-out">
+          <div className="fixed top-0 left-0 h-full w-64 bg-[#59247f] shadow-lg z-50 transition-transform duration-300 ease-in-out">
             <ul className="flex flex-col space-y-6 mt-10 px-6">
               <li>
                 <a href="/" className="text-lg text-[#ffff] flex items-center">
@@ -100,11 +100,11 @@ const Navbar = () => {
                   <MdFeaturedPlayList className="mr-2" /> Features
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/Blogs" className="text-lg text-[#ffff] flex items-center">
                   <MdFeaturedPlayList className="mr-2" /> Blogs
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/ContactForm" className="text-lg text-[#ffff] flex items-center">
                   <MdSupportAgent className="mr-2" /> Contact Us
