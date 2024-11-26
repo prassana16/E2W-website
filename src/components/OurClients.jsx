@@ -28,7 +28,7 @@ function OurClients() {
       <h2 className="relative text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos mb-16 pt-16">
         Revenue Sharing Model
       </h2>
-
+      <div className="flex flex-col items-center justify-center gap-4 md:gap-6 p-4 md:p-6 w-full">
       {/* Revenue Sharing Description Card */}
       <div className="relative max-w-4xl p-6 bg-[#000000a4] rounded-2xl border border-purple-400 mb-10 text-center">
         <h3 className="text-lg md:text-3xl font-Tinos text-[#F7F2E7] mb-4">How Revenue Share Model Works</h3>
@@ -76,7 +76,7 @@ function OurClients() {
           </motion.div>
         </motion.div>
       </div>
-
+</div>
       {/* Bottom Decorative Animated Lines */}
       <div className="w-full flex mt-24">
         {Array(26).fill().map((_, i) => (
