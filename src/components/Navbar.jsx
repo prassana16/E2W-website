@@ -56,14 +56,14 @@ const Navbar = () => {
 
             <li>
               <a href="#features" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
-                 Features
+                 Our Product
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/Blogs" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
                  Blogs
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="/ContactForm" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
                  Contact Us
@@ -100,11 +100,11 @@ const Navbar = () => {
                   <MdFeaturedPlayList className="mr-2" /> Features
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/Blogs" className="text-lg text-[#ffff] flex items-center">
                   <MdFeaturedPlayList className="mr-2" /> Blogs
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/ContactForm" className="text-lg text-[#ffff] flex items-center">
                   <MdSupportAgent className="mr-2" /> Contact Us
