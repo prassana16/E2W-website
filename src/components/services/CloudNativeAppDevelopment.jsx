@@ -1,84 +1,166 @@
 import React from 'react';
-import { FaCloud } from "react-icons/fa"; // Cloud icon for Cloud Native Development
 import { motion } from 'framer-motion';
+import cloudDevelopment from '../../assets/images/cloud1.png';
+import microservices from '../../assets/images/cloud2.png';
+import scalability from '../../assets/images/cloud3.png';
 
 const CloudNativeAppDevelopment = () => {
-  return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#f5c894] to-[#ffca2a] py-16 px-4 md:px-16 font-mono">
-      <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
-        
-        {/* Icon and Intro Section */}
-        <motion.div 
-          className="text-6xl text-[#333] mb-6 md:mb-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <FaCloud /> {/* Cloud icon for Cloud Native Development */}
-        </motion.div>
-        
-        <div>
-          {/* Header */}
-          <h2 className="text-4xl font-semibold text-[#333] mb-4">Cloud Native Application Development</h2>
-          <p className="text-lg text-[#201e1e] leading-relaxed">
-            Cloud-native application development is revolutionizing the way businesses build and scale applications. By leveraging microservices, containers, and cloud platforms, we design and develop applications that are scalable, resilient, and agile, enabling you to innovate faster and reduce operational costs.
-          </p>
-          
-          {/* Key Features */}
-          <div className="mt-10 space-y-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-2xl font-semibold text-[#333]">Key Features of Our Cloud Native Solutions:</h3>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg leading-relaxed">
-              <li>Microservices architecture for flexibility and scalability</li>
-              <li>Containerization using Docker and Kubernetes for portability and consistency</li>
-              <li>Cloud platforms (AWS, Azure, Google Cloud) for seamless deployment and management</li>
-              <li>High availability and disaster recovery for business continuity</li>
-              <li>Continuous Integration and Continuous Delivery (CI/CD) pipelines for faster releases</li>
-            </ul>
-          </div>
-          
-          
-          
-          {/* Current Cloud Native Trends */}
-          <div className="mt-16 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Current Trends in Cloud Native Development</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              Cloud-native technologies are rapidly evolving, and staying up-to-date with the latest trends is essential for businesses to remain competitive. Here are some of the current trends shaping the cloud-native landscape:
-            </p>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg mt-6 space-y-4">
-              <li><strong>Serverless Computing:</strong> Serverless architectures allow you to focus on writing code without managing the underlying infrastructure, reducing operational overhead and scaling automatically.</li>
-              <li><strong>Kubernetes and Containers:</strong> Kubernetes continues to lead as the orchestration platform for managing containerized applications, offering efficient scaling, automation, and security features.</li>
-              <li><strong>Multi-Cloud Strategies:</strong> To avoid vendor lock-in and improve resilience, businesses are adopting multi-cloud strategies, deploying apps across multiple cloud providers.</li>
-              <li><strong>Cloud-Native Security:</strong> With the rise of cloud-native architectures, security has become a top priority. DevSecOps integrates security practices directly into the development lifecycle for more secure applications.</li>
-              <li><strong>Edge Computing:</strong> Edge computing reduces latency by processing data closer to where it’s generated, enabling faster and more efficient cloud-native applications.</li>
-            </ul>
-          </div>
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
-          {/* Future Cloud Native Trends */}
-          <div className="mt-16 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Future Trends in Cloud Native Development</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              The cloud-native landscape is constantly evolving. Here are some future trends that will shape the way cloud-native applications are built:
-            </p>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg mt-6 space-y-4">
-              <li><strong>AI and Machine Learning Integration:</strong> AI and ML will be increasingly embedded in cloud-native applications to improve automation, predictive analytics, and personalized experiences.</li>
-              <li><strong>Cloud-Native Databases:</strong> With the rise of cloud-native applications, specialized databases like NoSQL and distributed databases will continue to replace traditional relational databases for better performance and scalability.</li>
-              <li><strong>Autonomous Cloud Platforms:</strong> Autonomous platforms that use AI to manage cloud infrastructure will be more prevalent, automating tasks like load balancing, security patching, and scaling.</li>
-              <li><strong>Cloud-Native Integration with 5G:</strong> The integration of cloud-native applications with 5G networks will enable ultra-low latency applications for real-time data processing in industries like healthcare, automotive, and IoT.</li>
-            </ul>
-          </div>
-          
-          {/* Call-to-Action */}
-          <div className="mt-20 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Ready to Build Scalable and Resilient Cloud-Native Applications?</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              Whether you’re looking to migrate to the cloud or build a new cloud-native application, our team of experts is here to help. Let’s discuss how we can design solutions that drive innovation and business growth in a cloud-first world.
-            </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#ffca2a] transition duration-300 ease-in-out">
-              Contact Us
-            </button>
-          </div>
+  return (
+    <section className="min-h-screen w-full  bg-gradient-to-r from-blue-600 to-cyan-700 text-white">
+      {/* Introduction */}
+      <motion.div
+        className="flex flex-col items-center text-center py-16 px-6 md:px-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Cloud Native Application Development
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl">
+          Build scalable, resilient, and modern applications designed to thrive in the cloud. Our cloud-native solutions empower businesses to unlock agility and achieve digital transformation.
+        </p>
+      </motion.div>
+
+      {/* Microservices Architecture Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={microservices}
+          alt="Microservices Architecture"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
+            Microservices Architecture
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Adopt a microservices architecture to decouple your application components, enabling independent development and deployment.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Modular and Scalable Design</li>
+            <li>Faster Deployment Cycles</li>
+            <li>Improved Fault Isolation</li>
+            <li>Seamless integration with cloud services</li>
+            <li>Supports multi-language development for flexibility</li>
+          </ul>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Scalability and Performance Section */}
+      <motion.div
+        className="flex flex-col md:flex-row-reverse items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #4caeff, #0176c4)', color: 'white' }}
+      >
+        <img
+          src={scalability}
+          alt="Scalability and Performance"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
+            Scalability and Performance
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Design applications that scale seamlessly to meet fluctuating demand while maintaining high performance and availability.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Elastic Scalability with Kubernetes</li>
+            <li>High Availability through Load Balancers</li>
+            <li>Optimized Resource Utilization</li>
+            <li>Proactive monitoring and performance tuning</li>
+            <li>Designed for global, distributed user bases</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Cloud-Native Technologies Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={cloudDevelopment}
+          alt="Cloud-Native Technologies"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
+            Cloud-Native Technologies
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Harness the power of cloud-native technologies to accelerate development, deployment, and delivery of applications.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Dockerized Containers for Portability</li>
+            <li>Serverless Architecture for Cost Efficiency</li>
+            <li>Continuous Integration and Delivery (CI/CD)</li>
+            <li>Automated Infrastructure Management with Terraform</li>
+            <li>Integration with AWS, Azure, and Google Cloud</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Why Choose Us Section */}
+      <motion.div
+        className="text-center px-6 md:px-16 py-16"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #4caeff, #0176c4)', color: 'white' }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Why Choose Our Cloud-Native Services?
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+          Unlock your business's full potential with scalable, secure, and future-proof cloud-native solutions.
+        </p>
+        <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6 max-w-3xl mx-auto">
+          <li>Expertise in Modern Cloud Technologies</li>
+          <li>Cost-Effective and Scalable Solutions</li>
+          <li>Seamless Migration to Cloud Environments</li>
+          <li>24/7 Support and Maintenance</li>
+          <li>Robust Security Practices for Cloud Applications</li>
+        </ul>
+      </motion.div>
+
+      {/* Call-to-Action Card */}
+      <motion.div
+        className="text-center px-6 py-12 bg-gradient-to-r from-blue-800 to-cyan-900 shadow-lg"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl md:text-4xl font-bold mb-4">
+          Ready to Transform Your Applications?
+        </h3>
+        <p className="text-lg md:text-xl leading-relaxed mb-8">
+          Leverage our expertise in cloud-native development to create scalable and future-ready applications. Contact us today!
+        </p>
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+          Contact Us
+        </button></a>
+      </motion.div>
     </section>
   );
 };

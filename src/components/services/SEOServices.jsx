@@ -1,84 +1,172 @@
 import React from 'react';
-import { FaSearch } from "react-icons/fa"; // Search icon for SEO services
 import { motion } from 'framer-motion';
+import onPageSEO from '../../assets/images/seo1.png';
+import offPageSEO from '../../assets/images/seo2.png';
+import localSEO from '../../assets/images/seo3.png';
 
 const SEOServices = () => {
-  return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#adc7f2] to-[#2e46ff] py-16 px-4 md:px-16 font-mono">
-      <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
-        
-        {/* Icon and Intro Section */}
-        <motion.div 
-          className="text-6xl text-[#333] mb-6 md:mb-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <FaSearch /> {/* Search icon for SEO services */}
-        </motion.div>
-        
-        <div>
-          {/* Header */}
-          <h2 className="text-4xl font-semibold text-[#333] mb-4">SEO Services</h2>
-          <p className="text-lg text-[#201e1e] leading-relaxed">
-            In today’s digital world, SEO is crucial for improving your website’s visibility and ensuring that your target audience finds you. Our SEO services are designed to optimize your website to rank higher in search engine results, drive organic traffic, and boost your business’s online presence.
-          </p>
-          
-          {/* Key Features */}
-          <div className="mt-10 space-y-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-2xl font-semibold text-[#333]">Key Features of Our SEO Services:</h3>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg leading-relaxed">
-              <li>Comprehensive SEO audit and analysis</li>
-              <li>On-page optimization for better user experience and search rankings</li>
-              <li>Keyword research to target high-converting terms</li>
-              <li>Technical SEO for faster site speed and improved crawlability</li>
-              <li>Link building strategies to enhance domain authority</li>
-            </ul>
-          </div>
-          
-        
-          
-          {/* Current SEO Trends */}
-          <div className="mt-16 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Current SEO Trends</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              SEO is constantly evolving, and staying on top of trends is key to success. Here are some of the current trends in the SEO landscape:
-            </p>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg mt-6 space-y-4">
-              <li><strong>AI and Search Engines:</strong> The rise of AI is changing search engine algorithms, making it crucial to adapt strategies to this shift.</li>
-              <li><strong>Core Web Vitals:</strong> Google’s emphasis on user experience metrics like loading speed and interactivity is now a ranking factor.</li>
-              <li><strong>Mobile-First Indexing:</strong> With more users accessing websites via mobile devices, Google now primarily uses the mobile version of your website for ranking.</li>
-              <li><strong>Voice Search Optimization:</strong> With the rise of smart speakers and virtual assistants, optimizing for voice search is becoming essential for SEO success.</li>
-              <li><strong>Video SEO:</strong> Video content continues to rise, and optimizing video content for search engines is an increasingly important strategy.</li>
-            </ul>
-          </div>
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
-          {/* Future SEO Trends */}
-          <div className="mt-16 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Future SEO Trends</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              As search engines continue to evolve, here’s a look at some SEO trends expected to gain importance in the future:
-            </p>
-            <ul className="list-disc list-inside text-[#201e1e] text-lg mt-6 space-y-4">
-              <li><strong>Zero-Click Searches:</strong> As featured snippets and other SERP features rise, optimizing for these results will be key to staying visible.</li>
-              <li><strong>E-A-T (Expertise, Authoritativeness, and Trustworthiness):</strong> Google’s focus on website quality means content needs to demonstrate authority and expertise in the field.</li>
-              <li><strong>Natural Language Processing (NLP):</strong> With improvements in NLP, optimizing content for conversational queries and long-tail keywords will be more important.</li>
-              <li><strong>Featured Snippets and Rich Results:</strong> As structured data continues to shape search results, optimizing for these rich results will boost visibility.</li>
-            </ul>
-          </div>
-          
-          {/* Call-to-Action */}
-          <div className="mt-20 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg p-8 border">
-            <h3 className="text-3xl font-semibold text-[#333]">Boost Your Rankings and Drive More Traffic with Our SEO Services</h3>
-            <p className="text-lg text-[#201e1e] mt-4 leading-relaxed">
-              Our SEO experts are ready to help your business rise above the competition. Get in touch with us to start optimizing your website for higher search engine rankings and increased organic traffic.
-            </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#80C4E9] transition duration-300 ease-in-out">
-              Contact Us
-            </button>
-          </div>
+  return (
+    <section className="min-h-screen w-full  bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
+      {/* Introduction */}
+      <motion.div
+        className="flex flex-col items-center text-center py-16 px-6 md:px-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">SEO Services</h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl">
+          Drive traffic, boost visibility, and increase conversions with our
+          expert SEO strategies. We craft tailor-made solutions to help your
+          business thrive in a competitive online landscape.
+        </p>
+      </motion.div>
+
+      {/* On-Page SEO Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={onPageSEO}
+          alt="On-Page SEO"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
+            On-Page SEO
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Optimize your website's content, structure, and meta information to
+            improve its ranking on search engine results pages (SERPs).
+          </p>
+          <ul className="list-disc  space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Keyword Research and Optimization</li>
+            <li>Title Tags, Meta Descriptions, and Headers</li>
+            <li>Internal Linking and Content Quality</li>
+            <li>Content Optimization: Ensure all content is optimized for readability and keyword density to meet both user intent and search engine algorithms.</li>
+            <li>Image Optimization: Compress and tag images with descriptive alt text for faster loading speeds and better accessibility.            </li>
+          </ul>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Off-Page SEO Section */}
+      <motion.div
+        className="flex flex-col md:flex-row-reverse items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+      >
+        <img
+          src={offPageSEO}
+          alt="Off-Page SEO"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
+            Off-Page SEO
+          </h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Enhance your website's reputation and authority by building
+            high-quality backlinks and engaging with external platforms.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Link Building and Backlink Analysis</li>
+            <li>Social Media Marketing</li>
+            <li>Online Reputation Management</li>
+            <li>Guest Blogging: Collaborate with industry-relevant blogs to publish high-quality content that links back to your website.</li>
+            <li>Competitor Analysis: Track and analyze your competitors' backlink profiles to identify new opportunities and stay ahead in rankings.</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Local SEO Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={localSEO}
+          alt="Local SEO"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+  <h3 className="text-2xl md:text-4xl font-semibold mb-4">Technical SEO</h3>
+  <p className="text-lg leading-relaxed mb-4">
+    Optimize the technical aspects of your website to enhance search engine crawling, indexing, and overall performance.
+  </p>
+  <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+    <li>Website Speed Optimization</li>
+    <li>Mobile-Friendly Design and Responsiveness</li>
+    <li>Structured Data Markup (Schema.org)</li>
+    <li>XML Sitemap Creation and Submission</li>
+    <li>Robots.txt File Optimization</li>
+    <li>Fixing Crawl Errors and Broken Links</li>
+    <li>HTTPS Implementation for Secure Browsing</li>
+    <li>Canonical Tags to Avoid Duplicate Content Issues</li>
+  </ul>
+</div>
+
+      </motion.div>
+
+      {/* About SEO Section */}
+      <motion.div
+        className="text-center px-6 md:px-16 py-16"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Why Choose Our SEO Services?
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+          Our SEO process involves in-depth research, technical audits, and
+          consistent optimization to ensure long-term success for your business.
+        </p>
+        <ul className="list-disc space-y-2  md:text-xl text-left md:space-y-5 pl-6 max-w-3xl mx-auto">
+          <li>Increase Organic Traffic and Lead Generation</li>
+          <li>Improve Online Visibility and Brand Awareness</li>
+          <li>Boost ROI with Targeted SEO Strategies</li>
+          <li>Dedicated Support Team: A team of SEO experts is available for consultation and support, ensuring your specific business needs are addressed.</li>
+          <li>Data-Driven Results: Monthly performance reports with detailed insights into traffic, keyword rankings, and ROI metrics to track progress effectively.</li>
+        </ul>
+      </motion.div>
+
+      {/* Call-to-Action Card */}
+      <motion.div
+        className="text-center px-6 py-12 bg-gradient-to-r from-purple-800 to-indigo-900 shadow-lg"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl md:text-4xl font-bold mb-4">
+          Ready to Boost Your Online Presence?
+        </h3>
+        <p className="text-lg md:text-xl leading-relaxed mb-8">
+          Partner with us for tailored SEO solutions that deliver measurable
+          results. Contact our team today to get started!
+        </p>
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+          Contact Us
+        </button></a>
+      </motion.div>
     </section>
   );
 };

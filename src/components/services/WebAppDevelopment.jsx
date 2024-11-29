@@ -13,7 +13,7 @@ import social from '../../assets/images/social.png';
 
 const WebAppDevelopment = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center  font-mono" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
+    <section className="min-h-screen flex flex-col items-center  " style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
       {/* E-commerce Platforms Section */}
 <motion.div
   className="flex flex-col  items-center justify-between gap-6 w-full p-6 h-full"
@@ -55,7 +55,7 @@ const WebAppDevelopment = () => {
 
       {/* CMS Section */}
       <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        className="flex flex-col md:flex-row-reverse items-center gap-6 w-full p-6 md:h-screen"
         style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ const WebAppDevelopment = () => {
 
       {/* Enterprise Solutions Section */}
       <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        className="flex flex-col md:flex-row-reverse items-center gap-6 w-full p-6 md:h-screen"
         style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ const WebAppDevelopment = () => {
 
       {/* Social Networking Apps Section */}
       <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        className="flex flex-col md:flex-row-reverse items-center gap-6 w-full p-6 md:h-screen"
         style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -143,14 +143,14 @@ const WebAppDevelopment = () => {
         
         <div className="grid grid-cols-1 ">
           <motion.div
-            className="p-6 shadow-lg text-center"
+            className="p-6 shadow-lg text-center "
             style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-xl md:text-5xl text-gray-100 font-semibold text-center mb-6">Our Portfolio</h3>
-            <img src={wellness} alt="Wellness" className="mb-4" />
+            <img src={wellness} alt="Wellness" className="mb-4 " />
             <h4 className="text-xl md:text-3xl  font-semibold text-neutral-100">Wellness PWA Software</h4>
             <p className="text-neutral-100 text-lg">A Fitness tracking and lifestyle platform</p>
           </motion.div>
@@ -172,8 +172,8 @@ const WebAppDevelopment = () => {
       {/* Call-to-Action Card */}
       <div className="w-full ">
         <motion.div
-          className="p-10 shadow-lg text-center"
-          style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+          className="p-10 shadow-lg text-center bg-gradient-to-r from-purple-800 to-indigo-900"
+          
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -182,9 +182,9 @@ const WebAppDevelopment = () => {
           <p className="text-sm md:text-lg text-neutral-100 mb-8">
             Let’s bring your web application idea to life. Reach out to our expert team and discover how we can help you create an impactful digital experience.
           </p>
-          <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#1e7c32] transition duration-300 ease-in-out">
-            Contact Us
-          </button>
+          <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+          Contact Us
+        </button></a>
         </motion.div>
       </div>
     </section>
