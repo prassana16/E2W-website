@@ -51,7 +51,6 @@ function App() {
           <>
           <BackgroundBoxesDemo />
           <Banner/>
-          <AppleCardsCarouselDemo />
           <HeroScrollDemo /> 
           <E2wProduct />
           <Intro />
