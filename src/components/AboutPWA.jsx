@@ -30,66 +30,91 @@ function AboutPWA() {
       </div>
 
       <h2 className="text-2xl md:text-5xl text-[#F7F2E7] text-center font-Tinos mb-8 md:mb-16 mt-16">
-        Progressive Web Applications (PWA)
-      </h2>
-      <div className="flex flex-col items-center justify-center gap-4 md:gap-6 p-4 md:p-6 w-full">
-      {/* Expertise Card */}
-      <motion.div
-        className="w-full flex flex-col items-center justify-center p-4 md:p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg text-center mb-8 md:mb-12 max-w-xl md:max-w-4xl mx-4"
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
-      >
-        <h3 className="text-2xl md:text-4xl font-semibold text-[#ffffff] mb-4 md:mb-6">
-          Why Choose Us for Your PWA Development
+  Progressive Web Applications (PWA)
+</h2>
+<div className="flex flex-col items-center justify-center gap-4 md:gap-6 p-4 md:p-6 w-full ">
+  {/* Expertise Card */}
+  <motion.div
+    className="w-full flex flex-col items-center justify-center p-4 md:p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg mb-8 md:mb-12 max-w-xl md:max-w-7xl mx-4 text-left"
+    initial={{ opacity: 0, y: -50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.5 }}
+  >
+    <h3 className="text-2xl md:text-4xl font-semibold text-[#ffffff] mb-4 md:mb-6 text-left">
+      Why Choose Us for Your PWA Development
+    </h3>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      Our company has established itself as a leader in Progressive Web Application technology, 
+      backed by years of experience and a portfolio of successful PWA projects. From retail 
+      to enterprise solutions, we have built and optimized PWAs that deliver lightning-fast 
+      performance, reliable offline access, and engaging user experiences that feel as seamless 
+      as native apps.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      Our PWAs are engineered with cutting-edge technologies like Service Workers, Web App 
+      Manifests, and responsive design to ensure cross-platform compatibility. Whether it’s 
+      improving website performance, enhancing mobile experiences, or creating scalable 
+      business solutions, we offer customized approaches that exceed expectations.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      What sets us apart is our focus on client satisfaction. We partner with you to understand 
+      your business goals, creating PWAs that drive engagement, increase conversions, and build 
+      lasting customer loyalty. From small startups to large enterprises, our PWA solutions are 
+      built to grow with your business.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf]">
+      Let us transform your digital presence with reliable, fast, and feature-rich applications 
+      that provide a native-like experience and measurable business results. Trust us for future-ready solutions!
+    </p>
+  </motion.div>
+
+  <div className="flex flex-col md:flex-row ">
+    {/* Left Column */}
+    <motion.div
+      className="flex flex-col items-center justify-center p-4 md:p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full max-w-xl md:max-w-7xl mx-4 "
+      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div className="text-4xl md:text-6xl mb-4">
+        <FaRocket className="text-[#28c836]" />
+      </div>
+      <div className="text-center">
+        <h3 className="text-xl md:text-3xl font-semibold text-[#ffffff] mb-4 md:mb-6 text-left md:text-center">
+          What is a Progressive Web Application (PWA)?
         </h3>
-        <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
-          Our company has established itself as a leader in Progressive Web Application technology, 
-          backed by years of experience and a portfolio of successful PWA projects. From retail 
-          to enterprise solutions, we have built and optimized PWAs that deliver lightning-fast 
-          performance, reliable offline access, and engaging user experiences that feel as seamless 
-          as native apps.
+        <p className="text-sm md:text-lg text-[#f8ebcf] mb-4 text-left">
+          A Progressive Web Application (PWA) combines the best features of web and mobile apps, 
+          offering fast, reliable, and engaging experiences directly in a browser. It’s a solution 
+          designed to function seamlessly across all devices and platforms, ensuring a unified user experience.
         </p>
-        <p className="text-sm md:text-lg text-[#f8ebcf]">
-          Leveraging our deep expertise in web technologies, we customize every PWA to meet 
-          unique client needs, ensuring accessibility, smooth navigation, and exceptional 
-          performance across devices. Our commitment to innovation means we stay on the cutting 
-          edge of PWA advancements, bringing you the best in scalability, speed, and user engagement.
+        <p className="text-sm md:text-lg text-[#f8ebcf] mb-4 text-left">
+          PWAs are known for their ability to work offline, send push notifications, and load 
+          instantly, even in low-network conditions. They remove the barriers of app installation 
+          by allowing users to access your application directly from their browsers.
         </p>
-      </motion.div>
-
-      <div className="flex flex-col md:flex-row  "></div>
-        {/* Left Column */}
-        <motion.div
-          className="flex flex-col items-center justify-center p-4 md:p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full max-w-xl  md:max-w-4xl mx-4"
-          initial={{ opacity: 0, y: -100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5 }}
-        >
-          <div className="text-4xl md:text-6xl mb-4">
-            <FaRocket className="text-[#28c836]" />
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl md:text-3xl font-semibold text-[#ffffff] mb-4 md:mb-6">
-              What is a Progressive Web Application (PWA)?
-            </h3>
-            <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
-              A Progressive Web Application (PWA) combines the best features of web and mobile apps, 
-              offering fast, reliable, and engaging experiences directly in a browser.
-            </p>
-            <h3 className="text-xl md:text-3xl font-semibold text-[#ffffff] mb-4 md:mb-6">
-              Our Expertise in PWAs
-            </h3>
-            <p className="text-sm md:text-lg text-[#f8ebcf]">
-              We anticipated the rise of PWAs early and have developed numerous successful products 
-              using this technology. Our PWAs offer superior performance, reliability, and user 
-              experience. Progressive Web Applications are the future of web experiences, blending 
-              the best of web and mobile worlds. Contact us to explore how PWAs can revolutionize 
-              your business.
-            </p>
-          </div>
-        </motion.div>
-
+        <h3 className="text-xl md:text-3xl font-semibold text-[#ffffff] mb-4 md:mb-6 text-left md:text-center">
+          Our Expertise in PWAs
+        </h3>
+        <p className="text-sm md:text-lg text-[#f8ebcf] mb-4 text-left">
+          We anticipated the rise of PWAs early and have developed numerous successful products 
+          using this technology. Our team specializes in creating apps that offer superior 
+          performance, reliability, and user experience. 
+        </p>
+        <p className="text-sm md:text-lg text-[#f8ebcf] mb-4 text-left">
+          From eCommerce stores that boost sales to business apps that streamline operations, 
+          we develop PWAs tailored to your goals. By incorporating advanced features like 
+          offline capabilities, app-like interfaces, and high-speed performance, we make your 
+          application a delight for users.
+        </p>
+        <p className="text-sm md:text-lg text-[#f8ebcf] text-left">
+          Progressive Web Applications are the future of web experiences, blending the best of 
+          web and mobile worlds. Our team is ready to revolutionize your business by building 
+          cutting-edge PWAs that redefine user engagement, enhance performance, and increase ROI.
+        </p>
+      </div>
+    </motion.div>
+    </div>
         {/* Right Column */}
         <div className="flex flex-col items-center w-full  md:max-w-4xl gap-4 md:gap-6">
           {/* Image Card */}

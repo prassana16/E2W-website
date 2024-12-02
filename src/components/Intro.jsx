@@ -22,12 +22,12 @@ const Intro = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 md:mt-24">
           {/* Card 1: Optionated */}
           <motion.div
-            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-100"
+            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-900 border border-purple-800"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+            
           >
             <motion.div
               initial={{ scale: 0 }}
@@ -44,11 +44,11 @@ const Intro = () => {
 
           {/* Card 2: Composable */}
           <motion.div
-            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-100"
+            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-900 border border-purple-800"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+            
             viewport={{ once: true }}
           >
 
@@ -67,11 +67,11 @@ const Intro = () => {
 
           {/* Card 3: Customizable */}
           <motion.div
-            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-100"
+            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-900 border border-purple-800 "
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+            
             viewport={{ once: true }}
           >
 
@@ -90,11 +90,11 @@ const Intro = () => {
 
           {/* Card 4: Accessible */}
           <motion.div
-            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-100"
+            className="flex flex-col p-5  rounded-xl shadow-md text-neutral-900 border border-purple-800"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+            
             viewport={{ once: true }}
           >
 
