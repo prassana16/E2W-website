@@ -56,14 +56,14 @@ const Navbar = () => {
 
             <li>
               <a href="#features" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
-                 Features
+                 Our Product
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/Blogs" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
                  Blogs
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="/ContactForm" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
                  Contact Us
@@ -85,7 +85,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="fixed top-0 left-0 h-full w-64 bg-[#00264c] shadow-lg z-50 transition-transform duration-300 ease-in-out">
+          <div className="fixed top-0 left-0 h-full w-64 bg-[#59247f] shadow-lg z-50 transition-transform duration-300 ease-in-out">
             <ul className="flex flex-col space-y-6 mt-10 px-6">
               <li>
                 <a href="/" className="text-lg text-[#ffff] flex items-center">
@@ -100,11 +100,11 @@ const Navbar = () => {
                   <MdFeaturedPlayList className="mr-2" /> Features
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/Blogs" className="text-lg text-[#ffff] flex items-center">
                   <MdFeaturedPlayList className="mr-2" /> Blogs
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="/ContactForm" className="text-lg text-[#ffff] flex items-center">
                   <MdSupportAgent className="mr-2" /> Contact Us
@@ -116,8 +116,8 @@ const Navbar = () => {
 
         {/* // Services Modal */}
          {isServiceModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50" onClick={closeServiceModal}>
-            <div className="bg-[#00264c] w-96 p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={closeServiceModal}>
+            <div className="bg-[#59247f]  p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
               <button className="absolute top-3 right-3 text-[#F7F2E7]" onClick={closeServiceModal}>
                 <AiOutlineClose className="w-6 h-6" />
               </button>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 {services.map((service, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2">{service.icon}</span>
-                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline text-xl">
+                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline text-lg md:text-2xl">
                       {service.name}
                     </a>
                   </li>

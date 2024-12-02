@@ -50,7 +50,7 @@ function App() {
         <Route path="/" element={
           <>
           <BackgroundBoxesDemo />
-          <AppleCardsCarouselDemo />
+          <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />
           <Intro />

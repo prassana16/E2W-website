@@ -10,6 +10,11 @@ import gracesite from '../../assets/images/gracescans-site.png';
 import baleensite from '../../assets/images/baleensite.png';
 
 const WebsiteDevelopment = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
       {/* Introduction Section */}

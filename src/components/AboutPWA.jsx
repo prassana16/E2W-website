@@ -100,11 +100,11 @@ function AboutPWA() {
             transition={{ duration: 1.5 }}
           >
             <img src={gif} alt="PWA illustration" className="w-full overflow-hidden max-w-xs  md:max-w-4xl" />
-            <button
+            {/* <button
               className="mt-4 px-6 flex items-center justify-center gap-2 py-3 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-md transition-all duration-300 ease-in-out"
             >
               Learn More About PWA <AiFillCaretRight className="text-2xl" />
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </div>

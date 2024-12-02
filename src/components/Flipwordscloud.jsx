@@ -4,13 +4,14 @@ import { BackgroundLines } from "./ui/background-lines";
 import { cn } from "../../lib/utils";
 
 export function FlipWordscloud() {
-  const words = ["better", "cute", "beautiful", "modern"];
+  const words = ["scalable", "secure", "reliable", "innovative"];
+
 
   return (
-    (<BackgroundLines className="h-[40rem] inset-0 flex justify-center items-center px-4 " >
+    (<BackgroundLines className=" md:h-[40rem] inset-0 flex justify-center items-center px-4 " >
       
       <h2
-        className="absolute text-2xl md:text-6xl mx-auto  text-neutral-100   font-bold  ">
+        className="absolute text-2xl  md:text-6xl mx-auto  text-neutral-100   font-bold  ">
         Build
         <FlipWords words={words} className={cn("bg-white bg-opacity-80 backdrop-blur-lg rounded-md border border-purple-400 shadow-lg text-center ml-3 p-1 uppercase")}/> <br />
         Cloud Applications with EASY2WORK

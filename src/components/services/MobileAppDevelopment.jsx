@@ -8,6 +8,11 @@ import enterpriseApp from '../../assets/images/enterprise-app.png';
 import socialApp from '../../assets/images/social-app.png';
 
 const MobileAppDevelopment = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section
       className="min-h-screen flex flex-col items-center font-mono justify-center"

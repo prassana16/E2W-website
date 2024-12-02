@@ -1,83 +1,158 @@
 import React from 'react';
-import { FaPalette } from "react-icons/fa"; // Icon representing design and creativity
 import { motion } from 'framer-motion';
+import userResearch from '../../assets/images/ui1.png';
+import wireframing from '../../assets/images/ui2.png';
+import prototyping from '../../assets/images/ui3.png';
 
 const UIUXDesign = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#8037ff] to-[#fc9139] py-16 px-4  font-mono">
-      <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
+    <section className="min-h-screen w-full  bg-gradient-to-r from-pink-600 to-red-600 text-white">
+      {/* Introduction */}
+      <motion.div
+        className="flex flex-col items-center text-center py-16 px-6 md:px-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">UI/UX Design Services</h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl">
+          Craft exceptional digital experiences with our innovative and user-centric UI/UX design services. We help brands stand out with intuitive, visually appealing designs.
+        </p>
+      </motion.div>
 
-        {/* Icon and Intro Section */}
-        <motion.div 
-          className="text-6xl  "
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <FaPalette  /> {/* Palette icon representing design */}
-        </motion.div>
-
-        <div>
-          {/* Header */}
-          <h2 className="text-4xl font-semibold text-[#000000] mb-4">UI/UX Design</h2>
-          <p className="text-lg text-[#fff] leading-relaxed mb-10">
-            UI/UX Design is at the core of creating digital experiences that users love. Our approach to UI/UX design focuses on understanding user behavior, ensuring usability, and crafting visually engaging interfaces that align with your brand's vision.
+      {/* User Research Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={userResearch}
+          alt="User Research"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">User Research</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Understand your target audience's needs, behaviors, and pain points to create designs that truly resonate with them.
           </p>
-
-          {/* Key Features Section */}
-          <div className="grid grid-cols-1  gap-8">
-            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-              <h3 className="text-2xl font-semibold text-[#333]">Key Aspects of Our UI/UX Design Process:</h3>
-              <ul className="list-disc list-inside text-[#191919] text-lg leading-relaxed">
-                <li>Research-driven approach to understand user needs</li>
-                <li>Interactive prototypes to visualize and refine design concepts</li>
-                <li>Consistent and visually appealing design language</li>
-                <li>User-friendly interfaces for seamless experiences</li>
-                <li>Responsive design to ensure functionality across devices</li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-              <h3 className="text-2xl font-semibold text-[#333]">Current Trends in UI/UX Design</h3>
-              <p className="text-lg text-[#191919] leading-relaxed">
-                The field of UI/UX design is constantly evolving. Staying updated with the latest trends helps create designs that feel modern and intuitive. Here are the key trends currently shaping the industry:
-              </p>
-              <ul className="list-disc list-inside text-[#191919] text-lg space-y-4">
-                <li><strong>Dark Mode:</strong> Dark themes are popular for reducing eye strain and giving applications a sleek look.</li>
-                <li><strong>Neumorphism:</strong> This design style creates soft, lifelike visuals that add depth and dimension.</li>
-                <li><strong>Micro-interactions:</strong> Subtle animations or feedback that make interactions feel natural and responsive.</li>
-                <li><strong>Minimalist Design:</strong> Focuses on simplicity and clarity, reducing unnecessary elements for a cleaner user interface.</li>
-                <li><strong>Voice User Interface (VUI):</strong> Integrating voice interactions to improve accessibility and provide hands-free user experiences.</li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-              <h3 className="text-2xl font-semibold text-[#333]">Future Trends in UI/UX Design</h3>
-              <p className="text-lg text-[#191919] leading-relaxed">
-                As user expectations evolve, so will UI/UX design. Anticipating future trends can help you stay ahead and deliver engaging experiences:
-              </p>
-              <ul className="list-disc list-inside text-[#191919] text-lg space-y-4">
-                <li><strong>Augmented Reality (AR) & Virtual Reality (VR):</strong> These immersive experiences will become more common, especially in e-commerce and training applications.</li>
-                <li><strong>Biometric Authentication:</strong> Facial recognition and fingerprint scanning will enhance security and improve user convenience.</li>
-                <li><strong>Personalized Experiences:</strong> Designs will increasingly adapt to user preferences and behaviors, offering tailored experiences.</li>
-                <li><strong>Motion Design:</strong> Using animations to guide users through tasks and create a more dynamic interface.</li>
-                <li><strong>3D Elements:</strong> Integrating 3D visuals to make designs more engaging and interactive.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Call-to-Action Section */}
-          <div className="mt-16 p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg">
-            <h3 className="text-3xl font-semibold text-[#333]">Ready to Elevate Your Digital Presence with Outstanding UI/UX?</h3>
-            <p className="text-lg text-[#191919] mt-4 leading-relaxed">
-              Our team specializes in creating intuitive, engaging, and visually appealing user interfaces. Let’s work together to craft an experience that not only meets but exceeds user expectations.
-            </p>
-            <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#8037ff] transition duration-300 ease-in-out">
-              Contact Us
-            </button>
-          </div>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Persona Development</li>
+            <li>User Surveys and Interviews</li>
+            <li>Competitor Analysis</li>
+            <li>Journey Mapping: Analyze how users interact with your product to optimize key touchpoints.</li>
+            <li>Data-Driven Insights: Leverage analytics to guide design decisions and enhance user satisfaction.</li>
+          </ul>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Wireframing Section */}
+      <motion.div
+        className="flex flex-col md:flex-row-reverse items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #ff7eb3, #ff4d4d)', color: 'white' }}
+      >
+        <img
+          src={wireframing}
+          alt="Wireframing"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">Wireframing</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Lay the foundation for seamless user experiences by planning out the structure and flow of your application.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Low-Fidelity Wireframes</li>
+            <li>Information Architecture</li>
+            <li>Clickable Prototypes</li>
+            <li>Navigation Flow: Ensure intuitive and efficient navigation throughout your platform.</li>
+            <li>Collaborative Approach: Work closely with stakeholders to align wireframes with business objectives.</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Prototyping Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={prototyping}
+          alt="Prototyping"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">Prototyping</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Bring your ideas to life with interactive prototypes, ensuring the final product meets user expectations and goals.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Interactive Mockups</li>
+            <li>User Testing and Feedback</li>
+            <li>Design Iterations</li>
+            <li>Cross-Device Compatibility: Validate the prototype on various devices to ensure a consistent experience.</li>
+            <li>Animation and Transition Testing: Explore animations and transitions to make the interface engaging.</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Why Choose Us Section */}
+      <motion.div
+        className="text-center px-6 md:px-16 py-16"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #ff7eb3, #ff4d4d)', color: 'white' }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Why Choose Our UI/UX Design Services?
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+          From ideation to implementation, we ensure user satisfaction with functional and aesthetic designs that align with your brand.
+        </p>
+        <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6 max-w-3xl mx-auto">
+          <li>Innovative and User-Centric Approach</li>
+          <li>Seamless Collaboration with Development Teams</li>
+          <li>Attention to Detail in Every Design Element</li>
+          <li>Accessibility Standards: Ensure your product is inclusive and accessible to all users.</li>
+          <li>Timely Delivery: We stick to timelines without compromising on quality.</li>
+        </ul>
+      </motion.div>
+
+      {/* Call-to-Action Card */}
+      <motion.div
+        className="text-center px-6 py-12 bg-gradient-to-r from-pink-700 to-red-800 shadow-lg"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl md:text-4xl font-bold mb-4">
+          Ready to Elevate Your Digital Experiences?
+        </h3>
+        <p className="text-lg md:text-xl leading-relaxed mb-8">
+          Partner with us to craft innovative designs that drive engagement and deliver results. Let's create something extraordinary together!
+        </p>
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+          Contact Us
+        </button></a>
+      </motion.div>
     </section>
   );
 };

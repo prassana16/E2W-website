@@ -4,7 +4,7 @@ import { BackgroundLines } from "./ui/background-lines";
 import { cn } from "../../lib/utils";
 
 export function FlipWordswebsite() {
-  const words = ["better", "cute", "beautiful", "modern"];
+  const words = ["Better", "Responsive", "Awesome", "Modern"];
 
   return (
     <BackgroundLines className="relative h-[25rem] md:h-[40rem] inset-0 flex justify-center items-center px-4 w-full">
