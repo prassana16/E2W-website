@@ -46,7 +46,7 @@ export const StickyScroll = ({
       style={{
         background: 'radial-gradient(ellipse at center, #6c008100, #6c008100)'
       }}
-      className="h-[100vh] overflow-y-auto flex justify-between md:justify-around relative space-x-1 md:space-x-10 p-4 md:p-10"
+      className="h-[50vh] md:h-[100vh] overflow-y-auto flex justify-between md:justify-around relative space-x-1 md:space-x-10 p-4 md:p-10"
       ref={ref}
     >
       <div className="flex items-start px-4 py-10">
@@ -72,12 +72,12 @@ export const StickyScroll = ({
               </motion.p>
             </motion.div>
           ))}
-          <div className="h-96" /> {/* Increased height for padding at end */}
+          <div className="h-10" /> {/* Increased height for padding at end */}
         </div>
       </div>
       <div
         className={cn(
-          "block h-80 w-96 md:w-[50%] md:h-96 rounded-lg shadow-lg bg-white sticky top-10 overflow-hidden",
+          "block h-80 w-96 md:w-[50%] md:h-96 sticky top-10 ",
           contentClassName
         )}
       >

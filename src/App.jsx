@@ -53,6 +53,7 @@ function App() {
           <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />
+          
           <Intro />
           <AboutPWA />
           <ClientSlider />
