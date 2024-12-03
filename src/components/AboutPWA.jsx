@@ -71,7 +71,7 @@ function AboutPWA() {
   <div className="flex flex-col md:flex-row ">
     {/* Left Column */}
     <motion.div
-      className="flex flex-col items-center justify-center p-4 md:p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full max-w-xl md:max-w-7xl mx-4 "
+      className="flex flex-col items-center justify-center p-4 md:p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full max-w-xl md:max-w-7xl  "
       initial={{ opacity: 0, y: -100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5 }}
