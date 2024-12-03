@@ -14,22 +14,88 @@ const WebAppDevelopment = () => {
   return (
     <section className="min-h-screen flex flex-col items-center  font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
       {/* E-commerce Platforms Section */}
-<motion.div
-  className="flex flex-col  items-center justify-between gap-6 w-full p-6 h-full"
-  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.1 }}
->
-  <div className="flex flex-col justify-center  text-center mb-16">
-    <h2 className="text-xl md:text-4xl font-semibold text-white mb-4">Web Application Development</h2>
-    <p className="text-sm md:text-lg leading-relaxed">
-      Web application development is essential for creating digital platforms that offer interactive, engaging, and user-centric experiences. We specialize in building scalable and responsive solutions tailored to meet diverse business needs.
-    </p>
-    
+  <motion.div
+    className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.1 }}
+  >
+    <div className="text-center max-w-6xl">
+      <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">Web Application Development</h2>
+      <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
+        Web application development is essential for creating digital platforms that offer interactive, engaging, and user-centric experiences. We specialize in building scalable and responsive solutions tailored to meet diverse business needs.
+      </p>
     </div>
-    
-    </motion.div>
+
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
+      {/* Cards */}
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Understanding Your Business Goals</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          Every successful web application starts with a deep understanding of your business objectives. Our team collaborates with you to identify your goals, target audience, and the core purpose of your application.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Innovative Technology Stack</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          Our expertise spans modern frameworks like React.js, Angular, and Vue.js for front-end development, and Node.js, Python, and .NET for the back-end. We ensure your web app is fast, reliable, and secure.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable and Responsive Design</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          We craft applications that perform seamlessly across devices and can scale with your business as it grows. Our designs provide an intuitive experience for users on any device.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Focus on Security</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          Our development process includes advanced security protocols, data encryption, and regular vulnerability assessments to protect your users' information.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Custom Features and Integrations</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          From integrating third-party APIs to implementing payment gateways, we ensure your application is equipped with all the functionalities needed to succeed.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Agile Development Process</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          By following an agile development process, we provide regular updates, allowing you to review progress and suggest changes at every stage of the development cycle.
+        </p>
+      </div>
+
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Post-Development Support</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          We provide post-development support and maintenance to ensure your application remains updated, bug-free, and performs optimally.
+        </p>
+      </div>
+
+      {/* New Card 1 */}
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics and Insights</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          Gain valuable insights with integrated analytics tools. Track user engagement, monitor performance, and make data-driven decisions to enhance your web application’s effectiveness.
+        </p>
+      </div>
+
+      {/* New Card 2 */}
+      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+        <h3 className="text-lg md:text-2xl font-bold mb-2">Continuous Improvement</h3>
+        <p className="text-sm md:text-base leading-relaxed">
+          We prioritize long-term success by offering continuous improvement plans. With regular updates and feature enhancements, your application stays relevant and competitive.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+
   
   
   <motion.div
@@ -47,6 +113,13 @@ const WebAppDevelopment = () => {
     <p className="text-lg leading-relaxed">
       Developing robust e-commerce solutions to help businesses reach customers worldwide, providing a seamless shopping experience and secure transaction handling.
     </p>
+    <ul className="list-disc list-inside text-lg mt-4">
+              <li>Customizable product catalogs</li>
+              <li>Secure payment gateways</li>
+              <li>Inventory management tools</li>
+              <li>User-friendly interfaces for seamless shopping</li>
+              <li>Real-time order tracking</li>
+            </ul>
   </div>
   </div>
 </motion.div>
@@ -66,6 +139,11 @@ const WebAppDevelopment = () => {
           <p className="text-lg leading-relaxed">
             Building user-friendly CMS platforms to streamline content creation and management, enabling businesses to maintain control over their digital assets.
           </p>
+          <ul className="list-disc list-inside text-lg mt-4">
+            <li>Organize, edit, and publish content efficiently</li>
+            <li>Manage blogs, articles, and media files</li>
+            <li>Easy integration with third-party tools</li>
+          </ul>
         </div>
         <img src={cms} alt="Content Management Systems" className="w-full md:w-1/2 rounded-lg" />
       </motion.div>
@@ -84,6 +162,11 @@ const WebAppDevelopment = () => {
           <p className="text-lg leading-relaxed">
             Creating CRM systems to manage customer interactions, improve customer satisfaction, and foster long-term relationships with tailored engagement solutions.
           </p>
+          <ul className="list-disc list-inside text-lg mt-4">
+            <li>Track leads and sales processes</li>
+            <li>Improve customer satisfaction with personalized interactions</li>
+            <li>Automate repetitive tasks</li>
+          </ul>
         </div>
       </motion.div>
 
@@ -101,6 +184,11 @@ const WebAppDevelopment = () => {
           <p className="text-lg leading-relaxed">
             Developing scalable enterprise applications to enhance operational efficiency, collaboration, and data management across various departments.
           </p>
+          <ul className="list-disc list-inside text-lg mt-4">
+            <li>Departmental integration</li>
+            <li>Data management and analytics</li>
+            <li>Efficient collaboration tools</li>
+          </ul>
         </div>
         <img src={enterprise} alt="Enterprise Solutions" className="w-full md:w-1/2 rounded-lg" />
       </motion.div>

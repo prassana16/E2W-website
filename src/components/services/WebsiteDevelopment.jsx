@@ -19,19 +19,95 @@ const WebsiteDevelopment = () => {
     <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
       {/* Introduction Section */}
       <motion.div
-        className="flex flex-col items-center justify-between gap-6 w-full p-6 h-full"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-      >
-        <div className="flex flex-col justify-center text-center mb-16">
-          <h2 className="text-xl md:text-4xl font-semibold text-white mb-4">Website Development</h2>
-          <p className="text-sm md:text-lg leading-relaxed">
-            Website development is at the core of a strong digital presence. We specialize in creating modern, responsive, and visually appealing websites that enhance user experience and drive engagement.
-          </p>
-        </div>
-      </motion.div>
+  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.1 }}
+>
+  <div className="text-center max-w-6xl">
+    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
+      Website Development
+    </h2>
+    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
+      Website development is at the heart of establishing your online presence. We design and build modern, user-friendly, and performance-driven websites that effectively communicate your brand and engage your audience.
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
+    {/* Cards */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Tailored Solutions</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We understand that every business is unique. Our team crafts custom websites that align with your brand, vision, and specific requirements.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Responsive Design</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Our websites are designed to adapt seamlessly to all devices, ensuring an exceptional user experience on desktops, tablets, and mobile phones.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">SEO Optimization</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We build websites optimized for search engines, helping you improve visibility and drive organic traffic to your site.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Content Management Systems</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We integrate robust content management systems like WordPress, Drupal, and Joomla, empowering you to manage your content with ease.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Performance Optimization</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Speed and performance matter. Our websites are optimized to load quickly, ensuring a smooth browsing experience for your users.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">E-Commerce Solutions</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        From intuitive product catalogs to secure payment systems, we create e-commerce websites that convert visitors into customers.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics Integration</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We incorporate analytics tools that help you monitor traffic, understand user behavior, and make data-driven decisions.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Security and Maintenance</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Protect your website with advanced security measures. We also offer ongoing maintenance to keep your site updated and running smoothly.
+      </p>
+    </div>
+
+    {/* New Card 1 */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">User-Centric Approach</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Our design philosophy centers on user experience. We ensure your website is intuitive, engaging, and aligned with your users' expectations.
+      </p>
+    </div>
+
+    {/* New Card 2 */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable Architecture</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        As your business grows, your website should too. We build scalable websites that evolve with your needs.
+      </p>
+    </div>
+  </div>
+</motion.div>
 
       {/* Portfolio Website Section */}
       <motion.div
@@ -41,6 +117,7 @@ const WebsiteDevelopment = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
+       
         <img src={portfolioSite} alt="Portfolio Websites" className="w-full md:w-1/2 rounded-lg" />
         <div className="flex flex-col justify-center md:w-1/2">
           <h3 className="text-xl md:text-3xl font-semibold mb-4 text-center">Portfolio Websites</h3>

@@ -20,19 +20,96 @@ const MobileAppDevelopment = () => {
     >
       {/* Mobile App Development Section */}
       <motion.div
-        className="flex flex-col items-center justify-between gap-6 w-full p-6 h-full"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-      >
-        <div className="flex flex-col justify-center text-center mb-16">
-          <h2 className="text-xl md:text-4xl font-semibold text-white mb-4">Mobile App Development</h2>
-          <p className="text-sm md:text-lg leading-relaxed">
-            Crafting innovative and user-friendly mobile applications for various platforms, ensuring seamless experiences and exceptional performance tailored to meet unique business needs.
-          </p>
-        </div>
-      </motion.div>
+  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.1 }}
+>
+  <div className="text-center max-w-6xl">
+    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
+      Mobile App Development
+    </h2>
+    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
+      Mobile app development transforms ideas into functional, user-friendly applications. We specialize in creating innovative and scalable mobile apps that meet the unique needs of businesses and their users.
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
+    {/* Cards */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Custom Mobile Solutions</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We build tailored mobile applications designed to address your specific business challenges and create seamless user experiences.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Native and Cross-Platform Development</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Whether it's iOS, Android, or cross-platform, we deliver high-performance apps that run smoothly on any device.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">User-Centric Design</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Our design process prioritizes usability and aesthetics to create intuitive apps that captivate and engage users.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Robust Backend Development</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We develop scalable back-end systems using secure and efficient architectures to support your mobile app's functionality.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Third-Party Integrations</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        From payment gateways to social media APIs, we ensure seamless integration with third-party services to enhance app functionality.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Focus on Performance</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Our apps are optimized for speed, reliability, and performance to ensure a flawless user experience across devices.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Advanced Security Features</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        We prioritize app security by implementing data encryption, authentication, and regular security assessments to protect user data.
+      </p>
+    </div>
+
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Agile Development Approach</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Our agile process ensures transparent communication and iterative updates to deliver your app on time and within budget.
+      </p>
+    </div>
+
+    {/* New Card 1 */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Post-Launch Support</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        After deployment, we provide ongoing support and updates to ensure your app remains current and fully functional.
+      </p>
+    </div>
+
+    {/* New Card 2 */}
+    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+      <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics and Insights</h3>
+      <p className="text-sm md:text-base leading-relaxed">
+        Track app usage, monitor performance, and make data-driven improvements with integrated analytics tools.
+      </p>
+    </div>
+  </div>
+</motion.div>
+
 
       {/* Native Apps Section */}
       <motion.div
