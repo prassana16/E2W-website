@@ -56,105 +56,106 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#022b54] p-8 rounded-lg shadow-lg text-[#F7F2E7] w-[95%] md:w-2/3 lg:w-1/2 mx-auto my-10">
-      <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
-      <p className="text-lg text-center mb-8">We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.</p>
+    <div className="flex flex-col items-center bg-[#471c64] p-8 rounded-lg shadow-lg text-[#F7F2E7] w-[95%] md:w-2/3 lg:w-1/2 mx-auto my-10">
+  <h2 className="text-3xl font-bold mb-4 text-center text-[#FFD700]">Contact Us</h2>
+  <p className="text-lg text-center mb-8 text-[#F5F1FF]">We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.</p>
 
-      {isSubmitted ? (
-        <div className="text-center">
-          <h3 className="text-2xl text-[#FFD700] mb-4">Thank You!</h3>
-          <p>Your message has been sent. We’ll be in touch soon.</p>
-          <button onClick={() => setIsSubmitted(false)} className="mt-4 bg-[#FFD700] text-[#022b54] px-4 py-2 rounded-md font-semibold">
-            Send Another Message
-          </button>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="w-full space-y-6">
-          <div className="flex items-center bg-[#001d3a] rounded-md p-3">
-            <AiOutlineUser className="text-[#FFD700] mr-2" />
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="bg-transparent outline-none text-[#F7F2E7] w-full"
-            />
-          </div>
-
-          <div className="flex items-center bg-[#001d3a] rounded-md p-3">
-            <AiOutlineMail className="text-[#FFD700] mr-2" />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="bg-transparent outline-none text-[#F7F2E7] w-full"
-            />
-          </div>
-
-          <div className="flex items-center bg-[#001d3a] rounded-md p-3">
-            <AiOutlinePhone className="text-[#FFD700] mr-2" />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="bg-transparent outline-none text-[#F7F2E7] w-full"
-            />
-          </div>
-
-          <div className="flex items-start bg-[#001d3a] rounded-md p-3">
-            <MdOutlineMessage className="text-[#FFD700] mt-1 mr-2" />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="bg-transparent outline-none text-[#F7F2E7] w-full h-24 resize-none"
-            ></textarea>
-          </div>
-
-          <div className="bg-[#001d3a] rounded-md p-3">
-            <button
-              type="button"
-              onClick={() => setShowDropdown(!showDropdown)}
-              className="w-full text-center text-[#FFD700] py-2 rounded font-semibold hover:bg-[#002f5a] transition duration-300"
-            >
-              Select Services
-            </button>
-            {showDropdown && (
-              <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
-                {["Web Application Development", "Website Development", "Mobile App Development", "SEO Services", "Cloud App Development", "SaaS", "UI/UX Development", "Quality Assurance", "Staff Augmentation"].map((service, index) => (
-                  <label key={index} className="flex items-center text-sm md:text-base">
-                    <input
-                      type="checkbox"
-                      name="services"
-                      value={service}
-                      onChange={handleChange}
-                      checked={formData.services.includes(service)}
-                      className="mr-2"
-                    />
-                    {service}
-                  </label>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <button type="submit" className="bg-[#FFD700] text-[#022b54] w-full py-3 rounded-md font-semibold hover:bg-[#ffcc00] transition duration-300">
-            Submit
-          </button>
-          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
-        </form>
-      )}
+  {isSubmitted ? (
+    <div className="text-center">
+      <h3 className="text-2xl text-[#FFD700] mb-4">Thank You!</h3>
+      <p className="text-[#F5F1FF]">Your message has been sent. We’ll be in touch soon.</p>
+      <button onClick={() => setIsSubmitted(false)} className="mt-4 bg-[#FFD700] text-[#471c64] px-4 py-2 rounded-md font-semibold hover:bg-[#ffcc00]">
+        Send Another Message
+      </button>
     </div>
+  ) : (
+    <form onSubmit={handleSubmit} className="w-full space-y-6">
+      <div className="flex items-center bg-[#5e276e] rounded-md p-3">
+        <AiOutlineUser className="text-[#FFD700] mr-2" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="bg-transparent outline-none text-[#F7F2E7] w-full placeholder-[#F5F1FF]"
+        />
+      </div>
+
+      <div className="flex items-center bg-[#5e276e] rounded-md p-3">
+        <AiOutlineMail className="text-[#FFD700] mr-2" />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="bg-transparent outline-none text-[#F7F2E7] w-full placeholder-[#F5F1FF]"
+        />
+      </div>
+
+      <div className="flex items-center bg-[#5e276e] rounded-md p-3">
+        <AiOutlinePhone className="text-[#FFD700] mr-2" />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          className="bg-transparent outline-none text-[#F7F2E7] w-full placeholder-[#F5F1FF]"
+        />
+      </div>
+
+      <div className="flex items-start bg-[#5e276e] rounded-md p-3">
+        <MdOutlineMessage className="text-[#FFD700] mt-1 mr-2" />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="bg-transparent outline-none text-[#F7F2E7] w-full h-24 resize-none placeholder-[#F5F1FF]"
+        ></textarea>
+      </div>
+
+      <div className="bg-[#5e276e] rounded-md p-3">
+        <button
+          type="button"
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="w-full text-center text-[#FFD700] py-2 rounded font-semibold hover:bg-[#5e276e]"
+        >
+          Select Services
+        </button>
+        {showDropdown && (
+          <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#471c64] max-h-40 overflow-y-auto">
+            {["Web Application Development", "Website Development", "Mobile App Development", "SEO Services", "Cloud App Development", "SaaS", "UI/UX Development", "Quality Assurance", "Staff Augmentation"].map((service, index) => (
+              <label key={index} className="flex items-center text-sm md:text-base">
+                <input
+                  type="checkbox"
+                  name="services"
+                  value={service}
+                  onChange={handleChange}
+                  checked={formData.services.includes(service)}
+                  className="mr-2"
+                />
+                {service}
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <button type="submit" className="bg-[#FFD700] text-[#471c64] w-full py-3 rounded-md font-semibold hover:bg-[#ffcc00] transition duration-300">
+        Submit
+      </button>
+      {error && <p className="text-[#FF6B6B] mt-4 text-center">{error}</p>}
+    </form>
+  )}
+</div>
+
   );
 };
 

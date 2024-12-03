@@ -63,6 +63,10 @@ function App() {
             <ContactPopup />
           </>
         } />
+        <Route path="/OurSolutions" element={
+          <E2wProduct />
+          
+      }/>
         {/* blog page */}
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/article/:id" element={<ArticleContent />} />

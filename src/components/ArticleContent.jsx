@@ -4,7 +4,22 @@ import GPTImage from "../assets/images/GPT5Main.jpg"; // Image for the overlay
 import Quantom from "../assets/images/quantum.jpg"
 import web3 from "../assets/images/wed3.jpg"
 import trends from "../assets/images/tech-trends.jpg"
-
+import AIDigi from '../assets/images/Blog-img/AI-digi.jpg';
+import Automation from '../assets/images/Blog-img/Automation.jpg';
+import BrandStorytelling from '../assets/images/Blog-img/Brand-Storytelling.jpg';
+import Chatbots from '../assets/images/Blog-img/Chatbots.jpg';
+import CloudComp from '../assets/images/Blog-img/Cloud-comp.jpg';
+import ContentMarketing from '../assets/images/Blog-img/Content-Marketing.jpg';
+import Cybersecurity from '../assets/images/Blog-img/Cybersecurity.jpg';
+import DataAnalytics from '../assets/images/Blog-img/Data Analytics.jpg';
+import EvolutionDigi from '../assets/images/Blog-img/Evolution-digi.jpg';
+import MasteringSEO from '../assets/images/Blog-img/Mastering-SEO.jpg';
+import MobileFirst from '../assets/images/Blog-img/Mobile-First.jpg';
+import PPCAdvertising from '../assets/images/Blog-img/PPC-Advertising.jpg';
+import PWAs from '../assets/images/Blog-img/PWAs.jpg';
+import RoleOfUIUX from '../assets/images/Blog-img/Role-of-UIUX.jpg';
+import SmallBusinesses from '../assets/images/Blog-img/Small-Businesses.jpg';
+import VoiceSearch from '../assets/images/Blog-img/Voice-Search.jpg';
 const ArticleContent = () => {
   const { id } = useParams(); // Get the article ID from the URL
 
@@ -385,7 +400,7 @@ const ArticleContent = () => {
     {
       id: 5,
       title: "Mastering SEO in 2024: Top Strategies for Success",
-      image: trends, // Placeholder for the overlay image
+      image: MasteringSEO, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Evolution of Search Algorithms",
@@ -483,7 +498,7 @@ const ArticleContent = () => {
     {
       id: 6,
       title: "The Evolution of Digital Marketing: Trends for the Next Decade",
-      image: GPTImage, // Placeholder for the overlay image
+      image: EvolutionDigi, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Shift to Hyper-Personalization",
@@ -572,7 +587,7 @@ const ArticleContent = () => {
     {
       id: 7,
       title: "Cloud Computing in 2024: The Future of Scalable Solutions",
-      image: GPTImage, // Placeholder for the overlay image
+      image: CloudComp, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Dominance of Multi-Cloud Strategies",
@@ -661,7 +676,7 @@ const ArticleContent = () => {
     {
       id: 8,
       title: "The Role of UI/UX in Modern Web Design",
-      image: GPTImage, // Placeholder for the overlay image
+      image: RoleOfUIUX, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Fusion of Aesthetics and Functionality",
@@ -742,7 +757,7 @@ const ArticleContent = () => {
     {
       id: 9,
       title: "Cybersecurity in 2024: Protecting Your Business in the Digital Age",
-      image: GPTImage, // Placeholder for the overlay image
+      image: Cybersecurity, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Growing Importance of Cybersecurity",
@@ -823,7 +838,7 @@ const ArticleContent = () => {
     {
       id: 10,
       title: "Mobile-First Strategies: How to Build for the Future",
-      image: GPTImage, // Placeholder for the overlay image
+      image: MobileFirst, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Shift to Mobile-First Design",
@@ -894,7 +909,7 @@ const ArticleContent = () => {
     {
       id: 11,
       title: "How AI is Transforming Digital Marketing Campaigns",
-      image: GPTImage, // Placeholder for the overlay image
+      image: AIDigi, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Personalization at Scale",
@@ -969,7 +984,7 @@ const ArticleContent = () => {
     {
       id: 12,
       title: "Data Analytics: Turning Numbers into Business Insights",
-      image: GPTImage, // Placeholder for the overlay image
+      image: DataAnalytics, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Role of Data in Decision-Making",
@@ -1000,7 +1015,7 @@ const ArticleContent = () => {
     {
       id: 13,
       title: "Chatbots and Beyond: The Future of Customer Engagement",
-      image: GPTImage, // Placeholder for the overlay image
+      image: Chatbots, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Evolution of Chatbots in Customer Interaction",
@@ -1031,7 +1046,7 @@ const ArticleContent = () => {
     {
       id: 14,
       title: "PPC Advertising Trends: Maximizing ROI in 2024",
-      image: GPTImage, // Placeholder for the overlay image
+      image: PPCAdvertising, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Advanced Targeting with AI",
@@ -1062,7 +1077,7 @@ const ArticleContent = () => {
     {
       id: 15,
       title: "The Importance of Brand Storytelling in Digital Marketing",
-      image: GPTImage, // Placeholder for the overlay image
+      image: BrandStorytelling, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Building Emotional Connections",
@@ -1093,7 +1108,7 @@ const ArticleContent = () => {
     {
       id: 16,
       title: "The Rise of Progressive Web Apps (PWAs)",
-      image: GPTImage, // Placeholder for the overlay image
+      image: PWAs, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. What Are PWAs?",
@@ -1124,7 +1139,7 @@ const ArticleContent = () => {
     {
       id: 17,
       title: "Voice Search Optimization: Are You Ready for the Future?",
-      image: GPTImage, // Placeholder for the overlay image
+      image: VoiceSearch, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. The Growth of Voice Search",
@@ -1155,7 +1170,7 @@ const ArticleContent = () => {
     {
       id: 18,
       title: "The Role of Automation in Digital Marketing",
-      image: GPTImage, // Placeholder for the overlay image
+      image: Automation, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Streamlining Marketing Operations",
@@ -1186,7 +1201,7 @@ const ArticleContent = () => {
     {
       id: 19,
       title: "Building a Strong Online Presence for Small Businesses",
-      image: GPTImage, // Placeholder for the overlay image
+      image: SmallBusinesses, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Developing a User-Friendly Website",
@@ -1235,7 +1250,7 @@ const ArticleContent = () => {
     {
       id: 20,
       title: "Content Marketing Strategies for 2024: What Works Now",
-      image: GPTImage, // Placeholder for the overlay image
+      image: ContentMarketing, // Placeholder for the overlay image
       content: [
         {
           subtitle: "1. Creating High-Quality, Long-Form Content",

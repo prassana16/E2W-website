@@ -13,7 +13,7 @@ function Testimonials() {
         
         {/* Testimonial Card: Baleen Media */}
         <motion.div
-          className="px-5 rounded-xl border  border-r-4 border-b-4 drop-shadow-md text-neutral-900 border-purple-800"
+          className="px-5 rounded-xl border-2 border-purple-900  text-neutral-900"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -35,7 +35,7 @@ function Testimonials() {
 
         {/* Testimonial Card: Grace Scans */}
         <motion.div
-          className="px-5 rounded-xl border border-purple-800 drop-shadow-md text-neutral-900 border-r-4 border-b-4"
+          className="px-5 rounded-xl border-2 border-purple-900  text-neutral-900 "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
