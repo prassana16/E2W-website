@@ -20,15 +20,15 @@ export function ClientSlider() {
             key={index}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="w-[300px]  rounded-lg shadow-lg p-4 flex items-center"
-            style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+            className="w-[300px]  rounded-lg shadow-lg p-4 flex items-center border border-purple-800 "
+            
           >
             <img
               src={item.image}
               alt={item.title}
               className=" h-16 rounded object-cover mr-4"
             />
-            <h3 className="text-lg md:text-2xl font-bold text-neutral-100">{item.title}</h3>
+            <h3 className="text-lg md:text-2xl font-bold text-neutral-900">{item.title}</h3>
           </motion.div>
         ))}
 

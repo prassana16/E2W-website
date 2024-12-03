@@ -50,7 +50,7 @@ function App() {
         <Route path="/" element={
           <>
           <BackgroundBoxesDemo />
-          <Banner/>
+          <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />
           

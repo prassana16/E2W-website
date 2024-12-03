@@ -1,85 +1,217 @@
 import React from 'react';
-import { FaDesktop } from "react-icons/fa"; // Changed icon to desktop for website development
 import { motion } from 'framer-motion';
+import portfolioSite from '../../assets/images/portfolio-site.png';
+import newsSite from '../../assets/images/newsSite.png';
+import communityForum from '../../assets/images/communityForum.png';
+import blogSite from '../../assets/images/blog-site.png';
+import businessSite from '../../assets/images/business-site.png';
+import personalSite from '../../assets/images/personal-site.png';
+import gracesite from '../../assets/images/gracescans-site.png';
+import baleensite from '../../assets/images/baleensite.png';
 
 const WebsiteDevelopment = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#FA4032] via-[#FF6F59] to-[#FFB6A5] py-16 px-4 font-mono">
+    <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
+      {/* Introduction Section */}
+      <motion.div
+        className="flex flex-col items-center justify-between gap-6 w-full p-6 h-full"
+        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        <div className="flex flex-col justify-center text-center mb-16">
+          <h2 className="text-xl md:text-4xl font-semibold text-white mb-4">Website Development</h2>
+          <p className="text-sm md:text-lg leading-relaxed">
+            Website development is at the core of a strong digital presence. We specialize in creating modern, responsive, and visually appealing websites that enhance user experience and drive engagement.
+          </p>
+        </div>
+      </motion.div>
 
-  <div className="flex flex-col items-center md:flex-row md:items-start gap-12 max-w-screen-lg w-full">
+      {/* Portfolio Website Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        <img src={portfolioSite} alt="Portfolio Websites" className="w-full md:w-1/2 rounded-lg" />
+        <div className="flex flex-col justify-center md:w-1/2">
+          <h3 className="text-xl md:text-3xl font-semibold mb-4 text-center">Portfolio Websites</h3>
+          <p className="text-lg leading-relaxed">
+            Showcase your work and achievements with a professionally designed portfolio website. Perfect for freelancers, artists, and professionals looking to stand out.
+          </p>
+        </div>
+      </motion.div>
 
-    {/* Icon and Intro Section */}
-    <motion.div 
-      className="text-6xl text-[#333]"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
+      {/* News Websites Section */}
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">News Websites</h3>
+    <p className="text-lg leading-relaxed">
+      Create visually appealing and highly functional news websites that provide real-time updates, seamless categorization, and engaging content layouts to keep readers informed.
+    </p>
+  </div>
+  <img src={newsSite} alt="News Websites" className="w-full md:w-1/2 rounded-lg" />
+</motion.div>
+
+{/* Community Forums Section */}
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3 }}
+>
+  <img src={communityForum} alt="Community Forums" className="w-full md:w-1/2 rounded-lg" />
+  <div className="flex flex-col justify-center md:w-1/2">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Community Forums</h3>
+    <p className="text-lg leading-relaxed">
+      Build interactive community forums designed to foster communication and collaboration, with features like threaded discussions, user profiles, and moderation tools.
+    </p>
+  </div>
+</motion.div>
+
+
+      {/* Blog Websites Section */}
+      <motion.div
+        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <div className="flex flex-col justify-center md:w-1/2">
+          <h3 className="text-xl md:text-3xl font-semibold mb-4">Blog Websites</h3>
+          <p className="text-lg leading-relaxed">
+            Create engaging blog websites with user-friendly interfaces, perfect for sharing ideas, tutorials, or news while keeping readers hooked.
+          </p>
+        </div>
+        <img src={blogSite} alt="Blog Websites" className="w-full md:w-1/2 rounded-lg" />
+      </motion.div>
+
+      {/* Business Websites Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <img src={businessSite} alt="Business Websites" className="w-full md:w-1/2 rounded-lg" />
+        <div className="flex flex-col justify-center md:w-1/2">
+          <h3 className="text-xl md:text-3xl font-semibold mb-4">Business Websites</h3>
+          <p className="text-lg leading-relaxed">
+            Empower your business with a professional website that communicates your brand, services, and values effectively to your audience.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Personal Websites Section */}
+      <motion.div
+        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        <div className="flex flex-col justify-center md:w-1/2">
+          <h3 className="text-xl md:text-3xl font-semibold mb-4">Personal Websites</h3>
+          <p className="text-lg leading-relaxed">
+            Share your personal story, projects, and achievements with a beautifully designed personal website tailored to your style.
+          </p>
+        </div>
+        <img src={personalSite} alt="Personal Websites" className="w-full md:w-1/2 rounded-lg" />
+      </motion.div>
+
+      {/* Portfolio Section */}
+<div className="w-full flex flex-col items-center">
+  <div className="grid grid-cols-1  w-full">
+    {/* Wellness Section */}
+    <motion.div
+      className="p-6 shadow-lg text-center"
+      style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <FaDesktop /> {/* Website development icon */}
+      <h3 className="text-xl md:text-5xl text-gray-100 font-semibold text-center mb-6">
+        Our Portfolio
+      </h3>
+      <div className="flex justify-center mb-4">
+        <img
+          src={gracesite}
+          alt="Wellness"
+          className="w-[100%] md:w-[70%] object-contain" // 30% smaller than its original width
+        />
+      </div>
+      <h4 className="text-xl md:text-3xl font-semibold text-neutral-100">
+        Grace Scans 
+      </h4>
+      <p className="text-neutral-100 text-lg">
+      Business Website for Health Care industry.
+      </p>
     </motion.div>
 
-    <div>
-      {/* Header */}
-      <h2 className="text-4xl font-semibold text-[#000000] mb-4">Website Development</h2>
-      <p className="text-lg text-[#fff] leading-relaxed mb-10">
-        A well-crafted website is essential for any business in the digital age. We specialize in building responsive, SEO-friendly, and user-centered websites that leave a lasting impression on your audience and help drive business growth.
+    {/* Easy2Work Section */}
+    <motion.div
+      className="p-6 shadow-lg text-center"
+      style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="flex justify-center mb-4">
+        <img
+          src={baleensite}
+          alt="Easy2Work"
+          className="w-[100%] md:w-[70%] object-contain" // 30% smaller than its original width
+        />
+      </div>
+      <h4 className="text-xl md:text-3xl font-semibold text-neutral-100">
+       Baleen Media 
+      </h4>
+      <p className="text-neutral-100 text-lg">
+        Business Website for Ad Agency.
       </p>
-
-      {/* Key Features Section */}
-      <div className="grid grid-cols-1 gap-8">
-        <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-          <h3 className="text-2xl font-semibold text-[#333]">Key Features of Our Website Development Services:</h3>
-          <ul className="list-disc list-inside text-[#191919] text-lg leading-relaxed">
-            <li>Custom web design tailored to your brand</li>
-            <li>Responsive design for mobile and desktop users</li>
-            <li>SEO-friendly structure to enhance visibility</li>
-            <li>Fast-loading pages for optimal user experience</li>
-            <li>Content Management System (CMS) for easy updates</li>
-          </ul>
-        </div>
-
-        <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-          <h3 className="text-2xl font-semibold text-[#333]">Current Trends in Website Development</h3>
-          <p className="text-lg text-[#191919] leading-relaxed">
-            The world of website development is always changing. Here are some of the key trends shaping the industry:
-          </p>
-          <ul className="list-disc list-inside text-[#191919] text-lg space-y-4">
-            <li><strong>Mobile-First Design:</strong> Designing websites for mobile devices first has become the standard practice as mobile traffic rises.</li>
-            <li><strong>Minimalist Web Design:</strong> Clean, simple, and functional designs make it easier for users to navigate and find information.</li>
-            <li><strong>Voice Search Optimization:</strong> Optimizing websites for voice search is crucial to staying ahead of the curve.</li>
-            <li><strong>Interactive Content:</strong> Quizzes, animations, and videos engage users and improve retention.</li>
-            <li><strong>Security Enhancements:</strong> HTTPS, two-factor authentication, and other security measures are now a top priority.</li>
-          </ul>
-        </div>
-
-        <div className="p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg space-y-4">
-          <h3 className="text-2xl font-semibold text-[#333]">Future Trends in Website Development</h3>
-          <p className="text-lg text-[#191919] leading-relaxed">
-            The future of website development holds exciting possibilities with emerging technologies. Here are some trends to watch out for:
-          </p>
-          <ul className="list-disc list-inside text-[#191919] text-lg space-y-4">
-            <li><strong>AI-Powered Personalization:</strong> AI will provide personalized content based on user behavior and preferences.</li>
-            <li><strong>Progressive Web Apps (PWA):</strong> Blurring the lines between websites and mobile apps, PWAs offer app-like experiences through the browser.</li>
-            <li><strong>Dark Mode:</strong> Gaining popularity for being easier on the eyes and reducing battery usage on OLED screens.</li>
-            <li><strong>Motion UI:</strong> Dynamic animations and transitions engage visitors and provide an interactive experience.</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Call-to-Action Section */}
-      <div className="mt-16 p-6 bg-white bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg">
-        <h3 className="text-3xl font-semibold text-[#333]">Ready to Launch Your New Website?</h3>
-        <p className="text-lg text-[#191919] mt-4 leading-relaxed">
-          Our team is ready to build a stunning, functional website that meets your business needs. Let’s get started on creating a website that works for you and your customers.
-        </p>
-        <button className="mt-8 px-6 py-3 bg-[#333] text-white text-lg rounded-lg shadow-md hover:bg-[#FF4545] transition duration-300 ease-in-out">
-          Contact Us
-        </button>
-      </div>
-    </div>
+    </motion.div>
   </div>
-</section>
+</div>
 
+      {/* Call-to-Action Card */}
+      <div className="w-full">
+        <motion.div
+          className="p-10 shadow-lg text-center flex flex-col items-center"
+          style={{ background: 'linear-gradient(to bottom, #001831, #59257c )' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="text-xl md:text-3xl font-semibold text-neutral-100 mb-4">Ready to Build Your Website?</h3>
+          <p className="text-sm md:text-lg text-neutral-100 mb-8">
+            Let us help you create a stunning website that drives results. Contact our team today to get started!
+          </p>
+          <a href="/ContactForm">
+            <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#1e7c32] transition duration-300 ease-in-out">
+              Contact Us
+            </button>
+          </a>
+          <div className="border-b border-[#f8d996] pt-16 md:w-[85%] w-full text-center"></div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
