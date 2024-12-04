@@ -51,7 +51,7 @@ export const StickyScroll = ({
 >
   {/* Left Side: Scrollable Descriptions */}
   <div
-    className=" overflow-y-auto pr-20 px-1 py-6 md:py-10 max-h-[calc(100vh-20px)]"
+    className=" overflow-y-auto pr-24 px-1 py-6 md:py-10 max-h-[calc(100vh-20px)]"
     style={{
       scrollbarWidth: 'none', // Hide scrollbar for Firefox
     }}
