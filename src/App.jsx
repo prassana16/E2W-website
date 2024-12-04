@@ -13,6 +13,7 @@ import Faq from './components/Faq';
 import AboutPWA from './components/AboutPWA';
 import ContactPopup from './components/ContactPopup';
 import ContactForm from './components/ContactUs';
+import AboutE2w from './components/AboutE2w';
 // services
 import MobileAppDevelopment from './components/services/MobileAppDevelopment';
 import WebAppDevelopment from './components/services/WebAppDevelopment';
@@ -50,6 +51,7 @@ function App() {
         <Route path="/" element={
           <>
           <BackgroundBoxesDemo />
+          <AboutE2w />
           <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />

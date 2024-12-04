@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
+import { motion } from 'framer-motion';
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -33,9 +33,29 @@ const Faq = () => {
   ];
 
   return (
-    <section className="bg-[#F7F2E7] py-16">
+    <section className="bg-[#e2d0fd] pb-16">
+      {/* Decorative Animated Lines */}
+  <div className="w-full flex ">
+    {[...Array(26)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="h-[2px] w-full"
+        style={{ background: 'linear-gradient(to bottom, #f3f4f6, #f3f4f6)' }}
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatDelay: 1,
+          delay: i * 0.2,
+        }}
+      />
+    ))}
+  </div>
       
-      <div className=" container mx-auto px-4">
+      
+      <div className=" container mx-auto px-4 pt-16">
+        
         
        
         <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16 ">
@@ -44,12 +64,12 @@ const Faq = () => {
 
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-[#00264c] rounded-lg p-5">
+            <div key={index} className="border-2 border-purple-900 rounded-lg p-5">
               <div
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFAQ(index)}
               >
-                <h3 className="text-lg md:text-2xl font-semibold text-[#00264c]">
+                <h3 className="text-lg md:text-2xl font-semibold text-black">
                   {faq.question}
                 </h3>
                 <span className="text-[#00264c]">
@@ -62,7 +82,7 @@ const Faq = () => {
               </div>
 
               {activeIndex === index && (
-                <p className="mt-4 text-[#00264c] text-base md:text-lg font-mono">
+                <p className="mt-4 text-black text-base md:text-lg font-mono">
                   {faq.answer}
                 </p>
               )}

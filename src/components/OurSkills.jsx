@@ -26,7 +26,7 @@ const skills = [
 
 function OurSkills() {
   return (
-    <section className='relative bg-[#F7F2E7] py-16 flex flex-col items-center justify-center overflow-hidden'>
+    <section className='relative bg-[#f3f4f6] py-16 flex flex-col items-center justify-center overflow-hidden'>
       {/* Background image with blending */}
       <img
   src={bg}

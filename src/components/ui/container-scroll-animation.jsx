@@ -36,7 +36,7 @@ export const ContainerScroll = ({
     (<div
       className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
       ref={containerRef}>
-        <div className="w-full absolute inset-0 h-[60rem] md:h-[80rem] ">
+        <div className="w-full absolute inset-0 h-[60rem] md:h-[80rem] bg-gray-100 ">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"

@@ -4,7 +4,7 @@ import { RiStarSFill } from "react-icons/ri";
 
 function Testimonials() {
   return (
-    <section className="bg-[#F7F2E7] py-16 flex flex-col items-center justify-center px-3">
+    <section className="bg-gray-100 py-16 flex flex-col items-center justify-center px-3">
       <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">
         Testimonials
       </h2>

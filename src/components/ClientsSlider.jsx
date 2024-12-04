@@ -7,7 +7,7 @@ import Baleen from '../assets/images/thumbnail.png';
 
 export function ClientSlider() {
   return (
-    <div className="py-16 md:py-20 rounded-md flex flex-col antialiased bg-[#F7F2E7] dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="py-16 md:py-20 rounded-md flex flex-col antialiased bg-[#f3f4f6] dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       {/* Heading */}
       <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-Tinos mb-24'>
           Our clients

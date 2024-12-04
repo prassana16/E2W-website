@@ -194,39 +194,60 @@ const WebAppDevelopment = () => {
       </motion.div>
 
       {/* LMS Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
-        <img src={lms} alt="Learning Management Systems" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Learning Management Systems (LMS)</h3>
-          <p className="text-lg leading-relaxed">
-            Designing LMS platforms to facilitate online education and training programs, offering personalized learning experiences and progress tracking.
-          </p>
-        </div>
-      </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-8 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5 }}
+>
+  <img
+    src={lms}
+    alt="Learning Management Systems"
+    className="w-full md:w-1/2 rounded-lg shadow-lg"
+  />
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Learning Management Systems (LMS)</h3>
+    <p className="text-lg leading-relaxed mb-4">
+      Learning Management Systems are revolutionizing the way education and corporate training are delivered. We specialize in designing intuitive LMS platforms that cater to a wide variety of industries, providing tools to enhance the learning experience.
+    </p>
+    <ul className="list-disc list-inside text-lg">
+      <li className="mb-2">Personalized Learning Paths: Create tailored course structures to meet individual user needs.</li>
+      <li className="mb-2">Interactive Features: Integrate quizzes, polls, and live sessions to keep learners engaged.</li>
+      <li className="mb-2">Gamification: Boost motivation with badges, leaderboards, and achievement rewards.</li>
+      
+    </ul>
+  </div>
+</motion.div>
 
-      {/* Social Networking Apps Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Social Networking Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Building social networking applications that foster communication and community engagement with modern features and user-friendly interfaces.
-          </p>
-        </div>
-        <img src={social} alt="Social Networking Apps" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+{/* Social Networking Apps Section */}
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-8 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Social Networking Apps</h3>
+    <p className="text-lg leading-relaxed mb-4">
+      Social networking apps are pivotal in building connections, fostering communities, and enhancing communication. We excel in crafting feature-rich and user-friendly social platforms that meet the demands of modern users.
+    </p>
+    <ul className="list-disc list-inside text-lg">
+      <li className="mb-2">Customizable Profiles: Allow users to create and customize their profiles with ease.</li>
+      <li className="mb-2">Messaging and Chat: Integrate real-time chat, video calls, and group messaging features.</li>
+      <li className="mb-2">Content Sharing: Enable users to post and share multimedia content such as photos, videos, and stories.</li>
+      <li className="mb-2">Push Notifications: Keep users informed about likes, comments, and new connections in real time.</li>
+      
+    </ul>
+  </div>
+  <img
+    src={social}
+    alt="Social Networking Apps"
+    className="w-full md:w-1/2 rounded-lg shadow-lg"
+  />
+</motion.div>
+
 
      {/* Portfolio Section */}
 <div className="w-full flex flex-col items-center">

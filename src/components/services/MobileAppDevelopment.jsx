@@ -112,106 +112,127 @@ const MobileAppDevelopment = () => {
 
 
       {/* Native Apps Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        <img src={nativeApp} alt="Native Apps" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Native Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Developing native mobile applications for iOS and Android to provide high performance, secure, and platform-optimized user experiences.
-          </p>
-        </div>
-      </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2 }}
+>
+  <img src={nativeApp} alt="Native Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Native Apps</h3>
+    <p className="text-lg leading-relaxed">
+      Develop high-performance native applications optimized for iOS and Android platforms, ensuring security, scalability, and superior user experiences.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Platform-specific designs leveraging native APIs.</li>
+      <li>Seamless integration with device hardware (camera, GPS, etc.).</li>
+      <li>Enhanced performance and reliability for end-users.</li>
+      <li>Optimized for App Store and Play Store compliance.</li>
+    </ul>
+  </div>
+</motion.div>
 
-      {/* Hybrid Apps Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Hybrid Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Building hybrid mobile applications using frameworks like React Native and Flutter to ensure cross-platform compatibility and cost efficiency.
-          </p>
-        </div>
-        <img src={hybridApp} alt="Hybrid Apps" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+
+     {/* Hybrid Apps Section */}
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Hybrid Apps</h3>
+    <p className="text-lg leading-relaxed">
+      Build cost-effective hybrid apps using technologies like React Native and Flutter, ensuring cross-platform compatibility without sacrificing performance.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Single codebase for iOS and Android platforms.</li>
+      <li>Faster development cycles and reduced costs.</li>
+      <li>Responsive UI components with native-like performance.</li>
+      <li>Broad support for third-party plugins and tools.</li>
+    </ul>
+  </div>
+  <img src={hybridApp} alt="Hybrid Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+</motion.div>
+
 
       {/* PWA Apps Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <img src={pwaApp} alt="Progressive Web Apps (PWAs)" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Progressive Web Apps (PWAs)</h3>
-          <p className="text-lg leading-relaxed">
-            Delivering cutting-edge PWAs that combine the best of web and mobile apps, ensuring fast, reliable, and engaging user experiences.
-          </p>
-        </div>
-      </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4 }}
+>
+  <img src={pwaApp} alt="Progressive Web Apps (PWAs)" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Progressive Web Apps (PWAs)</h3>
+    <p className="text-lg leading-relaxed">
+      Deliver cutting-edge PWAs that combine the best of web and mobile technologies to provide fast, reliable, and engaging experiences.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Offline functionality with service workers.</li>
+      <li>App-like feel with push notifications and fast loading.</li>
+      <li>SEO-friendly for improved discoverability.</li>
+      <li>Reduced app development and maintenance costs.</li>
+    </ul>
+  </div>
+</motion.div>
 
-      {/* Gaming Apps Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Gaming Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Creating immersive gaming applications with rich graphics, smooth performance, and engaging gameplay experiences for various platforms.
-          </p>
-        </div>
-        <img src={gamingApp} alt="Gaming Apps" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+
+      
+
+      
+      {/* Social Networking Apps Section */}
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Social Networking Apps</h3>
+    <p className="text-lg leading-relaxed">
+      Design feature-rich social networking apps that foster connectivity and interaction, ensuring a smooth and engaging user experience.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Real-time messaging and multimedia sharing.</li>
+      <li>Customizable user profiles and activity feeds.</li>
+      <li>Robust privacy controls and secure authentication.</li>
+      <li>Advanced analytics for user engagement tracking.</li>
+    </ul>
+  </div>
+  <img src={socialApp} alt="Social Networking Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+</motion.div>
 
       {/* Enterprise Apps Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        <img src={enterpriseApp} alt="Enterprise Apps" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Enterprise Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Designing enterprise-grade mobile apps to streamline workflows, enhance productivity, and improve collaboration across organizations.
-          </p>
-        </div>
-      </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+>
+  <img src={enterpriseApp} alt="Enterprise Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Enterprise Apps</h3>
+    <p className="text-lg leading-relaxed">
+      Create enterprise-grade applications tailored to improve business workflows, enhance productivity, and foster seamless collaboration.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Custom solutions for business operations and analytics.</li>
+      <li>Integration with existing enterprise software systems.</li>
+      <li>Secure data storage and compliance with industry standards.</li>
+      <li>Scalable architecture for future business needs.</li>
+    </ul>
+  </div>
+</motion.div>
 
-      {/* Social Networking Apps Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
-      >
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Social Networking Apps</h3>
-          <p className="text-lg leading-relaxed">
-            Developing feature-rich social networking apps to foster connectivity and engagement with seamless user interfaces and real-time interactions.
-          </p>
-        </div>
-        <img src={socialApp} alt="Social Networking Apps" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+
 
       {/* Call-to-Action Card */}
       <div className="w-full">

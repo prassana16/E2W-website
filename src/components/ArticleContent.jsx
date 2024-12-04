@@ -1343,7 +1343,7 @@ const ArticleContent = () => {
   };
 
   return (
-    <section className="bg-[#F7F2E7]">
+    <section className="bg-[#f3f4f6]">
   {/* Top Section: Fullscreen Image with Title Overlay */}
   <div className="relative w-full h-[50vh] md:h-[80vh] mb-16">
     <img

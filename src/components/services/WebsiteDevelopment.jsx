@@ -109,23 +109,44 @@ const WebsiteDevelopment = () => {
   </div>
 </motion.div>
 
-      {/* Portfolio Website Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-      >
-       
-        <img src={portfolioSite} alt="Portfolio Websites" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4 text-center">Portfolio Websites</h3>
-          <p className="text-lg leading-relaxed">
-            Showcase your work and achievements with a professionally designed portfolio website. Perfect for freelancers, artists, and professionals looking to stand out.
-          </p>
-        </div>
-      </motion.div>
+
+{/* Portfolio Website Section */}
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.1 }}
+>
+  <div className="flex flex-col w-full">
+    <h2 className="text-xl md:text-4xl font-semibold text-white mb-4 mt-14 text-center">
+      Types of Web Application Development
+    </h2>
+  
+<div className="flex gap-6">
+  <img
+    src={portfolioSite}
+    alt="Portfolio Websites"
+    className="w-full md:w-1/2 rounded-lg shadow-lg"
+  />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Portfolio Websites</h3>
+    <p className="text-lg leading-relaxed">
+      Showcase your work and achievements with a professionally designed portfolio website. 
+      Perfect for freelancers, artists, and professionals looking to stand out in their field.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Customizable layouts to highlight your unique style and projects.</li>
+      <li>Responsive design for an optimal viewing experience on any device.</li>
+      <li>Integration with social media and contact forms to connect with potential clients.</li>
+      <li>SEO-optimized structure to boost online visibility and attract clients.</li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</motion.div>
+
+
 
       {/* News Websites Section */}
 <motion.div
@@ -135,14 +156,28 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.2 }}
 >
-  <div className="flex flex-col justify-center md:w-1/2">
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">News Websites</h3>
     <p className="text-lg leading-relaxed">
-      Create visually appealing and highly functional news websites that provide real-time updates, seamless categorization, and engaging content layouts to keep readers informed.
+      Create visually appealing and highly functional news websites that provide real-time updates, seamless categorization, and engaging content layouts to keep readers informed and engaged.
     </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Dynamic content management to publish breaking news instantly.</li>
+      <li>Category-based navigation for seamless browsing (e.g., Politics, Sports, Tech).</li>
+      <li>Responsive designs that cater to readers on mobile, tablet, or desktop.</li>
+      <li>Advertisement integration for monetization opportunities.</li>
+      <li>SEO-friendly architecture to maximize visibility and reach.</li>
+      <li>Interactive features such as comment sections and polls for reader engagement.</li>
+      <li>Real-time notifications for news alerts and updates.</li>
+    </ul>
   </div>
-  <img src={newsSite} alt="News Websites" className="w-full md:w-1/2 rounded-lg" />
+  <img
+    src={newsSite}
+    alt="News Websites"
+    className="w-full md:w-1/2 rounded-lg shadow-lg"
+  />
 </motion.div>
+
 
 {/* Community Forums Section */}
 <motion.div
@@ -152,66 +187,102 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3 }}
 >
-  <img src={communityForum} alt="Community Forums" className="w-full md:w-1/2 rounded-lg" />
-  <div className="flex flex-col justify-center md:w-1/2">
+  <img src={communityForum} alt="Community Forums" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Community Forums</h3>
     <p className="text-lg leading-relaxed">
-      Build interactive community forums designed to foster communication and collaboration, with features like threaded discussions, user profiles, and moderation tools.
+      Build interactive community forums designed to foster communication and collaboration. Whether it's a niche interest group or a professional organization, our forums are equipped to create a thriving digital community.
     </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Threaded discussions for in-depth topic engagement.</li>
+      <li>User profiles with customizable settings and avatars.</li>
+      <li>Real-time notifications for replies and mentions.</li>
+      <li>Moderation tools to ensure a safe and respectful environment.</li>
+      <li>Search and categorization for easy access to topics.</li>
+      <li>Integration with social media for broader community reach.</li>
+    </ul>
   </div>
 </motion.div>
 
 
-      {/* Blog Websites Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Blog Websites</h3>
-          <p className="text-lg leading-relaxed">
-            Create engaging blog websites with user-friendly interfaces, perfect for sharing ideas, tutorials, or news while keeping readers hooked.
-          </p>
-        </div>
-        <img src={blogSite} alt="Blog Websites" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+
+     {/* Blog Websites Section */}
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Blog Websites</h3>
+    <p className="text-lg leading-relaxed">
+      Create engaging blog websites with user-friendly interfaces that captivate readers and boost your online presence. Whether you're a content creator, business owner, or hobbyist, our blogs cater to diverse needs.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Responsive layouts for seamless reading on any device.</li>
+      <li>Content management systems (CMS) for easy publishing.</li>
+      <li>Customizable themes and designs to match your style.</li>
+      <li>Built-in SEO optimization to enhance visibility.</li>
+      <li>Comment sections for fostering reader interaction.</li>
+      <li>Analytics integration to track visitor engagement.</li>
+    </ul>
+  </div>
+  <img src={blogSite} alt="Blog Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+</motion.div>
+
 
       {/* Business Websites Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
-        <img src={businessSite} alt="Business Websites" className="w-full md:w-1/2 rounded-lg" />
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Business Websites</h3>
-          <p className="text-lg leading-relaxed">
-            Empower your business with a professional website that communicates your brand, services, and values effectively to your audience.
-          </p>
-        </div>
-      </motion.div>
+<motion.div
+  className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5 }}
+>
+  <img src={businessSite} alt="Business Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Business Websites</h3>
+    <p className="text-lg leading-relaxed">
+      Empower your business with a professional website that effectively communicates your brand, services, and values to your audience. Designed to enhance your online presence and drive conversions, our business websites are tailored to your industry needs.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Custom designs aligned with your brand identity.</li>
+      <li>Responsive layouts for flawless performance on all devices.</li>
+      <li>Integration with CRM, payment gateways, and analytics tools.</li>
+      <li>Optimized for search engines (SEO) to boost visibility.</li>
+      <li>Call-to-action elements to generate leads and sales.</li>
+      <li>Scalable features to support business growth.</li>
+    </ul>
+  </div>
+</motion.div>
+
 
       {/* Personal Websites Section */}
-      <motion.div
-        className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        <div className="flex flex-col justify-center md:w-1/2">
-          <h3 className="text-xl md:text-3xl font-semibold mb-4">Personal Websites</h3>
-          <p className="text-lg leading-relaxed">
-            Share your personal story, projects, and achievements with a beautifully designed personal website tailored to your style.
-          </p>
-        </div>
-        <img src={personalSite} alt="Personal Websites" className="w-full md:w-1/2 rounded-lg" />
-      </motion.div>
+<motion.div
+  className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
+  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+>
+  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+    <h3 className="text-xl md:text-3xl font-semibold mb-4">Personal Websites</h3>
+    <p className="text-lg leading-relaxed">
+      Share your story, showcase your projects, and highlight your achievements with a personal website designed to reflect your unique style and personality. Whether you're building a professional profile or a creative portfolio, we’ve got you covered.
+    </p>
+    <ul className="list-disc list-inside mt-4 text-lg">
+      <li>Custom themes to match your personal brand.</li>
+      <li>Interactive portfolios to showcase your work effectively.</li>
+      <li>Integrated blogs or journals for sharing thoughts and updates.</li>
+      <li>Social media links for seamless connectivity.</li>
+      <li>Contact forms to enable networking and collaboration opportunities.</li>
+      <li>Secure and scalable hosting options.</li>
+    </ul>
+  </div>
+  <img src={personalSite} alt="Personal Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+</motion.div>
+
 
       {/* Portfolio Section */}
 <div className="w-full flex flex-col items-center">

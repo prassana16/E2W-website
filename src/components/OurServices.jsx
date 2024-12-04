@@ -114,7 +114,7 @@ function OurServices() {
     {[...Array(26)].map((_, i) => (
       <motion.div
         key={i}
-        className="bg-[#F7F2E7] h-[2px] w-full"
+        className="bg-[#f3f4f6] h-[2px] w-full"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
         transition={{
