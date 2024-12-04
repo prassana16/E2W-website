@@ -68,7 +68,7 @@ const Banner = () => {
     {
       title: 'Software as a Service',
       description: 'Delivering innovative SaaS solutions to streamline operations, reduce costs, and enhance business efficiency.',
-      image: e2w,
+      image: e2w, 
       bgColor: 'radial-gradient(ellipse at center, #6c0081, #001831)',
       learnMoreLink: "/SaaSDevelopment",
     },
