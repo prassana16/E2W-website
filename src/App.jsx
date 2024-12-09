@@ -24,6 +24,7 @@ import SaaSDevelopment from './components/services/SaaSDevelopment';
 import UIUXDesign from './components/services/UIUXDesign';
 import QualityAssurance from './components/services/QualityAssurance';
 import StaffAugmentation from './components/services/StaffAugmentation';
+import LeadGenerationServices from './components/services/LeadGenerationServices';
 // new service page components
 import { FlipWordswebsite } from './components/FlipWordswebsite';
 import { FlipWordswebapp } from './components/Flipwordsebapp';
@@ -34,6 +35,7 @@ import { FlipWordsquality } from './components/Flipwordsquality';
 import { FlipWordsstaff } from './components/Flipwordsstaff';
 import { FlipWordsui } from './components/Flipwordsui';
 import { FlipWordscloud } from './components/Flipwordscloud';
+import { FlipWordslead } from './components/Flipwordslead';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
@@ -109,6 +111,10 @@ function App() {
         <Route path="/StaffAugmentation" element={<>
           <FlipWordsstaff />
         <StaffAugmentation/></>} />
+        {/* Lead gen dev page */}
+        <Route path="/LeadGenerationServices" element={<>
+          <FlipWordslead />
+        <LeadGenerationServices/></>} />
         {/* contact us page */}
         <Route path="/ContactForm" element={<><ContactForm/></>} />
       </Routes>

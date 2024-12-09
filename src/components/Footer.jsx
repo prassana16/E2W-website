@@ -72,6 +72,9 @@ const Footer = () => {
               <p className="text-sm hover:text-[#f8d996] transition duration-200">
                 Phone: <a href="tel:+919600878113">+91 96008 78113</a>
               </p>
+              <p className="text-sm hover:text-[#f8d996] transition duration-200">
+                Whatsapp <a href="https://wa.me/9566031113">+91 95660 31113</a>
+              </p>
             </address>
           </div>
 

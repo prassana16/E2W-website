@@ -1,4 +1,3 @@
-// src/components/ContactPopup.js
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { AiOutlineClose, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
@@ -118,41 +117,41 @@ const ContactPopup = () => {
                 ></textarea>
               </div>
               <div className="bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-  <button
-    type="button"
-    onClick={() => setShowDropdown(!showDropdown)}
-    className="w-full text-center text-gray-100 py-1 md:py-2 rounded font-semibold hover:bg-black transition duration-300 md:text-sm"
-  >
-    Select Services
-  </button>
-  {showDropdown && (
-    <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
-      {[
-        "Web Application Development",
-        "Website Development",
-        "Mobile App Development",
-        "SEO Services",
-        "Cloud App Development",
-        "SaaS",
-        "UI/UX Development",
-        "Quality Assurance",
-        "Staff Augmentation"
-      ].map((service, index) => (
-        <label key={index} className="flex items-center text-sm ">
-          <input
-            type="checkbox"
-            name="services"
-            value={service}
-            onChange={handleChange}
-            checked={formData.services.includes(service)}
-            className="mr-2"
-          />
-          {service}
-        </label>
-      ))}
-    </div>
-  )}
-</div>
+                <button
+                  type="button"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  className="w-full text-center text-gray-100 py-1 md:py-2 rounded font-semibold hover:bg-black transition duration-300 md:text-sm"
+                >
+                  Select Services
+                </button>
+                {showDropdown && (
+                  <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
+                    {[
+                      "Web Application Development",
+                      "Website Development",
+                      "Mobile App Development",
+                      "SEO Services",
+                      "Cloud App Development",
+                      "SaaS",
+                      "UI/UX Development",
+                      "Quality Assurance",
+                      "Staff Augmentation"
+                    ].map((service, index) => (
+                      <label key={index} className="flex items-center text-sm ">
+                        <input
+                          type="checkbox"
+                          name="services"
+                          value={service}
+                          onChange={handleChange}
+                          checked={formData.services.includes(service)}
+                          className="mr-2"
+                        />
+                        {service}
+                      </label>
+                    ))}
+                  </div>
+                )}
+              </div>
               <button
                 type="submit"
                 className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300 text-sm "
@@ -164,12 +163,26 @@ const ContactPopup = () => {
           </div>
         </div>
       ) : (
-        <button
-          onClick={togglePopup}
-          className="fixed bottom-4 right-4 bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
-        >
-          Enquire
-        </button>
+        <div className="fixed bottom-4 right-4 flex items-center space-x-2">
+          <a
+            href="tel:+919600878113"
+            className="bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
+          >
+            Call
+          </a>
+          <a
+            href="https://wa.me/9566031113"
+            className="bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:bg-green-500 transition duration-300 z-50"
+          >
+            WhatsApp
+          </a>
+          <button
+            onClick={togglePopup}
+            className="bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
+          >
+            Enquire
+          </button>
+        </div>
       )}
     </div>
   );

@@ -5,7 +5,7 @@ import { MdExpandMore, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md
 import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers } from "react-icons/fa";
 import { VscFileCode } from "react-icons/vsc";
 import logo from '/icon-384x384.png';
-
+import { IoMdAnalytics } from "react-icons/io";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
@@ -189,6 +189,11 @@ const services = [
     name: 'Staff Augmentation',
     icon: <FaUsers className="text-[#4863fd]" />,
     path: '/StaffAugmentation'
+  },
+  {
+    name: 'Lead Generation',
+    icon: <IoMdAnalytics className="text-[#fd4848]" />,
+    path: '/LeadGenerationServices'
   },
 ];
 
