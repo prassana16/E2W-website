@@ -68,7 +68,7 @@ const Banner = () => {
     {
       title: 'Software as a Service',
       description: 'Delivering innovative SaaS solutions to streamline operations, reduce costs, and enhance business efficiency.',
-      image: e2w,
+      image: e2w, 
       bgColor: 'radial-gradient(ellipse at center, #6c0081, #001831)',
       learnMoreLink: "/SaaSDevelopment",
     },
@@ -97,102 +97,106 @@ const Banner = () => {
   
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [animationDirection, setAnimationDirection] = useState("right");
 
-const handleArrowClick = (direction) => {
-  setAnimationDirection(direction);
-  if (direction === "left") handlePrev();
-  else handleNext();
-};
+  // Auto-slide functionality
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        handleNext();
+      }, 5000); // Auto-slide every 5 seconds
 
-  //const [isPaused, setIsPaused] = useState(false);
-
-  // useEffect(() => {
-  //   if (!isPaused) {
-  //     const interval = setInterval(() => {
-  //       setCurrentSlide((prev) => (prev + 1) % slides.length);
-  //     }, 5000);
-
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [isPaused, slides.length]);
+      return () => clearInterval(interval); // Cleanup
+    }
+  }, [isPaused, slides.length]);
 
   const handleNext = () => {
+    setAnimationDirection("right");
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const handlePrev = () => {
+    setAnimationDirection("left");
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const togglePause = () => {
-    setIsPaused((prev) => !prev);
+  const handleArrowClick = (direction) => {
+    if (direction === "left") {
+      handlePrev();
+    } else {
+      handleNext();
+    }
   };
+
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
 
   return (
     <section
-  className="h-[600px] md:h-[480px] flex flex-col justify-between items-center  relative overflow-hidden"
-  style={{ background: slides[currentSlide].bgColor }}
->
-  {/* Slide Content */}
-  <div className="text-[#fceecf] flex flex-col items-center w-full max-w-screen-xl px-4 py-8">
-    <motion.div
-      key={currentSlide}
-      className="flex flex-col md:flex-row justify-center items-center w-full md:gap-0"
-      initial={{ opacity: 0, x: animationDirection === "right" ? 100 : -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: animationDirection === "right" ? -100 : 100 }}
-      transition={{ duration: 0.8 }}
+      className="h-[600px] md:h-[480px] flex flex-col justify-between items-center relative overflow-hidden"
+      style={{ background: slides[currentSlide].bgColor }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {/* Slide Text */}
-      <div className="flex flex-col items-center md:items-start gap-4 md:w-1/2 p-5 text-center md:text-left">
-        <h2 className="text-2xl md:text-5xl font-RozhaOne font-light">
-          {slides[currentSlide].title}
-        </h2>
-        <p className="text-sm md:text-2xl text-[#fceecf] opacity-70">
-          {slides[currentSlide].description}
-        </p>
-        <a
-          href={slides[currentSlide].learnMoreLink}
-          className="inline-block mt-2 px-2 py-2 md:mt-4 md:px-6 md:py-3 bg-[#fceecf] text-[#003f81] md:text-lg font-semibold rounded-lg hover:bg-[#ffd580] transition duration-300"
+      {/* Slide Content */}
+      <div className="text-[#fceecf] flex flex-col items-center w-full max-w-screen-xl px-4 py-8">
+        <motion.div
+          key={currentSlide}
+          className="flex flex-col md:flex-row justify-center items-center w-full md:gap-0"
+          initial={{ opacity: 0, x: animationDirection === "right" ? 100 : -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: animationDirection === "right" ? -100 : 100 }}
+          transition={{ duration: 0.8 }}
         >
-          Learn More
-        </a>
+          {/* Slide Text */}
+          <div className="flex flex-col items-center md:items-start gap-4 md:w-1/2 p-5 text-center md:text-left">
+            <h2 className="text-2xl md:text-5xl font-RozhaOne font-light">
+              {slides[currentSlide].title}
+            </h2>
+            <p className="text-sm md:text-2xl text-[#fceecf] opacity-70">
+              {slides[currentSlide].description}
+            </p>
+            <a
+              href={slides[currentSlide].learnMoreLink}
+              className="inline-block mt-2 px-2 py-2 md:mt-4 md:px-6 md:py-3 bg-[#fceecf] text-[#003f81] md:text-lg font-semibold rounded-lg hover:bg-[#ffd580] transition duration-300"
+            >
+              Learn More
+            </a>
+          </div>
+
+          {/* Slide Image */}
+          <div className="relative md:w-1/2 mt-8 md:mt-0 flex justify-center">
+            <motion.img
+              src={slides[currentSlide].image}
+              alt="Slide Image"
+              className="w-full max-w-md rounded-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2 }}
+            />
+          </div>
+        </motion.div>
       </div>
 
-      {/* Slide Image */}
-      <div className="relative md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <motion.img
-          src={slides[currentSlide].image}
-          alt="Slide Image"
-          className="w-full max-w-md rounded-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-        />
+      {/* Navigation Arrows */}
+      <div className="absolute left-4 right-4 bottom-8 flex justify-between items-center px-4">
+        <button
+          onClick={() => handleArrowClick("left")}
+          className="text-[#fceecf] hover:text-[#ffd580] transition duration-300"
+          aria-label="Previous Slide"
+        >
+          <FaRegArrowAltCircleLeft className="w-8 h-8 md:h-12 md:w-12" />
+        </button>
+        <button
+          onClick={() => handleArrowClick("right")}
+          className="text-[#fceecf] hover:text-[#ffd580] transition duration-300"
+          aria-label="Next Slide"
+        >
+          <FaRegArrowAltCircleRight className="w-8 h-8 md:h-12 md:w-12" />
+        </button>
       </div>
-    </motion.div>
-  </div>
-
-  {/* Navigation Arrows */}
-  <div className="absolute left-4 right-4 bottom-8 flex justify-between items-center px-4">
-    <button
-      onClick={() => handleArrowClick("left")}
-      className="text-[#fceecf] hover:text-[#ffd580] transition duration-300"
-      aria-label="Previous Slide"
-    >
-      <FaRegArrowAltCircleLeft className="w-8 h-8 md:h-12 md:w-12" />
-    </button>
-    <button
-      onClick={() => handleArrowClick("right")}
-      className="text-[#fceecf] hover:text-[#ffd580] transition duration-300"
-      aria-label="Next Slide"
-    >
-      <FaRegArrowAltCircleRight className="w-8 h-8 md:h-12 md:w-12" />
-    </button>
-  </div>
-</section>
-
+    </section>
   );
 };
 

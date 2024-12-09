@@ -139,7 +139,8 @@ const content = [
   {
     title: "Finance Manager",
     description: [
-      <li>Track revenue and expenses.</li>,
+      <li>Track revenue.</li>,
+      <li>Track expenses.</li>,
       <li>Real-time insights.</li>,
       <li>Monitor performance.</li>,
     ],
@@ -189,7 +190,7 @@ const content = [
   {
     title: "Rate Validation",
     description: [
-      <li>Ensure pricing consistency.</li>,
+      <li>Ensure pricing.</li>,
       <li>Maintain accuracy.</li>,
       <li>Avoid errors.</li>,
     ],
@@ -419,7 +420,7 @@ export function E2wProduct() {
     <h2
         className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold  text-neutral-100 dark:text-neutral-200 font-sans mb-4 md:mb-10"
       >
-        Our Workflow Management Tools.
+        Intelligent Business Managment Software
       </h2>
     <div className="h-[50vh] md:h-[100vh] ">
       <StickyScroll content={content} />
