@@ -105,7 +105,7 @@ const Banner = () => {
     if (!isPaused) {
       const interval = setInterval(() => {
         handleNext();
-      }, 5000); // Auto-slide every 5 seconds
+      }, 3000); // Auto-slide every 3 seconds
 
       return () => clearInterval(interval); // Cleanup
     }
@@ -144,10 +144,10 @@ const Banner = () => {
         <motion.div
           key={currentSlide}
           className="flex flex-col md:flex-row justify-center items-center w-full md:gap-0"
-          initial={{ opacity: 0, x: animationDirection === "right" ? 100 : -100 }}
+          initial={{ opacity: 0, x: animationDirection === "right" ? 100 : -10 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: animationDirection === "right" ? -100 : 100 }}
-          transition={{ duration: 0.8 }}
+          exit={{ opacity: 0, x: animationDirection === "right" ? -10 : 100 }}
+          transition={{ duration: 0.1 }}
         >
           {/* Slide Text */}
           <div className="flex flex-col items-center md:items-start gap-4 md:w-1/2 p-5 text-center md:text-left">
@@ -173,7 +173,7 @@ const Banner = () => {
               className="w-full max-w-md rounded-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 0.2 }}
             />
           </div>
         </motion.div>

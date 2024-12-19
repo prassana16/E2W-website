@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { AiOutlineClose, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
+import { IoCallSharp } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const ContactPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -166,19 +169,19 @@ const ContactPopup = () => {
         <div className="fixed bottom-4 right-4 flex items-center space-x-2">
           <a
             href="tel:+919600878113"
-            className="bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
+            className="bg-[#e6a6ff] text-[#000000] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
           >
-            Call
+            <IoCallSharp />
           </a>
           <a
             href="https://wa.me/9566031113"
             className="bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:bg-green-500 transition duration-300 z-50"
           >
-            WhatsApp
+            <FaWhatsapp />
           </a>
           <button
             onClick={togglePopup}
-            className="bg-[#FFD700] text-[#022b54] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
+            className="bg-[#e6a6ff] text-[#020105] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
           >
             Enquire
           </button>

@@ -37,7 +37,7 @@ import e2wlogoutphn from '../assets/images/e2w-mobile-img/e2wlogoutphn.png';
 
 const content = [
   {
-    title: "About Easy2Work",
+    title: "Our IBMS Software",
     description: [
       <li>Customizable workflows.</li>,
       <li>Manage clients and orders.</li>,
