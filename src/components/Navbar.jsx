@@ -96,8 +96,8 @@ const Navbar = () => {
                 <VscFileCode className="mr-2" /> Services <MdExpandMore className="ml-2" />
               </li>
               <li>
-                <a href="#features" className="text-lg text-[#ffff] flex items-center">
-                  <MdFeaturedPlayList className="mr-2" /> Our Solution
+                <a href="/OurIBMS" className="text-lg text-[#ffff] flex items-center">
+                  <MdFeaturedPlayList className="mr-2" /> Our IBMS
                 </a>
               </li>
               <li>

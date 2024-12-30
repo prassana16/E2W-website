@@ -57,6 +57,8 @@ const content = [
         src={e2wloginphn}
         className="block sm:hidden h-auto max-w-full object-contain"
         alt="linear board demo - phone"
+        loading="lazy" // Enable lazy loading
+        
       />
       </div>
     ),
@@ -420,7 +422,7 @@ export function E2wProduct() {
     <h2
         className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold  text-neutral-100 dark:text-neutral-200 font-sans mb-4 md:mb-10"
       >
-        Intelligent Business Managment Software
+        Intelligent Business Managment Software <p className="text-xs mt-10 font-thin font-sans">Scroll at the text on left to know more.</p>
       </h2>
     <div className="h-[50vh] md:h-[100vh] ">
       <StickyScroll content={content} />

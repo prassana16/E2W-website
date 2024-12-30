@@ -33,6 +33,7 @@ function OurSkills() {
   alt=""
   className='absolute w-full inset-0 h-full object-cover mix-blend-color-burn opacity-15'
   style={{ zIndex: 1 }}
+  loading="lazy" // Enable lazy loading
 />
       
       <h2 className="relative text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">

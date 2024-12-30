@@ -180,6 +180,7 @@ const SEOServices = () => {
           src={localSEO}
           alt="Local SEO"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
+          loading="lazy" // Enable lazy loading
         />
         <div className="flex flex-col md:w-1/2 text-center md:text-left">
   <h3 className="text-2xl md:text-4xl font-semibold mb-4">Technical SEO</h3>

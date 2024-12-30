@@ -16,7 +16,7 @@ const WebsiteDevelopment = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
+    <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-purple-950" >
       {/* Introduction Section */}
       <motion.div
   className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
@@ -28,71 +28,71 @@ const WebsiteDevelopment = () => {
     <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
       Website Development
     </h2>
-    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
+    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center text-white ">
       Website development is at the heart of establishing your online presence. We design and build modern, user-friendly, and performance-driven websites that effectively communicate your brand and engage your audience.
     </p>
   </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
+  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-2 w-full ">
     {/* Cards */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Tailored Solutions</h3>
       <p className="text-sm md:text-base leading-relaxed">
         We understand that every business is unique. Our team crafts custom websites that align with your brand, vision, and specific requirements.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Responsive Design</h3>
       <p className="text-sm md:text-base leading-relaxed">
         Our websites are designed to adapt seamlessly to all devices, ensuring an exceptional user experience on desktops, tablets, and mobile phones.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">SEO Optimization</h3>
       <p className="text-sm md:text-base leading-relaxed">
         We build websites optimized for search engines, helping you improve visibility and drive organic traffic to your site.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Content Management Systems</h3>
       <p className="text-sm md:text-base leading-relaxed">
         We integrate robust content management systems like WordPress, Drupal, and Joomla, empowering you to manage your content with ease.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Performance Optimization</h3>
       <p className="text-sm md:text-base leading-relaxed">
         Speed and performance matter. Our websites are optimized to load quickly, ensuring a smooth browsing experience for your users.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">E-Commerce Solutions</h3>
       <p className="text-sm md:text-base leading-relaxed">
         From intuitive product catalogs to secure payment systems, we create e-commerce websites that convert visitors into customers.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics Integration</h3>
       <p className="text-sm md:text-base leading-relaxed">
         We incorporate analytics tools that help you monitor traffic, understand user behavior, and make data-driven decisions.
       </p>
     </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Security and Maintenance</h3>
       <p className="text-sm md:text-base leading-relaxed">
         Protect your website with advanced security measures. We also offer ongoing maintenance to keep your site updated and running smoothly.
       </p>
     </div>
 
-    {/* New Card 1 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">User-Centric Approach</h3>
       <p className="text-sm md:text-base leading-relaxed">
         Our design philosophy centers on user experience. We ensure your website is intuitive, engaging, and aligned with your users' expectations.
@@ -100,7 +100,7 @@ const WebsiteDevelopment = () => {
     </div>
 
     {/* New Card 2 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
       <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable Architecture</h3>
       <p className="text-sm md:text-base leading-relaxed">
         As your business grows, your website should too. We build scalable websites that evolve with your needs.
@@ -122,20 +122,19 @@ const WebsiteDevelopment = () => {
     <h2 className="text-xl md:text-4xl font-semibold text-white mb-4 mt-14 text-center">
       Types of Web Application Development
     </h2>
-  
-<div className="flex gap-6">
+  <div className="flex flex-col md:flex-row gap-6">
   <img
     src={portfolioSite}
     alt="Portfolio Websites"
-    className="w-full md:w-1/2 rounded-lg shadow-lg"
+    className="w-full md:w-1/2 "
   />
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Portfolio Websites</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Showcase your work and achievements with a professionally designed portfolio website. 
       Perfect for freelancers, artists, and professionals looking to stand out in their field.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Customizable layouts to highlight your unique style and projects.</li>
       <li>Responsive design for an optimal viewing experience on any device.</li>
       <li>Integration with social media and contact forms to connect with potential clients.</li>
@@ -156,12 +155,12 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.2 }}
 >
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">News Websites</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Create visually appealing and highly functional news websites that provide real-time updates, seamless categorization, and engaging content layouts to keep readers informed and engaged.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Dynamic content management to publish breaking news instantly.</li>
       <li>Category-based navigation for seamless browsing (e.g., Politics, Sports, Tech).</li>
       <li>Responsive designs that cater to readers on mobile, tablet, or desktop.</li>
@@ -174,7 +173,7 @@ const WebsiteDevelopment = () => {
   <img
     src={newsSite}
     alt="News Websites"
-    className="w-full md:w-1/2 rounded-lg shadow-lg"
+    className="w-full md:w-1/2 "
   />
 </motion.div>
 
@@ -187,13 +186,13 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3 }}
 >
-  <img src={communityForum} alt="Community Forums" className="w-full md:w-1/2 rounded-lg shadow-lg" />
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <img src={communityForum} alt="Community Forums" className="w-full md:w-1/2 " />
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Community Forums</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Build interactive community forums designed to foster communication and collaboration. Whether it's a niche interest group or a professional organization, our forums are equipped to create a thriving digital community.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Threaded discussions for in-depth topic engagement.</li>
       <li>User profiles with customizable settings and avatars.</li>
       <li>Real-time notifications for replies and mentions.</li>
@@ -214,12 +213,12 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.4 }}
 >
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Blog Websites</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Create engaging blog websites with user-friendly interfaces that captivate readers and boost your online presence. Whether you're a content creator, business owner, or hobbyist, our blogs cater to diverse needs.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Responsive layouts for seamless reading on any device.</li>
       <li>Content management systems (CMS) for easy publishing.</li>
       <li>Customizable themes and designs to match your style.</li>
@@ -228,7 +227,7 @@ const WebsiteDevelopment = () => {
       <li>Analytics integration to track visitor engagement.</li>
     </ul>
   </div>
-  <img src={blogSite} alt="Blog Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <img src={blogSite} alt="Blog Websites" className="w-full md:w-1/2 " />
 </motion.div>
 
 
@@ -240,13 +239,13 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5 }}
 >
-  <img src={businessSite} alt="Business Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <img src={businessSite} alt="Business Websites" className="w-full md:w-1/2 " />
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Business Websites</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Empower your business with a professional website that effectively communicates your brand, services, and values to your audience. Designed to enhance your online presence and drive conversions, our business websites are tailored to your industry needs.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Custom designs aligned with your brand identity.</li>
       <li>Responsive layouts for flawless performance on all devices.</li>
       <li>Integration with CRM, payment gateways, and analytics tools.</li>
@@ -266,12 +265,12 @@ const WebsiteDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
 >
-  <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
+  <div className="flex flex-col justify-center md:w-1/2 text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Personal Websites</h3>
-    <p className="text-lg leading-relaxed">
+    <p className="text-base md:text-lg leading-relaxed">
       Share your story, showcase your projects, and highlight your achievements with a personal website designed to reflect your unique style and personality. Whether you're building a professional profile or a creative portfolio, we’ve got you covered.
     </p>
-    <ul className="list-disc list-inside mt-4 text-lg">
+    <ul className="list-disc list-inside mt-4 text-base md:text-lg">
       <li>Custom themes to match your personal brand.</li>
       <li>Interactive portfolios to showcase your work effectively.</li>
       <li>Integrated blogs or journals for sharing thoughts and updates.</li>
@@ -280,8 +279,120 @@ const WebsiteDevelopment = () => {
       <li>Secure and scalable hosting options.</li>
     </ul>
   </div>
-  <img src={personalSite} alt="Personal Websites" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <img src={personalSite} alt="Personal Websites" className="w-full md:w-1/2 " />
 </motion.div>
+
+
+<motion.div
+  className="flex flex-col items-center w-full px-6 py-12 space-y-8"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.1 }}
+>
+  {/* Section Title */}
+  <div className="text-center">
+    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Rate Card</h2>
+    <p className="text-base md:text-lg text-gray-200">
+      Choose the right plan for your business. From essentials to advanced solutions, we have you covered.
+    </p>
+  </div>
+
+  {/* Cards */}
+  <div className="grid md:grid-cols-3 gap-8 w-full max-w-6xl">
+    {/* Basic Plan */}
+    <div className="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl p-8 shadow-lg">
+      <h3 className="text-2xl md:text-4xl font-semibold mb-4 text-center">Basic</h3>
+      <p className="text-xl text-center mb-6">Starts at ₹20,000</p>
+      <ul className="space-y-4 text-base md:text-lg">
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Custom website design.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Fully responsive design.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-red-400 text-xl">✖</span>
+          SEO not included.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Free maintenance for 3 months.
+        </li>
+      </ul>
+      <div className="mt-6 text-center">
+        <button
+          className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+         onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
+        >
+          Select Plan
+        </button>
+      </div>
+    </div>
+
+    {/* Advance Plan */}
+    <div className="bg-gradient-to-br from-purple-700 to-indigo-900 text-white rounded-2xl p-8 shadow-lg">
+      <h3 className="text-2xl md:text-4xl font-semibold mb-4 text-center">Advance</h3>
+      <p className="text-xl text-center mb-6">Contact Us for Pricing</p>
+      <ul className="space-y-4 text-base md:text-lg">
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          All features of the Basic plan.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          SEO optimization for higher visibility.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Performance optimization.
+        </li>
+      </ul>
+      <div className="mt-6 text-center">
+        <button
+          className="px-6 py-3 bg-white text-indigo-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+         onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
+        >
+          Select Plan
+        </button>
+      </div>
+    </div>
+
+    {/* Pro Plan */}
+    <div className="bg-gradient-to-br from-green-700 to-teal-900 text-white rounded-2xl p-8 shadow-lg">
+      <h3 className="text-2xl md:text-4xl font-semibold mb-4 text-center">Pro</h3>
+      <p className="text-xl text-center mb-6">Customized Pricing Available</p>
+      <ul className="space-y-4 text-base md:text-lg">
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          All features of the Advance plan.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          E-commerce integration.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Advanced analytics and monitoring.
+        </li>
+        <li className="flex items-center gap-4">
+          <span className="text-green-400 text-xl">✔</span>
+          Free maintenance for 6 months.
+        </li>
+      </ul>
+      <div className="mt-6 text-center">
+        <button
+          className="px-6 py-3 bg-white text-teal-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+         onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
+        >
+          Select Plan
+        </button>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
 
 
       {/* Portfolio Section */}
@@ -311,30 +422,53 @@ const WebsiteDevelopment = () => {
       <p className="text-neutral-100 text-lg">
       Business Website for Health Care industry.
       </p>
+      {/* Button to view website */}
+  <a
+    href="https://www.gracescans.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="mt-4 px-4 py-2 bg-purple-8
+    00 text-white text-md md:text-lg rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
+      View Website
+    </button>
+  </a>
     </motion.div>
 
     {/* Easy2Work Section */}
     <motion.div
-      className="p-6 shadow-lg text-center"
-      style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="flex justify-center mb-4">
-        <img
-          src={baleensite}
-          alt="Easy2Work"
-          className="w-[100%] md:w-[70%] object-contain" // 30% smaller than its original width
-        />
-      </div>
-      <h4 className="text-xl md:text-3xl font-semibold text-neutral-100">
-       Baleen Media 
-      </h4>
-      <p className="text-neutral-100 text-lg">
-        Business Website for Ad Agency.
-      </p>
-    </motion.div>
+  className="p-6 shadow-lg text-center"
+  style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <div className="flex justify-center mb-4">
+    <img
+      src={baleensite}
+      alt="Easy2Work"
+      className="w-[100%] md:w-[70%] object-contain" // 30% smaller than its original width
+    />
+  </div>
+  <h4 className="text-xl md:text-3xl font-semibold text-neutral-100">
+    Baleen Media
+  </h4>
+  <p className="text-neutral-100 text-lg">
+    Business Website for Ad Agency.
+  </p>
+  {/* Button to view website */}
+  <a
+    href="https://www.baleenmedia.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="mt-4 px-4 py-2 bg-purple-8
+    00 text-white text-md md:text-lg rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
+      View Website
+    </button>
+  </a>
+</motion.div>
+
   </div>
 </div>
 

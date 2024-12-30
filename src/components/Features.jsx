@@ -162,6 +162,7 @@ function Features() {
             repeatDelay: 1,
             delay: i * 0.2,
           }}
+          loading="lazy" // Enable lazy loading
         />
       ))}
       

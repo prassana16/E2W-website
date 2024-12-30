@@ -108,6 +108,7 @@ export const StickyScroll = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className="h-full w-full"
+      loading="lazy" // Enable lazy loading
     >
       {content[activeCard].content ?? null}
     </motion.div>

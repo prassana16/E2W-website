@@ -68,7 +68,7 @@ function App() {
           </>
         } />
         <Route path="/OurSolutions" element={
-          <E2wProduct />
+          <E2wProduct /> 
           
       }/>
         {/* blog page */}

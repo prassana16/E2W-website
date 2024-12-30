@@ -217,7 +217,7 @@ const MobileAppDevelopment = () => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
 >
-  <img src={enterpriseApp} alt="Enterprise Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
+  <img src={enterpriseApp} alt="Enterprise Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" loading="lazy" />
   <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left">
     <h3 className="text-xl md:text-3xl font-semibold mb-4">Enterprise Apps</h3>
     <p className="text-lg leading-relaxed">

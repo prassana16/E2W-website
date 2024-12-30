@@ -38,6 +38,7 @@ const QualityAssurance = () => {
           src={bugTracking}
           alt="Bug Tracking"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
+          loading="lazy" 
         />
         <div className="flex flex-col md:w-1/2 text-center md:text-left">
           <h3 className="text-2xl md:text-4xl font-semibold mb-4">Bug Tracking & Resolution</h3>

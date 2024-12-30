@@ -107,7 +107,7 @@ const WebAppDevelopment = () => {
 > 
 <h2 className="text-xl md:text-4xl font-semibold text-white mb-4 mt-14 text-center">Types of Web Application Development</h2>
   <div className="flex flex-col md:flex-row  items-center gap-6 ">
-  <img src={e_com} alt="E-commerce Platforms" className="w-full md:w-1/2 rounded-lg" />
+  <img src={e_com} alt="E-commerce Platforms" className="w-full md:w-1/2 rounded-lg" loading="lazy" />
   <div className="flex flex-col justify-center md:w-1/2">
     <h3 className="text-xl md:text-3xl font-semibold mb-4 text-center">E-commerce Platforms</h3>
     <p className="text-lg leading-relaxed">

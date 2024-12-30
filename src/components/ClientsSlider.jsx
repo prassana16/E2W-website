@@ -27,6 +27,7 @@ export function ClientSlider() {
               src={item.image}
               alt={item.title}
               className=" h-16 rounded object-cover mr-4"
+              loading="lazy" // Enable lazy loading
             />
             <h3 className="text-lg md:text-2xl font-bold text-neutral-900">{item.title}</h3>
           </motion.div>
