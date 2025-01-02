@@ -5,7 +5,7 @@ import ItCompanyImage from './assets/images/quantum.jpg';
 import GPTImage from './assets/images/GPT5Main.jpg';
 import web3 from './assets/images/wed3.jpg';
 import trends from "./assets/images/tech-trends.jpg"
-import AIDigi from './assets/images/Blog-img/AI-digi.jpg';
+import AIDigi from './assets/images/Blog-img/AI-digi.jpg'; 
 import Automation from './assets/images/Blog-img/Automation.jpg';
 import BrandStorytelling from './assets/images/Blog-img/Brand-Storytelling.jpg';
 import Chatbots from './assets/images/Blog-img/Chatbots.jpg';

@@ -33,48 +33,15 @@ function AboutPWA() {
   Progressive Web Applications (PWA)
 </h2>
 <div className="flex flex-col items-center justify-center gap-4 md:gap-6 p-4 md:p-6 w-full ">
-  {/* Expertise Card */}
-  <motion.div
-    className="w-full flex flex-col items-center justify-center p-4 md:p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg mb-8 md:mb-12 max-w-xl md:max-w-7xl mx-4 text-left"
-    initial={{ opacity: 0, y: -50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.5 }}
-  >
-    <h3 className="text-2xl md:text-4xl font-semibold text-[#ffffff] mb-4 md:mb-6 text-left">
-      Why Choose Us for Your PWA Development
-    </h3>
-    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
-      Our company has established itself as a leader in Progressive Web Application technology, 
-      backed by years of experience and a portfolio of successful PWA projects. From retail 
-      to enterprise solutions, we have built and optimized PWAs that deliver lightning-fast 
-      performance, reliable offline access, and engaging user experiences that feel as seamless 
-      as native apps.
-    </p>
-    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
-      Our PWAs are engineered with cutting-edge technologies like Service Workers, Web App 
-      Manifests, and responsive design to ensure cross-platform compatibility. Whether it’s 
-      improving website performance, enhancing mobile experiences, or creating scalable 
-      business solutions, we offer customized approaches that exceed expectations.
-    </p>
-    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
-      What sets us apart is our focus on client satisfaction. We partner with you to understand 
-      your business goals, creating PWAs that drive engagement, increase conversions, and build 
-      lasting customer loyalty. From small startups to large enterprises, our PWA solutions are 
-      built to grow with your business.
-    </p>
-    <p className="text-sm md:text-lg text-[#f8ebcf]">
-      Let us transform your digital presence with reliable, fast, and feature-rich applications 
-      that provide a native-like experience and measurable business results. Trust us for future-ready solutions!
-    </p>
-  </motion.div>
+  
 
   <div className="flex flex-col md:flex-row ">
     {/* Left Column */}
     <motion.div
       className="flex flex-col items-center justify-center p-4 md:p-6 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-md w-full max-w-xl md:max-w-7xl  "
-      initial={{ opacity: 0, y: -100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.5 }}
+      initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5 }}
     >
       <div className="text-4xl md:text-6xl mb-4">
         <FaRocket className="text-[#28c836]" />
@@ -120,7 +87,7 @@ function AboutPWA() {
           {/* Image Card */}
           <motion.div
             className="w-full items-center flex flex-col p-4 md:p-9"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5 }}
           >
@@ -132,6 +99,40 @@ function AboutPWA() {
             </button> */}
           </motion.div>
         </div>
+        {/* Expertise Card */}
+  <motion.div
+    className="w-full flex flex-col items-center justify-center p-4 md:p-8 bg-[#000000a4] rounded-2xl border border-purple-400 shadow-lg mb-8 md:mb-12 max-w-xl md:max-w-7xl mx-4 text-left"
+    initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5 }}
+  >
+    <h3 className="text-2xl md:text-4xl font-semibold text-[#ffffff] mb-4 md:mb-6 text-left">
+      Why Choose Us for Your PWA Development
+    </h3>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      Our company has established itself as a leader in Progressive Web Application technology, 
+      backed by years of experience and a portfolio of successful PWA projects. From retail 
+      to enterprise solutions, we have built and optimized PWAs that deliver lightning-fast 
+      performance, reliable offline access, and engaging user experiences that feel as seamless 
+      as native apps.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      Our PWAs are engineered with cutting-edge technologies like Service Workers, Web App 
+      Manifests, and responsive design to ensure cross-platform compatibility. Whether it’s 
+      improving website performance, enhancing mobile experiences, or creating scalable 
+      business solutions, we offer customized approaches that exceed expectations.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf] mb-4">
+      What sets us apart is our focus on client satisfaction. We partner with you to understand 
+      your business goals, creating PWAs that drive engagement, increase conversions, and build 
+      lasting customer loyalty. From small startups to large enterprises, our PWA solutions are 
+      built to grow with your business.
+    </p>
+    <p className="text-sm md:text-lg text-[#f8ebcf]">
+      Let us transform your digital presence with reliable, fast, and feature-rich applications 
+      that provide a native-like experience and measurable business results. Trust us for future-ready solutions!
+    </p>
+  </motion.div>
       </div>
 
       {/* Decorative Animated Lines */}

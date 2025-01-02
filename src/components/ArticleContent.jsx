@@ -27,94 +27,91 @@ const ArticleContent = () => {
   const articleDetails = [
     {
       id: 1,
-      title: "Breaking: GPT-5 Launch Announced",
-      image: GPTImage,
-      content: [
-        {
-          subtitle: "Introduction to GPT-5",
-          text: `
-            OpenAI has introduced GPT-5, marking a groundbreaking advancement in artificial intelligence. 
-            With the ability to perform tasks requiring deep language comprehension, reasoning, and multimodal 
-            processing, GPT-5 represents a leap forward in generative AI technology. 
-            
-            GPT-5 is built to overcome limitations of its predecessor, GPT-4, offering superior accuracy, 
-            faster response times, and enhanced scalability. This new generation of AI is equipped to address 
-            complex challenges across various domains, such as scientific research, content creation, and industry-specific 
-            applications.
-          `,
-        },
-        {
-          subtitle: "Key Features of GPT-5",
-          text: `
-            GPT-5 comes with a host of innovative features that set it apart from earlier models:
-            
-            1. Unprecedented Context Understanding: GPT-5 can handle multi-turn conversations, remembering context and user intent over long interactions.
-            2. Multimodal Support: In addition to text and image processing, GPT-5 introduces limited video understanding and even basic audio analysis capabilities.
-            3. Dynamic Learning: The model can learn and adapt in real-time based on user inputs, making it smarter and more effective with continued use.
-            4. Emotion Detection: GPT-5 can recognize and respond to user emotions, ensuring a more personalized and empathetic interaction.
-            5. Lower Latency: Optimizations in its architecture reduce response times, enhancing user experience in real-time applications.
-          `,
-        },
-        {
-          subtitle: "Improved Multimodal Capabilities",
-          text: `
-            Building on GPT-4’s multimodal abilities, GPT-5 pushes boundaries with its ability to process and 
-            generate content that integrates text, images, and video seamlessly. For example:
-            
-            - Video Summarization: GPT-5 can analyze and summarize videos, providing concise, insightful descriptions.
-            - Audio to Text with Contextualization: It can transcribe audio while providing contextual insights, 
-              making it ideal for applications in podcast summaries or meeting notes.
-            - Creative Media Production: Generate cohesive multimedia content for marketing, education, or entertainment purposes.
-          `,
-        },
-        {
-          subtitle: "Advanced Use Cases in Industry",
-          text: `
-            GPT-5 is designed to revolutionize various sectors. Here’s how it’s making an impact:
-            
-            - Healthcare: Automating medical documentation, providing accurate symptom analysis, and assisting in patient education.
-            - Education: Creating interactive, personalized learning modules for students of all ages.
-            - Business Operations: Enhancing productivity with intelligent scheduling, email drafting, and decision-making assistance.
-            - Gaming and Entertainment: Designing immersive storytelling experiences, character dialogues, and interactive worlds.
-          `,
-        },
-        {
-          subtitle: "Ethical Considerations and Challenges",
-          text: `
-            As with any advanced AI, GPT-5 raises questions about ethical usage, data privacy, and fairness. 
-            OpenAI has taken steps to mitigate these concerns, including:
-            
-            - Enhanced bias detection and mitigation during training.
-            - Transparency in how GPT-5 processes and generates outputs.
-            - Guidelines to prevent misuse in areas like disinformation or harmful content generation.
-            
-            However, ongoing collaboration between developers, policymakers, and researchers is necessary to ensure ethical deployment.
-          `,
-        },
-        {
-          subtitle: "GPT-5 vs. Previous Generations",
-          text: `
-            GPT-5 brings several improvements compared to earlier iterations like GPT-3 and GPT-4:
-            
-            - Training Dataset: The dataset used for GPT-5 is significantly larger and more diverse, ensuring better global applicability.
-            - Processing Speed: Response times have been reduced by up to 50%, ensuring smoother user experiences.
-            - Accuracy: GPT-5 delivers fewer hallucinations (incorrect responses), thanks to improved fine-tuning mechanisms.
-            - Customization: Users can now fine-tune GPT-5 more effectively for specific tasks or industries.
-          `,
-        },
-        {
-          subtitle: "Future Developments and Vision",
-          text: `
-            GPT-5 is not just a milestone but a foundation for the future of AI. OpenAI envisions further integration of 
-            AI into daily life, empowering users with tools that amplify creativity, productivity, and learning. 
-            Upcoming advancements may include:
-            
-            - Fully multimodal models that seamlessly integrate text, video, and sensory inputs.
-            - Specialized AI models for critical sectors like healthcare and climate research.
-            - Improved democratization of AI technology, making it more accessible to small businesses and individuals.
-          `,
-        },
-      ],
+  title: "Breaking: GPT-5 Launch Announced",
+  image: GPTImage,
+  content: [
+    {
+      subtitle: "Introduction to GPT-5",
+      text: `
+        Easy2Work has conducted extensive research into GPT-5, recognizing it as a groundbreaking advancement in artificial intelligence. 
+        With its ability to perform tasks requiring deep language comprehension, reasoning, and multimodal 
+        processing, GPT-5 represents a significant opportunity for innovation. 
+        
+        Easy2Work plans to harness GPT-5's capabilities to develop solutions that address complex challenges across domains such as scientific research, content creation, and industry-specific applications.
+      `,
+    },
+    {
+      subtitle: "Key Features of GPT-5",
+      text: `
+        Based on our research, Easy2Work has identified key features of GPT-5 that will transform various industries:
+        
+        1. Unprecedented Context Understanding: GPT-5's ability to handle multi-turn conversations makes it ideal for long-term interactions.
+        2. Multimodal Support: GPT-5 introduces advanced capabilities for text, image, and limited video and audio processing.
+        3. Dynamic Learning: Its real-time adaptive learning ensures more effective and intelligent interactions.
+        4. Emotion Detection: Recognizing and responding to user emotions ensures a personalized experience.
+        5. Lower Latency: Enhanced architectural optimizations make it suitable for real-time applications.
+        
+        Easy2Work is exploring how these features can be integrated into solutions for our clients.
+      `,
+    },
+    {
+      subtitle: "Improved Multimodal Capabilities",
+      text: `
+        Easy2Work sees GPT-5's multimodal capabilities as a game-changer. By leveraging its ability to integrate text, images, and video seamlessly, we aim to develop solutions that redefine user experience. Examples include:
+        
+        - Video Summarization: Easy2Work plans to use GPT-5 for analyzing and summarizing video content effectively.
+        - Audio to Text with Contextualization: Our applications will benefit from contextual audio transcription, ideal for podcasts and meetings.
+        - Creative Media Production: We envision creating innovative multimedia solutions for marketing, education, and entertainment.
+      `,
+    },
+    {
+      subtitle: "Advanced Use Cases in Industry",
+      text: `
+        Easy2Work believes GPT-5 can revolutionize various sectors and is committed to driving its implementation. Use cases include:
+        
+        - Healthcare: Easy2Work is exploring applications for automating medical documentation, symptom analysis, and patient education.
+        - Education: We plan to develop personalized, interactive learning modules using GPT-5.
+        - Business Operations: By integrating GPT-5, we aim to enhance productivity with intelligent scheduling and decision-making assistance.
+        - Gaming and Entertainment: Easy2Work envisions creating immersive storytelling and dynamic character dialogues powered by GPT-5.
+      `,
+    },
+    {
+      subtitle: "Ethical Considerations and Challenges",
+      text: `
+        Easy2Work understands the ethical challenges that come with advanced AI like GPT-5, including concerns about data privacy and fairness. 
+        Our approach includes:
+        
+        - Implementing bias detection and mitigation strategies.
+        - Ensuring transparency in how GPT-5 processes data and generates outputs.
+        - Establishing clear guidelines to prevent misuse, such as disinformation or harmful content creation.
+        
+        We are dedicated to collaborating with policymakers and researchers to promote ethical AI deployment.
+      `,
+    },
+    {
+      subtitle: "GPT-5 vs. Previous Generations",
+      text: `
+        Easy2Work's analysis highlights GPT-5's significant improvements over earlier versions, including GPT-3 and GPT-4:
+        
+        - Training Dataset: A larger and more diverse dataset ensures better global applicability.
+        - Processing Speed: Response times are reduced, enabling seamless user interactions.
+        - Accuracy: Enhanced mechanisms lead to fewer incorrect responses, ensuring reliability.
+        - Customization: GPT-5's adaptability allows Easy2Work to fine-tune it for specific industry needs.
+      `,
+    },
+    {
+      subtitle: "Future Developments and Vision",
+      text: `
+        Easy2Work envisions GPT-5 as a cornerstone for future advancements in AI. Our research indicates immense potential in:
+        
+        - Developing fully multimodal models that integrate text, video, and sensory inputs.
+        - Creating specialized AI solutions for critical sectors like healthcare and environmental research.
+        - Expanding access to AI technology for small businesses and individuals.
+        
+        Easy2Work is committed to shaping a future where AI empowers creativity, productivity, and innovation on a global scale.
+      `,
+    },
+  ],
     },
     {
       id: 2,
@@ -124,36 +121,36 @@ const ArticleContent = () => {
         {
           subtitle: "Introduction to Quantum Computing",
           text: `
-            Quantum computing is poised to revolutionize technology as we know it. Unlike classical computing, which relies on binary bits, 
-            quantum computing harnesses the principles of quantum mechanics to process information in qubits. 
-            
-            These qubits can exist in multiple states simultaneously, enabling quantum computers to solve complex problems far beyond 
-            the capabilities of traditional machines. As we step closer to realizing its full potential, quantum computing offers 
-            groundbreaking solutions for science, technology, and industry.
-          `,
+             Easy2Work's exploration into quantum computing highlights its revolutionary potential. By leveraging the principles of quantum mechanics, 
+        quantum computers process information in qubits, unlocking unprecedented computational power. 
+        
+        Easy2Work aims to harness this technology to solve complex problems in science, technology, and industry, paving the way for innovations that were previously unimaginable.
+      `,
         },
         {
           subtitle: "How Quantum Computing Works",
           text: `
-            At the heart of quantum computing are the principles of superposition, entanglement, and interference:
-            
-            1. **Superposition**: Qubits can represent both 0 and 1 at the same time, exponentially increasing computational power.
-            2. **Entanglement**: Qubits can become interlinked, allowing changes in one qubit to instantaneously affect another, regardless of distance.
-            3. **Interference**: Quantum computers use interference to amplify correct solutions while canceling out incorrect ones.
-            
-            These phenomena enable quantum computers to perform parallel computations, solving problems in seconds that might take classical computers thousands of years.
-          `,
+            Easy2Work's research identifies key principles underlying quantum computing:
+        
+        1. **Superposition**: Qubits exist in multiple states simultaneously, enabling vast parallel computations.
+        2. **Entanglement**: Changes in one qubit instantaneously influence others, irrespective of distance.
+        3. **Interference**: Amplifying correct solutions while canceling incorrect ones enhances computational efficiency.
+        
+        By studying these principles, Easy2Work plans to build applications that leverage quantum computing's unparalleled speed and problem-solving capabilities.
+      `,
         },
         {
           subtitle: "Key Applications of Quantum Computing",
           text: `
-            Quantum computing is set to transform multiple industries with its ability to tackle problems that are unsolvable with classical computing:
-            
-            - **Drug Discovery**: Simulating molecular interactions for faster and more effective pharmaceutical development.
-            - **Cryptography**: Developing unbreakable encryption methods while also posing risks to current cryptographic systems.
-            - **Optimization Problems**: Solving logistical challenges in supply chain management, transportation, and financial modeling.
-            - **Climate Science**: Simulating complex systems to predict climate patterns and develop sustainable solutions.
-          `,
+           Easy2Work foresees quantum computing transforming industries through applications like:
+        
+        - **Drug Discovery**: Accelerating pharmaceutical development by simulating molecular interactions.
+        - **Cryptography**: Crafting next-generation encryption methods and preparing for potential quantum threats.
+        - **Optimization Problems**: Revolutionizing logistics, supply chains, and financial modeling.
+        - **Climate Science**: Enhancing climate prediction models to drive sustainable solutions.
+        
+        These use cases represent areas where Easy2Work is actively developing research initiatives.
+      `,
         },
         {
           subtitle: "Challenges in Quantum Computing",
