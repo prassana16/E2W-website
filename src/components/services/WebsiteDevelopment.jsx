@@ -8,105 +8,140 @@ import businessSite from '../../assets/images/business-site.png';
 import personalSite from '../../assets/images/personal-site.png';
 import gracesite from '../../assets/images/gracescans-site.png';
 import baleensite from '../../assets/images/baleensite.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const WebsiteDevelopment = () => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
+  
+  const cards = [
+    {
+      title: "Tailored Solutions",
+      content:
+        "We understand that every business is unique. Our team crafts custom websites that align with your brand, vision, and specific requirements.",
+    },
+    {
+      title: "Responsive Design",
+      content:
+        "Our websites are designed to adapt seamlessly to all devices, ensuring an exceptional user experience on desktops, tablets, and mobile phones.",
+    },
+    {
+      title: "SEO Optimization",
+      content:
+        "We build websites optimized for search engines, helping you improve visibility and drive organic traffic to your site.",
+    },
+    {
+      title: "Content Management Systems",
+      content:
+        "We integrate robust content management systems like WordPress, Drupal, and Joomla, empowering you to manage your content with ease.",
+    },
+    {
+      title: "Performance Optimization",
+      content:
+        "Speed and performance matter. Our websites are optimized to load quickly, ensuring a smooth browsing experience for your users.",
+    },
+    {
+      title: "E-Commerce Solutions",
+      content:
+        "From intuitive product catalogs to secure payment systems, we create e-commerce websites that convert visitors into customers.",
+    },
+    {
+      title: "Analytics Integration",
+      content:
+        "We incorporate analytics tools that help you monitor traffic, understand user behavior, and make data-driven decisions.",
+    },
+    {
+      title: "Security and Maintenance",
+      content:
+        "Protect your website with advanced security measures. We also offer ongoing maintenance to keep your site updated and running smoothly.",
+    },
+    {
+      title: "User-Centric Approach",
+      content:
+        "Our design philosophy centers on user experience. We ensure your website is intuitive, engaging, and aligned with your users' expectations.",
+    },
+    {
+      title: "Scalable Architecture",
+      content:
+        "As your business grows, your website should too. We build scalable websites that evolve with your needs.",
+    },
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-purple-950" >
       {/* Introduction Section */}
       <motion.div
-  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
+  className="w-full h-full py-20"
+  style={{
+    background: "linear-gradient(135deg, #6b46c1, #44337a)",
+    color: "white",
+  }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.1 }}
 >
-  <div className="text-center max-w-6xl">
-    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
-      Website Development
-    </h2>
-    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center text-white ">
-      Website development is at the heart of establishing your online presence. We design and build modern, user-friendly, and performance-driven websites that effectively communicate your brand and engage your audience.
-    </p>
-  </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-2 w-full ">
-    {/* Cards */}
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Tailored Solutions</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We understand that every business is unique. Our team crafts custom websites that align with your brand, vision, and specific requirements.
-      </p>
-    </div>
+  <div className="text-center max-w-6xl mx-auto mb-12">
+        <h2 className="text-2xl md:text-5xl font-bold mb-4">
+          Website Development
+        </h2>
+        <p className="text-sm md:text-lg leading-relaxed">
+          Website development is at the heart of establishing your online presence. We design and build modern, user-friendly, and performance-driven websites that effectively communicate your brand and engage your audience.
+        </p>
+      </div>
 
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Responsive Design</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our websites are designed to adapt seamlessly to all devices, ensuring an exceptional user experience on desktops, tablets, and mobile phones.
-      </p>
-    </div>
+      <Slider {...settings} className="w-full">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center h-full py-8"
+          >
+            <div
+              className="text-white text-center px-6 py-12 rounded-xl"
+              style={{
+                background: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
+              <p className="text-sm md:text-lg leading-relaxed">{card.content}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
 
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">SEO Optimization</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We build websites optimized for search engines, helping you improve visibility and drive organic traffic to your site.
-      </p>
-    </div>
-
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Content Management Systems</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We integrate robust content management systems like WordPress, Drupal, and Joomla, empowering you to manage your content with ease.
-      </p>
-    </div>
-
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Performance Optimization</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Speed and performance matter. Our websites are optimized to load quickly, ensuring a smooth browsing experience for your users.
-      </p>
-    </div>
-
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">E-Commerce Solutions</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        From intuitive product catalogs to secure payment systems, we create e-commerce websites that convert visitors into customers.
-      </p>
-    </div>
-
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics Integration</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We incorporate analytics tools that help you monitor traffic, understand user behavior, and make data-driven decisions.
-      </p>
-    </div>
-
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Security and Maintenance</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Protect your website with advanced security measures. We also offer ongoing maintenance to keep your site updated and running smoothly.
-      </p>
-    </div>
-
-    
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">User-Centric Approach</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our design philosophy centers on user experience. We ensure your website is intuitive, engaging, and aligned with your users' expectations.
-      </p>
-    </div>
-
-    {/* New Card 2 */}
-    <div className="bg- text-purple-100 p-6   hover:shadow-2xl transition-all border-white border-l-2 md:border ">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable Architecture</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        As your business grows, your website should too. We build scalable websites that evolve with your needs.
-      </p>
-    </div>
-  </div>
 </motion.div>
 
 

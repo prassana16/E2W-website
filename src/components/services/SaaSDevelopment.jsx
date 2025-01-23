@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import e2w from '../../assets/images/PWAintro2.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SaaSDevelopment = () => {
   const sectionVariants = {
@@ -8,98 +11,134 @@ const SaaSDevelopment = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  const cards = [
+    {
+      title: "Custom SaaS Development",
+      content:
+        "We build custom SaaS applications from scratch, tailored to your unique business requirements and customer needs.",
+    },
+    {
+      title: "Multi-Tenant Architecture",
+      content:
+        "Our expertise in multi-tenant architecture ensures your SaaS application serves multiple users efficiently while maintaining data isolation.",
+    },
+    {
+      title: "Scalability and Performance",
+      content:
+        "We design scalable SaaS applications that grow with your business and deliver consistent performance across user bases.",
+    },
+    {
+      title: "Secure Data Management",
+      content:
+        "From data encryption to role-based access control, we prioritize the security of your SaaS application and user data.",
+    },
+    {
+      title: "API Integration and Development",
+      content:
+        "Seamlessly integrate third-party services and create custom APIs to enhance your SaaS application’s functionality.",
+    },
+    {
+      title: "Subscription Management",
+      content:
+        "Implement flexible subscription models and payment gateways for efficient user onboarding and billing processes.",
+    },
+    {
+      title: "Cross-Platform Compatibility",
+      content:
+        "We ensure your SaaS application is accessible and performs seamlessly across devices, operating systems, and browsers.",
+    },
+    {
+      title: "Analytics and Reporting",
+      content:
+        "Gain insights into user behavior and application performance with built-in analytics and reporting tools.",
+    },
+    {
+      title: "Continuous Deployment",
+      content:
+        "Leverage automated CI/CD pipelines for frequent updates and new feature rollouts without downtime.",
+    },
+    {
+      title: "Post-Launch Support",
+      content:
+        "We provide ongoing maintenance and updates to keep your SaaS application running smoothly and meeting user expectations.",
+    },
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="min-h-screen w-full  bg-gradient-to-r from-blue-600 to-indigo-500 text-white">
       {/* Introduction */}
       <motion.div
-  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.1 }}
+         className="w-full h-full py-20"
+         style={{
+           background: "linear-gradient(135deg, #3182ce, #5a67d8)",
+           color: "white",
+         }}
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ delay: 0.1 }}
 >
-  <div className="text-center max-w-6xl">
-    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
-      Software as a Service (SaaS) Development
-    </h2>
-    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
-      SaaS development is revolutionizing the way businesses deliver software solutions by providing scalable, cloud-based applications accessible anytime, anywhere. We specialize in creating robust, multi-tenant SaaS solutions tailored to your business needs.
-    </p>
-  </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
-    {/* Cards */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Custom SaaS Development</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We build custom SaaS applications from scratch, tailored to your unique business requirements and customer needs.
-      </p>
-    </div>
+   
+  <div className="text-center max-w-6xl mx-auto mb-12">
+        <h2 className="text-2xl md:text-5xl font-bold mb-4">
+          Software as a Service (SaaS) Development
+        </h2>
+        <p className="text-sm md:text-lg leading-relaxed">
+          SaaS development is revolutionizing the way businesses deliver
+          software solutions by providing scalable, cloud-based applications
+          accessible anytime, anywhere. We specialize in creating robust,
+          multi-tenant SaaS solutions tailored to your business needs.
+        </p>
+      </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Multi-Tenant Architecture</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our expertise in multi-tenant architecture ensures your SaaS application serves multiple users efficiently while maintaining data isolation.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Scalability and Performance</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We design scalable SaaS applications that grow with your business and deliver consistent performance across user bases.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Secure Data Management</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        From data encryption to role-based access control, we prioritize the security of your SaaS application and user data.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">API Integration and Development</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Seamlessly integrate third-party services and create custom APIs to enhance your SaaS application’s functionality.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Subscription Management</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Implement flexible subscription models and payment gateways for efficient user onboarding and billing processes.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Cross-Platform Compatibility</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We ensure your SaaS application is accessible and performs seamlessly across devices, operating systems, and browsers.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics and Reporting</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Gain insights into user behavior and application performance with built-in analytics and reporting tools.
-      </p>
-    </div>
-
-    {/* New Card 1 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Continuous Deployment</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Leverage automated CI/CD pipelines for frequent updates and new feature rollouts without downtime.
-      </p>
-    </div>
-
-    {/* New Card 2 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Post-Launch Support</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We provide ongoing maintenance and updates to keep your SaaS application running smoothly and meeting user expectations.
-      </p>
-    </div>
-  </div>
+      <Slider {...settings} className="w-full">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center h-full py-8"
+          >
+            <div
+              className="text-black text-center px-6 py-12 rounded-xl"
+              style={{
+                background: "radial-gradient( #3182ce, #5a67d8 70%)",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+                color: "white",
+              }}
+            >
+              <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
+              <p className="text-sm md:text-lg leading-relaxed">{card.content}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
+  
 </motion.div>
 <h2 className=''></h2>
 

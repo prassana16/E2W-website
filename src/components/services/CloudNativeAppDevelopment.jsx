@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import cloudDevelopment from '../../assets/images/cloud1.png';
 import microservices from '../../assets/images/cloud2.png';
 import scalability from '../../assets/images/cloud3.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const CloudNativeAppDevelopment = () => {
   const sectionVariants = {
@@ -10,101 +14,129 @@ const CloudNativeAppDevelopment = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  const cards = [
+    {
+      title: "Custom Mobile Solutions",
+      content:
+        "We build tailored mobile applications designed to address your specific business challenges and create seamless user experiences.",
+    },
+    {
+      title: "Native and Cross-Platform Development",
+      content:
+        "We specialize in creating robust, high-performance applications tailored to meet the needs of diverse platforms. For native development, we leverage platform-specific technologies like Swift for iOS and Kotlin for Android.",
+    },
+    {
+      title: "User-Centric Design",
+      content:
+        "We prioritize usability and aesthetics to craft intuitive applications that not only look stunning but also deliver seamless interactions.",
+    },
+    {
+      title: "Robust Backend Development",
+      content:
+        "We develop scalable back-end systems using secure and efficient architectures to support your mobile app's functionality.",
+    },
+    {
+      title: "Third-Party Integrations",
+      content:
+        "Modern applications thrive on their ability to connect with a wide range of third-party services, and we ensure these integrations are seamless and efficient.",
+    },
+    {
+      title: "Focus on Performance",
+      content:
+        "Delivering a flawless user experience requires applications that are not only visually appealing but also exceptionally fast, reliable, and efficient.",
+    },
+    {
+      title: "Advanced Security Features",
+      content:
+        "Security is at the forefront of our development process, ensuring that your app and its users are safeguarded against potential threats.",
+    },
+    {
+      title: "Agile Development Approach",
+      content:
+        "Our agile development approach ensures that your app is delivered efficiently, on time, and within budget, all while maintaining the highest quality standards.",
+    },
+    {
+      title: "Post-Launch Support",
+      content:
+        "We offer comprehensive post-launch support to ensure your app remains up-to-date, secure, and fully functional.",
+    },
+    {
+      title: "Analytics and Insights",
+      content:
+        "Track app usage, monitor performance, and make data-driven improvements with integrated analytics tools.",
+    },
+  ];
+   
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500, // Animation speed (0.5 seconds)
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true, // Enable automatic sliding
+    autoplaySpeed: 3000, // 1-second interval
+    arrows: false, // Disable manual arrows for a cleaner look
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="min-h-screen w-full  bg-gradient-to-r from-blue-600 to-cyan-700 text-white">
       {/* Introduction */}
       <motion.div
-  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
+  className="w-full h-full py-20"
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.1 }}
 >
-  <div className="text-center max-w-6xl">
-    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
-      Cloud-Native Application Development
-    </h2>
-    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
-      Cloud-native application development leverages modern cloud platforms to build scalable, resilient, and highly available applications. We specialize in crafting tailored cloud-native solutions that empower businesses to innovate and scale effortlessly.
-    </p>
-  </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
-    {/* Cards */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Cloud-Native Architecture Design</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We design architectures that leverage microservices, containers, and serverless computing to maximize scalability and efficiency.
-      </p>
-    </div>
+  <div className="text-center max-w-6xl mx-auto mb-12">
+        <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
+          Cloud-Native Application Development
+        </h2>
+        <p className="text-sm md:text-lg leading-relaxed text-white">
+          Cloud-native application development leverages modern cloud platforms
+          to build scalable, resilient, and highly available applications. We
+          specialize in crafting tailored cloud-native solutions that empower
+          businesses to innovate and scale effortlessly.
+        </p>
+      </div>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Containerization and Kubernetes</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Using tools like Docker and Kubernetes, we ensure your applications are portable, reliable, and easily deployable across environments.
-      </p>
-    </div>
+  <Slider {...settings} className="w-full">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center h-full py-8"
+          >
+            <div
+              className="text-white text-center px-6 py-12 rounded-xl"
+              style={{
+                background: "linear-gradient(to right, #2563eb, #0ea5e9)",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
+              <p className="text-sm md:text-lg leading-relaxed">{card.content}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
 
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable and Resilient Systems</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our solutions are built to scale dynamically with your business needs while maintaining high availability and fault tolerance.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">DevOps Integration</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We incorporate DevOps practices to streamline CI/CD pipelines, automate deployments, and enhance collaboration between development and operations teams.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Serverless Application Development</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Build cost-efficient applications using serverless computing platforms like AWS Lambda, Azure Functions, and Google Cloud Functions.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Cloud Platform Expertise</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We work with leading cloud platforms such as AWS, Microsoft Azure, and Google Cloud to deliver tailored cloud-native solutions.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Focus on Security</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our development process includes robust security measures such as encryption, IAM, and regular vulnerability assessments to safeguard your applications.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Cost Optimization Strategies</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We help you maximize ROI by designing cost-efficient applications and optimizing resource usage in the cloud.
-      </p>
-    </div>
-
-    {/* New Card 1 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Monitoring and Observability</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        With integrated monitoring tools and observability frameworks, we ensure your applications remain performant and reliable.
-      </p>
-    </div>
-
-    {/* New Card 2 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Continuous Improvement</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We provide ongoing support and updates to adapt your cloud-native applications to evolving business and technological needs.
-      </p>
-    </div>
-    
-  </div>
 </motion.div>
-
 
       {/* Microservices Architecture Section */}
       <motion.div

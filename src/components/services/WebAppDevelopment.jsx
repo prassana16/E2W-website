@@ -9,91 +9,126 @@ import crm from '../../assets/images/crm.png';
 import enterprise from '../../assets/images/enterprise.png';
 import lms from '../../assets/images/lms.png';
 import social from '../../assets/images/social.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const WebAppDevelopment = () => {
+
+  const cards = [
+    {
+      title: "Understanding Your Business Goals",
+      content:
+        "Every successful web application starts with a deep understanding of your business objectives. Our team collaborates with you to identify your goals, target audience, and the core purpose of your application.",
+    },
+    {
+      title: "Innovative Technology Stack",
+      content:
+        "Our expertise spans modern frameworks like React.js, Angular, and Vue.js for front-end development, and Node.js, Python, and .NET for the back-end. We ensure your web app is fast, reliable, and secure.",
+    },
+    {
+      title: "Scalable and Responsive Design",
+      content:
+        "We craft applications that perform seamlessly across devices and can scale with your business as it grows. Our designs provide an intuitive experience for users on any device.",
+    },
+    {
+      title: "Focus on Security",
+      content:
+        "Our development process includes advanced security protocols, data encryption, and regular vulnerability assessments to protect your users' information.",
+    },
+    {
+      title: "Custom Features and Integrations",
+      content:
+        "From integrating third-party APIs to implementing payment gateways, we ensure your application is equipped with all the functionalities needed to succeed.",
+    },
+    {
+      title: "Agile Development Process",
+      content:
+        "By following an agile development process, we provide regular updates, allowing you to review progress and suggest changes at every stage of the development cycle.",
+    },
+    {
+      title: "Post-Development Support",
+      content:
+        "We provide post-development support and maintenance to ensure your application remains updated, bug-free, and performs optimally.",
+    },
+    {
+      title: "Analytics and Insights",
+      content:
+        "Gain valuable insights with integrated analytics tools. Track user engagement, monitor performance, and make data-driven decisions to enhance your web application’s effectiveness.",
+    },
+    {
+      title: "Continuous Improvement",
+      content:
+        "We prioritize long-term success by offering continuous improvement plans. With regular updates and feature enhancements, your application stays relevant and competitive.",
+    },
+  ];
+  
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="min-h-screen flex flex-col items-center  font-mono justify-center" style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}>
       {/* E-commerce Platforms Section */}
   <motion.div
-    className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.1 }}
+    className="w-full h-full py-20"
+      style={{background: "linear-gradient(135deg, #7a4cff, #5906cc)", color: "white",  }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
   >
-    <div className="text-center max-w-6xl">
-      <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">Web Application Development</h2>
-      <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
-        Web application development is essential for creating digital platforms that offer interactive, engaging, and user-centric experiences. We specialize in building scalable and responsive solutions tailored to meet diverse business needs.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
-      {/* Cards */}
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Understanding Your Business Goals</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          Every successful web application starts with a deep understanding of your business objectives. Our team collaborates with you to identify your goals, target audience, and the core purpose of your application.
+    <div className="text-center max-w-6xl mx-auto mb-12">
+        <h2 className="text-2xl md:text-5xl font-bold mb-4">
+          Web Application Development
+        </h2>
+        <p className="text-sm md:text-lg leading-relaxed">
+          Web application development is essential for creating digital platforms that offer interactive, engaging, and user-centric experiences. We specialize in building scalable and responsive solutions tailored to meet diverse business needs.
         </p>
       </div>
 
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Innovative Technology Stack</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          Our expertise spans modern frameworks like React.js, Angular, and Vue.js for front-end development, and Node.js, Python, and .NET for the back-end. We ensure your web app is fast, reliable, and secure.
-        </p>
-      </div>
-
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Scalable and Responsive Design</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          We craft applications that perform seamlessly across devices and can scale with your business as it grows. Our designs provide an intuitive experience for users on any device.
-        </p>
-      </div>
-
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Focus on Security</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          Our development process includes advanced security protocols, data encryption, and regular vulnerability assessments to protect your users' information.
-        </p>
-      </div>
-
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Custom Features and Integrations</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          From integrating third-party APIs to implementing payment gateways, we ensure your application is equipped with all the functionalities needed to succeed.
-        </p>
-      </div>
-
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Agile Development Process</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          By following an agile development process, we provide regular updates, allowing you to review progress and suggest changes at every stage of the development cycle.
-        </p>
-      </div>
-
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Post-Development Support</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          We provide post-development support and maintenance to ensure your application remains updated, bug-free, and performs optimally.
-        </p>
-      </div>
-
-      {/* New Card 1 */}
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics and Insights</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          Gain valuable insights with integrated analytics tools. Track user engagement, monitor performance, and make data-driven decisions to enhance your web application’s effectiveness.
-        </p>
-      </div>
-
-      {/* New Card 2 */}
-      <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-        <h3 className="text-lg md:text-2xl font-bold mb-2">Continuous Improvement</h3>
-        <p className="text-sm md:text-base leading-relaxed">
-          We prioritize long-term success by offering continuous improvement plans. With regular updates and feature enhancements, your application stays relevant and competitive.
-        </p>
-      </div>
-    </div>
+    <Slider {...settings} className="w-full">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center h-full py-8"
+          >
+            <div
+              className="text-white text-center px-6 py-12 rounded-xl"
+              style={{
+                background: "linear-gradient(135deg, #7a4cff, #5906cc)",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
+              <p className="text-sm md:text-lg leading-relaxed">{card.content}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
   </motion.div>
 
   

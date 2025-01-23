@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import onPageSEO from '../../assets/images/seo1.png';
 import offPageSEO from '../../assets/images/seo2.png';
 import localSEO from '../../assets/images/seo3.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SEOServices = () => {
   const sectionVariants = {
@@ -10,98 +13,125 @@ const SEOServices = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
+  const cards = [
+    {
+      title: "Comprehensive SEO Audit",
+      content:
+        "Our SEO audit identifies key areas for improvement, including site structure, content optimization, and technical issues, to boost your search engine rankings.",
+    },
+    {
+      title: "Keyword Research and Strategy",
+      content:
+        "We identify high-performing keywords and develop a strategic plan to target terms that align with your audience's search behavior and business goals.",
+    },
+    {
+      title: "On-Page Optimization",
+      content:
+        "From optimizing meta tags and headings to improving content structure, we ensure your website is fully optimized for search engines.",
+    },
+    {
+      title: "Technical SEO",
+      content:
+        "We address technical issues such as crawl errors, site speed, mobile-friendliness, and schema markup to improve your website’s performance in search engines.",
+    },
+    {
+      title: "Content Creation and Optimization",
+      content:
+        "Engaging and SEO-friendly content is key to success. We create or refine your content to resonate with both users and search engines.",
+    },
+    {
+      title: "Local SEO Services",
+      content:
+        "Boost your visibility in local searches with Google My Business optimization, local citations, and geo-targeted strategies.",
+    },
+    {
+      title: "Link Building Strategies",
+      content:
+        "We employ ethical and effective link-building techniques to improve your domain authority and drive referral traffic to your site.",
+    },
+    {
+      title: "Analytics and Reporting",
+      content:
+        "Track your progress with regular reports and actionable insights. We monitor traffic, rankings, and conversions to measure the effectiveness of our SEO efforts.",
+    },
+    {
+      title: "E-Commerce SEO",
+      content:
+        "Optimize your online store for higher visibility in product searches and improved conversions. From product descriptions to category pages, we ensure your store is SEO-ready.",
+    },
+    {
+      title: "Competitor Analysis",
+      content:
+        "Gain an edge over competitors by understanding their SEO strategies. We analyze their strengths and weaknesses to refine your approach.",
+    },
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="min-h-screen w-full  bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
       {/* Introduction */}
       <motion.div
-  className="flex flex-col items-center gap-12 w-full h-full px-3 md:px-6 py-6"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.1 }}
+        className="w-full h-full py-20"
+        style={{
+          background: "linear-gradient(135deg, #6b46c1, #4c51bf)",
+          color: "white",
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
 >
-  <div className="text-center max-w-6xl">
-    <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 text-nowrap">
-      SEO Services
-    </h2>
-    <p className="text-sm md:text-lg leading-relaxed text-left md:text-center">
-      Search Engine Optimization (SEO) is essential for improving your website's visibility and driving organic traffic. We specialize in developing tailored SEO strategies to help you rank higher, attract the right audience, and grow your business online.
-    </p>
-  </div>
+<div className="text-center max-w-6xl mx-auto mb-12">
+        <h2 className="text-2xl md:text-5xl font-bold mb-4">SEO Services</h2>
+        <p className="text-sm md:text-lg leading-relaxed">
+          Search Engine Optimization (SEO) is essential for improving your website's visibility and driving organic traffic. We specialize in developing tailored SEO strategies to help you rank higher, attract the right audience, and grow your business online.
+        </p>
+      </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 w-full ">
-    {/* Cards */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Comprehensive SEO Audit</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Our SEO audit identifies key areas for improvement, including site structure, content optimization, and technical issues, to boost your search engine rankings.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Keyword Research and Strategy</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We identify high-performing keywords and develop a strategic plan to target terms that align with your audience's search behavior and business goals.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">On-Page Optimization</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        From optimizing meta tags and headings to improving content structure, we ensure your website is fully optimized for search engines.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Technical SEO</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We address technical issues such as crawl errors, site speed, mobile-friendliness, and schema markup to improve your website’s performance in search engines.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Content Creation and Optimization</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Engaging and SEO-friendly content is key to success. We create or refine your content to resonate with both users and search engines.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Local SEO Services</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Boost your visibility in local searches with Google My Business optimization, local citations, and geo-targeted strategies.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Link Building Strategies</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        We employ ethical and effective link-building techniques to improve your domain authority and drive referral traffic to your site.
-      </p>
-    </div>
-
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Analytics and Reporting</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Track your progress with regular reports and actionable insights. We monitor traffic, rankings, and conversions to measure the effectiveness of our SEO efforts.
-      </p>
-    </div>
-
-    {/* New Card 1 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">E-Commerce SEO</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Optimize your online store for higher visibility in product searches and improved conversions. From product descriptions to category pages, we ensure your store is SEO-ready.
-      </p>
-    </div>
-
-    {/* New Card 2 */}
-    <div className="bg-white text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
-      <h3 className="text-lg md:text-2xl font-bold mb-2">Competitor Analysis</h3>
-      <p className="text-sm md:text-base leading-relaxed">
-        Gain an edge over competitors by understanding their SEO strategies. We analyze their strengths and weaknesses to refine your approach.
-      </p>
-    </div>
-  </div>
+      <Slider {...settings} className="w-full">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex justify-center items-center h-full py-8"
+          >
+            <div
+              className="text-black text-center px-6 py-12 rounded-xl"
+              style={{
+                background: "radial-gradient( #7a4cff, #5906cc)",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
+              <p className="text-sm md:text-lg leading-relaxed">{card.content}</p>
+            </div>
+          </div>
+        ))}
+      </Slider>
 </motion.div>
 
 
