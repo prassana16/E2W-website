@@ -4,7 +4,7 @@ import { RiStarSFill } from "react-icons/ri";
 
 function Testimonials() {
   return (
-    <section className="bg-[#F7F2E7] py-16 flex flex-col items-center justify-center px-3">
+    <section className="bg-gray-100 py-16 flex flex-col items-center justify-center px-3">
       <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16">
         Testimonials
       </h2>
@@ -13,12 +13,12 @@ function Testimonials() {
         
         {/* Testimonial Card: Baleen Media */}
         <motion.div
-          className="px-5 rounded-xl border border-[#000000] border-r-4 border-b-4 drop-shadow-md text-neutral-100"
+          className="px-5 rounded-xl border-2 border-purple-900  text-neutral-900"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: false  }}
-          style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+          
         >
           <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
             <RiStarSFill />
@@ -35,12 +35,12 @@ function Testimonials() {
 
         {/* Testimonial Card: Grace Scans */}
         <motion.div
-          className="px-5 rounded-xl border border-[#000000] drop-shadow-md text-neutral-100 border-r-4 border-b-4"
+          className="px-5 rounded-xl border-2 border-purple-900  text-neutral-900 "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false }}
-          style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+          
         >
           <div className="flex gap-1 text-yellow-400 text-2xl md:text-3xl mt-6 mb-3">
             <RiStarSFill />

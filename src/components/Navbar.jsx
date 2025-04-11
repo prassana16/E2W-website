@@ -5,7 +5,7 @@ import { MdExpandMore, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md
 import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers } from "react-icons/fa";
 import { VscFileCode } from "react-icons/vsc";
 import logo from '/icon-384x384.png';
-
+import { IoMdAnalytics } from "react-icons/io";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
@@ -54,9 +54,9 @@ const Navbar = () => {
               </button>
             </li>
 
-            {/* <li>
-              <a href="#features" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
-                 Features
+            <li>
+              <a href="/OurSolutions" className="text-[#F7F2E7] md:text-lg hover:text-[#FFD700] transition duration-300 flex items-center">
+                 Our Solutions
               </a>
             </li> */}
             {/* <li>
@@ -96,8 +96,8 @@ const Navbar = () => {
                 <VscFileCode className="mr-2" /> Services <MdExpandMore className="ml-2" />
               </li>
               <li>
-                <a href="#features" className="text-lg text-[#ffff] flex items-center">
-                  <MdFeaturedPlayList className="mr-2" /> Features
+                <a href="/OurIBMS" className="text-lg text-[#ffff] flex items-center">
+                  <MdFeaturedPlayList className="mr-2" /> Our IBMS
                 </a>
               </li>
               {/* <li>
@@ -116,8 +116,8 @@ const Navbar = () => {
 
         {/* // Services Modal */}
          {isServiceModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50" onClick={closeServiceModal}>
-            <div className="bg-[#00264c] w-96 p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" onClick={closeServiceModal}>
+            <div className="bg-[#59247f]  p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
               <button className="absolute top-3 right-3 text-[#F7F2E7]" onClick={closeServiceModal}>
                 <AiOutlineClose className="w-6 h-6" />
               </button>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 {services.map((service, index) => (
                   <li key={index} className="flex items-center">
                     <span className="mr-2">{service.icon}</span>
-                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline text-xl">
+                    <a href={service.path} className="text-[#F7F2E7] font-semibold hover:underline text-lg md:text-2xl">
                       {service.name}
                     </a>
                   </li>
@@ -189,6 +189,11 @@ const services = [
     name: 'Staff Augmentation',
     icon: <FaUsers className="text-[#4863fd]" />,
     path: '/StaffAugmentation'
+  },
+  {
+    name: 'Lead Generation',
+    icon: <IoMdAnalytics className="text-[#fd4848]" />,
+    path: '/LeadGenerationServices'
   },
 ];
 

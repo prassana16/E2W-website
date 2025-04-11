@@ -25,7 +25,7 @@ const Footer = () => {
         {[...Array(26)].map((_, i) => (
           <motion.div
             key={i}
-            className={`bg-[#F7F2E7] h-[2px] w-full`}
+            className={`bg-[#f3f4f6] h-[2px] w-full`}
             initial={{ scaleY: 1 }}
             animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
             transition={{
@@ -67,10 +67,13 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
             <address className="not-italic space-y-3">
               <p className="text-sm hover:text-[#f8d996] transition duration-200">
-                32, 3rd Cross Street, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020
+              No: 32, 3rd Cross Street, opposite to Nalli Silks, Kasturba Nagar, Adyar, Chennai, Tamil Nadu - 600020
               </p>
               <p className="text-sm hover:text-[#f8d996] transition duration-200">
                 Phone: <a href="tel:+919600878113">+91 96008 78113</a>
+              </p>
+              <p className="text-sm hover:text-[#f8d996] transition duration-200">
+                Whatsapp <a href="https://wa.me/9566031113">+91 95660 31113</a>
               </p>
             </address>
           </div>

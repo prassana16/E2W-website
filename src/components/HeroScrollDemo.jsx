@@ -34,6 +34,7 @@ export function HeroScrollDemo() {
             draggable={false}
           />
         </picture>
+        
       </ContainerScroll>
       
       

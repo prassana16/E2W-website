@@ -38,6 +38,7 @@ const Consultant = () => {
             initial={{ opacity: 0, x: -100 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
+            loading="lazy" // Enable lazy loading
           >
             <img src={consultantImage} alt="Client Manager Mockup" className="w-3/4 md:w-full" />
           </motion.div>

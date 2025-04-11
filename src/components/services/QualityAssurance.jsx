@@ -1,112 +1,159 @@
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa'; // Icon representing quality and assurance
 import { motion } from 'framer-motion';
+import bugTracking from '../../assets/images/qual1.png';
+import automationTesting from '../../assets/images/qual2.png';
+import performanceTesting from '../../assets/images/qual3.png';
 
 const QualityAssurance = () => {
-  return (
-    <section className="min-h-screen bg-gradient-to-br from-[#8fe132] to-[#007ba7] py-16 px-4 md:px-16 font-mono text-white items-center justify-center">
-      {/* Header Section */}
-      <div className="text-center max-w-screen-lg mx-auto">
-        <motion.h1
-          className="text-5xl font-extrabold mb-6 text-black"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Quality Assurance
-        </motion.h1>
-        <p className="text-lg md:text-xl leading-relaxed text-black">
-          Excellence is at the heart of everything we do. Our Quality Assurance (QA) services ensure every product we deliver is reliable, functional, and user-friendly. Let us help you build software that works flawlessly.
-        </p>
-      </div>
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
-      {/* Features Section */}
-      <div className="grid grid-cols-1  gap-10 max-w-screen-lg mx-auto mt-16 p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg ">
-        {/* Feature List */}
-        <div>
-          <h2 className="text-3xl font-semibold mb-6 text-black ">Why Choose Our QA Services?</h2>
-          <ul className="space-y-6 text-gray-800">
-            {[
-              { icon: <FaCheckCircle />, title: 'Functional Testing', desc: 'Ensure all features operate smoothly and meet specifications.' },
-              { icon: <FaCheckCircle />, title: 'Performance Testing', desc: 'Optimize for speed and efficiency under different workloads.' },
-              { icon: <FaCheckCircle />, title: 'Security Testing', desc: 'Safeguard sensitive data with robust security protocols.' },
-              { icon: <FaCheckCircle />, title: 'Usability Testing', desc: 'Deliver an intuitive and seamless user experience.' },
-              { icon: <FaCheckCircle />, title: 'Automated Testing', desc: 'Reduce time-to-market with efficient automated processes.' },
-            ].map(({ icon, title, desc }) => (
-              <motion.li
-                key={title}
-                className="flex items-center gap-4"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="text-4xl text-[#333]">{icon}</div>
-                <div>
-                  <h3 className="text-2xl font-semibold">{title}</h3>
-                  <p className="text-lg ">{desc}</p>
-                </div>
-              </motion.li>
-            ))}
+  return (
+    <section className="min-h-screen w-full  bg-gradient-to-r from-blue-700 to-cyan-500 text-white">
+      {/* Introduction */}
+      <motion.div
+        className="flex flex-col items-center text-center py-16 px-6 md:px-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">Quality Assurance Services</h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl">
+          Ensure your software performs flawlessly with our end-to-end quality assurance services. From manual testing to advanced automation, we deliver reliability, efficiency, and customer satisfaction.
+        </p>
+      </motion.div>
+
+      {/* Bug Tracking Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={bugTracking}
+          alt="Bug Tracking"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+          loading="lazy" 
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">Bug Tracking & Resolution</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Identify and fix issues before they impact your users. Our meticulous bug tracking ensures a seamless experience for your audience.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Comprehensive Defect Analysis</li>
+            <li>Real-Time Bug Reporting</li>
+            <li>Collaboration with Development Teams</li>
+            <li>Root Cause Analysis: Address underlying issues to prevent recurring bugs.</li>
+            <li>Agile Integration: Ensure bugs are resolved quickly during sprints.</li>
           </ul>
         </div>
+      </motion.div>
 
-        
-      </div>
-
-      {/* Trends Section */}
-      <div className="max-w-screen-lg mx-auto mt-20">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Current and Future QA Trends</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {[
-            {
-              title: 'Current Trends',
-              points: [
-                'Automated Testing: Efficient, fast, and scalable.',
-                'Shift-Left Testing: Catch bugs earlier in the process.',
-                'CI/CD Pipelines: Integrate testing with continuous delivery.',
-                'AI-Powered Testing: Smarter and faster defect detection.',
-                'Agile/DevOps Practices: Collaboration for speed and quality.',
-              ],
-            },
-            {
-              title: 'Future Trends',
-              points: [
-                'Blockchain Testing: Secure and transparent systems.',
-                'IoT Testing: Seamless communication for connected devices.',
-                'RPA: Automation for repetitive and precise testing.',
-                'Performance Engineering: Scalability from day one.',
-                'Hyperautomation: AI-powered end-to-end processes.',
-              ],
-            },
-          ].map(({ title, points }) => (
-            <motion.div
-              key={title}
-              className="bg-[#333] rounded-lg p-6 shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-              <ul className="list-disc list-inside space-y-4 text-gray-300">
-                {points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+      {/* Automation Testing Section */}
+      <motion.div
+        className="flex flex-col md:flex-row-reverse items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', color: 'white' }}
+      >
+        <img
+          src={automationTesting}
+          alt="Automation Testing"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">Automation Testing</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Save time and improve accuracy with our cutting-edge automation testing solutions, ensuring consistent quality across all releases.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Custom Test Automation Frameworks</li>
+            <li>Regression Testing</li>
+            <li>Continuous Integration (CI/CD) Testing</li>
+            <li>Cross-Browser Testing: Ensure compatibility across multiple platforms.</li>
+            <li>Scalability: Handle complex test scenarios with ease.</li>
+          </ul>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Call-to-Action */}
-      <div className="text-center mt-20">
-        <h2 className="text-3xl font-semibold mb-4">Ready to Deliver Excellence?</h2>
-        <p className="text-lg leading-relaxed mb-6">
-          Let our Quality Assurance experts ensure your product is built to perfection. Contact us to get started!
+      {/* Performance Testing Section */}
+      <motion.div
+        className="flex flex-col md:flex-row items-center gap-8 px-6 md:px-16 py-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <img
+          src={performanceTesting}
+          alt="Performance Testing"
+          className="w-full md:w-1/2 rounded-lg shadow-lg"
+        />
+        <div className="flex flex-col md:w-1/2 text-center md:text-left">
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">Performance Testing</h3>
+          <p className="text-lg leading-relaxed mb-4">
+            Assess and enhance your software’s speed, scalability, and reliability to deliver superior performance under any conditions.
+          </p>
+          <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
+            <li>Load Testing</li>
+            <li>Stress Testing</li>
+            <li>Scalability Analysis</li>
+            <li>Real-World Simulation: Replicate user scenarios to uncover potential bottlenecks.</li>
+            <li>Reporting and Optimization: Deliver actionable insights to improve system performance.</li>
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Why Choose Us Section */}
+      <motion.div
+        className="text-center px-6 md:px-16 py-16"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', color: 'white' }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Why Choose Our Quality Assurance Services?
+        </h2>
+        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+          With our expertise in QA methodologies, we ensure flawless software performance, enhancing user satisfaction and business success.
         </p>
-        <button className="px-8 py-3 bg-[#333] text-white text-lg rounded-lg shadow-lg hover:bg-[#8fe132] transition duration-300">
+        <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6 max-w-3xl mx-auto">
+          <li>Thorough Manual and Automated Testing</li>
+          <li>Focus on User Experience and System Reliability</li>
+          <li>Timely Delivery of High-Quality Results</li>
+          <li>Flexible Testing Solutions Tailored to Your Needs</li>
+          <li>Expert QA Engineers with Diverse Domain Knowledge</li>
+        </ul>
+      </motion.div>
+
+      {/* Call-to-Action Card */}
+      <motion.div
+        className="text-center px-6 py-12 bg-gradient-to-r from-blue-800 to-cyan-600 shadow-lg"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h3 className="text-2xl md:text-4xl font-bold mb-4">
+          Ready to Deliver Flawless Software?
+        </h3>
+        <p className="text-lg md:text-xl leading-relaxed mb-8">
+          Partner with us to ensure your software meets the highest quality standards and exceeds user expectations.
+        </p>
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
           Contact Us
-        </button>
-      </div>
+        </button></a>
+      </motion.div>
     </section>
   );
 };

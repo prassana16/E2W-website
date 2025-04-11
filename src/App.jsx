@@ -13,6 +13,7 @@ import Faq from './components/Faq';
 import AboutPWA from './components/AboutPWA';
 import ContactPopup from './components/ContactPopup';
 import ContactForm from './components/ContactUs';
+import AboutE2w from './components/AboutE2w';
 // services
 import MobileAppDevelopment from './components/services/MobileAppDevelopment';
 import WebAppDevelopment from './components/services/WebAppDevelopment';
@@ -23,6 +24,7 @@ import SaaSDevelopment from './components/services/SaaSDevelopment';
 import UIUXDesign from './components/services/UIUXDesign';
 import QualityAssurance from './components/services/QualityAssurance';
 import StaffAugmentation from './components/services/StaffAugmentation';
+import LeadGenerationServices from './components/services/LeadGenerationServices';
 // new service page components
 import { FlipWordswebsite } from './components/FlipWordswebsite';
 import { FlipWordswebapp } from './components/Flipwordsebapp';
@@ -33,6 +35,7 @@ import { FlipWordsquality } from './components/Flipwordsquality';
 import { FlipWordsstaff } from './components/Flipwordsstaff';
 import { FlipWordsui } from './components/Flipwordsui';
 import { FlipWordscloud } from './components/Flipwordscloud';
+import { FlipWordslead } from './components/Flipwordslead';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
@@ -50,9 +53,11 @@ function App() {
         <Route path="/" element={
           <>
           <BackgroundBoxesDemo />
-          <AppleCardsCarouselDemo />
+          <AboutE2w />
+          <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />
+          
           <Intro />
           <AboutPWA />
           <ClientSlider />
@@ -62,6 +67,10 @@ function App() {
             <ContactPopup />
           </>
         } />
+        <Route path="/OurSolutions" element={
+          <E2wProduct /> 
+          
+      }/>
         {/* blog page */}
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/article/:id" element={<ArticleContent />} />
@@ -102,6 +111,10 @@ function App() {
         <Route path="/StaffAugmentation" element={<>
           <FlipWordsstaff />
         <StaffAugmentation/></>} />
+        {/* Lead gen dev page */}
+        <Route path="/LeadGenerationServices" element={<>
+          <FlipWordslead />
+        <LeadGenerationServices/></>} />
         {/* contact us page */}
         <Route path="/ContactForm" element={<><ContactForm/></>} />
       </Routes>
