@@ -44,7 +44,7 @@ import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
 import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
 import { E2wProduct } from './components/E2wProduct';
-import { ClientSlider } from './components/ClientsSlider';
+import ClientSlider from './components/ClientsSlider';
 function App() {
   return (
     <Router>
