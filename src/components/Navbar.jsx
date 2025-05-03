@@ -66,17 +66,19 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  // Close dropdowns when clicking outside
+  // Close dropdowns when clicking outside - BUT ONLY on desktop
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-        setIsServicesOpen(false);
+      // Only apply this behavior for desktop screens
+      if (window.innerWidth >= 768) {
+        if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+          setIsServicesOpen(false);
+        }
+        if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
+          setIsSolutionsOpen(false);
+        }
       }
-      if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
-        setIsSolutionsOpen(false);
-      }
-      // For mobile menu, we only want to handle outside clicks via the overlay
-      // to prevent unexpected menu closing
+      // For mobile, we'll only toggle dropdowns when their headers are explicitly clicked
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -122,17 +124,42 @@ const Navbar = () => {
     setTouchStartX(null);
   };
 
-  const toggleServices = () => {
+  const toggleServices = (e) => {
+    // Stop event propagation
+    if (e) e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
-    if (window.innerWidth <= 768) {
-       // On mobile, close other accordion when opening one
+    if (window.innerWidth <= 1068) {
+      setIsSolutionsOpen(false); // On mobile, close other accordion when opening one
     }
   };
 
-  const toggleSolutions = () => {
+  const toggleSolutions = (e) => {
+    // Stop event propagation
+    if (e) e.stopPropagation();
     setIsSolutionsOpen(!isSolutionsOpen);
-    if (window.innerWidth <= 768) {
-       // On mobile, close other accordion when opening one
+    if (window.innerWidth <= 1068) {
+      setIsServicesOpen(false); // On mobile, close other accordion when opening one
+    }
+  };
+  
+  // Handle clicks inside the mobile menu to prevent them from closing dropdowns
+  const handleMobileMenuClick = (e) => {
+    // Prevent clicks within the mobile menu from closing dropdowns
+    // unless they are explicitly on the dropdown headers
+    e.stopPropagation();
+  };
+
+  // Handle dropdown item click - Fixed to prevent closing dropdown
+  const handleDropdownItemClick = (e) => {
+    // Stop event from bubbling up to parent elements
+    e.stopPropagation();
+    // Note: We're not closing the menu or dropdown here
+    // This allows users to navigate to the link without closing the dropdown first
+    // For desktop view only, we might want to close the menu after selecting an item
+    if (window.innerWidth >= 768) {
+      // Only close dropdown if on desktop
+      if (isServicesOpen) setIsServicesOpen(false);
+      if (isSolutionsOpen) setIsSolutionsOpen(false);
     }
   };
 
@@ -270,6 +297,7 @@ const Navbar = () => {
                           key={index} 
                           href={service.path}
                           className="p-4 rounded-lg hover:bg-purple-50 border border-transparent hover:border-purple-200 transition-all duration-300 flex flex-col group"
+                          onClick={handleDropdownItemClick}
                         >
                           <div className="flex items-start">
                             <div className="mr-3 mt-1 bg-purple-100 p-2 rounded-lg group-hover:bg-purple-200 transition-all duration-300">
@@ -318,6 +346,7 @@ const Navbar = () => {
                       key={index} 
                       href={solution.path}
                       className="block p-4 hover:bg-purple-50 transition-all duration-300 border-b border-purple-100 last:border-b-0"
+                      onClick={handleDropdownItemClick}
                     >
                       <div className="flex items-center">
                         <div className="mr-3 bg-purple-100 p-2 rounded-lg">{solution.icon}</div>
@@ -367,6 +396,7 @@ const Navbar = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onClick={handleMobileMenuClick} // Add click handler to prevent propagation
       >
         {/* Close button and logo on mobile */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
@@ -399,7 +429,10 @@ const Navbar = () => {
             {/* Mobile Services Accordion */}
             <div className="border-b border-gray-700 pb-1">
               <button 
-                onClick={toggleServices} 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleServices(e);
+                }} 
                 className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white hover:bg-purple-800/30 px-4 py-3 rounded-lg transition-all duration-300"
               >
                 <span className="flex items-center">
@@ -413,13 +446,20 @@ const Navbar = () => {
               </button>
               
               {isServicesOpen && (
-                <div className=" pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1">
+                <div 
+                  className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                  onClick={(e) => e.stopPropagation()} // Prevent clicks inside from closing the dropdown
+                >
                   {services.map((service, index) => (
                     <a 
                       key={index} 
                       href={service.path}
                       className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300 z-50"
-                      onClick={toggleMenu}
+                      onClick={(e) => {
+                        // Only close the mobile menu, not the dropdown
+                        e.stopPropagation();
+                        // Navigate to the link without closing dropdowns
+                      }}
                     >
                       <span className="mr-2 text-sm">{service.icon}</span>
                       <span className="text-sm">{service.name}</span>
@@ -439,7 +479,10 @@ const Navbar = () => {
             {/* Mobile Solutions Accordion */}
             <div className="border-b border-gray-700 pb-1">
               <button 
-                onClick={toggleSolutions} 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleSolutions(e);
+                }} 
                 className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white hover:bg-purple-800/30 px-4 py-3 rounded-lg transition-all duration-300"
               >
                 <span className="flex items-center">
@@ -453,13 +496,20 @@ const Navbar = () => {
               </button>
               
               {isSolutionsOpen && (
-                <div className=" pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1">
+                <div 
+                  className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
+                  onClick={(e) => e.stopPropagation()} // Prevent clicks inside from closing the dropdown
+                >
                   {solutions.map((solution, index) => (
                     <a 
                       key={index} 
                       href={solution.path}
                       className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300"
-                      onClick={toggleMenu}
+                      onClick={(e) => {
+                        // Only stop propagation to prevent closing dropdown
+                        e.stopPropagation();
+                        // Just navigate to the link without closing the dropdown
+                      }}
                     >
                       <span className="mr-2 text-sm">{solution.icon}</span>
                       <span className="text-sm">{solution.name}</span>
