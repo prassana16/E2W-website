@@ -60,128 +60,119 @@ const ContactPopup = () => {
   };
 
   return (
-    <div className={`fixed ${isOpen ? 'inset-0 flex items-center justify-center' : 'bottom-4 right-4'} z-50`}>
-      {isOpen ? (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-transform duration-300">
-          <div className="p-6 bg-white bg-opacity-60 backdrop-blur-lg rounded-xl shadow-lg w-[90%] sm:w-96 md:w-[28rem] relative text-[#022b54]">
-            <button
-              onClick={togglePopup}
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-            >
-              <AiOutlineClose size={24} />
-            </button>
-            <h3 className="text-xl md:text-2xl font-semibold text-center mb-4">Enquire Now</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlineUser className="text-[#FFD700] mr-2 text-lg md:text-xl" />
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
-                />
-              </div>
-              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlineMail className="text-[#FFD700] mr-2 text-lg md:text-xl" />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
-                />
-              </div>
-              <div className="flex items-center bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <AiOutlinePhone className="text-[#FFD700] mr-2 text-lg md:text-xl" />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent outline-none text-gray-100 w-full text-xs md:text-sm "
-                />
-              </div>
-              <div className="flex items-start bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <MdOutlineMessage className="text-[#FFD700] mr-2 mt-1 text-lg md:text-xl" />
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="bg-transparent outline-none text-gray-100 w-full h-20 resize-none text-xs md:text-sm "
-                ></textarea>
-              </div>
-              <div className="bg-black bg-opacity-60 backdrop-blur-lg p-2 rounded">
-                <button
-                  type="button"
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="w-full text-center text-gray-100 py-1 md:py-2 rounded font-semibold hover:bg-black transition duration-300 md:text-sm"
-                >
-                  Select Services
-                </button>
-                {showDropdown && (
-                  <div className="mt-2 bg-white rounded-lg shadow-lg p-4 text-[#022b54] max-h-40 overflow-y-auto">
-                    {[
-                      "Web Application Development",
-                      "Website Development",
-                      "Mobile App Development",
-                      "SEO Services",
-                      "Cloud App Development",
-                      "SaaS",
-                      "UI/UX Development",
-                      "Quality Assurance",
-                      "Staff Augmentation"
-                    ].map((service, index) => (
-                      <label key={index} className="flex items-center text-sm ">
-                        <input
-                          type="checkbox"
-                          name="services"
-                          value={service}
-                          onChange={handleChange}
-                          checked={formData.services.includes(service)}
-                          className="mr-2"
-                        />
-                        {service}
-                      </label>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition duration-300 text-sm "
-              >
-                Submit
-              </button>
-              {formStatus && <p className="text-center text-green-600 mt-2 text-sm ">{formStatus}</p>}
-            </form>
+    <div className="fixed bottom-4 right-4 z-50">
+    {isOpen ? (
+      <div className="w-80 bg-purple-100 rounded-xl shadow-lg overflow-hidden flex flex-col border border-purple-300">
+        <div className="flex justify-between items-center p-4 bg-purple-600 text-white">
+          <h3 className="text-lg font-semibold">Enquire Now</h3>
+          <button onClick={togglePopup}>
+            <AiOutlineClose size={20} />
+          </button>
+        </div>
+        <form onSubmit={handleSubmit} className="p-4 space-y-3 bg-white">
+          <div className="flex items-center border border-purple-300 p-2 rounded">
+            <AiOutlineUser className="text-purple-600 mr-2" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="bg-transparent outline-none text-sm w-full text-purple-800"
+            />
           </div>
+          <div className="flex items-center border border-purple-300 p-2 rounded">
+            <AiOutlineMail className="text-purple-600 mr-2" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="bg-transparent outline-none text-sm w-full text-purple-800"
+            />
+          </div>
+          <div className="flex items-center border border-purple-300 p-2 rounded">
+            <AiOutlinePhone className="text-purple-600 mr-2" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="bg-transparent outline-none text-sm w-full text-purple-800"
+            />
+          </div>
+          <div className="flex items-start border border-purple-300 p-2 rounded">
+            <MdOutlineMessage className="text-purple-600 mr-2 mt-1" />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="bg-transparent outline-none text-sm w-full h-20 resize-none text-purple-800"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              type="button"
+              onClick={() => setShowDropdown(!showDropdown)}
+              className="w-full text-sm bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition"
+            >
+              Select Services
+            </button>
+            {showDropdown && (
+              <div className="mt-2 bg-white border border-purple-300 rounded shadow max-h-32 overflow-y-auto text-purple-800">
+                {[
+                  "Web Application Development",
+                  "Website Development",
+                  "Mobile App Development",
+                  "SEO Services",
+                  "Cloud App Development",
+                  "SaaS",
+                  "UI/UX Development",
+                  "Quality Assurance",
+                  "Staff Augmentation",
+                ].map((service, index) => (
+                  <label key={index} className="flex items-center px-2 py-1 text-xs">
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={service}
+                      onChange={handleChange}
+                      checked={formData.services.includes(service)}
+                      className="mr-2 accent-purple-600"
+                    />
+                    {service}
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+            <button
+              type="submit"
+              className="w-full bg-[#FFD700] text-[#022b54] py-2 rounded font-semibold hover:bg-yellow-500 transition text-sm"
+            >
+              Submit
+            </button>
+            {formStatus && <p className="text-center text-green-600 text-xs">{formStatus}</p>}
+          </form>
         </div>
       ) : (
-        <div className="fixed bottom-4 right-4 flex items-center space-x-2">
-          <a
-            href="tel:+919600878113"
-            className="bg-[#e6a6ff] text-[#000000] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
-          >
-            <IoCallSharp />
+        <div className="flex items-center space-x-2">
+          <a href="tel:+919600878113" className="bg-[#e6a6ff] p-3 rounded-full shadow hover:bg-yellow-500">
+            <IoCallSharp className="text-black" />
           </a>
-          <a
-            href="https://wa.me/9566031113"
-            className="bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:bg-green-500 transition duration-300 z-50"
-          >
-            <FaWhatsapp />
+          <a href="https://wa.me/9566031113" className="bg-[#25D366] p-3 rounded-full shadow hover:bg-green-500">
+            <FaWhatsapp className="text-white" />
           </a>
           <button
             onClick={togglePopup}
-            className="bg-[#e6a6ff] text-[#020105] p-3 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 z-50"
+            className="bg-[#e6a6ff] p-3 rounded-full shadow hover:bg-yellow-500"
           >
             Enquire
           </button>

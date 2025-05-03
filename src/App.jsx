@@ -36,6 +36,9 @@ import { FlipWordsstaff } from './components/Flipwordsstaff';
 import { FlipWordsui } from './components/Flipwordsui';
 import { FlipWordscloud } from './components/Flipwordscloud';
 import { FlipWordslead } from './components/Flipwordslead';
+// IBMS/ILMS (our solutions)
+import IBMS from './components/IBMS';
+import ILMS from './components/ILMS';
 // Blogs
 import Blogs from './Blogs'; 
 import ArticleContent from "./components/ArticleContent"; 
@@ -45,6 +48,8 @@ import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
 import { E2wProduct } from './components/E2wProduct';
 import ClientSlider from './components/ClientsSlider';
+// Google form
+import GoogleForm from './components/GoogleForm';
 function App() {
   return (
     <Router>
@@ -116,7 +121,14 @@ function App() {
           <FlipWordslead />
         <LeadGenerationServices/></>} />
         {/* contact us page */}
-        <Route path="/ContactForm" element={<><ContactForm/></>} />
+        <Route path="/ContactForm" element={<><GoogleForm/></>} />
+        {/* IBMS page */}
+        <Route path="/IBMS" element={<>
+          <IBMS/></>} />
+       {/* ILMS page */}
+       <Route path="/ILMS" element={<>
+          <ILMS/></>} />
+
       </Routes>
       
       <Footer />
