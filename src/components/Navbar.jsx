@@ -125,14 +125,14 @@ const Navbar = () => {
   const toggleServices = () => {
     setIsServicesOpen(!isServicesOpen);
     if (window.innerWidth <= 768) {
-      setIsSolutionsOpen(false); // On mobile, close other accordion when opening one
+       // On mobile, close other accordion when opening one
     }
   };
 
   const toggleSolutions = () => {
     setIsSolutionsOpen(!isSolutionsOpen);
     if (window.innerWidth <= 768) {
-      setIsServicesOpen(false); // On mobile, close other accordion when opening one
+       // On mobile, close other accordion when opening one
     }
   };
 
@@ -418,7 +418,7 @@ const Navbar = () => {
                     <a 
                       key={index} 
                       href={service.path}
-                      className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300"
+                      className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300 z-50"
                       onClick={toggleMenu}
                     >
                       <span className="mr-2 text-sm">{service.icon}</span>
