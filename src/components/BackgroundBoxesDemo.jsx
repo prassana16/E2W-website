@@ -13,7 +13,7 @@ export function BackgroundBoxesDemo() {
   const words = [
     {
       text: "Easy2Work.",
-      className: "text-2xl md:text-6xl xl:text-8xl text-purple-200"
+      className: "text-3xl md:text-6xl xl:text-8xl text-purple-200"
     }
   ];
 
@@ -33,18 +33,18 @@ export function BackgroundBoxesDemo() {
       />
 
       {/* Optional Overlay for better contrast */}
-      <div className="absolute inset-0 bg-black opacity-10 md:opacity-20" />
+      <div className="absolute inset-0 bg-black opacity-40 md:opacity-30" />
 
       {/* Animated Boxes (if needed) */}
       {/* <Boxes /> */}
 
       {/* Heading */}
-      <h1 className="xl:text-8xl md:text-6xl text-2xl font-bold text-white relative z-20 flex items-center gap-2 md:gap-4">
+      <h1 className="xl:text-8xl md:text-6xl text-3xl font-bold text-white relative z-20 flex items-center gap-2 md:gap-4">
         Welcome to <TypewriterEffect words={words}  />
       </h1>
 
       {/* Description */}
-      <p className="text-center text-xs md:text-2xl xl:text-4xl md:text-nowrap mt-4 md:mt-6 text-neutral-300 relative z-20 px-4 md:px-0 max-w-xs md:max-w-lg">
+      <p className="text-center text-md md:text-2xl xl:text-4xl text-nowrap mt-4 md:mt-6 text-neutral-300 relative z-20 px-4 md:px-0 max-w-xs md:max-w-lg">
         Intelligence at the Heart of Your Business.
       </p>
     </div>
