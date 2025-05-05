@@ -2,15 +2,15 @@
 import { Button } from "./ui/moving-border";
 import React from "react";
 import { Carousel, Card } from "./ui/apple-cards-carousel";
-import WebDevImage from '../assets/images/uiux-service-card.jpg';
-import seo from '../assets/images/seo-service-card.jpg';
-import staff from '../assets/images/staff-service-card.jpg';
-import mobile from '../assets/images/mobile-service-card.jpg';
-import uiux from '../assets/images/website-service-card.jpg';
-import quality from '../assets/images/quality-service-card2.jpg';
-import webapp from '../assets/images/web-app-service-card.jpg';
-import cloud from '../assets/images/cloud-service-card.jpg';
-import saas from '../assets/images/saas-service-card.jpg';
+// import WebDevImage from '../assets/images/uiux-service-card.jpg';
+// import seo from '../assets/images/seo-service-card.jpg';
+// import staff from '../assets/images/staff-service-card.jpg';
+// import mobile from '../assets/images/mobile-service-card.jpg';
+// import uiux from '../assets/images/website-service-card.jpg';
+// import quality from '../assets/images/quality-service-card2.jpg';
+// import webapp from '../assets/images/web-app-service-card.jpg';
+// import cloud from '../assets/images/cloud-service-card.jpg';
+// import saas from '../assets/images/saas-service-card.jpg';
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (

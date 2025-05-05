@@ -3,9 +3,38 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ilmsBg from '/src/Videos/ILMS.mp4';
 import Vid1 from '/src/Videos/IBMS module.mp4'
+import SEO from './SEO'; // Import the SEO component
 export default function ILMS() {
+
+  const ilmsSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Easy2Work ILMS",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Intelligent Lead Management Software (ILMS) for optimizing sales processes and converting prospects. Perfect for businesses in USA, Canada, UK, and India.",
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for pricing",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Easy2Work",
+      "url": "https://easy2work.in"
+    },
+    "featureList": "Lead Scoring, Lead Nurturing, Sales Pipeline Management, Analytics Dashboard, CRM Integration"
+  };
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f3d2e] to-[#0f3d2e] text-white">
+      <SEO 
+        title="ILMS - Intelligent Lead Management Software | Easy2Work"
+        description="Advanced Intelligent Lead Management Software (ILMS) by Easy2Work. Convert prospects, optimize sales processes, and increase revenue with our customizable lead management solutions for USA, Canada, UK, and India."
+        keywords="ILMS, Intelligent Lead Management Software, sales automation, lead generation software, CRM integration, lead nurturing, lead scoring, USA lead management, Canada sales software, UK lead nurturing software, India CRM solutions"
+        schema={ilmsSchema}
+      />
       <HeroSection />
       <ModulesSection />
     </div>

@@ -4,7 +4,7 @@ import { IoIosArrowUp } from 'react-icons/io';
 import { BsWhatsapp } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';
 import { IoLogoWhatsapp } from "react-icons/io";
-import logo from '/icon-384x384.png';
+import logo from '/public/EASY2Work-Logo.png';
 import { motion } from 'framer-motion';  
 
 const Footer = () => {

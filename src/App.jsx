@@ -1,18 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Intro from './components/Intro';
-import Features from './components/Features';
+// import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import OurClients from './components/OurClients';
-import OurSkills from './components/OurSkills';
-import OurServices from './components/OurServices';
+// import OurSkills from './components/OurSkills';
+// import OurServices from './components/OurServices';
 import Faq from './components/Faq';
 import AboutPWA from './components/AboutPWA';
 import ContactPopup from './components/ContactPopup';
-import ContactForm from './components/ContactUs';
+// import ContactForm from './components/ContactUs';
 import AboutE2w from './components/AboutE2w';
 // services
 import MobileAppDevelopment from './components/services/MobileAppDevelopment';
@@ -44,25 +45,35 @@ import Blogs from './Blogs';
 import ArticleContent from "./components/ArticleContent"; 
 // new components
 import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
-import { AppleCardsCarouselDemo } from './components/AppleCardsCarouselDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
 import { E2wProduct } from './components/E2wProduct';
 import ClientSlider from './components/ClientsSlider';
+
+// Import SEO component for Home page
+import SEO from './components/SEO';
+
 // Google form
 import GoogleForm from './components/GoogleForm';
 function App() {
   return (
+    <HelmetProvider> 
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={
           <>
+          {/* Home page SEO */}
+          <SEO 
+                title="Easy2Work - IBMS & ILMS Solutions | Software Development Company"
+                description="Easy2Work offers enterprise-grade IBMS, ILMS, and custom software development services for businesses in USA, Canada, UK, and India. Innovative IT solutions tailored to your needs."
+                keywords="Easy2Work, IBMS, ILMS, software development, IT services, web development, mobile apps, USA, Canada, UK, India"
+              />
           <BackgroundBoxesDemo />
           <AboutE2w />
           <Banner />
           <HeroScrollDemo /> 
           <E2wProduct />
-          
+
           <Intro />
           <AboutPWA />
           <ClientSlider />
@@ -133,6 +144,7 @@ function App() {
       
       <Footer />
     </Router>
+  </HelmetProvider>
   );
 }
 

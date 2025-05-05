@@ -13,7 +13,7 @@ export function BackgroundBoxesDemo() {
   const words = [
     {
       text: "Easy2Work.",
-      className: "text-3xl md:text-6xl xl:text-8xl text-purple-200"
+      className: "text-3xl md:text-6xl xl:text-8xl text-white"
     }
   ];
 

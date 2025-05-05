@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import SEO from './SEO'; // Import the SEO component
 // BG video
 import bg from '/src/Videos/IBMS bg.mp4'
 import bg2 from '/src/Videos/IBMS bg2.mp4'
@@ -24,8 +25,36 @@ import e2wlogout from '../assets/images/e2w-products-laptop/e2wlogout.png';
 import Vid1 from '/src/Videos/IBMS module.mp4'
 
 export default function IBMS() {
+
+  const ibmsSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Easy2Work IBMS",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Intelligent Business Management Software (IBMS) for streamlining operations and enhancing productivity across USA, Canada, UK, and India businesses.",
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for pricing",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Easy2Work",
+      "url": "https://easy2work.in"
+    },
+    "featureList": "Process Automation, Data Analysis, Business Intelligence, Custom Reporting, Performance Monitoring"
+  };
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#060e14] to-[#091c2c] text-white">
+      <SEO 
+        title="IBMS - Intelligent Business Management Software | Easy2Work"
+        description="Comprehensive Intelligent Business Management Software (IBMS) solutions by Easy2Work. Streamline operations, boost productivity, and manage business processes efficiently. Available in USA, Canada, UK, and India."
+        keywords="IBMS, Intelligent Business Management Software, business process automation, enterprise software, workflow management, business intelligence software, USA IBMS solutions, Canada business software, UK IBMS systems, India business management solutions"
+        schema={ibmsSchema}
+      />
       <HeroSection />
       <ModulesSection />
     </div>
