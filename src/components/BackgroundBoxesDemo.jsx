@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Boxes } from "./ui/background-boxes";
-import BGvid4 from "/src/Videos/main bg4.mp4";
+
+
 import Easy2workLogo from "/EASY2Work-Logo.png";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 

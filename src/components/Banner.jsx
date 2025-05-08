@@ -1,103 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaRegArrowAltCircleLeft,
+  FaRegArrowAltCircleRight,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import WebDevImage from '../assets/images/webdev2.png';
-import SoftwareDevImage from '../assets/images/mobileapp2.png';
-import SeoImage from '../assets/images/seobanner4.png';
-import ItCompanyImage from '../assets/images/bannerimg.png';
-import CloudImage from '../assets/images/cloudbanner3.png';
-import WebsiteImage from '../assets/images/websitedev2.png';
-import Websiteapp from '../assets/images/websiteapp.png';
-import Websitedevelopment from '../assets/images/website.png';
-import Mobileapp from '../assets/images/mobileapp.png';
-import seo from '../assets/images/seo.png';
-import software from '../assets/images/software.png';
-import quality from '../assets/images/quality.png';
-import UIUX from '../assets/images/UIUX.png';
+import portfolioSite from "../assets/images/portfolio-site.png";
+import pwaApp from "../assets/images/pwa-app.png";
+import localSEO from "../assets/images/seo3.png";
+import microservices from "../assets/images/cloud2.png";
+import e2w from "../assets/images/PWAintro2.png";
+import prototyping from "../assets/images/ui3.png";
+import bugTracking from "../assets/images/qual1.png";
+import teamCollaboration from "../assets/images/staff2.png";
+import cms from "../assets/images/cms.png";
 
-import enterprise from '../assets/images/enterprise.png';
-import portfolioSite from '../assets/images/portfolio-site.png';
-import pwaApp from '../assets/images/pwa-app.png';
-import localSEO from '../assets/images/seo3.png';
-import microservices from '../assets/images/cloud2.png';
-import e2w from '../assets/images/PWAintro2.png';
-import prototyping from '../assets/images/ui3.png';
-import bugTracking from '../assets/images/qual1.png';
-import teamCollaboration from '../assets/images/staff2.png';
-import cms from '../assets/images/cms.png';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Navbar from "./Navbar";
-import BGvid from "../Videos/main bg.mp4";
 
 const Banner = () => {
   const slides = [
     {
-      title: 'Website Application Development',
-      description: 'Building robust, scalable, and secure web applications tailored to meet your business needs and enhance user engagement.',
+      title: "Website Application Development",
+      description:
+        "Building robust, scalable, and secure web applications tailored to meet your business needs and enhance user engagement.",
       image: cms,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/WebAppDevelopment",
     },
     {
-      title: 'Website Development',
-      description: 'Crafting dynamic and responsive websites that provide seamless user experiences and drive digital growth.',
+      title: "Website Development",
+      description:
+        "Crafting dynamic and responsive websites that provide seamless user experiences and drive digital growth.",
       image: portfolioSite,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/WebsiteDevelopment",
     },
     {
-      title: 'Mobile App Development',
-      description: 'Designing and developing intuitive mobile applications for iOS and Android platforms to meet diverse user needs.',
+      title: "Mobile App Development",
+      description:
+        "Designing and developing intuitive mobile applications for iOS and Android platforms to meet diverse user needs.",
       image: pwaApp,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/MobileAppDevelopment",
     },
     {
-      title: 'SEO Services',
-      description: 'Optimizing your website to improve visibility, increase traffic, and achieve top rankings on search engines.',
+      title: "SEO Services",
+      description:
+        "Optimizing your website to improve visibility, increase traffic, and achieve top rankings on search engines.",
       image: localSEO,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/SEOServices",
     },
     {
-      title: 'Cloud App Development',
-      description: 'Leveraging cloud technology to create scalable, resilient applications that meet modern business demands.',
+      title: "Cloud App Development",
+      description:
+        "Leveraging cloud technology to create scalable, resilient applications that meet modern business demands.",
       image: microservices,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/CloudNativeAppDevelopment",
     },
     {
-      title: 'Software as a Service',
-      description: 'Delivering innovative SaaS solutions to streamline operations, reduce costs, and enhance business efficiency.',
-      image: e2w, 
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      title: "Software as a Service",
+      description:
+        "Delivering innovative SaaS solutions to streamline operations, reduce costs, and enhance business efficiency.",
+      image: e2w,
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/SaaSDevelopment",
     },
     {
-      title: 'UI/UX Design',
-      description: 'Creating visually appealing and user-friendly designs to deliver exceptional digital experiences.',
+      title: "UI/UX Design",
+      description:
+        "Creating visually appealing and user-friendly designs to deliver exceptional digital experiences.",
       image: prototyping,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/UIUXDesign",
     },
     {
-      title: 'Quality Assurance',
-      description: 'Ensuring your products meet the highest standards of quality through rigorous testing and validation processes.',
+      title: "Quality Assurance",
+      description:
+        "Ensuring your products meet the highest standards of quality through rigorous testing and validation processes.",
       image: bugTracking,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/QualityAssurance",
     },
     {
-      title: 'Staff Augmentation',
-      description: 'Providing skilled professionals to help you scale your team, meet project deadlines, and achieve your goals efficiently.',
+      title: "Staff Augmentation",
+      description:
+        "Providing skilled professionals to help you scale your team, meet project deadlines, and achieve your goals efficiently.",
       image: teamCollaboration,
-      bgColor: 'radial-gradient(ellipse at center, #017598, #014066)',
+      bgColor: "radial-gradient(ellipse at center, #017598, #014066)",
       learnMoreLink: "/StaffAugmentation",
     },
   ];
-  
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -194,8 +189,9 @@ const Banner = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl"
           >
-            Transform your business with our suite of intelligent management systems, 
-            customized digital solutions, and expert consulting services.
+            Transform your business with our suite of intelligent management
+            systems, customized digital solutions, and expert consulting
+            services.
           </motion.p>
 
           <motion.div
@@ -228,15 +224,15 @@ const Banner = () => {
         <div className="flex flex-col items-center">
           <p className="text-sm mb-2">Scroll to explore</p>
           <div className="w-1 h-8 rounded-full bg-white/30 overflow-hidden">
-            <motion.div 
+            <motion.div
               className="w-full bg-accent-400 h-full"
-              animate={{ 
+              animate={{
                 y: ["-100%", "100%"],
               }}
-              transition={{ 
+              transition={{
                 repeat: Infinity,
                 duration: 1.5,
-                ease: "easeInOut" 
+                ease: "easeInOut",
               }}
             />
           </div>
@@ -248,7 +244,10 @@ const Banner = () => {
         <motion.div
           key={currentSlide}
           className="flex flex-col md:flex-row justify-center items-center w-full md:gap-0"
-          initial={{ opacity: 0, x: animationDirection === "right" ? 100 : -10 }}
+          initial={{
+            opacity: 0,
+            x: animationDirection === "right" ? 100 : -10,
+          }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: animationDirection === "right" ? -10 : 100 }}
           transition={{ duration: 0.1 }}
@@ -278,7 +277,7 @@ const Banner = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
-              loading="lazy" 
+              loading="lazy"
             />
           </div>
         </motion.div>

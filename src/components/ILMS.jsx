@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ilmsBg from '/src/Videos/ILMS.mp4';
-import Vid1 from '/src/Videos/IBMS module.mp4';
 import SEO from './SEO';
 
 export default function ILMS() {

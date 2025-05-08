@@ -6,8 +6,8 @@ import Logo from "/EASY2Work-Logo.png"; // Updated path to reference file from p
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [solutionsDropdown, setSolutionsDropdown] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
-  const [productsDropdown, setProductsDropdown] = useState(false);
   const location = useLocation();
 
   // Handle window scroll
@@ -27,41 +27,42 @@ const Navbar = () => {
   // Close mobile menu when route changes
   useEffect(() => {
     setNav(false);
+    setSolutionsDropdown(false);
     setServicesDropdown(false);
-    setProductsDropdown(false);
   }, [location.pathname]);
 
-  // Create a state for tracking mouse position for dropdown hover
   const toggleNav = () => setNav(!nav);
   
+  const toggleSolutionsDropdown = () => {
+    setSolutionsDropdown(!solutionsDropdown);
+    if (servicesDropdown) setServicesDropdown(false);
+  };
+
   const toggleServicesDropdown = () => {
     setServicesDropdown(!servicesDropdown);
-    if (productsDropdown) setProductsDropdown(false);
-  };
-  
-  const toggleProductsDropdown = () => {
-    setProductsDropdown(!productsDropdown);
-    if (servicesDropdown) setServicesDropdown(false);
+    if (solutionsDropdown) setSolutionsDropdown(false);
   };
 
   // Navbar style based on scroll position
   const navbarStyle = {
-    backgroundColor: isScrolled ? "rgba(98, 0, 120, 0.9)" : "transparent", // Changed to new dark magenta with transparency
+    backgroundColor: isScrolled ? "rgba(98, 0, 120, 0.9)" : "transparent",
     backdropFilter: isScrolled ? "blur(10px)" : "none",
     transition: "all 0.3s ease-in-out",
+    boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
   };
 
   // Define hover and active states for nav links
   const linkClasses = 
-    "text-white hover:text-primary-200 transition duration-300 py-2 relative";
+    "text-white hover:text-primary-200 transition duration-300 py-2 relative text-base font-medium";
   
   const activeLinkClasses = 
-    "text-primary-100 hover:text-primary-200 transition duration-300 py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-200";
+    "text-primary-100 hover:text-primary-200 transition duration-300 py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-200 text-base font-medium";
 
   // Dropdown style
   const dropdownStyle = {
-    backgroundColor: "rgba(98, 0, 120, 0.95)", // Changed to new dark magenta with transparency
+    backgroundColor: "rgba(98, 0, 120, 0.95)",
     backdropFilter: "blur(10px)",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
   };
 
   return (
@@ -81,205 +82,169 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex space-x-6 font-medium">
-          <li>
-            <Link
-              to="/"
-              className={location.pathname === "/" ? activeLinkClasses : linkClasses}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/AboutE2w"
-              className={location.pathname === "/AboutE2w" ? activeLinkClasses : linkClasses}
-            >
-              About
-            </Link>
-          </li>
-          <li className="relative group">
-            <button
-              className={`flex items-center ${servicesDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2`}
-              onClick={toggleServicesDropdown}
-              onMouseEnter={() => setServicesDropdown(true)}
-              onMouseLeave={() => setServicesDropdown(false)}
-            >
-              Services
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+        {/* Desktop Navigation - Right Aligned */}
+        <div className="hidden lg:flex items-center justify-end flex-1">
+          <ul className="flex space-x-8 font-medium items-center">
+            <li>
+              <Link
+                to="/"
+                className={location.pathname === "/" ? activeLinkClasses : linkClasses}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            {/* Services Dropdown */}
-            {servicesDropdown && (
-              <div
-                className="absolute left-0 mt-2 w-60 rounded-md shadow-lg py-1 z-50"
-                style={dropdownStyle}
+                Home
+              </Link>
+            </li>
+            <li className="relative group">
+              <button
+                className={`flex items-center ${servicesDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2 text-base font-medium`}
+                onClick={toggleServicesDropdown}
                 onMouseEnter={() => setServicesDropdown(true)}
                 onMouseLeave={() => setServicesDropdown(false)}
               >
-                <Link
-                  to="/WebAppDevelopment"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
+                Services
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Web App Development
-                </Link>
-                <Link
-                  to="/MobileAppDevelopment"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              {/* Services Dropdown */}
+              {servicesDropdown && (
+                <div
+                  className="absolute right-0 mt-2 w-60 rounded-md shadow-lg py-1 z-50"
+                  style={dropdownStyle}
+                  onMouseEnter={() => setServicesDropdown(true)}
+                  onMouseLeave={() => setServicesDropdown(false)}
                 >
-                  Mobile App Development
-                </Link>
-                <Link
-                  to="/UIUXDesign"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  UI/UX Design
-                </Link>
-                <Link
-                  to="/PWA"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  PWA Development
-                </Link>
-                <Link
-                  to="/CloudServices"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  Cloud Services
-                </Link>
-                <Link
-                  to="/SAAS"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  SAAS Development
-                </Link>
-                <Link
-                  to="/Consultant"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  Consultancy Services 
-                </Link>
-                <Link
-                  to="/ContentWriting"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  Content Development
-                </Link>
-                <Link
-                  to="/SEO"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  SEO Services
-                </Link>
-              </div>
-            )}
-          </li>
-          <li className="relative group">
-            <button
-              className={`flex items-center ${productsDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2`}
-              onClick={toggleProductsDropdown}
-              onMouseEnter={() => setProductsDropdown(true)}
-              onMouseLeave={() => setProductsDropdown(false)}
-            >
-              Products
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                  <Link
+                    to="/WebsiteDevelopment"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Website Development
+                  </Link>
+                  <Link
+                    to="/WebAppDevelopment"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Web App Development
+                  </Link>
+                  <Link
+                    to="/MobileAppDevelopment"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Mobile App Development
+                  </Link>
+                  <Link
+                    to="/UIUXDesign"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    UI/UX Design
+                  </Link>
+                  <Link
+                    to="/CloudNativeAppDevelopment"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Cloud Services
+                  </Link>
+                  <Link
+                    to="/SaaSDevelopment"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    SaaS Development
+                  </Link>
+                  <Link
+                    to="/StaffAugmentation"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Staff Augmentation
+                  </Link>
+                  <Link
+                    to="/QualityAssurance"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    Quality Assurance
+                  </Link>
+                  <Link
+                    to="/SEOServices"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    SEO Services
+                  </Link>
+                </div>
+              )}
+            </li>
+            <li className="relative group">
+              <button
+                className={`flex items-center ${solutionsDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2 text-base font-medium`}
+                onClick={toggleSolutionsDropdown}
+                onMouseEnter={() => setSolutionsDropdown(true)}
+                onMouseLeave={() => setSolutionsDropdown(false)}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-            {/* Products Dropdown */}
-            {productsDropdown && (
-              <div
-                className="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 z-50"
-                style={dropdownStyle}
-                onMouseEnter={() => setProductsDropdown(true)}
-                onMouseLeave={() => setProductsDropdown(false)}
+                Our Solutions
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              {/* Solutions Dropdown */}
+              {solutionsDropdown && (
+                <div
+                  className="absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-50"
+                  style={dropdownStyle}
+                  onMouseEnter={() => setSolutionsDropdown(true)}
+                  onMouseLeave={() => setSolutionsDropdown(false)}
+                >
+                  <Link
+                    to="/IBMS"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    IBMS
+                  </Link>
+                  <Link
+                    to="/ILMS"
+                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                  >
+                    ILMS
+                  </Link>
+                </div>
+              )}
+            </li>
+            <li>
+              <Link
+                to="/ContactForm"
+                className={location.pathname === "/ContactForm" ? activeLinkClasses : linkClasses}
               >
-                <Link
-                  to="/IBMS"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  IBMS
-                </Link>
-                <Link
-                  to="/ILMS"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  ILMS
-                </Link>
-                <Link
-                  to="/E2wProduct"
-                  className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white"
-                >
-                  Easy2Work PWA
-                </Link>
-              </div>
-            )}
-          </li>
-          <li>
-            <Link
-              to="/Clients"
-              className={location.pathname === "/Clients" ? activeLinkClasses : linkClasses}
-            >
-              Clients
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/Careers"
-              className={location.pathname === "/Careers" ? activeLinkClasses : linkClasses}
-            >
-              Careers
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/Blogs"
-              className={location.pathname === "/Blogs" ? activeLinkClasses : linkClasses}
-            >
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/ContactForm"
-              className={location.pathname === "/ContactForm" ? activeLinkClasses : linkClasses}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
 
-        {/* Contact Button (Desktop) */}
-        <div className="hidden lg:flex">
-          <Link to="/ContactForm">
-            <button className="bg-primary-300 hover:bg-primary-200 text-white px-5 py-2 rounded-md transition duration-300">
-              Get in Touch
-            </button>
-          </Link>
+          {/* Contact Button (Desktop) */}
+          <div className="ml-8">
+            <Link to="/ContactForm">
+              <button className="bg-primary-300 hover:bg-primary-200 text-white px-5 py-2 rounded-md transition duration-300 font-medium">
+                Get in Touch
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -290,7 +255,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {nav && (
-        <div className="lg:hidden absolute top-20 left-0 right-0 bg-primary-500 text-white">
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-primary-500 text-white shadow-lg rounded-b-lg">
           <ul className="px-4 py-2">
             <li className="py-3 border-b border-primary-400">
               <Link
@@ -299,15 +264,6 @@ const Navbar = () => {
                 onClick={() => setNav(false)}
               >
                 Home
-              </Link>
-            </li>
-            <li className="py-3 border-b border-primary-400">
-              <Link
-                to="/AboutE2w"
-                className="block"
-                onClick={() => setNav(false)}
-              >
-                About
               </Link>
             </li>
             <li className="py-3 border-b border-primary-400">
@@ -334,6 +290,13 @@ const Navbar = () => {
               {servicesDropdown && (
                 <div className="mt-2 space-y-2 pl-4">
                   <Link
+                    to="/WebsiteDevelopment"
+                    className="block py-2 text-sm"
+                    onClick={() => setNav(false)}
+                  >
+                    Website Development
+                  </Link>
+                  <Link
                     to="/WebAppDevelopment"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
@@ -355,42 +318,35 @@ const Navbar = () => {
                     UI/UX Design
                   </Link>
                   <Link
-                    to="/PWA"
-                    className="block py-2 text-sm"
-                    onClick={() => setNav(false)}
-                  >
-                    PWA Development
-                  </Link>
-                  <Link
-                    to="/CloudServices"
+                    to="/CloudNativeAppDevelopment"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
                   >
                     Cloud Services
                   </Link>
                   <Link
-                    to="/SAAS"
+                    to="/SaaSDevelopment"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
                   >
-                    SAAS Development
+                    SaaS Development
                   </Link>
                   <Link
-                    to="/Consultant"
+                    to="/StaffAugmentation"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
                   >
-                    Consultancy Services
+                    Staff Augmentation
                   </Link>
                   <Link
-                    to="/ContentWriting"
+                    to="/QualityAssurance"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
                   >
-                    Content Development
+                    Quality Assurance
                   </Link>
                   <Link
-                    to="/SEO"
+                    to="/SEOServices"
                     className="block py-2 text-sm"
                     onClick={() => setNav(false)}
                   >
@@ -402,11 +358,11 @@ const Navbar = () => {
             <li className="py-3 border-b border-primary-400">
               <button
                 className="flex items-center justify-between w-full"
-                onClick={toggleProductsDropdown}
+                onClick={toggleSolutionsDropdown}
               >
-                Products
+                Our Solutions
                 <svg
-                  className={`w-4 h-4 transition-transform ${productsDropdown ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 transition-transform ${solutionsDropdown ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -420,7 +376,7 @@ const Navbar = () => {
                   ></path>
                 </svg>
               </button>
-              {productsDropdown && (
+              {solutionsDropdown && (
                 <div className="mt-2 space-y-2 pl-4">
                   <Link
                     to="/IBMS"
@@ -436,42 +392,8 @@ const Navbar = () => {
                   >
                     ILMS
                   </Link>
-                  <Link
-                    to="/E2wProduct"
-                    className="block py-2 text-sm"
-                    onClick={() => setNav(false)}
-                  >
-                    Easy2Work PWA
-                  </Link>
                 </div>
               )}
-            </li>
-            <li className="py-3 border-b border-primary-400">
-              <Link
-                to="/Clients"
-                className="block"
-                onClick={() => setNav(false)}
-              >
-                Clients
-              </Link>
-            </li>
-            <li className="py-3 border-b border-primary-400">
-              <Link
-                to="/Careers"
-                className="block"
-                onClick={() => setNav(false)}
-              >
-                Careers
-              </Link>
-            </li>
-            <li className="py-3 border-b border-primary-400">
-              <Link
-                to="/Blogs"
-                className="block"
-                onClick={() => setNav(false)}
-              >
-                Blogs
-              </Link>
             </li>
             <li className="py-3">
               <Link
@@ -479,14 +401,14 @@ const Navbar = () => {
                 className="block"
                 onClick={() => setNav(false)}
               >
-                Contact
+                Contact Us
               </Link>
             </li>
           </ul>
           <div className="px-4 py-4">
             <Link to="/ContactForm">
               <button
-                className="w-full bg-primary-300 hover:bg-primary-200 text-white py-2 rounded-md transition duration-300"
+                className="w-full bg-primary-300 hover:bg-primary-200 text-white py-2 rounded-md transition duration-300 font-medium"
                 onClick={() => setNav(false)}
               >
                 Get in Touch

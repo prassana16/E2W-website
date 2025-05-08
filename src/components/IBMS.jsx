@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from './Navbar';
 import Footer from './Footer';
-import IBMSVideo from '../Videos/ibmsdemovid.mp4';
 import { motion, useInView } from "framer-motion";
 import { FaCheckCircle, FaCog, FaChartLine, FaUsers } from "react-icons/fa";
-import IBMSbg2 from '../Videos/IBMS bg2.mp4';
+
 
 const IBMS = () => {
   const [loading, setLoading] = useState(true);
