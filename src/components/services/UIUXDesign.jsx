@@ -11,7 +11,7 @@ const UIUXDesign = () => {
   };
 
   return (
-    <section className="min-h-screen w-full  bg-gradient-to-r from-pink-600 to-red-600 text-white">
+    <section className="min-h-screen w-full bg-gradient-to-r from-primary-500 to-primary-400 text-white">
       {/* Introduction */}
       <motion.div
         className="flex flex-col items-center text-center py-16 px-6 md:px-12"
@@ -62,24 +62,25 @@ const UIUXDesign = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #ff7eb3, #ff4d4d)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05a7be, #087ea2)', color: 'white' }}
       >
         <img
           src={wireframing}
           alt="Wireframing"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
+          loading="lazy"
         />
         <div className="flex flex-col md:w-1/2 text-center md:text-left">
           <h3 className="text-2xl md:text-4xl font-semibold mb-4">Wireframing</h3>
           <p className="text-lg leading-relaxed mb-4">
-            Lay the foundation for seamless user experiences by planning out the structure and flow of your application.
+            Create the blueprint of your digital product with our detailed wireframing process, focusing on structure, hierarchy, and functionality.
           </p>
           <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
-            <li>Low-Fidelity Wireframes</li>
-            <li>Information Architecture</li>
-            <li>Clickable Prototypes</li>
-            <li>Navigation Flow: Ensure intuitive and efficient navigation throughout your platform.</li>
-            <li>Collaborative Approach: Work closely with stakeholders to align wireframes with business objectives.</li>
+            <li>Information Architecture Planning</li>
+            <li>Low and High-Fidelity Wireframes</li>
+            <li>Usability Testing on Early Concepts</li>
+            <li>Responsive Design Foundations: Ensure your product works flawlessly across all devices.</li>
+            <li>Collaborative Feedback Sessions: We involve stakeholders early to align on direction.</li>
           </ul>
         </div>
       </motion.div>
@@ -96,16 +97,17 @@ const UIUXDesign = () => {
           src={prototyping}
           alt="Prototyping"
           className="w-full md:w-1/2 rounded-lg shadow-lg"
+          loading="lazy"
         />
         <div className="flex flex-col md:w-1/2 text-center md:text-left">
           <h3 className="text-2xl md:text-4xl font-semibold mb-4">Prototyping</h3>
           <p className="text-lg leading-relaxed mb-4">
-            Bring your ideas to life with interactive prototypes, ensuring the final product meets user expectations and goals.
+            Transform concepts into interactive experiences that simulate the final product, enabling thorough testing before development begins.
           </p>
           <ul className="list-disc space-y-2 md:space-y-5 md:text-xl text-left pl-6">
-            <li>Interactive Mockups</li>
-            <li>User Testing and Feedback</li>
-            <li>Design Iterations</li>
+            <li>Interactive Clickable Prototypes</li>
+            <li>User Flow Validation</li>
+            <li>Feedback Implementation</li>
             <li>Cross-Device Compatibility: Validate the prototype on various devices to ensure a consistent experience.</li>
             <li>Animation and Transition Testing: Explore animations and transitions to make the interface engaging.</li>
           </ul>
@@ -119,7 +121,7 @@ const UIUXDesign = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #ff7eb3, #ff4d4d)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
           Why Choose Our UI/UX Design Services?
@@ -138,7 +140,7 @@ const UIUXDesign = () => {
 
       {/* Call-to-Action Card */}
       <motion.div
-        className="text-center px-6 py-12 bg-gradient-to-r from-pink-700 to-red-800 shadow-lg"
+        className="text-center px-6 py-12 bg-gradient-to-r from-primary-500 to-primary-600 shadow-lg"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -150,7 +152,7 @@ const UIUXDesign = () => {
         <p className="text-lg md:text-xl leading-relaxed mb-8">
           Partner with us to craft innovative designs that drive engagement and deliver results. Let's create something extraordinary together!
         </p>
-        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-primary-700 text-lg rounded-lg hover:bg-primary-100 transition duration-300 ease-in-out">
           Contact Us
         </button></a>
       </motion.div>

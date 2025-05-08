@@ -6,7 +6,7 @@ const SEO = ({
   description, 
   keywords, 
   canonicalUrl = null, 
-  ogImage = 'https://easy2work.in/public/EASY2Work-Logo.png',
+  ogImage = 'https://easy2work.in/EASY2Work-Logo.png',
   schema = null,
   region = "global" // For region-specific meta tags
 }) => {

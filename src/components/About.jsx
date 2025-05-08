@@ -4,7 +4,7 @@ import mobileMockup from '../assets/images/ModuleImages/e2wAbout.png'; // Path t
 
 const About = () => {
   return (
-    <section className="bg-[#00264c] py-16" id='features'>
+    <section className="bg-primary-900 py-16" id='features'>
       
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
         
@@ -15,10 +15,10 @@ const About = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold font-Tinos text-[#fceecf] mb-4">
+          <h2 className="text-3xl font-bold font-Tinos text-primary-100 mb-4">
             About Easy2Work
           </h2>
-          <p className="text-[#F7F2E7] font-mono text-lg mb-6">
+          <p className="text-primary-200 font-mono text-lg mb-6">
             Easy2Work is an all-in-one workflow management system designed to optimize business processes and streamline daily operations. Customization is our value-add. It provides an intuitive interface for managing clients, handling rate cards, processing orders, and governing financial transactions.
           </p>
         </motion.div>

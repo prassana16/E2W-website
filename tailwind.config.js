@@ -15,6 +15,30 @@ const config = {
         Tinos: ['Tinos', 'sans'],
         RozhaOne: ['RozhaOne', 'serif'],
       },
+      colors: {
+        'primary': {
+          100: '#f6c5e2', // Lightest magenta
+          200: '#ef9dcf', // Light magenta
+          300: '#e072bd', // Medium-light magenta
+          400: '#d048ab', // Medium magenta
+          500: '#b81d99', // Medium-dark magenta
+          600: '#961989', // Dark magenta
+          700: '#77157a', // Deeper magenta
+          800: '#590f6a', // Very dark magenta
+          900: '#3b095a', // Deepest purple/magenta
+        },
+        'accent': {
+          100: '#e6c9f4', // Lightest purple
+          200: '#d3a6ed', // Light purple
+          300: '#c182e6', // Medium-light purple
+          400: '#ae5fde', // Medium purple
+          500: '#9c3cd7', // Medium-dark purple
+          600: '#8130b0', // Dark purple
+          700: '#672589', // Deeper purple
+          800: '#4d1a62', // Very dark purple
+          900: '#33103c', // Deepest purple
+        },
+      },
     },
   },
   plugins: [addVariablesForColors],

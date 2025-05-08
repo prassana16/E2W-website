@@ -70,13 +70,13 @@ function Features() {
   }, []);
 
   return (
-    <div className="bg-[#00264c]" id='features'>
+    <div className="bg-primary-900" id='features'>
        {/* Decorative Animated Lines */}
-    <div className="w-full flex   ">
+    <div className="w-full flex">
       {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
         <motion.div
           key={i}
-          className={`bg-[#f3f4f6] h-[2px] w-full `}
+          className={`bg-accent-200 h-[2px] w-full`}
           initial={{ scaleY: 1 }}
           animate={{ scaleY: [1,2,4,6,8,10,12,12,10,8,6,4,2,1] }}
           transition={{
@@ -91,18 +91,18 @@ function Features() {
     </div>
       
       {/* Title */}
-      <h2 className="text-4xl md:text-5xl text-[#F7F2E7] text-center font-Tinos pt-11 ">
-    Our Product
-  </h2>
+      <h2 className="text-4xl md:text-5xl text-primary-100 text-center font-Tinos pt-11">
+        Our Product
+      </h2>
       
       {/* Pagination */}
-      <div className='text-[#F7F2E7] text-lg text-center mb flex items-center gap-2 justify-center'>
+      <div className='text-primary-100 text-lg text-center mb flex items-center gap-2 justify-center'>
         <button onClick={handlePrev} disabled={currentPage === 1}>
-          <IoIosArrowDropleftCircle className={`${currentPage === 1 ? 'opacity-50' : ''}`} />
+          <IoIosArrowDropleftCircle className={`${currentPage === 1 ? 'opacity-50' : 'text-accent-300 hover:text-accent-200'}`} />
         </button>
         <span>{currentPage} / {totalPages}</span>
         <button onClick={handleNext} disabled={currentPage === totalPages}>
-          <IoIosArrowDroprightCircle className={`${currentPage === totalPages ? 'opacity-50' : ''}`} />
+          <IoIosArrowDroprightCircle className={`${currentPage === totalPages ? 'opacity-50' : 'text-accent-300 hover:text-accent-200'}`} />
         </button>
       </div>
       
@@ -153,7 +153,7 @@ function Features() {
       {[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2].map((width, i) => (
         <motion.div
           key={i}
-          className={`bg-[#f3f4f6] h-[2px] w-full `}
+          className={`bg-accent-200 h-[2px] w-full `}
           initial={{ scaleY: 1 }}
           animate={{ scaleY: [1,2,4,6,8,10,12,12,10,8,6,4,2,1] }}
           transition={{
