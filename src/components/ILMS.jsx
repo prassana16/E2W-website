@@ -12,7 +12,7 @@ export default function ILMS() {
     "name": "Easy2Work ILMS",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Intelligent Lead Management Software (ILMS) for optimizing sales processes and converting prospects. Perfect for businesses in USA, Canada, UK, and India.",
+    "description": "Intelligent Lead Management Software (ILMS) for optimizing sales processes and converting prospects. Perfect for businesses in USA, Canada, UK, India, and specifically Tamil Nadu region.",
     "offers": {
       "@type": "Offer",
       "price": "Contact for pricing",
@@ -23,16 +23,46 @@ export default function ILMS() {
       "name": "Easy2Work",
       "url": "https://easy2work.in"
     },
-    "featureList": "Lead Scoring, Lead Nurturing, Sales Pipeline Management, Analytics Dashboard, CRM Integration"
+    "featureList": "Lead Scoring, Lead Nurturing, Sales Pipeline Management, Analytics Dashboard, CRM Integration, Multi-Platform Lead Fetching, Email Inbox Extraction, Attachment Parser, Smart Source Detection, Tamil Nadu Lead Generation"
+  };
+
+  // Tamil Nadu specific schema with additional local information
+  const tamilNaduSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Easy2Work ILMS for Tamil Nadu",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Intelligent Lead Management Software (ILMS) optimized for Tamil Nadu businesses. Generate, manage and convert leads with region-specific features tailored for Chennai, Coimbatore, Madurai and other Tamil Nadu cities.",
+    "offers": {
+      "@type": "Offer",
+      "price": "Contact for pricing",
+      "priceCurrency": "INR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Easy2Work",
+      "url": "https://easy2work.in"
+    },
+    "audience": {
+      "@type": "Audience",
+      "geographicArea": {
+        "@type": "AdministrativeArea",
+        "name": "Tamil Nadu",
+        "containsPlace": ["Chennai", "Coimbatore", "Madurai", "Trichy", "Salem"]
+      }
+    },
+    "featureList": "Tamil Nadu Lead Generation, Local Business Intelligence, Multi-Platform Lead Fetching, Smart Source Detection, Duplicate Lead Detection, High-Conversion Region Mapping for Tamil Nadu"
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f3d2e] to-[#0a2a1f] text-white">
       <SEO 
-        title="ILMS - Intelligent Lead Management Software | Easy2Work"
-        description="Advanced Intelligent Lead Management Software (ILMS) by Easy2Work. Convert prospects, optimize sales processes, and increase revenue with our customizable lead management solutions for USA, Canada, UK, and India."
-        keywords="ILMS, Intelligent Lead Management Software, sales automation, lead generation software, CRM integration, lead nurturing, lead scoring, USA lead management, Canada sales software, UK lead nurturing software, India CRM solutions"
-        schema={ilmsSchema}
+        title="ILMS - Intelligent Lead Management Software for Tamil Nadu | Easy2Work"
+        description="Advanced Intelligent Lead Management Software (ILMS) by Easy2Work with Tamil Nadu-optimized features. Convert prospects, optimize sales processes, and increase revenue with specialized lead generation for Chennai, Coimbatore, Madurai and other Tamil Nadu regions."
+        keywords="ILMS, Intelligent Lead Management Software, Tamil Nadu lead generation, Chennai CRM, Coimbatore lead management, Madurai sales software, Multi-Platform Lead Fetching, Email Inbox Extraction, Attachment Parser, Smart Source Detection, Duplicate Lead Detection, Auto-Tagging Engine, High-Conversion Region Mapping"
+        schema={tamilNaduSchema}
+        region="india"
       />
       <HeroSection />
       <TabsSection activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -40,6 +70,7 @@ export default function ILMS() {
       {activeTab === 'modules' && <ModulesSection />}
       {activeTab === 'benefits' && <BenefitsSection />}
       {activeTab === 'demo' && <DemoSection />}
+      <TamilNaduLeadGenSection />
       <StatsSection />
       <TestimonialsSection />
       <CTASection />
@@ -386,7 +417,7 @@ const ModuleItem = ({ title, description,  isReversed, index }) => {
           {/* Image placeholder replacing video */}
           <div className="flex flex-col items-center justify-center p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-green-200 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
             <p className="text-green-200 text-lg">{title} Visualization</p>
           </div>
@@ -751,7 +782,7 @@ const DemoSection = () => {
                 <div className="text-center">
                   <span className="text-green-400 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m-1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     No obligation
                   </span>
@@ -868,6 +899,187 @@ const TestimonialCard = ({ testimonial, index }) => {
   );
 };
 
+// Tamil Nadu Lead Generation Section Component
+const TamilNaduLeadGenSection = () => {
+  const leadGenFeatures = [
+    {
+      title: "Multi-Platform Lead Fetching",
+      description: "Automatically pulls leads from popular sources like Justdial, LinkedIn, Apollo, etc., either via APIs or smart scraping.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+        </svg>
+      )
+    },
+    {
+      title: "Email Inbox Extraction",
+      description: "Scans connected Gmail or Outlook inboxes for unread lead emails, then extracts name, phone, email, and specialization.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      )
+    },
+    {
+      title: "Attachment Parser",
+      description: "Supports reading Excel, CSV, and PDF attachments for embedded lead details.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      )
+    },
+    {
+      title: "Smart Source Detection",
+      description: "Automatically detects the origin of each lead (e.g., Justdial or LinkedIn) using email subject and body content.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
+        </svg>
+      )
+    }
+  ];
+
+  const advancedFeatures = [
+    {
+      title: "Duplicate Lead Detection",
+      description: "Flags and removes duplicate leads using AI-powered fuzzy logic or rules (e.g., same mobile or similar name + email).",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        </svg>
+      )
+    },
+    {
+      title: "Auto-Tagging Engine",
+      description: "Adds smart tags like #Cardiologist, #Verified, #Justdial to each lead to make filtering easier.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+        </svg>
+      )
+    },
+    {
+      title: "Scheduled Fetching (Automation)",
+      description: "Leads are fetched on a scheduled interval (every 30 minutes or every hour) without manual effort.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
+    },
+    {
+      title: "High-Conversion Region Mapping",
+      description: "Identifies cities, towns, or pin codes with the highest response rates or conversion history in Tamil Nadu.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
+    }
+  ];
+
+  const tamilNaduRegions = [
+    { name: "Chennai", industries: "IT, Healthcare, Manufacturing" },
+    { name: "Coimbatore", industries: "Textiles, Engineering, Education" },
+    { name: "Madurai", industries: "Healthcare, Tourism, Retail" },
+    { name: "Trichy", industries: "Education, Engineering, Healthcare" },
+    { name: "Salem", industries: "Steel, Textiles, Agriculture" },
+    { name: "Tirunelveli", industries: "Agriculture, Healthcare, Retail" }
+  ];
+
+  return (
+    <section id="tamil-nadu-leads" className="py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="inline-block px-4 py-1 bg-green-700 text-white text-sm rounded-full mb-4">Tamil Nadu Specialized Features</span>
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">Advanced Lead Generation for Tamil Nadu Businesses</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Our ILMS is optimized for Tamil Nadu's unique business landscape, with specialized features to capture, analyze, and convert leads across Chennai, Coimbatore, Madurai, and beyond.
+          </p>
+        </motion.div>
+
+        {/* Tamil Nadu Regional Focus */}
+        <div className="mb-20">
+          <h3 className="text-2xl text-white font-bold mb-8 text-center">Regional Intelligence</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {tamilNaduRegions.map((region, index) => (
+              <div key={index} className="bg-gradient-to-br from-green-900/40 to-green-800/20 p-4 rounded-lg border border-green-500/20 text-center">
+                <h4 className="text-white font-bold mb-2">{region.name}</h4>
+                <p className="text-green-300 text-sm">{region.industries}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Lead Generation Features */}
+        <div className="mb-20">
+          <h3 className="text-2xl text-white font-bold mb-8 text-center">Core Lead Generation Features</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {leadGenFeatures.map((feature, index) => (
+              <FeatureCard key={index} feature={feature} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Advanced Analytics Features */}
+        <div>
+          <h3 className="text-2xl text-white font-bold mb-8 text-center">Advanced Intelligence & Analytics</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {advancedFeatures.map((feature, index) => (
+              <FeatureCard key={index} feature={feature} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Tamil Nadu Specific Case Study */}
+        <div className="mt-20 bg-gradient-to-r from-green-900/30 to-green-800/30 rounded-xl p-8 border border-green-500/20">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
+              <h3 className="text-2xl text-white font-bold mb-4">Success in Tamil Nadu</h3>
+              <p className="text-gray-300 mb-4">
+                A leading healthcare provider in Chennai saw a 62% increase in qualified leads and a 40% reduction in lead acquisition cost after implementing our Tamil Nadu-optimized ILMS solution.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">Chennai</span>
+                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">Healthcare</span>
+                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">62% More Leads</span>
+                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">40% Cost Reduction</span>
+              </div>
+            </div>
+            <div className="w-full md:w-1/3 flex justify-center">
+              <div className="rounded-full h-48 w-48 bg-green-700/20 flex items-center justify-center border-4 border-green-500/30">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-white">62%</div>
+                  <div className="text-green-300">More Leads</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tamil Nadu Specific CTA */}
+        <div className="mt-16 text-center">
+          <a href="#demo">
+            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+              Get Tamil Nadu Optimized ILMS Demo
+            </button>
+          </a>
+          <p className="mt-4 text-green-400 text-sm">
+            Specialized solutions for Chennai, Coimbatore, Madurai, and all Tamil Nadu regions
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // CTA Section Component
 const CTASection = () => {
   const controls = useAnimation();
@@ -907,24 +1119,16 @@ const CTASection = () => {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#demo">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
-              Schedule a Demo
+            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+              Request a Demo
             </button>
           </a>
-          <a href="/contact">
-            <button className="border border-green-500 hover:bg-green-900 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
+          <a href="https://easy2work.in/contact" target="_blank" rel="noopener noreferrer">
+            <button className="border border-green-500 hover:bg-green-900 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Contact Sales
             </button>
           </a>
         </div>
-        <p className="mt-6 text-green-400">
-          <span className="flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            Your data is secure with us
-          </span>
-        </p>
       </motion.div>
     </section>
   );
