@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import { FaQuoteLeft, FaStar, FaGlobeAmericas } from "react-icons/fa";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -12,36 +12,50 @@ const Testimonials = () => {
       name: "Sarah Johnson",
       position: "Marketing Director",
       company: "TechInnovate",
+      location: "New York, USA",
       image: "https://randomuser.me/api/portraits/women/32.jpg",
       rating: 5,
-      text: "Working with Easy2Work has been transformative for our business. Their IBMS solution streamlined our operations and increased our productivity by 35%. The team's expertise and support throughout the implementation process made the transition seamless.",
+      text: "Working with Easy2Work has been transformative for our business. Their AI-powered IBMS solution streamlined our operations and increased our productivity by 35%. The team's expertise and support throughout the implementation process made the transition seamless across our global offices.",
     },
     {
       id: 2,
       name: "Michael Chen",
       position: "CTO",
       company: "Future Systems",
+      location: "Singapore",
       image: "https://randomuser.me/api/portraits/men/46.jpg",
       rating: 5,
-      text: "The quality of Easy2Work's solutions exceeded our expectations. Their attention to detail and understanding of our industry-specific needs resulted in a custom solution that perfectly addresses our challenges. I highly recommend their services to any business looking to optimize their operations.",
+      text: "The quality of Easy2Work's solutions exceeded our expectations. Their attention to detail and understanding of our industry-specific needs resulted in a custom solution that perfectly addresses our challenges across APAC markets. I highly recommend their services.",
     },
     {
       id: 3,
       name: "Emily Rodriguez",
       position: "Operations Manager",
       company: "Global Connect",
+      location: "Toronto, Canada",
       image: "https://randomuser.me/api/portraits/women/68.jpg",
       rating: 4,
-      text: "Easy2Work's ILMS has revolutionized how we manage our logistics. The platform is intuitive, powerful, and adaptable to our changing needs. Their customer support team is responsive and always ready to help with any questions or issues.",
+      text: "Easy2Work's IBMS has revolutionized how we manage our logistics across North America. The platform is intuitive, powerful, and adaptable to our changing needs. Their customer support team is responsive and always ready to help with any questions or issues.",
     },
     {
       id: 4,
-      name: "David Park",
+      name: "David Mueller",
       position: "CEO",
       company: "Innovate Solutions",
+      location: "Berlin, Germany",
       image: "https://randomuser.me/api/portraits/men/29.jpg",
       rating: 5,
-      text: "We've worked with several software development companies in the past, but Easy2Work stands out for their professionalism, expertise, and commitment to excellence. Their team took the time to understand our business goals and delivered a solution that has significantly improved our efficiency.",
+      text: "We've worked with several software development companies in the EU, but Easy2Work stands out for their professionalism, expertise, and commitment to excellence. Their AI integration capabilities have significantly improved our efficiency and competitive edge.",
+    },
+    {
+      id: 5,
+      name: "Aisha Al-Mansouri",
+      position: "Head of Technology",
+      company: "FutureTech Enterprises",
+      location: "Dubai, UAE",
+      image: "https://randomuser.me/api/portraits/women/41.jpg",
+      rating: 5,
+      text: "Easy2Work delivered an exceptional PWA that has transformed our business operations in the Middle East. Their understanding of regional requirements and attention to detail made all the difference. The team's commitment to quality and innovative solutions is unmatched.",
     },
   ];
 
@@ -51,7 +65,7 @@ const Testimonials = () => {
     if (autoplay) {
       interval = setInterval(() => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      }, 5000);
+      }, 6000); // Increased to 6 seconds for better readability
     }
     
     return () => clearInterval(interval);
@@ -73,8 +87,13 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-20 bg-gradient-to-b from-primary-800 to-primary-700 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #017598, #05a7be)' }}>
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h20v20H0z" fill="%23ffffff" fill-opacity=".05"/%3E%3C/svg%3E")', backgroundSize: '20px 20px' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,23 +101,28 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Our Clients Say
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Global Success Stories
           </h2>
-          <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about their experience working with us.
+          <p className="text-lg text-white text-opacity-90 max-w-3xl mx-auto">
+            See how Easy2Work is transforming businesses across the world with our innovative AI-powered solutions.
           </p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           {/* Testimonial Cards */}
-          <div className="relative h-[450px] md:h-[400px]">
+          <div className="relative h-[500px] md:h-[450px]">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className={`absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-800 rounded-2xl p-8 md:p-10 shadow-xl transition-all duration-500 ${
+                className={`absolute inset-0 rounded-2xl p-8 md:p-10 shadow-xl transition-all duration-500 ${
                   index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
+                style={{ 
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))', 
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255,255,255,0.18)'
+                }}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{
                   opacity: index === activeIndex ? 1 : 0,
@@ -106,8 +130,8 @@ const Testimonials = () => {
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="absolute top-10 left-10 text-primary-300 opacity-20">
-                  <FaQuoteLeft className="text-6xl" />
+                <div className="absolute top-10 left-10 text-white text-opacity-10">
+                  <FaQuoteLeft className="text-8xl" />
                 </div>
                 
                 <div className="relative z-10 h-full flex flex-col justify-between">
@@ -118,31 +142,37 @@ const Testimonials = () => {
                           key={i}
                           className={`text-xl ${
                             i < testimonial.rating
-                              ? "text-primary-300"
+                              ? "text-yellow-400"
                               : "text-gray-400"
                           }`}
                         />
                       ))}
                     </div>
                     
-                    <blockquote className="text-xl text-gray-100 italic mb-8">
+                    <blockquote className="text-lg md:text-xl text-white italic mb-8">
                       "{testimonial.text}"
                     </blockquote>
                   </div>
                   
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-primary-300"
-                    />
-                    <div className="ml-4">
-                      <h4 className="text-lg font-semibold text-white">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-primary-200">
-                        {testimonial.position}, {testimonial.company}
-                      </p>
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <div className="flex items-center mb-4 md:mb-0">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full object-cover border-2 border-[#18c4b8]"
+                      />
+                      <div className="ml-4">
+                        <h4 className="text-lg font-semibold text-white">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-white text-opacity-80">
+                          {testimonial.position}, {testimonial.company}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-white text-opacity-90">
+                      <FaGlobeAmericas className="mr-2" />
+                      <span>{testimonial.location}</span>
                     </div>
                   </div>
                 </div>
@@ -150,11 +180,11 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
+          {/* Navigation Controls */}
+          <div className="flex justify-between items-center mt-8">
             <button
               onClick={handlePrevious}
-              className="bg-primary-600 hover:bg-primary-500 text-white p-3 rounded-full transition duration-300"
+              className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
               aria-label="Previous testimonial"
             >
               <svg
@@ -178,10 +208,10 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`h-3 rounded-full transition-all duration-300 ${
                     index === activeIndex
-                      ? "bg-primary-300 w-8"
-                      : "bg-primary-600 hover:bg-primary-400"
+                      ? "bg-white w-8"
+                      : "bg-white/50 w-3 hover:bg-white/80"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -190,7 +220,7 @@ const Testimonials = () => {
 
             <button
               onClick={handleNext}
-              className="bg-primary-600 hover:bg-primary-500 text-white p-3 rounded-full transition duration-300"
+              className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
               aria-label="Next testimonial"
             >
               <svg
@@ -209,9 +239,39 @@ const Testimonials = () => {
               </svg>
             </button>
           </div>
+          
+          {/* Global presence indicator */}
+          <motion.div 
+            className="mt-16 flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <FaGlobeAmericas className="text-white mr-2" />
+              <span className="text-white text-sm">USA</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <FaGlobeAmericas className="text-white mr-2" />
+              <span className="text-white text-sm">Canada</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <FaGlobeAmericas className="text-white mr-2" />
+              <span className="text-white text-sm">Germany</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <FaGlobeAmericas className="text-white mr-2" />
+              <span className="text-white text-sm">Singapore</span>
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <FaGlobeAmericas className="text-white mr-2" />
+              <span className="text-white text-sm">UAE</span>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
