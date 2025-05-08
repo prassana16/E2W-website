@@ -48,6 +48,9 @@ import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
 import { E2wProduct } from './components/E2wProduct';
 import ClientSlider from './components/ClientsSlider';
+//AI driven solutions
+import AIEnterpriseDataSolution from './components/AI-Enterprise-Data-Solution';
+import AIMedicalLeadPlatform from './components/AI-Medical-Lead-Platform';
 
 // Import SEO component for Home page
 import SEO from './components/SEO';
@@ -139,6 +142,17 @@ function App() {
        {/* ILMS page */}
        <Route path="/ILMS" element={<>
           <ILMS/></>} />
+           {/* AI Enterprise Data Solution page */}
+        <Route 
+          path="/AI-Enterprise-Data-Solution" 
+          element={<AIEnterpriseDataSolution />} 
+        />
+        
+        {/* AI Medical Lead Platform page */}
+        <Route 
+          path="/AI-Medical-Lead-Platform" 
+          element={<AIMedicalLeadPlatform />} 
+        />
 
       </Routes>
       

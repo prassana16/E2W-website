@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { RiHome5Line } from "react-icons/ri";
 import { MdExpandMore, MdExpandLess, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md";
-import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers, FaBars, FaTimes } from "react-icons/fa";
+import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers, FaBars, FaTimes, FaRobot } from "react-icons/fa";
 import { VscFileCode } from "react-icons/vsc";
 import { IoMdAnalytics } from "react-icons/io";
-import { BsBuilding, BsBook } from "react-icons/bs";
+import { BsBuilding, BsBook, BsLightning } from "react-icons/bs";
 
 // Normally this would be imported from your public directory
 const logo = "/EASY2Work-Logo.png";
@@ -27,6 +27,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isAIDropdownOpen, setIsAIDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
   
@@ -34,6 +35,19 @@ const Navbar = () => {
   const servicesRef = useRef(null);
   const solutionsRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const aiDropdownRef = useRef(null);
+  
+  // Initialize the refs with objects that can hold timeout properties
+  useEffect(() => {
+    servicesRef.current = { ...servicesRef.current, timeout: null };
+    solutionsRef.current = { ...solutionsRef.current, timeout: null };
+    
+    // Cleanup timeouts when component unmounts
+    return () => {
+      if (servicesRef.current?.timeout) clearTimeout(servicesRef.current.timeout);
+      if (solutionsRef.current?.timeout) clearTimeout(solutionsRef.current.timeout);
+    };
+  }, []);
 
   // Handle scroll effect and cleanup overflow when component unmounts
   useEffect(() => {
@@ -65,27 +79,6 @@ const Navbar = () => {
       document.body.classList.remove('overflow-hidden');
     }
   }, [isOpen]);
-
-  // Close dropdowns when clicking outside - BUT ONLY on desktop
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Only apply this behavior for desktop screens
-      if (window.innerWidth >= 768) {
-        if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-          setIsServicesOpen(false);
-        }
-        if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
-          setIsSolutionsOpen(false);
-        }
-      }
-      // For mobile, we'll only toggle dropdowns when their headers are explicitly clicked
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   const toggleMenu = () => {
     // Add a class to prevent scrolling when menu is open
@@ -130,6 +123,7 @@ const Navbar = () => {
     setIsServicesOpen(!isServicesOpen);
     if (window.innerWidth <= 1068) {
       setIsSolutionsOpen(false); // On mobile, close other accordion when opening one
+      setIsAIDropdownOpen(false);
     }
   };
 
@@ -141,6 +135,12 @@ const Navbar = () => {
       setIsServicesOpen(false); // On mobile, close other accordion when opening one
     }
   };
+
+  const toggleAIDropdown = (e) => {
+    // Stop event propagation
+    if (e) e.stopPropagation();
+    setIsAIDropdownOpen(!isAIDropdownOpen);
+  };
   
   // Handle clicks inside the mobile menu to prevent them from closing dropdowns
   const handleMobileMenuClick = (e) => {
@@ -149,17 +149,16 @@ const Navbar = () => {
     e.stopPropagation();
   };
 
-  // Handle dropdown item click - Fixed to prevent closing dropdown
+  // Handle dropdown item click
   const handleDropdownItemClick = (e) => {
     // Stop event from bubbling up to parent elements
     e.stopPropagation();
-    // Note: We're not closing the menu or dropdown here
-    // This allows users to navigate to the link without closing the dropdown first
     // For desktop view only, we might want to close the menu after selecting an item
     if (window.innerWidth >= 768) {
       // Only close dropdown if on desktop
       if (isServicesOpen) setIsServicesOpen(false);
       if (isSolutionsOpen) setIsSolutionsOpen(false);
+      if (isAIDropdownOpen) setIsAIDropdownOpen(false);
     }
   };
 
@@ -243,6 +242,22 @@ const Navbar = () => {
     }
   ];
 
+  // AI Solutions data
+  const aiSolutions = [
+    {
+      name: 'AI-Powered Enterprise Data Cleansing & Deduplication SaaS Solution',
+      description: 'Enhance data quality with our intelligent cleansing tools',
+      icon: <FaCogs className="text-purple-600 text-xl" />,
+      path: '/AI-Enterprise-Data-Solution'
+    },
+    {
+      name: 'AI-Powered Medical Lead Generation & Intelligence Platform',
+      description: 'Smart lead generation specialized for healthcare providers',
+      icon: <IoMdAnalytics className="text-purple-600 text-xl" />,
+      path: '/AI-Medical-Lead-Platform'
+    }
+  ];
+
   return (
     <nav 
       ref={navbarRef}
@@ -274,17 +289,28 @@ const Navbar = () => {
               Home
             </a>
             
-            {/* Services Dropdown */}
-            <div className="relative" ref={servicesRef}>
+            {/* Services Dropdown - WITH HOVER & CLICK */}
+            <div 
+              className="relative" 
+              ref={servicesRef}
+              onMouseEnter={() => {
+                clearTimeout(servicesRef.current?.timeout);
+                setIsServicesOpen(true);
+              }}
+              onMouseLeave={() => {
+                servicesRef.current.timeout = setTimeout(() => {
+                  setIsServicesOpen(false);
+                }, 90); // Keep menu open for 70ms after hover out
+              }}
+            >
               <button 
-                onClick={toggleServices}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsServicesOpen(!isServicesOpen);
+                }}
                 className="text-white hover:text-purple-400 transition-all duration-300 text-lg font-medium flex items-center"
               >
-                Services 
-                {/* {isServicesOpen ? 
-                  <MdExpandLess className="ml-1 transition-all duration-300" /> : 
-                  <MdExpandMore className="ml-1 transition-all duration-300" />
-                } */}
+                Services
               </button>
               
               {/* Services Mega Menu */}
@@ -314,49 +340,118 @@ const Navbar = () => {
                       ))}
                     </div>
                   </div>
-                  {/* <div className="bg-purple-50 p-4">
-                    <div className="text-center">
-                      <a href="/AllServices" className="text-purple-700 hover:text-purple-900 font-medium transition-all duration-300">
-                        View All Services
-                      </a>
-                    </div>
-                  </div> */}
                 </div>
               )}
             </div>
             
-            {/* Solutions Dropdown */}
-            <div className="relative" ref={solutionsRef}>
+            {/* Solutions Dropdown - WITH HOVER & CLICK */}
+            <div 
+              className="relative" 
+              ref={solutionsRef}
+              onMouseEnter={() => {
+                clearTimeout(solutionsRef.current?.timeout);
+                setIsSolutionsOpen(true);
+              }}
+              onMouseLeave={() => {
+                solutionsRef.current.timeout = setTimeout(() => {
+                  setIsSolutionsOpen(false);
+                }, 90); // Keep menu open for 70ms after hover out
+              }}
+            >
               <button 
-                onClick={toggleSolutions}
-                className="text-white hover:text-purple-400 transition-all duration-300 text-lg font-medium flex items-center hover:{toggleSolutions}"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsSolutionsOpen(!isSolutionsOpen);
+                }}
+                className="text-white hover:text-purple-400 transition-all duration-300 text-lg font-medium flex items-center"
               >
-                Our Solutions 
-                {/* {isSolutionsOpen ? 
-                  <MdExpandLess className="ml-1 transition-all duration-300" /> : 
-                  <MdExpandMore className="ml-1 transition-all duration-300" />
-                } */}
+                Our Solutions
               </button>
               
-              {/* Solutions Dropdown Menu */}
+              {/* Solutions Dropdown Menu - Enhanced with AI section */}
               {isSolutionsOpen && (
-                <div className="absolute left-0 mt-6 w-72 bg-white/95 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden z-50 border border-purple-100">
-                  {solutions.map((solution, index) => (
-                    <a 
-                      key={index} 
-                      href={solution.path}
-                      className="block p-4 hover:bg-purple-50 transition-all duration-300 border-b border-purple-100 last:border-b-0"
-                      onClick={handleDropdownItemClick}
-                    >
-                      <div className="flex items-center">
-                        <div className="mr-3 bg-purple-100 p-2 rounded-lg">{solution.icon}</div>
-                        <div>
-                          <h3 className="text-base font-semibold text-gray-800">{solution.name}</h3>
-                          <p className="text-gray-600 text-xs mt-1">{solution.description}</p>
+                <div className="absolute -left-96 mt-6 w-auto min-w-max bg-white/95 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden z-50 border border-purple-100">
+                  <div className="flex">
+                    {/* Left side - Existing solutions */}
+                    <div className="w-72 border-r border-purple-100">
+                      {/* Added heading for Enterprise Solutions */}
+                      <div className="p-3 bg-purple-50 border-b border-purple-100">
+                        <h3 className="text-base font-semibold text-purple-700">Enterprise Solutions</h3>
+                      </div>
+                      
+                      {solutions.map((solution, index) => (
+                        <a 
+                          key={index} 
+                          href={solution.path}
+                          className="block p-4 hover:bg-purple-50 transition-all duration-300 border-b border-purple-100 last:border-b-0"
+                          onClick={handleDropdownItemClick}
+                        >
+                          <div className="flex items-center">
+                            <div className="mr-3 bg-purple-100 p-2 rounded-lg">{solution.icon}</div>
+                            <div>
+                              <h3 className="text-base font-semibold text-gray-800">{solution.name}</h3>
+                              <p className="text-gray-600 text-xs mt-1">{solution.description}</p>
+                            </div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                    
+                    {/* Right side - Upcoming features and AI solutions */}
+                    <div className="w-80">
+                      {/* Added heading for Future Solutions */}
+                      <div className="p-3 bg-purple-50 border-b border-purple-100">
+                        <h3 className="text-base font-semibold text-purple-700">Future Solutions</h3>
+                      </div>
+                      
+                      <div className="border-b border-purple-100">
+                        <div className="p-4">
+                          <div className="flex items-center">
+                            <BsLightning className="text-purple-600 text-xl mr-2" />
+                            <h3 className="text-lg font-semibold text-gray-800">Upcoming Features</h3>
+                          </div>
                         </div>
                       </div>
-                    </a>
-                  ))}
+                      
+                      {/* AI Solutions Dropdown */}
+                      <div 
+                        className="relative"
+                        ref={aiDropdownRef}
+                      >
+                        <button 
+                          onClick={toggleAIDropdown}
+                          className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700 hover:bg-purple-50 px-4 py-3 transition-all duration-300 border-b border-purple-100"
+                        >
+                          <span className="flex items-center">
+                            <FaRobot className="mr-3 text-purple-600 text-lg" /> 
+                            <span className="font-medium">AI-driven Solutions</span>
+                          </span>
+                          {isAIDropdownOpen ? 
+                            <MdExpandLess className="text-lg" /> : 
+                            <MdExpandMore className="text-lg" />
+                          }
+                        </button>
+                        
+                        {isAIDropdownOpen && (
+                          <div className="py-2 space-y-1">
+                            {aiSolutions.map((solution, index) => (
+                              <a 
+                                key={index} 
+                                href={solution.path}
+                                className="block px-4 py-2 hover:bg-purple-50 transition-all duration-300"
+                                onClick={handleDropdownItemClick}
+                              >
+                                <div className="pl-6">
+                                  <h4 className="text-sm font-medium text-gray-700 hover:text-purple-700">{solution.name}</h4>
+                                  <p className="text-gray-600 text-xs mt-1">{solution.description}</p>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -396,7 +491,7 @@ const Navbar = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        onClick={handleMobileMenuClick} // Add click handler to prevent propagation
+        onClick={handleMobileMenuClick}
       >
         {/* Close button and logo on mobile */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
@@ -448,7 +543,7 @@ const Navbar = () => {
               {isServicesOpen && (
                 <div 
                   className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
-                  onClick={(e) => e.stopPropagation()} // Prevent clicks inside from closing the dropdown
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {services.map((service, index) => (
                     <a 
@@ -456,22 +551,13 @@ const Navbar = () => {
                       href={service.path}
                       className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300 z-50"
                       onClick={(e) => {
-                        // Only close the mobile menu, not the dropdown
                         e.stopPropagation();
-                        // Navigate to the link without closing dropdowns
                       }}
                     >
                       <span className="mr-2 text-sm">{service.icon}</span>
                       <span className="text-sm">{service.name}</span>
                     </a>
                   ))}
-                  {/* <a 
-                    href="/AllServices" 
-                    className="flex items-center text-purple-400 hover:text-purple-300 py-2 px-3 mt-2 border-t border-gray-700 transition-all duration-300"
-                    onClick={toggleMenu}
-                  >
-                    <span className="text-sm font-medium">View All Services</span>
-                  </a> */}
                 </div>
               )}
             </div>
@@ -498,23 +584,77 @@ const Navbar = () => {
               {isSolutionsOpen && (
                 <div 
                   className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
-                  onClick={(e) => e.stopPropagation()} // Prevent clicks inside from closing the dropdown
+                  onClick={(e) => e.stopPropagation()}
                 >
+                  {/* Enterprise Solutions heading for mobile */}
+                  <div className="px-3 py-2 text-gray-300 border-b border-gray-700">
+                    <span className="text-sm font-medium text-purple-400">Enterprise Solutions</span>
+                  </div>
+                  
+                  {/* Existing solutions */}
                   {solutions.map((solution, index) => (
                     <a 
                       key={index} 
                       href={solution.path}
                       className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300"
                       onClick={(e) => {
-                        // Only stop propagation to prevent closing dropdown
                         e.stopPropagation();
-                        // Just navigate to the link without closing the dropdown
                       }}
                     >
                       <span className="mr-2 text-sm">{solution.icon}</span>
                       <span className="text-sm">{solution.name}</span>
                     </a>
                   ))}
+                  
+                  {/* Future Solutions heading for mobile */}
+                  <div className="px-3 py-2 text-gray-300 border-t border-b border-gray-700 mt-2">
+                    <span className="text-sm font-medium text-purple-400">Future Solutions</span>
+                  </div>
+                  
+                  {/* Upcoming Features Section */}
+                  <div className="pt-2">
+                    <div className="flex items-center px-3 py-2 text-gray-300">
+                      <BsLightning className="mr-2 text-sm text-purple-400" />
+                      <span className="text-sm font-medium">Upcoming Features</span>
+                    </div>
+                    
+                    {/* AI Solutions Dropdown */}
+                    <div className="px-3 border-t border-gray-700 mt-1 pt-2">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleAIDropdown(e);
+                        }}
+                        className="flex items-center justify-between w-full text-left text-gray-400 hover:text-white py-2 transition-all duration-300"
+                      >
+                        <span className="flex items-center">
+                          <FaRobot className="mr-2 text-sm text-purple-400" /> 
+                          <span className="text-sm">AI-driven Solutions</span>
+                        </span>
+                        {isAIDropdownOpen ? 
+                          <MdExpandLess className="text-sm" /> : 
+                          <MdExpandMore className="text-sm" />
+                        }
+                      </button>
+                      
+                      {isAIDropdownOpen && (
+                        <div className="pl-6 space-y-2 mt-1">
+                          {aiSolutions.map((solution, index) => (
+                            <a 
+                              key={index} 
+                              href={solution.path}
+                              className="block text-gray-500 hover:text-white py-1 transition-all duration-300"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                            >
+                              <span className="text-xs">{solution.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -529,17 +669,6 @@ const Navbar = () => {
             </a>
           </nav>
         </div>
-        
-        {/* Footer for mobile menu */}
-        {/* <div className="p-6 border-t border-gray-700 mt-auto">
-          <a 
-            href="/ContactForm" 
-            className="block w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white text-center rounded-lg transition-all duration-300"
-            onClick={toggleMenu}
-          >
-            Get in Touch
-          </a>
-        </div> */}
       </div>
       
       {/* Overlay for mobile menu */}
