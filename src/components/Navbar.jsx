@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import Logo from '../assets/images/EASY2Work-Logo.png';
+import Logo from "/EASY2Work-Logo.png"; // Updated path to reference file from public directory
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
