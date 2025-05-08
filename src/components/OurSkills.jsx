@@ -4,7 +4,7 @@ import { FaReact, FaGitAlt, FaFigma, FaNodeJs, FaLaravel } from "react-icons/fa"
 import { SiNextdotjs, SiRedux, SiMicrosoftazure, SiAzuredevops, SiPhp, SiMysql, SiCsharp, SiTensorflow } from "react-icons/si";
 import { DiDotnet } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
-import bg from '../assets/images/bgvect.png';
+
 
 const skills = [
   { name: 'React.js', icon: <FaReact className="text-[#61DBFB]" /> },

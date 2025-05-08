@@ -144,16 +144,7 @@ const Banner = () => {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Background Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src={BGvid} type="video/mp4" />
-      </video>
+     
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-900/70 to-primary-600/40"></div>

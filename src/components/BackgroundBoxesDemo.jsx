@@ -21,15 +21,7 @@ export function BackgroundBoxesDemo() {
         background: "radial-gradient(ellipse at center, #05a7be, #017598)",
       }}
     >
-      {/* Background Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src={BGvid4}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+     
 
       {/* Optional Overlay for better contrast */}
       <div className="absolute inset-0 bg-black opacity-40 md:opacity-30" />

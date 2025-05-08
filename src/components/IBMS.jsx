@@ -121,15 +121,8 @@ const IBMS = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={IBMSbg2} type="video/mp4" />
-        </video>
+        {/* Gradient background replacing video */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-900 to-primary-700"></div>
         
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/70"></div>
         
@@ -200,16 +193,13 @@ const IBMS = () => {
                 viewport={{ once: true }}
                 className="relative rounded-xl overflow-hidden shadow-2xl"
               >
-                <video
-                  className="w-full"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                >
-                  <source src={IBMSVideo} type="video/mp4" />
-                </video>
+                {/* Image placeholder replacing video */}
+                <div className="bg-primary-800 h-64 flex items-center justify-center">
+                  <div className="flex flex-col items-center justify-center p-8 text-center">
+                    <FaChartLine className="text-6xl text-primary-100 mb-4" />
+                    <p className="text-primary-100 text-xl">Business Intelligence Dashboard</p>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>

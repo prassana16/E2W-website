@@ -51,17 +51,11 @@ export default function ILMS() {
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 overflow-hidden">
-      {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src={ilmsBg} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Background Image (replacing video) */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[#0f3d2e] z-0">
+        {/* Gradient background as fallback for removed video */}
+        <div className="w-full h-full bg-gradient-to-b from-[#0f3d2e] to-[#0a2a1f] opacity-80"></div>
+      </div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
@@ -335,7 +329,7 @@ const FeatureCard = ({ feature, index }) => {
 };
 
 // Module Item Component
-const ModuleItem = ({ title, description, videoSrc, isReversed, index }) => {
+const ModuleItem = ({ title, description,  isReversed, index }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -389,16 +383,13 @@ const ModuleItem = ({ title, description, videoSrc, isReversed, index }) => {
 
       <div className="w-full md:w-1/2 md:px-8">
         <div className="bg-gradient-to-r from-green-900 to-green-800 rounded-lg overflow-hidden shadow-xl h-64 flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02]">
-          <video 
-            className="w-full h-full object-cover" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-          >
-            <source src={Vid1} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {/* Image placeholder replacing video */}
+          <div className="flex flex-col items-center justify-center p-8 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-green-200 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <p className="text-green-200 text-lg">{title} Visualization</p>
+          </div>
         </div>
       </div>
     </motion.div>
