@@ -13,7 +13,7 @@ import OurClients from './components/OurClients';
 import Faq from './components/Faq';
 import AboutPWA from './components/AboutPWA';
 import ContactPopup from './components/ContactPopup';
-// import ContactForm from './components/ContactUs';
+import ContactForm from './components/ContactForm';
 import AboutE2w from './components/AboutE2w';
 // services
 import MobileAppDevelopment from './components/services/MobileAppDevelopment';
@@ -126,13 +126,12 @@ function App() {
         {/* staff aug dev page */}
         <Route path="/StaffAugmentation" element={<>
           <FlipWordsstaff />
-        <StaffAugmentation/></>} />
-        {/* Lead gen dev page */}
+        <StaffAugmentation/></>} />        {/* Lead gen dev page */}
         <Route path="/LeadGenerationServices" element={<>
           <FlipWordslead />
         <LeadGenerationServices/></>} />
         {/* contact us page */}
-        <Route path="/ContactForm" element={<><GoogleForm/></>} />
+        <Route path="/ContactForm" element={<><ContactForm/></>} />
         {/* IBMS page */}
         <Route path="/IBMS" element={<>
           <IBMS/></>} />

@@ -8,7 +8,7 @@ function AboutPWA() {
   return (
     <section
       className="flex flex-col items-center justify-center"
-      style={{ background: 'radial-gradient(ellipse at center, #6c0081, #001831)' }}
+      style={{ background: 'radial-gradient(ellipse at center, #017598, #087ea2)' }}
     >
       {/* Decorative Animated Lines */}
       <div className="w-full flex">
@@ -16,7 +16,7 @@ function AboutPWA() {
           <motion.div
             key={i}
             className="h-[2px] w-full"
-            style={{ background: 'linear-gradient(to bottom, #6c0081, #001831)' }}
+            style={{ background: 'linear-gradient(to bottom, #05a7be, #1ed7cd)' }}
             initial={{ scaleY: 1 }}
             animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
             transition={{

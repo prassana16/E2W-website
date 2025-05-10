@@ -54,9 +54,8 @@ const Footer = () => {
     { name: "ILMS", path: "/ILMS" },
     { name: "Easy2Work PWA", path: "/E2wProduct" },
   ];
-
   return (
-    <footer className="bg-primary-900 text-white pt-10 pb-8">
+    <footer className="bg-[#017598] text-white pt-10 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -74,7 +73,7 @@ const Footer = () => {
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-800 hover:bg-primary-300 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
               >
                 <FaFacebookF />
               </a>
@@ -82,7 +81,7 @@ const Footer = () => {
                 href="https://twitter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-800 hover:bg-primary-300 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
               >
                 <FaTwitter />
               </a>
@@ -90,7 +89,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-800 hover:bg-primary-300 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
               >
                 <FaLinkedinIn />
               </a>
@@ -98,7 +97,7 @@ const Footer = () => {
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-800 hover:bg-primary-300 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
               >
                 <FaInstagram />
               </a>

@@ -5,7 +5,7 @@ import Baleen from '../assets/images/thumbnail.png';
 
 function OurClients() {
   return (
-    <section className='flex flex-col items-center justify-center' style={{ background: 'radial-gradient(ellipse at center, #2a0061, #0a0011)' }}>
+    <section className='flex flex-col items-center justify-center' style={{ background: 'radial-gradient(ellipse at center, #017598, #05a7be)' }}>
       {/* Decorative Animated Lines */}
       <div className="w-full flex">
         {Array(26).fill().map((_, i) => (

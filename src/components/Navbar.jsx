@@ -42,10 +42,9 @@ const Navbar = () => {
     setServicesDropdown(!servicesDropdown);
     if (solutionsDropdown) setSolutionsDropdown(false);
   };
-
-  // Navbar style based on scroll position
+  // Navbar style based on scroll position - updated to blue theme
   const navbarStyle = {
-    backgroundColor: isScrolled ? "rgba(98, 0, 120, 0.9)" : "transparent",
+    backgroundColor: isScrolled ? "rgba(1, 117, 152, 0.9)" : "transparent",
     backdropFilter: isScrolled ? "blur(10px)" : "none",
     transition: "all 0.3s ease-in-out",
     boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
@@ -57,10 +56,9 @@ const Navbar = () => {
   
   const activeLinkClasses = 
     "text-primary-100 hover:text-primary-200 transition duration-300 py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-200 text-base font-medium";
-
-  // Dropdown style
+  // Dropdown style - updated to blue theme
   const dropdownStyle = {
-    backgroundColor: "rgba(98, 0, 120, 0.95)",
+    backgroundColor: "rgba(1, 117, 152, 0.95)",
     backdropFilter: "blur(10px)",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
   };
@@ -93,12 +91,10 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li className="relative group">
-              <button
+            <li className="relative group">              <button
                 className={`flex items-center ${servicesDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2 text-base font-medium`}
                 onClick={toggleServicesDropdown}
                 onMouseEnter={() => setServicesDropdown(true)}
-                onMouseLeave={() => setServicesDropdown(false)}
               >
                 Services
                 <svg
@@ -123,70 +119,66 @@ const Navbar = () => {
                   style={dropdownStyle}
                   onMouseEnter={() => setServicesDropdown(true)}
                   onMouseLeave={() => setServicesDropdown(false)}
-                >
-                  <Link
+                >                  <Link
                     to="/WebsiteDevelopment"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Website Development
                   </Link>
                   <Link
                     to="/WebAppDevelopment"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Web App Development
-                  </Link>
-                  <Link
+                  </Link>                  <Link
                     to="/MobileAppDevelopment"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Mobile App Development
                   </Link>
                   <Link
                     to="/UIUXDesign"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     UI/UX Design
                   </Link>
                   <Link
                     to="/CloudNativeAppDevelopment"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Cloud Services
                   </Link>
                   <Link
                     to="/SaaSDevelopment"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     SaaS Development
                   </Link>
                   <Link
                     to="/StaffAugmentation"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Staff Augmentation
                   </Link>
                   <Link
                     to="/QualityAssurance"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     Quality Assurance
                   </Link>
                   <Link
                     to="/SEOServices"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     SEO Services
                   </Link>
                 </div>
               )}
             </li>
-            <li className="relative group">
-              <button
+            <li className="relative group">              <button
                 className={`flex items-center ${solutionsDropdown ? "text-primary-100" : "text-white"} hover:text-primary-200 transition duration-300 py-2 text-base font-medium`}
                 onClick={toggleSolutionsDropdown}
                 onMouseEnter={() => setSolutionsDropdown(true)}
-                onMouseLeave={() => setSolutionsDropdown(false)}
               >
                 Our Solutions
                 <svg
@@ -211,36 +203,26 @@ const Navbar = () => {
                   style={dropdownStyle}
                   onMouseEnter={() => setSolutionsDropdown(true)}
                   onMouseLeave={() => setSolutionsDropdown(false)}
-                >
-                  <Link
+                >                  <Link
                     to="/IBMS"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     IBMS
                   </Link>
                   <Link
                     to="/ILMS"
-                    className="block px-4 py-2 text-sm hover:bg-primary-400 hover:text-white transition-colors duration-200"
+                    className="block px-4 py-2 text-sm hover:bg-[#05a7be] hover:text-white transition-colors duration-200"
                   >
                     ILMS
                   </Link>
                 </div>
               )}
-            </li>
-            <li>
-              <Link
-                to="/ContactForm"
-                className={location.pathname === "/ContactForm" ? activeLinkClasses : linkClasses}
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+            </li>          </ul>
 
           {/* Contact Button (Desktop) */}
           <div className="ml-8">
             <Link to="/ContactForm">
-              <button className="bg-primary-300 hover:bg-primary-200 text-white px-5 py-2 rounded-md transition duration-300 font-medium">
+              <button className="bg-[#087ea2] hover:bg-[#18c4b8] text-white px-5 py-2 rounded-md transition duration-300 font-medium">
                 Get in Touch
               </button>
             </Link>
@@ -251,13 +233,11 @@ const Navbar = () => {
         <div className="lg:hidden cursor-pointer" onClick={toggleNav}>
           {nav ? <FaTimes size={25} /> : <FaBars size={25} />}
         </div>
-      </div>
-
-      {/* Mobile Menu */}
+      </div>      {/* Mobile Menu */}
       {nav && (
-        <div className="lg:hidden absolute top-20 left-0 right-0 bg-primary-500 text-white shadow-lg rounded-b-lg">
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-[#017598] text-white shadow-lg rounded-b-lg">
           <ul className="px-4 py-2">
-            <li className="py-3 border-b border-primary-400">
+            <li className="py-3 border-b border-[#05a7be]">
               <Link
                 to="/"
                 className="block"
@@ -265,8 +245,7 @@ const Navbar = () => {
               >
                 Home
               </Link>
-            </li>
-            <li className="py-3 border-b border-primary-400">
+            </li>            <li className="py-3 border-b border-[#05a7be]">
               <button
                 className="flex items-center justify-between w-full"
                 onClick={toggleServicesDropdown}
@@ -286,76 +265,73 @@ const Navbar = () => {
                     d="M19 9l-7 7-7-7"
                   ></path>
                 </svg>
-              </button>
-              {servicesDropdown && (
+              </button>              {servicesDropdown && (
                 <div className="mt-2 space-y-2 pl-4">
                   <Link
                     to="/WebsiteDevelopment"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Website Development
-                  </Link>
-                  <Link
+                  </Link>                  <Link
                     to="/WebAppDevelopment"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Web App Development
                   </Link>
                   <Link
                     to="/MobileAppDevelopment"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Mobile App Development
                   </Link>
                   <Link
                     to="/UIUXDesign"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     UI/UX Design
                   </Link>
                   <Link
                     to="/CloudNativeAppDevelopment"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Cloud Services
                   </Link>
                   <Link
                     to="/SaaSDevelopment"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     SaaS Development
                   </Link>
                   <Link
                     to="/StaffAugmentation"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Staff Augmentation
                   </Link>
                   <Link
                     to="/QualityAssurance"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     Quality Assurance
                   </Link>
                   <Link
                     to="/SEOServices"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     SEO Services
                   </Link>
                 </div>
               )}
-            </li>
-            <li className="py-3 border-b border-primary-400">
+            </li>            <li className="py-3 border-b border-[#05a7be]">
               <button
                 className="flex items-center justify-between w-full"
                 onClick={toggleSolutionsDropdown}
@@ -375,40 +351,37 @@ const Navbar = () => {
                     d="M19 9l-7 7-7-7"
                   ></path>
                 </svg>
-              </button>
-              {solutionsDropdown && (
+              </button>              {solutionsDropdown && (
                 <div className="mt-2 space-y-2 pl-4">
                   <Link
                     to="/IBMS"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     IBMS
                   </Link>
                   <Link
                     to="/ILMS"
-                    className="block py-2 text-sm"
+                    className="block py-2 text-sm hover:bg-[#05a7be]/20"
                     onClick={() => setNav(false)}
                   >
                     ILMS
                   </Link>
                 </div>
               )}
-            </li>
-            <li className="py-3">
+            </li>            <li className="py-3">
               <Link
                 to="/ContactForm"
                 className="block"
                 onClick={() => setNav(false)}
               >
-                Contact Us
+                Get in Touch
               </Link>
             </li>
-          </ul>
-          <div className="px-4 py-4">
+          </ul>          <div className="px-4 py-4">
             <Link to="/ContactForm">
               <button
-                className="w-full bg-primary-300 hover:bg-primary-200 text-white py-2 rounded-md transition duration-300 font-medium"
+                className="w-full bg-[#087ea2] hover:bg-[#18c4b8] text-white py-2 rounded-md transition duration-300 font-medium"
                 onClick={() => setNav(false)}
               >
                 Get in Touch

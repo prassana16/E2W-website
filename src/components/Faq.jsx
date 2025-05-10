@@ -31,9 +31,8 @@ const Faq = () => {
       answer: "Yes, Easy2Work supports integration with a variety of third-party services, allowing you to create a seamless experience across different tools and platforms."
     }
   ];
-
   return (
-    <section className="bg-[#e2d0fd] pb-16">
+    <section className="bg-[#e0f2f8] pb-16">
       {/* Decorative Animated Lines */}
   <div className="w-full flex ">
     {[...Array(26)].map((_, i) => (
@@ -58,13 +57,13 @@ const Faq = () => {
         
         
        
-        <h2 className="text-4xl md:text-5xl text-[#00264c] text-center font-Tinos mb-16 ">
+        <h2 className="text-4xl md:text-5xl text-[#017598] text-center font-Tinos mb-16 ">
         Frequently Asked Questions
         </h2>
 
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-2 border-purple-900 rounded-lg p-5">
+            <div key={index} className="border-2 border-[#087ea2] rounded-lg p-5">
               <div
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFAQ(index)}
@@ -72,7 +71,7 @@ const Faq = () => {
                 <h3 className="text-lg md:text-2xl font-semibold text-black">
                   {faq.question}
                 </h3>
-                <span className="text-[#00264c]">
+                <span className="text-[#017598]">
                   {activeIndex === index ? (
                     <IoIosArrowUp className="text-2xl" />
                   ) : (

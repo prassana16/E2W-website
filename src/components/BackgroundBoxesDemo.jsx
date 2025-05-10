@@ -15,7 +15,6 @@ export function BackgroundBoxesDemo() {
   ];
 
   const locations = ["USA", "Canada", "Germany", "Singapore", "Dubai"];
-
   return (
     <div
       className="h-[80vh] md:h-[100vh] relative w-full overflow-hidden flex flex-col items-center justify-center"
@@ -31,11 +30,6 @@ export function BackgroundBoxesDemo() {
 
       {/* Heading */}
       <div className="relative z-10 flex flex-col items-center">
-        <img
-          src={Easy2workLogo}
-          alt="Easy2Work Logo"
-          className="w-72 md:w-96 mb-6 md:mb-10"
-        />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
