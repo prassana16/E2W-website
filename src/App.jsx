@@ -40,9 +40,8 @@ import { FlipWordslead } from './components/Flipwordslead';
 // IBMS/ILMS (our solutions)
 import IBMS from './components/IBMS';
 import ILMS from './components/ILMS';
-// Blogs
-import Blogs from './Blogs'; 
-import ArticleContent from "./components/ArticleContent"; 
+
+
 // new components
 import { BackgroundBoxesDemo } from './components/BackgroundBoxesDemo';
 import { HeroScrollDemo } from './components/HeroScrollDemo';
@@ -87,9 +86,7 @@ function App() {
           <E2wProduct /> 
           
       }/>
-        {/* blog page */}
-        <Route path="/Blogs" element={<Blogs />} />
-        <Route path="/article/:id" element={<ArticleContent />} />
+        
         {/* mobile app dev page */}
         <Route path="/MobileAppDevelopment" element={<>
           <FlipWordsmobile />
