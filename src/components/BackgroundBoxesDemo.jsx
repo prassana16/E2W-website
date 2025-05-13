@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Boxes } from "./ui/background-boxes";
+// import { Boxes } from "./ui/background-boxes";
 import Easy2workLogo from "/EASY2Work-Logo.png";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { Link } from "react-router-dom";
@@ -22,8 +22,8 @@ export function BackgroundBoxesDemo() {
         background: `linear-gradient(135deg, #017598, #087ea2, #05a7be, #18c4b8, #1ed7cd)`,
       }}
     >
-      {/* Animated Boxes */}
-      <Boxes />
+      
+     
 
       {/* Optional Overlay for better contrast */}
       <div className="absolute inset-0 bg-black opacity-30" />
