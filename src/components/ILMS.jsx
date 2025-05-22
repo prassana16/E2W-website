@@ -54,9 +54,8 @@ export default function ILMS() {
     },
     "featureList": "Tamil Nadu Lead Generation, Local Business Intelligence, Multi-Platform Lead Fetching, Smart Source Detection, Duplicate Lead Detection, High-Conversion Region Mapping for Tamil Nadu"
   };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f3d2e] to-[#0a2a1f] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#2D1B69] to-[#5B0737] text-white">
       <SEO 
         title="ILMS - Intelligent Lead Management Software for Tamil Nadu | Easy2Work"
         description="Advanced Intelligent Lead Management Software (ILMS) by Easy2Work with Tamil Nadu-optimized features. Convert prospects, optimize sales processes, and increase revenue with specialized lead generation for Chennai, Coimbatore, Madurai and other Tamil Nadu regions."
@@ -79,13 +78,12 @@ export default function ILMS() {
 }
 
 // Hero Section Component
-const HeroSection = () => {
-  return (
+const HeroSection = () => {  return (
     <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 overflow-hidden">
       {/* Background Image (replacing video) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#0f3d2e] z-0">
+      <div className="absolute top-0 left-0 w-full h-full bg-[#2D1B69] z-0">
         {/* Gradient background as fallback for removed video */}
-        <div className="w-full h-full bg-gradient-to-b from-[#0f3d2e] to-[#0a2a1f] opacity-80"></div>
+        <div className="w-full h-full bg-gradient-to-b from-[#2D1B69] to-[#5B0737] opacity-80"></div>
       </div>
 
       {/* Overlay */}
@@ -103,8 +101,7 @@ const HeroSection = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1 }}
           className="mb-6"
-        >
-          <span className="inline-block px-4 py-1 bg-green-700 text-white text-sm rounded-full mb-4">Sales Automation Solution</span>
+        >          <span className="inline-block px-4 py-1 bg-[#5B0737] text-white text-sm rounded-full mb-4">Sales Automation Solution</span>
         </motion.div>
         
         <motion.h1 
@@ -130,14 +127,13 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a href="#modules">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
+        >          <a href="#modules">
+            <button className="bg-[#5B0737] hover:bg-[#4A0629] text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
               Explore ILMS
             </button>
           </a>
           <a href="#demo">
-            <button className="border border-green-500 hover:bg-green-900 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
+            <button className="border border-[#2D1B69] hover:bg-[#2D1B69]/20 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
               Request Demo
             </button>
           </a>
@@ -150,8 +146,7 @@ const HeroSection = () => {
           className="mt-12"
         >
           <div className="flex flex-wrap justify-center gap-8">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-green-800 rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -159,16 +154,14 @@ const HeroSection = () => {
               </div>
               <span>Lead Tracking</span>
             </div>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-green-800 rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
               <span>Automated Follow-ups</span>
             </div>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-green-800 rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -185,14 +178,14 @@ const HeroSection = () => {
 // Tabs Section Component
 const TabsSection = ({ activeTab, setActiveTab }) => {
   return (
-    <div className="bg-[#072018] sticky top-0 z-30 shadow-lg">
+    <div className="bg-[#2D1B69] sticky top-0 z-30 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex overflow-x-auto py-4 scrollbar-hide">
           <button
             onClick={() => setActiveTab('features')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${
               activeTab === 'features' 
-                ? 'bg-green-600 text-white' 
+                ? 'bg-[#5B0737] text-white' 
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -202,7 +195,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('modules')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${
               activeTab === 'modules' 
-                ? 'bg-green-600 text-white' 
+                ? 'bg-[#5B0737] text-white' 
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -212,7 +205,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('benefits')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${
               activeTab === 'benefits' 
-                ? 'bg-green-600 text-white' 
+                ? 'bg-[#5B0737] text-white' 
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -222,7 +215,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('demo')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${
               activeTab === 'demo' 
-                ? 'bg-green-600 text-white' 
+                ? 'bg-[#5B0737] text-white' 
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -349,10 +342,9 @@ const FeatureCard = ({ feature, index }) => {
       ref={ref}
       initial="hidden"
       animate={controls}
-      variants={variants}
-      className="bg-gradient-to-br from-[#0c3d2e] to-[#0a2a1f] p-8 rounded-xl shadow-lg border border-green-900/30 hover:border-green-600/50 transition-all duration-300 hover:shadow-green-900/10 h-full"
+      variants={variants}      className="bg-gradient-to-br from-[#2D1B69] to-[#5B0737] p-8 rounded-xl shadow-lg border border-[#2D1B69]/30 hover:border-[#5B0737]/50 transition-all duration-300 hover:shadow-[#2D1B69]/10 h-full"
     >
-      <div className="text-green-500 mb-4">{feature.icon}</div>
+      <div className="text-white mb-4">{feature.icon}</div>
       <h3 className="text-xl text-white font-bold mb-3">{feature.title}</h3>
       <p className="text-gray-400">{feature.description}</p>
     </motion.div>
@@ -396,14 +388,13 @@ const ModuleItem = ({ title, description,  isReversed, index }) => {
       <div className="w-full md:w-1/2 mb-8 md:mb-0 md:px-8">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">{title}</h2>
         <p className="text-lg text-gray-300 mb-6">{description}</p>
-        <div className="flex space-x-4">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-100">
+        <div className="flex space-x-4">          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#2D1B69] text-white">
             <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             User-Friendly
           </span>
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-100">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#5B0737] text-white">
             <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
@@ -412,14 +403,13 @@ const ModuleItem = ({ title, description,  isReversed, index }) => {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 md:px-8">
-        <div className="bg-gradient-to-r from-green-900 to-green-800 rounded-lg overflow-hidden shadow-xl h-64 flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02]">
+      <div className="w-full md:w-1/2 md:px-8">        <div className="bg-gradient-to-r from-[#2D1B69] to-[#5B0737] rounded-lg overflow-hidden shadow-xl h-64 flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02]">
           {/* Image placeholder replacing video */}
           <div className="flex flex-col items-center justify-center p-8 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-green-200 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            <p className="text-green-200 text-lg">{title} Visualization</p>
+            <p className="text-white text-lg">{title} Visualization</p>
           </div>
         </div>
       </div>
@@ -610,8 +600,7 @@ const BenefitCard = ({ benefit, index }) => {
 
 // Stats Section Component
 const StatsSection = () => {
-  return (
-    <section className="py-16 px-4 bg-gradient-to-r from-green-900/30 to-green-800/30">
+  return (    <section className="py-16 px-4 bg-gradient-to-r from-[#2D1B69]/30 to-[#5B0737]/30">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <StatItem 
@@ -688,12 +677,11 @@ const StatItem = ({ value, label, icon }) => {
       animate={controls}
       variants={variants}
       className="text-center p-6"
-    >
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-green-700 text-white rounded-full mb-4">
+    >      <div className="inline-flex items-center justify-center w-16 h-16 bg-[#5B0737] text-white rounded-full mb-4">
         {icon}
       </div>
       <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{value}</h3>
-      <p className="text-green-300">{label}</p>
+      <p className="text-purple-300">{label}</p>
     </motion.div>
   );
 };
@@ -730,7 +718,7 @@ const DemoSection = () => {
           initial="hidden"
           animate={controls}
           variants={variants}
-          className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-2xl p-8 md:p-12 shadow-xl border border-green-500/20"
+          className="bg-gradient-to-r from-[#2D1B69]/40 to-[#5B0737]/40 rounded-2xl p-8 md:p-12 shadow-xl border border-[#2D1B69]/20"
         >
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
@@ -759,16 +747,14 @@ const DemoSection = () => {
                   <span className="text-gray-300">Implementation and pricing discussion</span>
                 </li>
               </ul>
-              <a href="#contact">
-                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300">
+              <a href="#contact">                <button className="bg-[#5B0737] hover:bg-[#4A0629] text-white px-8 py-3 rounded-lg font-medium transition duration-300">
                   Request Your Demo
                 </button>
               </a>
             </div>
-            <div className="w-full md:w-1/3">
-              <div className="bg-green-900/30 rounded-xl p-6 border border-green-500/20">
+            <div className="w-full md:w-1/3">              <div className="bg-[#2D1B69]/30 rounded-xl p-6 border border-[#5B0737]/20">
                 <div className="text-center mb-4">
-                  <div className="inline-block p-3 bg-green-700 rounded-full mb-2">
+                  <div className="inline-block p-3 bg-[#5B0737] rounded-full mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -1111,20 +1097,19 @@ const CTASection = () => {
         initial="hidden"
         animate={controls}
         variants={variants}
-        className="max-w-5xl mx-auto bg-gradient-to-r from-green-800/40 to-emerald-900/40 rounded-2xl p-10 shadow-xl text-center border border-green-500/20"
+        className="max-w-5xl mx-auto bg-gradient-to-r from-[#2D1B69]/40 to-[#5B0737]/40 rounded-2xl p-10 shadow-xl text-center border border-[#2D1B69]/20"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Boost Your Sales Performance?</h2>
         <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
           Join hundreds of successful businesses that have transformed their lead management and sales process with our ILMS solution.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#demo">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+          <a href="#demo">            <button className="bg-[#5B0737] hover:bg-[#4A0629] text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Request a Demo
             </button>
           </a>
           <a href="https://easy2work.in/contact" target="_blank" rel="noopener noreferrer">
-            <button className="border border-green-500 hover:bg-green-900 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+            <button className="border border-[#2D1B69] hover:bg-[#2D1B69]/20 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Contact Sales
             </button>
           </a>

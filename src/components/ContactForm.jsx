@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaRegPaperPlane, FaCheck, FaExclamationTriangle, FaMapMarkerAlt, FaEnvelope, FaPhone, FaGlobe } from "react-icons/fa";
 
 const ContactForm = () => {
-  // Color palette from the provided colors
+  // Main color scheme based on the design system
   const colors = {
-    primary: "#017598",
-    secondary: "#087ea2",
-    accent: "#05a7be",
-    highlight: "#18c4b8",
-    bright: "#1ed7cd",
+    primary: "#2D1B69", // Deep Purple
+    secondary: "#5B0737", // Dark Burgundy
+    accent: "#620078", // Bright Purple
   };
 
   const [formData, setFormData] = useState({
@@ -23,19 +23,57 @@ const ContactForm = () => {
     submitted: false,
     success: false,
     message: "",
+    isLoading: false,
   });
 
   const [formErrors, setFormErrors] = useState({});
+  const [formTouched, setFormTouched] = useState({});
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+        duration: 0.6,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0, 
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }
+  };
 
   const validateForm = () => {
     const errors = {};
     if (!formData.name.trim()) errors.name = "Name is required";
+    
     if (!formData.email.trim()) {
       errors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Email is invalid";
+      errors.email = "Please enter a valid email address";
     }
+    
+    if (formData.phone && !/^\+?[0-9\s\-()]{8,20}$/.test(formData.phone)) {
+      errors.phone = "Please enter a valid phone number";
+    }
+    
     if (!formData.message.trim()) errors.message = "Message is required";
+    else if (formData.message.trim().length < 10) errors.message = "Message should be at least 10 characters";
     
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -44,6 +82,11 @@ const ContactForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    // Mark field as touched
+    if (!formTouched[name]) {
+      setFormTouched(prev => ({ ...prev, [name]: true }));
+    }
     
     // Clear error when user types
     if (formErrors[name]) {
@@ -55,253 +98,395 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  // Validate touched fields on blur
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    
+    setFormTouched(prev => ({ ...prev, [name]: true }));
+    
+    // Validate just this field
+    const errors = { ...formErrors };
+    
+    if (name === 'name' && !formData.name.trim()) {
+      errors.name = "Name is required";
+    }
+    
+    if (name === 'email') {
+      if (!formData.email.trim()) {
+        errors.email = "Email is required";
+      } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        errors.email = "Please enter a valid email address";
+      }
+    }
+    
+    if (name === 'phone' && formData.phone && !/^\+?[0-9\s\-()]{8,20}$/.test(formData.phone)) {
+      errors.phone = "Please enter a valid phone number";
+    }
+    
+    if (name === 'message') {
+      if (!formData.message.trim()) {
+        errors.message = "Message is required";
+      } else if (formData.message.trim().length < 10) {
+        errors.message = "Message should be at least 10 characters";
+      }
+    }
+    
+    setFormErrors(errors);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (validateForm()) {
-      // Show loading state
-      setFormStatus({ submitted: true, success: false, message: "Sending your message..." });
+    if (!validateForm()) return;
+    
+    setFormStatus(prev => ({ ...prev, isLoading: true }));
+    
+    try {
+      // Simulate API call with a delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Simulate API call with a timeout
-      setTimeout(() => {
-        setFormStatus({ submitted: true, success: true, message: "Your message has been sent. We'll get back to you soon!" });
-        
-        // Reset form after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-      }, 1500);
+      // Success simulation - in production this would be a real API call
+      setFormStatus({
+        submitted: true,
+        success: true,
+        message: "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+        isLoading: false
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+      setFormTouched({});
+      
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "Oops! Something went wrong. Please try again later or contact us directly via email.",
+        isLoading: false
+      });
     }
   };
 
+  const clearStatus = () => {
+    setFormStatus(prev => ({ ...prev, submitted: false, message: "" }));
+  };
+  
+  // Contact information items for display
+  const contactInfo = [
+    {
+      icon: <FaMapMarkerAlt className="text-purple-400" />,
+      title: "Our Office",
+      content: "123 Tech Plaza, Innovation District, San Francisco, CA 94105",
+    },
+    {
+      icon: <FaEnvelope className="text-purple-400" />,
+      title: "Email Us",
+      content: "info@easy2work.in",
+      link: "mailto:info@easy2work.in"
+    },
+    {
+      icon: <FaPhone className="text-purple-400" />,
+      title: "Call Us",
+      content: "+1 (234) 567-890",
+      link: "tel:+1234567890"
+    },
+    {
+      icon: <FaGlobe className="text-purple-400" />,
+      title: "Global Presence",
+      content: "USA, Canada, Germany, Singapore, Dubai",
+    }
+  ];
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="w-full max-w-4xl mx-auto"
-    >
-      <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100 overflow-hidden relative">
-        {/* Decorative elements */}
+    <div ref={ref} className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute -right-16 -bottom-16 w-32 h-32 rounded-full opacity-10"
-          style={{ background: `linear-gradient(135deg, ${colors.accent}, ${colors.highlight})` }}
+          className="absolute right-0 top-0 w-1/3 h-1/3 opacity-20 dark:opacity-10 bg-gradient-to-b from-purple-300 to-purple-600 blur-3xl rounded-full transform -translate-y-1/2 translate-x-1/4"
         ></div>
         <div 
-          className="absolute -left-16 -top-16 w-32 h-32 rounded-full opacity-10"
-          style={{ background: `linear-gradient(135deg, ${colors.secondary}, ${colors.primary})` }}
+          className="absolute left-0 bottom-0 w-1/4 h-1/4 opacity-20 dark:opacity-10 bg-gradient-to-t from-purple-400 to-pink-600 blur-3xl rounded-full transform translate-y-1/3 -translate-x-1/4"
         ></div>
-        
-        <h2 
-          className="text-2xl md:text-3xl font-semibold mb-6 relative z-10"
-          style={{ color: colors.primary }}
-        >
-          Get In Touch
-          <div className="h-1 w-12 mt-2 rounded-full" style={{ background: colors.highlight }}></div>
-        </h2>
-        
-        {formStatus.submitted && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`p-4 mb-6 rounded-lg ${
-              formStatus.success
-                ? "bg-green-50 text-green-800 border border-green-200"
-                : "bg-blue-50 text-blue-800 border border-blue-200"
-            }`}
-          >
-            <div className="flex items-center">
-              <div className={`p-2 rounded-full mr-3 ${
-                formStatus.success ? "bg-green-100" : "bg-blue-100"
-              }`}>
-                {formStatus.success ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-                  </svg>
-                )}
-              </div>
-              <span>{formStatus.message}</span>
-            </div>
-          </motion.div>
-        )}
-        
-        <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="group">
-              <label
-                htmlFor="name"
-                className="block text-gray-700 font-medium text-sm mb-2 transition-colors duration-300 group-focus-within:text-accent"
-              >
-                Your Name <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  className={`w-full px-4 py-3 text-gray-700 rounded-lg border ${
-                    formErrors.name
-                      ? "border-red-400 focus:border-red-500"
-                      : "border-gray-300 focus:border-transparent"
-                  } focus:outline-none focus:ring-2 transition-all duration-300`}
-                  style={{ 
-                    boxShadow: formErrors.name ? '0 0 0 1px #f87171' : 'none',
-                    background: 'white',
-                    focusRing: colors.accent,
-                    '--tw-ring-color': colors.accent
-                  }}
-                />
-                {formErrors.name && (
-                  <p className="text-red-500 text-xs mt-1">
-                    {formErrors.name}
-                  </p>
-                )}
-              </div>
-            </div>
-            
-            <div className="group">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 font-medium text-sm mb-2 transition-colors duration-300 group-focus-within:text-accent"
-              >
-                Email Address <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="johndoe@example.com"
-                className={`w-full px-4 py-3 text-gray-700 rounded-lg border ${
-                  formErrors.email
-                    ? "border-red-400 focus:border-red-500"
-                    : "border-gray-300 focus:border-transparent"
-                } focus:outline-none focus:ring-2 transition-all duration-300`}
-                style={{ 
-                  boxShadow: formErrors.email ? '0 0 0 1px #f87171' : 'none',
-                  '--tw-ring-color': colors.accent
-                }}
-              />
-              {formErrors.email && (
-                <p className="text-red-500 text-xs mt-1">
-                  {formErrors.email}
-                </p>
-              )}
-            </div>
-            
-            <div className="group">
-              <label
-                htmlFor="phone"
-                className="block text-gray-700 font-medium text-sm mb-2 transition-colors duration-300 group-focus-within:text-accent"
-              >
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+1 (234) 567-890"
-                className="w-full px-4 py-3 text-gray-700 rounded-lg border border-gray-300 focus:border-transparent focus:outline-none focus:ring-2 transition-all duration-300"
-                style={{ '--tw-ring-color': colors.accent }}
-              />
-            </div>
-            
-            <div className="group">
-              <label
-                htmlFor="subject"
-                className="block text-gray-700 font-medium text-sm mb-2 transition-colors duration-300 group-focus-within:text-accent"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="How can we help you?"
-                className="w-full px-4 py-3 text-gray-700 rounded-lg border border-gray-300 focus:border-transparent focus:outline-none focus:ring-2 transition-all duration-300"
-                style={{ '--tw-ring-color': colors.accent }}
-              />
-            </div>
-          </div>
-          
-          <div className="group">
-            <label
-              htmlFor="message"
-              className="block text-gray-700 font-medium text-sm mb-2 transition-colors duration-300 group-focus-within:text-accent"
-            >
-              Your Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="5"
-              placeholder="Tell us about your project or inquiry..."
-              className={`w-full px-4 py-3 text-gray-700 rounded-lg border ${
-                formErrors.message
-                  ? "border-red-400 focus:border-red-500"
-                  : "border-gray-300 focus:border-transparent"
-              } focus:outline-none focus:ring-2 transition-all duration-300`}
-              style={{ 
-                boxShadow: formErrors.message ? '0 0 0 1px #f87171' : 'none',
-                '--tw-ring-color': colors.accent
-              }}
-            ></textarea>
-            {formErrors.message && (
-              <p className="text-red-500 text-xs mt-1">
-                {formErrors.message}
-              </p>
-            )}
-          </div>
-          
-          <div className="pt-2">
-            <button
-              type="submit"
-              className="text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-              style={{ 
-                background: `linear-gradient(to right, ${colors.primary}, ${colors.highlight})`,
-                boxShadow: `0 4px 14px 0 rgba(1, 117, 152, 0.25)`
-              }}
-            >
-              <div className="flex items-center justify-center">
-                <span>Send Message</span>
-                <svg 
-                  className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth="2" 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </div>
-            </button>
-          </div>
-        </form>
       </div>
-    </motion.div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="max-w-6xl mx-auto"
+        >
+          {/* Section header */}
+          <motion.div 
+            variants={itemVariants}
+            className="text-center mb-12"
+          >
+            <h5 className="text-purple-600 dark:text-purple-400 font-medium mb-2">Get in Touch</h5>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-Tinos font-bold mb-4 text-gray-800 dark:text-white">
+              Contact Us
+            </h2>
+            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+              Have questions or want to discuss how we can help your business grow? 
+              Reach out to our team and we'll get back to you shortly.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+            {/* Contact information column */}
+            <motion.div 
+              variants={itemVariants} 
+              className="lg:w-1/3"
+            >
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 lg:p-8 h-full">
+                <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                <div className="space-y-6">
+                  {contactInfo.map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      className="flex items-start"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-800 dark:text-white">{item.title}</h4>
+                        {item.link ? (
+                          <a 
+                            href={item.link} 
+                            className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                          >
+                            {item.content}
+                          </a>
+                        ) : (
+                          <p className="text-gray-600 dark:text-gray-300">{item.content}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Map or image could be added here */}
+                <div className="mt-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 h-48">
+                  <div className="h-full w-full flex items-center justify-center text-gray-400">
+                    <p className="text-center px-4">Interactive map could be embedded here</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Contact form column */}
+            <motion.div 
+              variants={itemVariants}
+              className="lg:w-2/3"
+            >
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 lg:p-8">
+                {/* Form status messages */}
+                <AnimatePresence>
+                  {formStatus.submitted && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className={`mb-6 p-4 rounded-lg flex items-start ${
+                        formStatus.success 
+                          ? "bg-green-50 text-green-800 dark:bg-green-900/30 dark:text-green-200" 
+                          : "bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-200"
+                      }`}
+                    >
+                      <div className="mr-3 mt-0.5">
+                        {formStatus.success ? (
+                          <FaCheck className="text-green-500 dark:text-green-400" />
+                        ) : (
+                          <FaExclamationTriangle className="text-red-500 dark:text-red-400" />
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <p>{formStatus.message}</p>
+                      </div>
+                      <button 
+                        onClick={clearStatus}
+                        className="ml-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                        aria-label="Close message"
+                      >
+                        &times;
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <form onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    {/* Name field */}
+                    <div>
+                      <label 
+                        htmlFor="name" 
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="John Doe"
+                        className={`w-full px-4 py-3 rounded-lg border ${
+                          formErrors.name && formTouched.name
+                            ? "border-red-500 dark:border-red-400"
+                            : "border-gray-300 dark:border-gray-600"
+                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                        aria-invalid={formErrors.name ? "true" : "false"}
+                      />
+                      {formErrors.name && formTouched.name && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{formErrors.name}</p>
+                      )}
+                    </div>
+
+                    {/* Email field */}
+                    <div>
+                      <label 
+                        htmlFor="email" 
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="john@example.com"
+                        className={`w-full px-4 py-3 rounded-lg border ${
+                          formErrors.email && formTouched.email
+                            ? "border-red-500 dark:border-red-400"
+                            : "border-gray-300 dark:border-gray-600"
+                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                        aria-invalid={formErrors.email ? "true" : "false"}
+                      />
+                      {formErrors.email && formTouched.email && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{formErrors.email}</p>
+                      )}
+                    </div>
+                    
+                    {/* Phone field */}
+                    <div>
+                      <label 
+                        htmlFor="phone" 
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Phone Number <span className="text-gray-500 dark:text-gray-400 font-normal">(Optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="+1 (234) 567-8910"
+                        className={`w-full px-4 py-3 rounded-lg border ${
+                          formErrors.phone && formTouched.phone
+                            ? "border-red-500 dark:border-red-400"
+                            : "border-gray-300 dark:border-gray-600"
+                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                        aria-invalid={formErrors.phone ? "true" : "false"}
+                      />
+                      {formErrors.phone && formTouched.phone && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{formErrors.phone}</p>
+                      )}
+                    </div>
+
+                    {/* Subject field */}
+                    <div>
+                      <label 
+                        htmlFor="subject" 
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Subject <span className="text-gray-500 dark:text-gray-400 font-normal">(Optional)</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        placeholder="What is your inquiry about?"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white"
+                      />
+                    </div>
+
+                    {/* Message field */}
+                    <div className="md:col-span-2">
+                      <label 
+                        htmlFor="message" 
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >
+                        Message <span className="text-red-500">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Please tell us how we can help you..."
+                        rows={5}
+                        className={`w-full px-4 py-3 rounded-lg border ${
+                          formErrors.message && formTouched.message
+                            ? "border-red-500 dark:border-red-400"
+                            : "border-gray-300 dark:border-gray-600"
+                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                        aria-invalid={formErrors.message ? "true" : "false"}
+                      ></textarea>
+                      {formErrors.message && formTouched.message && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">{formErrors.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Submit button */}
+                  <div className="flex justify-end">
+                    <motion.button
+                      type="submit"
+                      disabled={formStatus.isLoading}
+                      className={`px-6 py-3 bg-gradient-to-r from-[#2D1B69] to-[#620078] text-white rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                        formStatus.isLoading ? "opacity-80 cursor-not-allowed" : "hover:from-[#3f2b85] hover:to-[#7a0d92]"
+                      }`}
+                      whileHover={{ scale: formStatus.isLoading ? 1 : 1.03 }}
+                      whileTap={{ scale: formStatus.isLoading ? 1 : 0.98 }}
+                    >
+                      {formStatus.isLoading ? (
+                        <>
+                          <div className="w-5 h-5 border-t-2 border-r-2 border-white rounded-full animate-spin mr-2"></div>
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaRegPaperPlane className="mr-2" />
+                          <span>Send Message</span>
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
   );
 };
 

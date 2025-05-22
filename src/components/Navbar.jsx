@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { RiHome5Line } from "react-icons/ri";
 import { MdExpandMore, MdExpandLess, MdFeaturedPlayList, MdSupportAgent } from "react-icons/md";
 import { FaLaptopCode, FaSearch, FaCloud, FaMobile, FaGlobe, FaCheckCircle, FaPalette, FaCogs, FaUsers, FaBars, FaTimes, FaRobot } from "react-icons/fa";
@@ -6,7 +8,7 @@ import { VscFileCode } from "react-icons/vsc";
 import { IoMdAnalytics } from "react-icons/io";
 import { BsBuilding, BsBook, BsLightning } from "react-icons/bs";
 
-// Normally this would be imported from your public directory
+// Logo import
 const logo = "/EASY2Work-Logo.png";
 
 // Add a global style for when mobile menu is open
@@ -24,6 +26,7 @@ if (typeof document !== 'undefined') {
 }
 
 const Navbar = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -41,18 +44,28 @@ const Navbar = () => {
   useEffect(() => {
     servicesRef.current = { ...servicesRef.current, timeout: null };
     solutionsRef.current = { ...solutionsRef.current, timeout: null };
+    aiDropdownRef.current = { ...aiDropdownRef.current, timeout: null };
     
     // Cleanup timeouts when component unmounts
     return () => {
       if (servicesRef.current?.timeout) clearTimeout(servicesRef.current.timeout);
       if (solutionsRef.current?.timeout) clearTimeout(solutionsRef.current.timeout);
+      if (aiDropdownRef.current?.timeout) clearTimeout(aiDropdownRef.current.timeout);
     };
   }, []);
 
-  // Handle scroll effect and cleanup overflow when component unmounts
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+    if (typeof window !== 'undefined') {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [location.pathname]);
+
+  // Handle scroll effect with improved threshold and cleanup
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 10) { // Lower threshold for faster reaction
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -94,7 +107,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   
-  // Add touch handlers for swipe to close functionality
+  // Add touch handlers for swipe to close functionality with improved sensitivity
   const handleTouchStart = (e) => {
     setTouchStartX(e.touches[0].clientX);
   };
@@ -102,13 +115,15 @@ const Navbar = () => {
   const handleTouchMove = (e) => {
     if (!touchStartX) return;
     
-    const touchEndX = e.touches[0].clientX;
-    const deltaX = touchEndX - touchStartX;
+    const currentX = e.touches[0].clientX;
+    const diff = touchStartX - currentX;
     
-    // If swiping right (and menu is open), close the menu
-    if (isOpen && deltaX > 70) {
+    // If swiped left more than 70px, close the menu
+    if (diff > 70) {
       setIsOpen(false);
-      document.body.style.overflow = '';
+      if (typeof window !== 'undefined') {
+        document.body.classList.remove('overflow-hidden');
+      }
       setTouchStartX(null);
     }
   };
@@ -117,567 +132,703 @@ const Navbar = () => {
     setTouchStartX(null);
   };
 
-  const toggleServices = (e) => {
-    // Stop event propagation
-    if (e) e.stopPropagation();
-    setIsServicesOpen(!isServicesOpen);
-    if (window.innerWidth <= 1068) {
-      setIsSolutionsOpen(false); // On mobile, close other accordion when opening one
-      setIsAIDropdownOpen(false);
+  // Enhanced mouseover handlers for desktop dropdown menus
+  const handleServicesMouseOver = () => {
+    if (servicesRef.current?.timeout) {
+      clearTimeout(servicesRef.current.timeout);
     }
-  };
-
-  const toggleSolutions = (e) => {
-    // Stop event propagation
-    if (e) e.stopPropagation();
-    setIsSolutionsOpen(!isSolutionsOpen);
-    if (window.innerWidth <= 1068) {
-      setIsServicesOpen(false); // On mobile, close other accordion when opening one
-    }
-  };
-
-  const toggleAIDropdown = (e) => {
-    // Stop event propagation
-    if (e) e.stopPropagation();
-    setIsAIDropdownOpen(!isAIDropdownOpen);
+    setIsServicesOpen(true);
   };
   
-  // Handle clicks inside the mobile menu to prevent them from closing dropdowns
-  const handleMobileMenuClick = (e) => {
-    // Prevent clicks within the mobile menu from closing dropdowns
-    // unless they are explicitly on the dropdown headers
-    e.stopPropagation();
+  const handleServicesMouseOut = () => {
+    servicesRef.current.timeout = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150); // Slightly shorter timeout for better responsiveness
   };
 
-  // Handle dropdown item click
-  const handleDropdownItemClick = (e) => {
-    // Stop event from bubbling up to parent elements
-    e.stopPropagation();
-    // For desktop view only, we might want to close the menu after selecting an item
-    if (window.innerWidth >= 768) {
-      // Only close dropdown if on desktop
-      if (isServicesOpen) setIsServicesOpen(false);
-      if (isSolutionsOpen) setIsSolutionsOpen(false);
-      if (isAIDropdownOpen) setIsAIDropdownOpen(false);
+  const handleSolutionsMouseOver = () => {
+    if (solutionsRef.current?.timeout) {
+      clearTimeout(solutionsRef.current.timeout);
+    }
+    setIsSolutionsOpen(true);
+  };
+  
+  const handleSolutionsMouseOut = () => {
+    solutionsRef.current.timeout = setTimeout(() => {
+      setIsSolutionsOpen(false);
+    }, 150);
+  };
+
+  const handleAIDropdownMouseOver = () => {
+    if (aiDropdownRef.current?.timeout) {
+      clearTimeout(aiDropdownRef.current.timeout);
+    }
+    setIsAIDropdownOpen(true);
+  };
+  
+  const handleAIDropdownMouseOut = () => {
+    aiDropdownRef.current.timeout = setTimeout(() => {
+      setIsAIDropdownOpen(false);
+    }, 150);
+  };
+  
+  // Animation variants for menu items
+  const menuItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i) => ({ 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        delay: i * 0.05,
+        duration: 0.4, 
+        ease: [0.25, 0.1, 0.25, 1] 
+      }
+    }),
+  };
+
+  // Enhanced dropdown animation variants
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -5,
+      scaleY: 0.95,
+      transformOrigin: "top",
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scaleY: 1,
+      transition: { 
+        duration: 0.25,
+        ease: [0.25, 0.1, 0.25, 1],
+        staggerChildren: 0.03,
+        delayChildren: 0.03
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -5,
+      scaleY: 0.95,
+      transition: { 
+        duration: 0.2,
+        ease: [0.25, 0.1, 0.25, 1] 
+      }
+    }
+  };
+  
+  const dropdownItemVariants = {
+    hidden: { opacity: 0, y: -5 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.25,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
     }
   };
 
-  // Services data with icons and paths
-  const services = [
-    {
-      name: 'Web Application Development',
-      icon: <FaGlobe className="text-[#087ea2] text-xl" />,
-      description: 'Custom web applications tailored to your business needs',
-      path: '/WebAppDevelopment'
+  // Mobile menu animation
+  const mobileMenuVariants = {
+    closed: {
+      x: "100%",
+      transition: {
+        type: "tween",
+        duration: 0.35,
+        ease: [0.25, 0.1, 0.25, 1],
+        when: "afterChildren",
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
     },
-    {
-      name: 'Website Development',
-      icon: <FaLaptopCode className="text-[#087ea2] text-xl" />,
-      description: 'Responsive and engaging websites for any industry',
-      path: '/WebsiteDevelopment'
-    },
-    {
-      name: 'Mobile App Development',
-      icon: <FaMobile className="text-[#087ea2] text-xl" />,
-      description: 'Native and cross-platform mobile applications',
-      path: '/MobileAppDevelopment'
-    },
-    {
-      name: 'SEO Services',
-      icon: <FaSearch className="text-[#087ea2] text-xl" />,
-      description: 'Boost your visibility and reach your target audience',
-      path: '/SEOServices'
-    },
-    {
-      name: 'Cloud Native Development',
-      icon: <FaCloud className="text-[#087ea2] text-xl" />,
-      description: 'Scalable applications built for the cloud',
-      path: '/CloudNativeAppDevelopment'
-    },
-    {
-      name: 'SaaS Development',
-      icon: <FaCogs className="text-[#087ea2] text-xl" />,
-      description: 'Software as a Service solutions for recurring revenue',
-      path: '/SaaSDevelopment'
-    },
-    {
-      name: 'UI/UX Design',
-      icon: <FaPalette className="text-[#087ea2] text-xl" />,
-      description: 'User-centered design that delights your customers',
-      path: '/UIUXDesign'
-    },
-    {
-      name: 'Quality Assurance',
-      icon: <FaCheckCircle className="text-[#087ea2] text-xl" />,
-      description: 'Comprehensive testing for bug-free applications',
-      path: '/QualityAssurance'
-    },
-    {
-      name: 'Staff Augmentation',
-      icon: <FaUsers className="text-[#087ea2] text-xl" />,
-      description: 'Extend your team with our skilled professionals',
-      path: '/StaffAugmentation'
-    },
-    {
-      name: 'Lead Generation',
-      icon: <IoMdAnalytics className="text-[#087ea2] text-xl" />,
-      description: 'Data-driven strategies to grow your customer base',
-      path: '/LeadGenerationServices'
-    },
-  ];
-
-  // Solutions data
-  const solutions = [
-    {
-      name: 'IBMS',
-      description: 'Integrated Business Management System',
-      icon: <BsBuilding className="text-[#087ea2] text-xl" />,
-      path: '/IBMS'
-    },
-    {
-      name: 'ILMS',
-      description: 'Integrated Learning Management System',
-      icon: <BsBook className="text-[#087ea2] text-xl" />,
-      path: '/ILMS'
+    open: {
+      x: 0,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+        ease: [0.25, 0.1, 0.25, 1],
+        when: "beforeChildren",
+        staggerChildren: 0.07
+      }
     }
-  ];
+  };
 
-  // AI Solutions data
-  const aiSolutions = [
-    {
-      name: 'AI-Powered Enterprise Data Cleansing & Deduplication SaaS Solution',
-      description: 'Enhance data quality with our intelligent cleansing tools',
-      icon: <FaCogs className="text-[#087ea2] text-xl" />,
-      path: '/AI-Enterprise-Data-Solution'
-    },
-    {
-      name: 'AI-Powered Medical Lead Generation & Intelligence Platform',
-      description: 'Smart lead generation specialized for healthcare providers',
-      icon: <IoMdAnalytics className="text-[#087ea2] text-xl" />,
-      path: '/AI-Medical-Lead-Platform'
+  const mobileMenuItemVariants = {
+    closed: { opacity: 0, x: 20 },
+    open: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { 
+        duration: 0.4,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
     }
-  ];
+  };
+  
+  // Navigation links with active state styling
+  const isActive = (path) => {
+    return location.pathname === path ? "text-white" : "text-gray-100/90";
+  };
 
   return (
     <nav 
       ref={navbarRef}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? ' shadow-lg' : 'bg-transparent '
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? 
+          'bg-gradient-to-r from-[#2D1B69]/95 to-[#5B0737]/95 py-2 shadow-lg backdrop-blur-md' : 
+          'bg-transparent py-4'
       }`}
+      aria-label="Main navigation"
     >
-      {/* Optional Overlay for better contrast */}
-      <div className={`absolute inset-0  ${
-        scrolled ? ' bg-black opacity-80' : ' bg-black opacity-10'
-      }`} />
-      
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center h-20">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center text-2xl md:text-3xl font-bold text-white z-10">
-            <img src={logo} alt="Easy2Work Logo" className="w-10 md:w-12 " />
-            <span className="text-white">
+          <Link to="/" className="flex items-center gap-2">
+            <motion.img
+              src={logo}
+              alt="Easy2Work Logo"
+              className="h-10 w-10 object-contain"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            />
+            <motion.span 
+              className="hidden sm:block font-Tinos text-lg lg:text-xl font-bold text-white tracking-wider"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               Easy2Work
-            </span>
-          </div>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 z-10">
-            <a 
-              href="/" 
-              className="text-white hover:text-[#18c4b8] transition-all duration-300 text-lg font-medium"
+            </motion.span>
+          </Link>
+
+          {/* Desktop Navigation Menu */}
+          <div className="hidden lg:flex items-center space-x-1">
+            <motion.div 
+              className="flex space-x-1" 
+              initial="hidden" 
+              animate="visible"
             >
-              Home
-            </a>
-            
-            {/* Services Dropdown - WITH HOVER & CLICK */}
-            <div 
-              className="relative" 
-              ref={servicesRef}
-              onMouseEnter={() => {
-                clearTimeout(servicesRef.current?.timeout);
-                setIsServicesOpen(true);
-              }}
-              onMouseLeave={() => {
-                servicesRef.current.timeout = setTimeout(() => {
-                  setIsServicesOpen(false);
-                }, 90); // Keep menu open for 70ms after hover out
-              }}
-            >
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsServicesOpen(!isServicesOpen);
-                }}
-                className="text-white hover:text-[#18c4b8] transition-all duration-300 text-lg font-medium flex items-center"
+              {/* Home */}
+              <motion.div 
+                custom={0} 
+                variants={menuItemVariants}
+                className="relative"
               >
-                Services
-              </button>
+                <Link
+                  to="/"
+                  className={`flex items-center px-3 py-2 text-sm font-medium ${isActive("/")} hover:text-white transition-colors duration-200`}
+                >
+                  <RiHome5Line className="mr-1" size={18} />
+                  Home
+                </Link>
+              </motion.div>
               
-              {/* Services Mega Menu */}
-              {isServicesOpen && (
-                <div className="absolute transform -translate-x-3/4 mt-6 w-screen max-w-6xl bg-white/95 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden z-50 border border-[#18c4b8]/20">
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {services.map((service, index) => (
-                        <a 
-                          key={index} 
-                          href={service.path}
-                          className="p-4 rounded-lg hover:bg-[#18c4b8]/10 border border-transparent hover:border-[#18c4b8]/20 transition-all duration-300 flex flex-col group"
-                          onClick={handleDropdownItemClick}
-                        >
-                          <div className="flex items-start">
-                            <div className="mr-3 mt-1 bg-[#18c4b8]/10 p-2 rounded-lg group-hover:bg-[#18c4b8]/20 transition-all duration-300">
-                              {service.icon}
-                            </div>
-                            <div>
-                              <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#087ea2] transition-all duration-300">
-                                {service.name}
-                              </h3>
-                              <p className="text-gray-600 text-sm mt-1">{service.description}</p>
-                            </div>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            {/* Solutions Dropdown - WITH HOVER & CLICK */}
-            <div 
-              className="relative" 
-              ref={solutionsRef}
-              onMouseEnter={() => {
-                clearTimeout(solutionsRef.current?.timeout);
-                setIsSolutionsOpen(true);
-              }}
-              onMouseLeave={() => {
-                solutionsRef.current.timeout = setTimeout(() => {
-                  setIsSolutionsOpen(false);
-                }, 90); // Keep menu open for 70ms after hover out
-              }}
-            >
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsSolutionsOpen(!isSolutionsOpen);
-                }}
-                className="text-white hover:text-[#18c4b8] transition-all duration-300 text-lg font-medium flex items-center"
+             
+              
+              {/* Services Dropdown */}
+              <motion.div 
+                custom={2} 
+                variants={menuItemVariants}
+                className="relative"
+                ref={servicesRef}
+                onMouseEnter={handleServicesMouseOver}
+                onMouseLeave={handleServicesMouseOut}
               >
-                Our Solutions
-              </button>
-              
-              {/* Solutions Dropdown Menu - Enhanced with AI section */}
-              {isSolutionsOpen && (
-                <div className="absolute -left-96 mt-6 w-auto min-w-max bg-white/95 backdrop-blur-lg rounded-lg shadow-xl overflow-hidden z-50 border border-[#18c4b8]/20">
-                  <div className="flex">
-                    {/* Left side - Existing solutions */}
-                    <div className="w-72 border-r border-[#18c4b8]/20">
-                      {/* Added heading for Enterprise Solutions */}
-                      <div className="p-3 bg-[#18c4b8]/10 border-b border-[#18c4b8]/20">
-                        <h3 className="text-base font-semibold text-[#087ea2]">Enterprise Solutions</h3>
-                      </div>
-                      
-                      {solutions.map((solution, index) => (
-                        <a 
-                          key={index} 
-                          href={solution.path}
-                          className="block p-4 hover:bg-[#18c4b8]/10 transition-all duration-300 border-b border-[#18c4b8]/20 last:border-b-0"
-                          onClick={handleDropdownItemClick}
-                        >
-                          <div className="flex items-center">
-                            <div className="mr-3 bg-[#18c4b8]/10 p-2 rounded-lg">{solution.icon}</div>
-                            <div>
-                              <h3 className="text-base font-semibold text-gray-800">{solution.name}</h3>
-                              <p className="text-gray-600 text-xs mt-1">{solution.description}</p>
-                            </div>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                    
-                    {/* Right side - Upcoming features and AI solutions */}
-                    <div className="w-80">
-                      {/* Added heading for Future Solutions */}
-                      <div className="p-3 bg-[#18c4b8]/10 border-b border-[#18c4b8]/20">
-                        <h3 className="text-base font-semibold text-[#087ea2]">Future Solutions</h3>
-                      </div>
-                      
-                      <div className="border-b border-[#18c4b8]/20">
-                        <div className="p-4">
-                          <div className="flex items-center">
-                            <BsLightning className="text-[#087ea2] text-xl mr-2" />
-                            <h3 className="text-lg font-semibold text-gray-800">Upcoming Features</h3>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* AI Solutions Dropdown */}
-                      <div 
-                        className="relative"
-                        ref={aiDropdownRef}
-                      >
-                        <button 
-                          onClick={toggleAIDropdown}
-                          className="flex items-center justify-between w-full text-left text-gray-700 hover:text-[#087ea2] hover:bg-[#18c4b8]/10 px-4 py-3 transition-all duration-300 border-b border-[#18c4b8]/20"
-                        >
-                          <span className="flex items-center">
-                            <FaRobot className="mr-3 text-[#087ea2] text-lg" /> 
-                            <span className="font-medium">AI-driven Solutions</span>
-                          </span>
-                          {isAIDropdownOpen ? 
-                            <MdExpandLess className="text-lg" /> : 
-                            <MdExpandMore className="text-lg" />
-                          }
-                        </button>
+                <button
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                >
+                  <FaLaptopCode className="mr-1" size={16} />
+                  Services
+                  {isServicesOpen ? (
+                    <MdExpandLess className="ml-1" size={18} />
+                  ) : (
+                    <MdExpandMore className="ml-1" size={18} />
+                  )}
+                </button>
+
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="absolute left-0 mt-1 w-64 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden"
+                    >
+                      <div className="p-2">
+                        {/* Services dropdown content */}
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/WebAppDevelopment"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <VscFileCode className="mr-3 text-purple-300" size={18} />
+                            <span>Web Application Development</span>
+                          </Link>
+                        </motion.div>
+
+                        {/* Additional service items... (can be expanded in full implementation) */}
                         
-                        {isAIDropdownOpen && (
-                          <div className="py-2 space-y-1">
-                            {aiSolutions.map((solution, index) => (
-                              <a 
-                                key={index} 
-                                href={solution.path}
-                                className="block px-4 py-2 hover:bg-[#18c4b8]/10 transition-all duration-300"
-                                onClick={handleDropdownItemClick}
-                              >
-                                <div className="pl-6">
-                                  <h4 className="text-sm font-medium text-gray-700 hover:text-[#087ea2]">{solution.name}</h4>
-                                  <p className="text-gray-600 text-xs mt-1">{solution.description}</p>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-                        )}
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/MobileAppDevelopment"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaMobile className="mr-3 text-purple-300" size={18} />
+                            <span>Mobile App Development</span>
+                          </Link>
+                        </motion.div>
+
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/WebsiteDevelopment"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaGlobe className="mr-3 text-purple-300" size={18} />
+                            <span>Website Development</span>
+                          </Link>
+                        </motion.div>
+                        
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/SEOServices"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaSearch className="mr-3 text-purple-300" size={18} />
+                            <span>SEO Services</span>
+                          </Link>
+                        </motion.div>
+                        
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/CloudNativeAppDevelopment"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaCloud className="mr-3 text-purple-300" size={18} />
+                            <span>Cloud Native Development</span>
+                          </Link>
+                        </motion.div>
+                        
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/UIUXDesign"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaPalette className="mr-3 text-purple-300" size={18} />
+                            <span>UI/UX Design</span>
+                          </Link>
+                        </motion.div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            <a 
-              href="/ContactForm" 
-              className="px-6 py-2 bg-[#05a7be] text-white rounded-full hover:bg-[#087ea2] transition-all duration-300 font-medium"
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Solutions Dropdown */}
+              <motion.div 
+                custom={3} 
+                variants={menuItemVariants}
+                className="relative"
+                ref={solutionsRef}
+                onMouseEnter={handleSolutionsMouseOver}
+                onMouseLeave={handleSolutionsMouseOut}
+              >
+                <button
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
+                  aria-expanded={isSolutionsOpen}
+                  aria-haspopup="true"
+                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                >
+                  <FaCheckCircle className="mr-1" size={16} />
+                  Solutions
+                  {isSolutionsOpen ? (
+                    <MdExpandLess className="ml-1" size={18} />
+                  ) : (
+                    <MdExpandMore className="ml-1" size={18} />
+                  )}
+                </button>
+
+                <AnimatePresence>
+                  {isSolutionsOpen && (
+                    <motion.div
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="absolute left-0 mt-1 w-64 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden"
+                    >
+                      <div className="p-2">
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/IBMS"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <FaCogs className="mr-3 text-purple-300" size={18} />
+                            <span>IBMS</span>
+                          </Link>
+                        </motion.div>
+
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/ILMS"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                          >
+                            <IoMdAnalytics className="mr-3 text-purple-300" size={18} />
+                            <span>ILMS</span>
+                          </Link>
+                        </motion.div>
+
+                        {/* AI Solutions - with nested dropdown */}
+                        <motion.div 
+                          variants={dropdownItemVariants}
+                          className="relative"
+                          ref={aiDropdownRef}
+                          onMouseEnter={handleAIDropdownMouseOver}
+                          onMouseLeave={handleAIDropdownMouseOut}
+                        >
+                          <button
+                            className="flex items-center justify-between w-full px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                            aria-expanded={isAIDropdownOpen}
+                          >
+                            <div className="flex items-center">
+                              <FaRobot className="mr-3 text-purple-300" size={18} />
+                              <span>AI Solutions</span>
+                            </div>
+                            {isAIDropdownOpen ? (
+                              <MdExpandLess size={18} />
+                            ) : (
+                              <MdExpandMore size={18} />
+                            )}
+                          </button>
+                          
+                          <AnimatePresence>
+                            {isAIDropdownOpen && (
+                              <motion.div
+                                variants={dropdownVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                className="absolute left-full ml-1 top-0 w-72 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden"
+                              >
+                                <div className="p-2">
+                                  <motion.div variants={dropdownItemVariants}>
+                                    <Link
+                                      to="/AI-Enterprise-Data-Solution"
+                                      className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                                    >
+                                      <BsLightning className="mr-3 text-amber-300" size={18} />
+                                      <span>AI Enterprise Data Solution</span>
+                                    </Link>
+                                  </motion.div>
+                                  <motion.div variants={dropdownItemVariants}>
+                                    <Link
+                                      to="/AI-Medical-Lead-Platform"
+                                      className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                                    >
+                                      <BsLightning className="mr-3 text-red-300" size={18} />
+                                      <span>AI Medical Lead Platform</span>
+                                    </Link>
+                                  </motion.div>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+              
+              {/* Additional nav items */}
+              <motion.div 
+                custom={4} 
+                variants={menuItemVariants}
+                className="relative"
+              >
+                <Link
+                  to="/ContactForm"
+                  className={`flex items-center px-3 py-2 text-sm font-medium ${isActive("/ContactForm")} hover:text-white transition-colors duration-200`}
+                >
+                  <MdSupportAgent className="mr-1" size={18} />
+                  Contact Us
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Call to Action Button */}
+            <motion.div 
+              custom={5} 
+              variants={menuItemVariants}
+              className="ml-4"
             >
-              Contact Us
-            </a>
+              <Link 
+                to="/ContactForm" 
+                className="px-4 py-2 bg-white hover:bg-white/90 text-[#2D1B69] rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Get Started
+              </Link>
+            </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden z-10">
-            <button 
-              onClick={toggleMenu} 
-              className="text-white hover:text-[#18c4b8] transition-all duration-300 p-2 focus:outline-none active:scale-95"
+          {/* Mobile menu button */}
+          <div className="flex lg:hidden">
+            <motion.button
+              onClick={toggleMenu}
+              className="p-2 text-white focus:outline-none"
+              whileTap={{ scale: 0.9 }}
               aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? (
-                <FaTimes className="w-6 h-6" />
+                <FaTimes size={22} />
               ) : (
-                <FaBars className="w-6 h-6" />
+                <FaBars size={22} />
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu Sidebar */}
-      <div 
-        ref={mobileMenuRef}
-        className={`absolute top-0 right-0 h-screen w-full max-w-xs bg-gray-900/95 backdrop-blur-lg z-50 shadow-2xl transition-all duration-500 ease-in-out transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } overflow-y-auto flex flex-col`}
-        style={{ touchAction: 'pan-y' }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onClick={handleMobileMenuClick}
-      >
-        {/* Close button and logo on mobile */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-700">
-          <div className="flex items-center space-x-2">
-            <img src={logo} alt="Easy2Work Logo" className="w-8 h-8" />
-            <span className="text-xl font-bold bg-gradient-to-r from-[#18c4b8] to-[#087ea2] bg-clip-text text-transparent">
-              Easy2Work
-            </span>
-          </div>
-          <button 
-            onClick={toggleMenu}
-            className="text-gray-400 hover:text-white transition-all duration-300"
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-menu"
+            key="mobile-menu"
+            className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-gradient-to-b from-[#2D1B69] to-[#5B0737] shadow-xl z-50 lg:hidden overflow-y-auto"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={mobileMenuVariants}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            ref={mobileMenuRef}
           >
-            <FaTimes className="w-5 h-5" />
-          </button>
-        </div>
-        
-        {/* Mobile menu items */}
-        <div className="flex-1 overflow-y-auto">
-          <nav className="px-6 py-4 space-y-1">
-            <a 
-              href="/" 
-              className="flex items-center text-gray-300 hover:text-white hover:bg-[#087ea2]/30 px-4 py-3 rounded-lg transition-all duration-300"
-              onClick={toggleMenu}
-            >
-              <RiHome5Line className="mr-3 text-lg text-[#18c4b8]" /> 
-              <span>Home</span>
-            </a>
-            
-            {/* Mobile Services Accordion */}
-            <div className="border-b border-gray-700 pb-1">
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleServices(e);
-                }} 
-                className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white hover:bg-[#087ea2]/30 px-4 py-3 rounded-lg transition-all duration-300"
-              >
-                <span className="flex items-center">
-                  <VscFileCode className="mr-3 text-lg text-[#18c4b8]" /> 
-                  <span>Services</span>
-                </span>
-                {isServicesOpen ? 
-                  <MdExpandLess className="text-lg" /> : 
-                  <MdExpandMore className="text-lg" />
-                }
-              </button>
-              
-              {isServicesOpen && (
-                <div 
-                  className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
-                  onClick={(e) => e.stopPropagation()}
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-8">
+                <Link to="/" className="flex items-center space-x-2" onClick={toggleMenu}>
+                  <img src={logo} alt="Easy2Work Logo" className="h-10 w-10 object-contain" />
+                  <span className="font-Tinos text-lg font-bold text-white">Easy2Work</span>
+                </Link>
+                <motion.button
+                  onClick={toggleMenu}
+                  className="p-2 text-white"
+                  whileTap={{ scale: 0.9 }}
+                  aria-label="Close menu"
                 >
-                  {services.map((service, index) => (
-                    <a 
-                      key={index} 
-                      href={service.path}
-                      className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300 z-50"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                      }}
-                    >
-                      <span className="mr-2 text-sm">{service.icon}</span>
-                      <span className="text-sm">{service.name}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            {/* Mobile Solutions Accordion */}
-            <div className="border-b border-gray-700 pb-1">
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleSolutions(e);
-                }} 
-                className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white hover:bg-[#087ea2]/30 px-4 py-3 rounded-lg transition-all duration-300"
-              >
-                <span className="flex items-center">
-                  <MdFeaturedPlayList className="mr-3 text-lg text-[#18c4b8]" /> 
-                  <span>Our Solutions</span>
-                </span>
-                {isSolutionsOpen ? 
-                  <MdExpandLess className="text-lg" /> : 
-                  <MdExpandMore className="text-lg" />
-                }
-              </button>
-              
-              {isSolutionsOpen && (
-                <div 
-                  className="pr-4 py-2 space-y-1 bg-gray-800/30 rounded-lg mt-1"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Enterprise Solutions heading for mobile */}
-                  <div className="px-3 py-2 text-gray-300 border-b border-gray-700">
-                    <span className="text-sm font-medium text-[#18c4b8]">Enterprise Solutions</span>
-                  </div>
-                  
-                  {/* Existing solutions */}
-                  {solutions.map((solution, index) => (
-                    <a 
-                      key={index} 
-                      href={solution.path}
-                      className="flex items-center text-gray-400 hover:text-white py-2 px-3 rounded-md transition-all duration-300"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                      }}
-                    >
-                      <span className="mr-2 text-sm">{solution.icon}</span>
-                      <span className="text-sm">{solution.name}</span>
-                    </a>
-                  ))}
-                  
-                  {/* Future Solutions heading for mobile */}
-                  <div className="px-3 py-2 text-gray-300 border-t border-b border-gray-700 mt-2">
-                    <span className="text-sm font-medium text-[#18c4b8]">Future Solutions</span>
-                  </div>
-                  
-                  {/* Upcoming Features Section */}
-                  <div className="pt-2">
-                    <div className="flex items-center px-3 py-2 text-gray-300">
-                      <BsLightning className="mr-2 text-sm text-[#18c4b8]" />
-                      <span className="text-sm font-medium">Upcoming Features</span>
+                  <FaTimes size={22} />
+                </motion.button>
+              </div>
+
+              <div className="space-y-1">
+                <motion.div variants={mobileMenuItemVariants}>
+                  <Link
+                    to="/"
+                    onClick={toggleMenu}
+                    className="flex items-center px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                  >
+                    <RiHome5Line className="mr-3" size={18} />
+                    Home
+                  </Link>
+                </motion.div>
+
+                <motion.div variants={mobileMenuItemVariants}>
+                  <Link
+                    to="/AboutE2w"
+                    onClick={toggleMenu}
+                    className="flex items-center px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                  >
+                    <BsBuilding className="mr-3" size={18} />
+                    About Us
+                  </Link>
+                </motion.div>
+
+                {/* Services dropdown - mobile */}
+                <motion.div variants={mobileMenuItemVariants} className="space-y-1">
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="flex items-center justify-between w-full px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                    aria-expanded={isServicesOpen}
+                  >
+                    <div className="flex items-center">
+                      <FaLaptopCode className="mr-3" size={18} />
+                      Services
                     </div>
-                    
-                    {/* AI Solutions Dropdown */}
-                    <div className="px-3 border-t border-gray-700 mt-1 pt-2">
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleAIDropdown(e);
-                        }}
-                        className="flex items-center justify-between w-full text-left text-gray-400 hover:text-white py-2 transition-all duration-300"
+                    {isServicesOpen ? (
+                      <MdExpandLess size={20} />
+                    ) : (
+                      <MdExpandMore size={20} />
+                    )}
+                  </button>
+                  
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="pl-4 overflow-hidden"
                       >
-                        <span className="flex items-center">
-                          <FaRobot className="mr-2 text-sm text-[#18c4b8]" /> 
-                          <span className="text-sm">AI-driven Solutions</span>
-                        </span>
-                        {isAIDropdownOpen ? 
-                          <MdExpandLess className="text-sm" /> : 
-                          <MdExpandMore className="text-sm" />
-                        }
-                      </button>
-                      
-                      {isAIDropdownOpen && (
-                        <div className="pl-6 space-y-2 mt-1">
-                          {aiSolutions.map((solution, index) => (
-                            <a 
-                              key={index} 
-                              href={solution.path}
-                              className="block text-gray-500 hover:text-white py-1 transition-all duration-300"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                            >
-                              <span className="text-xs">{solution.name}</span>
-                            </a>
-                          ))}
+                        <div className="border-l-2 border-white/20 pl-4 py-2 space-y-1">
+                          {/* Mobile menu service links */}
+                          <Link
+                            to="/WebAppDevelopment"
+                            onClick={toggleMenu}
+                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                          >
+                            <VscFileCode className="mr-3 text-purple-300" size={16} />
+                            Web Application Development
+                          </Link>
+                          <Link
+                            to="/MobileAppDevelopment"
+                            onClick={toggleMenu}
+                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                          >
+                            <FaMobile className="mr-3 text-purple-300" size={16} />
+                            Mobile App Development
+                          </Link>
+                          {/* More mobile service links would be added here */}
                         </div>
-                      )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Solutions dropdown - mobile */}
+                <motion.div variants={mobileMenuItemVariants} className="space-y-1">
+                  <button
+                    onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+                    className="flex items-center justify-between w-full px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                    aria-expanded={isSolutionsOpen}
+                  >
+                    <div className="flex items-center">
+                      <FaCheckCircle className="mr-3" size={18} />
+                      Solutions
                     </div>
-                  </div>
-                </div>
-              )}
+                    {isSolutionsOpen ? (
+                      <MdExpandLess size={20} />
+                    ) : (
+                      <MdExpandMore size={20} />
+                    )}
+                  </button>
+                  
+                  <AnimatePresence>
+                    {isSolutionsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="pl-4 overflow-hidden"
+                      >
+                        <div className="border-l-2 border-white/20 pl-4 py-2 space-y-1">
+                          <Link
+                            to="/IBMS"
+                            onClick={toggleMenu}
+                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                          >
+                            <FaCogs className="mr-3 text-purple-300" size={16} />
+                            IBMS
+                          </Link>
+                          <Link
+                            to="/ILMS"
+                            onClick={toggleMenu}
+                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                          >
+                            <IoMdAnalytics className="mr-3 text-purple-300" size={16} />
+                            ILMS
+                          </Link>
+                          {/* AI Products in mobile menu */}
+                          <button
+                            onClick={() => setIsAIDropdownOpen(!isAIDropdownOpen)}
+                            className="flex items-center justify-between w-full px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                          >
+                            <div className="flex items-center">
+                              <FaRobot className="mr-3 text-purple-300" size={16} />
+                              AI Solutions
+                            </div>
+                            {isAIDropdownOpen ? (
+                              <MdExpandLess size={16} />
+                            ) : (
+                              <MdExpandMore size={16} />
+                            )}
+                          </button>
+                          
+                          <AnimatePresence>
+                            {isAIDropdownOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="pl-4 overflow-hidden"
+                              >
+                                <div className="border-l-2 border-white/20 pl-3 py-2 space-y-1">
+                                  <Link
+                                    to="/AI-Enterprise-Data-Solution"
+                                    onClick={toggleMenu}
+                                    className="flex items-center px-3 py-2 text-xs text-white/80 hover:bg-white/10 hover:text-white rounded-lg"
+                                  >
+                                    <BsLightning className="mr-3 text-amber-300" size={14} />
+                                    AI Enterprise Data Solution
+                                  </Link>
+                                  <Link
+                                    to="/AI-Medical-Lead-Platform"
+                                    onClick={toggleMenu}
+                                    className="flex items-center px-3 py-2 text-xs text-white/80 hover:bg-white/10 hover:text-white rounded-lg"
+                                  >
+                                    <BsLightning className="mr-3 text-red-300" size={14} />
+                                    AI Medical Lead Platform
+                                  </Link>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                <motion.div variants={mobileMenuItemVariants}>
+                  <Link
+                    to="/ContactForm"
+                    onClick={toggleMenu}
+                    className="flex items-center px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                  >
+                    <MdSupportAgent className="mr-3" size={18} />
+                    Contact Us
+                  </Link>
+                </motion.div>
+              </div>
+              
+              {/* Mobile CTA */}
+              <motion.div 
+                variants={mobileMenuItemVariants}
+                className="mt-8 pt-6 border-t border-white/10"
+              >
+                <Link
+                  to="/ContactForm"
+                  onClick={toggleMenu}
+                  className="flex items-center justify-center px-4 py-3 bg-white text-[#2D1B69] rounded-xl text-sm font-medium w-full"
+                >
+                  Get Started
+                </Link>
+              </motion.div>
             </div>
-            
-            <a 
-              href="/ContactForm" 
-              className="flex items-center text-gray-300 hover:text-white hover:bg-[#087ea2]/30 px-4 py-3 rounded-lg transition-all duration-300"
-              onClick={toggleMenu}
-            >
-              <MdSupportAgent className="mr-3 text-lg text-[#18c4b8]" /> 
-              <span>Contact Us</span>
-            </a>
-          </nav>
-        </div>
-      </div>
-      
-      {/* Overlay for mobile menu */}
-      <div 
-        className={`absolute inset-0 bg-black/70 z-40 transition-opacity duration-500 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={toggleMenu}
-      ></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

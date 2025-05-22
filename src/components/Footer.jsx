@@ -1,15 +1,89 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaArrowUp } from "react-icons/fa";
-// Using the logo from the public directory instead of assets/images
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaLinkedinIn, 
+  FaInstagram, 
+  FaArrowUp,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+  FaGlobe,
+  FaChevronRight,
+  FaHeart
+} from "react-icons/fa";
+
+// Using the logo from the public directory
 import logo from "/EASY2Work-Logo.png";
 
 const Footer = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [currentYear] = useState(new Date().getFullYear());
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ 
+    triggerOnce: true, 
+    threshold: 0.1,
+    rootMargin: "50px" 
+  });
+
+  // Enhanced animation variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }
+  };
+  
+  const iconVariants = {
+    hover: (i) => ({
+      y: -5,
+      scale: 1.1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }),
+    initial: {
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 500) {
         setShowScrollButton(true);
       } else {
         setShowScrollButton(false);
@@ -33,7 +107,7 @@ const Footer = () => {
     { name: "Services", path: "#" },
     { name: "Products", path: "#" },
     { name: "Careers", path: "/Careers" },
-    { name: "Blogs", path: "/Blogs" },
+    { name: "Blog", path: "/Blogs" },
     { name: "Contact", path: "/ContactForm" },
   ];
 
@@ -44,171 +118,194 @@ const Footer = () => {
     { name: "PWA Development", path: "/PWA" },
     { name: "Cloud Services", path: "/CloudServices" },
     { name: "SAAS Development", path: "/SAAS" },
-    { name: "Consultancy Services", path: "/Consultant" },
-    { name: "Content Development", path: "/ContentWriting" },
     { name: "SEO Services", path: "/SEO" },
   ];
 
-  const products = [
+  const solutions = [
     { name: "IBMS", path: "/IBMS" },
     { name: "ILMS", path: "/ILMS" },
-    { name: "Easy2Work PWA", path: "/E2wProduct" },
+    { name: "AI Enterprise Data Solution", path: "/AI-Enterprise-Data-Solution" },
+    { name: "AI Medical Lead Platform", path: "/AI-Medical-Lead-Platform" },
   ];
+
+  const socialMedia = [
+    { icon: <FaFacebookF />, url: "https://facebook.com", name: "Facebook", ariaLabel: "Visit our Facebook page" },
+    { icon: <FaTwitter />, url: "https://twitter.com", name: "Twitter", ariaLabel: "Visit our Twitter profile" },
+    { icon: <FaLinkedinIn />, url: "https://linkedin.com", name: "LinkedIn", ariaLabel: "Visit our LinkedIn profile" },
+    { icon: <FaInstagram />, url: "https://instagram.com", name: "Instagram", ariaLabel: "Visit our Instagram profile" },
+  ];
+
   return (
-    <footer className="bg-[#017598] text-white pt-10 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-gradient-to-b from-[#1A103F] to-[#2D1B69] text-white pt-16 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-0 left-[-10%] w-[30%] h-[30%] rounded-full opacity-10 bg-gradient-to-br from-purple-400 to-purple-600 blur-3xl"></div>
+        <div className="absolute bottom-0 right-[-5%] w-[25%] h-[25%] rounded-full opacity-10 bg-gradient-to-tr from-pink-400 to-purple-600 blur-3xl"></div>
+      </div>
+
+      {/* Scroll to top button with enhanced animation */}
+      <AnimatePresence>
+        {showScrollButton && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 bg-white text-[#2D1B69] p-3 rounded-full shadow-lg z-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D1B69]"
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp className="text-xl" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Main footer content */}
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={controls}
+        className="container mx-auto px-4 lg:px-8 relative z-10"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
           {/* Company Info */}
-          <div>
-            <Link to="/" className="inline-block mb-4">
-              <img src={logo} alt="Easy2Work Logo" className="h-12" />
-            </Link>
-            <p className="text-gray-300 mb-6">
-              Easy2Work provides innovative business solutions designed to
-              streamline workflows, enhance productivity, and drive growth for
-              your business.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
-              >
-                <FaLinkedinIn />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#05a7be] hover:bg-[#1ed7cd] w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
-              >
-                <FaInstagram />
-              </a>
+          <motion.div variants={itemVariants} className="lg:col-span-4">
+            <div className="flex items-center mb-6">
+              <img src={logo} alt="Easy2Work Logo" className="h-12 w-12 mr-3" />
+              <h3 className="text-2xl font-bold font-Tinos bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+                Easy2Work
+              </h3>
             </div>
-          </div>
+            
+            <p className="text-gray-300 mb-6">
+              Transforming businesses with intelligent software solutions. We create innovative enterprise applications, websites, and mobile apps to help your business thrive in the digital world.
+            </p>
+            
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
+              {socialMedia.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.ariaLabel}
+                  className="bg-white/10 hover:bg-white/20 p-2.5 rounded-lg text-white transition-all duration-300"
+                  variants={iconVariants}
+                  custom={index}
+                  initial="initial"
+                  whileHover="hover"
+                  onMouseEnter={() => setHoveredIcon(index)}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-100">Quick Links</h3>
-            <ul className="space-y-2">
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h4 className="text-lg font-semibold mb-6 font-Tinos">Quick Links</h4>
+            <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-primary-100 transition duration-300"
+                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                   >
+                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-100">Our Services</h3>
-            <ul className="space-y-2">
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h4 className="text-lg font-semibold mb-6 font-Tinos">Our Services</h4>
+            <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
                     to={service.path}
-                    className="text-gray-300 hover:text-primary-100 transition duration-300"
+                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                   >
+                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
                     {service.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Products & Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-100">Our Products</h3>
-            <ul className="space-y-2 mb-6">
-              {products.map((product, index) => (
+          {/* Solutions */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h4 className="text-lg font-semibold mb-6 font-Tinos">Our Solutions</h4>
+            <ul className="space-y-3">
+              {solutions.map((solution, index) => (
                 <li key={index}>
                   <Link
-                    to={product.path}
-                    className="text-gray-300 hover:text-primary-100 transition duration-300"
+                    to={solution.path}
+                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                   >
-                    {product.name}
+                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
+                    {solution.name}
                   </Link>
                 </li>
               ))}
             </ul>
+          </motion.div>
 
-            <h3 className="text-lg font-semibold mb-4 text-primary-100">Contact Us</h3>
-            <address className="not-italic text-gray-300">
-              <p className="mb-2">123 Business Avenue,</p>
-              <p className="mb-2">Tech District, City 12345</p>
-              <p className="mb-2">
-                Email:{" "}
-                <a
-                  href="mailto:info@easy2work.com"
-                  className="hover:text-primary-100 transition duration-300"
-                >
-                  info@easy2work.com
+          {/* Contact Info */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <h4 className="text-lg font-semibold mb-6 font-Tinos">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <FaMapMarkerAlt className="mt-1 mr-3 text-purple-400" />
+                <span className="text-gray-300">123 Tech Plaza, Innovation District, San Francisco, CA 94105</span>
+              </li>
+              <li className="flex items-center">
+                <FaEnvelope className="mr-3 text-purple-400" />
+                <a href="mailto:info@easy2work.in" className="text-gray-300 hover:text-white transition-colors">
+                  info@easy2work.in
                 </a>
-              </p>
-              <p>
-                Phone:{" "}
-                <a
-                  href="tel:+1234567890"
-                  className="hover:text-primary-100 transition duration-300"
-                >
+              </li>
+              <li className="flex items-center">
+                <FaPhone className="mr-3 text-purple-400" />
+                <a href="tel:+1234567890" className="text-gray-300 hover:text-white transition-colors">
                   +1 (234) 567-890
                 </a>
-              </p>
-            </address>
-          </div>
+              </li>
+              <li className="flex items-center">
+                <FaGlobe className="mr-3 text-purple-400" />
+                <span className="text-gray-300">Global Presence</span>
+              </li>
+            </ul>
+          </motion.div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-primary-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Easy2Work. All rights reserved.
-          </p>
-          <div className="flex space-x-4 text-sm text-gray-400">
-            <Link to="/privacy-policy" className="hover:text-primary-100 transition duration-300">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="hover:text-primary-100 transition duration-300">
-              Terms of Service
-            </Link>
-            <Link to="/sitemap" className="hover:text-primary-100 transition duration-300">
-              Sitemap
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll to Top Button */}
-      {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-primary-300 hover:bg-primary-200 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50"
-          aria-label="Scroll to top"
+        {/* Newsletter subscription - could be added here */}
+        <motion.div 
+          variants={itemVariants}
+          className="border-t border-white/10 pt-8 pb-12 mt-8"
         >
-          <FaArrowUp />
-        </button>
-      )}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-center md:text-left text-gray-300 text-sm">
+                &copy; {currentYear} Easy2Work. All rights reserved. Made with <FaHeart className="inline-block text-red-400 mx-1" /> for innovation.
+              </p>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-gray-400">
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 };

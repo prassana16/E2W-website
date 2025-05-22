@@ -8,7 +8,9 @@ import {
   FaRobot,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
+// Import images
 import portfolioSite from "../assets/images/portfolio-site.png";
 import pwaApp from "../assets/images/pwa-app.png";
 import localSEO from "../assets/images/seo3.png";
@@ -28,7 +30,7 @@ const Banner = () => {
       description:
         "Building robust, scalable, and AI-enabled web applications tailored to meet your global business needs with cutting-edge technology.",
       image: cms,
-      bgColor: "linear-gradient(135deg, #017598, #05a7be)",
+      bgColor: "from-[#017598] to-[#05a7be]",
       learnMoreLink: "/WebAppDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
     },
@@ -37,7 +39,7 @@ const Banner = () => {
       description:
         "Creating responsive, SEO-optimized websites with international market focus that drive engagement and enhance your global digital presence.",
       image: portfolioSite,
-      bgColor: "linear-gradient(135deg, #05a7be, #18c4b8)",
+      bgColor: "from-[#05a7be] to-[#18c4b8]",
       learnMoreLink: "/WebsiteDevelopment",
       icon: <FaGlobeAmericas className="text-4xl mb-4" />,
     },
@@ -46,7 +48,7 @@ const Banner = () => {
       description:
         "Designing intuitive cross-platform mobile applications that deliver exceptional user experiences for global audiences.",
       image: pwaApp,
-      bgColor: "linear-gradient(135deg, #18c4b8, #1ed7cd)",
+      bgColor: "from-[#18c4b8] to-[#1ed7cd]",
       learnMoreLink: "/MobileAppDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
     },
@@ -106,192 +108,242 @@ const Banner = () => {
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [animationDirection, setAnimationDirection] = useState("right");
-  const [typedText, setTypedText] = useState("");
-  const fullText = "Global Technology Partners";
-  const typingSpeed = 100; // milliseconds per character
+  
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
+  });
 
-  // Auto-slide functionality
+  // Handle automatic slide change
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        handleNext();
-      }, 5000); // Auto-slide every 5 seconds for better readability
-
-      return () => clearInterval(interval); // Cleanup
+    let slideTimer;
+    
+    if (!isPaused && inView) {
+      slideTimer = setTimeout(() => {
+        if (!transitioning) {
+          goToNextSlide();
+        }
+      }, 5000);
     }
-  }, [isPaused, slides.length]);
+    
+    return () => {
+      if (slideTimer) clearTimeout(slideTimer);
+    };
+  }, [currentIndex, transitioning, isPaused, inView]);
 
-  useEffect(() => {
-    if (typedText.length < fullText.length) {
-      const timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, typedText.length + 1));
-      }, typingSpeed);
-      return () => clearTimeout(timeout);
-    }
-  }, [typedText]);
-
-  const handleNext = () => {
-    setAnimationDirection("right");
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  // Functions to handle slide navigation
+  const goToPreviousSlide = () => {
+    if (transitioning) return;
+    
+    setTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
+    
+    setTimeout(() => {
+      setTransitioning(false);
+    }, 500);
   };
 
-  const handlePrev = () => {
-    setAnimationDirection("left");
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const goToNextSlide = () => {
+    if (transitioning) return;
+    
+    setTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+    );
+    
+    setTimeout(() => {
+      setTransitioning(false);
+    }, 500);
   };
 
-  const handleArrowClick = (direction) => {
-    if (direction === "left") {
-      handlePrev();
-    } else {
-      handleNext();
+  const goToSlide = (index) => {
+    if (transitioning || index === currentIndex) return;
+    
+    setTransitioning(true);
+    setCurrentIndex(index);
+    
+    setTimeout(() => {
+      setTransitioning(false);
+    }, 500);
+  };
+
+  // Touch event handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swipe left
+      goToNextSlide();
+    } else if (touchEnd - touchStart > 75) {
+      // Swipe right
+      goToPreviousSlide();
     }
+    setIsPaused(false);
   };
 
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => setIsPaused(false);
+  // Framer Motion variants
+  const slideVariants = {
+    hidden: (direction) => ({
+      x: direction === "right" ? "100%" : "-100%",
+      opacity: 0,
+    }),
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+      },
+    },
+    exit: (direction) => ({
+      x: direction === "right" ? "-100%" : "100%",
+      opacity: 0,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+      },
+    }),
+  };
 
   return (
-    <div className="relative min-h-screen overflow-hidden" id="services">
-      {/* Background with our brand colors */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#087ea2] to-[#05a7be]"></div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10 text-white pt-24 pb-20">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-bold mb-6"
-          >
-            Our Services
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-semibold mb-6 h-8"
-          >
-            <span className="text-white">{typedText}</span>
-            <span className="animate-blink">|</span>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto"
-          >
-            Delivering innovative AI-powered solutions to businesses across the
-            globe, with a focus on scalability, security, and exceptional user
-            experience.
-          </motion.p>
-        </div>
-
-        {/* Slide Content */}
-        <div
-          className="w-full max-w-6xl mx-auto px-4 py-8 rounded-2xl overflow-hidden backdrop-blur-sm bg-white/5 border border-white/10 shadow-xl"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+    <div 
+      ref={ref}
+      className="relative h-screen w-full overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <Navbar />
+      
+      {/* Main slider */}
+      <AnimatePresence initial={false} custom={currentIndex > (currentIndex - 1 + slides.length) % slides.length ? "right" : "left"}>
+        <motion.div
+          key={currentIndex}
+          custom={currentIndex > (currentIndex - 1 + slides.length) % slides.length ? "right" : "left"}
+          variants={slideVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className={`absolute inset-0 flex flex-col md:flex-row items-center w-full h-screen bg-gradient-to-br ${slides[currentIndex].bgColor}`}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              className="flex flex-col md:flex-row justify-center items-center w-full md:gap-8"
-              initial={{
-                opacity: 0,
-                x: animationDirection === "right" ? 100 : -100,
-              }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{
-                opacity: 0,
-                x: animationDirection === "right" ? -100 : 100,
-                transition: { duration: 0.3 },
-              }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* Slide Text */}
-              <div className="flex flex-col items-center md:items-start gap-4 md:w-1/2 p-5 text-center md:text-left">
-                <div className="bg-white/10 p-4 rounded-full">
-                  {slides[currentSlide].icon}
-                </div>
-                <h3 className="text-2xl md:text-4xl font-bold">
-                  {slides[currentSlide].title}
-                </h3>
-                <p className="text-base md:text-lg text-white/90">
-                  {slides[currentSlide].description}
-                </p>
-                <a
-                  href={slides[currentSlide].learnMoreLink}
-                  className="inline-block mt-4 px-6 py-3 bg-white text-[#087ea2] text-lg font-bold rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg"
+          {/* Content section */}
+          <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-1/2 text-white space-y-6 pt-24 md:pt-0 order-2 md:order-1">
+              {/* Icon with animation */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block p-4 bg-white/10 backdrop-blur-md rounded-xl mb-4"
+              >
+                {slides[currentIndex].icon}
+              </motion.div>
+              
+              {/* Title with animation */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold font-Tinos leading-tight"
+              >
+                {slides[currentIndex].title}
+              </motion.h1>
+              
+              {/* Description with animation */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-lg md:text-xl text-white/90 max-w-lg"
+              >
+                {slides[currentIndex].description}
+              </motion.p>
+              
+              {/* CTA button with animation */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Link
+                  to={slides[currentIndex].learnMoreLink}
+                  className="inline-block px-8 py-4 mt-6 bg-white text-[#017598] rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   Learn More
-                </a>
-              </div>
-
-              {/* Slide Image */}
-              <div className="relative md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                <motion.div
-                  className="relative overflow-hidden rounded-xl border-2 border-white/20 shadow-2xl"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent z-10"></div>
-                  <img
-                    src={slides[currentSlide].image}
-                    alt={slides[currentSlide].title}
-                    className="w-full max-w-md object-cover rounded-lg"
-                    style={{ maxHeight: "300px" }}
-                    loading="lazy"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center mt-8 space-x-2">
+                </Link>
+              </motion.div>
+            </div>
+            
+            {/* Image section */}
+            <div className="w-full md:w-1/2 relative order-1 md:order-2 h-[40vh] md:h-auto">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, type: "spring" }}
+                className="relative w-full h-full flex items-center justify-center"
+              >
+                <img
+                  src={slides[currentIndex].image}
+                  alt={slides[currentIndex].title}
+                  className="object-contain max-h-[70vh] max-w-full rounded-lg shadow-2xl"
+                />
+                
+                {/* Decorative elements */}
+                <div className="absolute -z-10 w-60 h-60 bg-white/10 rounded-full blur-3xl top-1/4 -left-20"></div>
+                <div className="absolute -z-10 w-80 h-80 bg-white/5 rounded-full blur-3xl -bottom-10 -right-10"></div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Navigation arrows */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center items-center space-x-6 z-20">
+        <button
+          onClick={goToPreviousSlide}
+          className="p-2 text-white/70 hover:text-white transition-colors duration-300"
+          aria-label="Previous slide"
+        >
+          <FaRegArrowAltCircleLeft className="w-8 h-8" />
+        </button>
+        
+        {/* Indicator dots */}
+        <div className="flex space-x-2">
           {slides.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-white w-6"
-                  : "bg-white/50 hover:bg-white/80"
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
-
-        {/* Navigation Arrows */}
-        <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 flex justify-between items-center px-4 z-20">
-          <button
-            onClick={() => handleArrowClick("left")}
-            className="bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition duration-300 backdrop-blur-sm"
-            aria-label="Previous Slide"
-          >
-            <FaRegArrowAltCircleLeft className="w-8 h-8" />
-          </button>
-          <button
-            onClick={() => handleArrowClick("right")}
-            className="bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition duration-300 backdrop-blur-sm"
-            aria-label="Next Slide"
-          >
-            <FaRegArrowAltCircleRight className="w-8 h-8" />
-          </button>
-        </div>
+        
+        <button
+          onClick={goToNextSlide}
+          className="p-2 text-white/70 hover:text-white transition-colors duration-300"
+          aria-label="Next slide"
+        >
+          <FaRegArrowAltCircleRight className="w-8 h-8" />
+        </button>
       </div>
     </div>
   );
