@@ -484,73 +484,16 @@ const Navbar = () => {
                           </Link>
                         </motion.div>
 
-                        {/* AI Solutions - with nested dropdown */}
-                        <motion.div 
-                          variants={dropdownItemVariants}
-                          className="relative"
-                          ref={aiDropdownRef}
-                          onMouseEnter={handleAIDropdownMouseOver}
-                          onMouseLeave={handleAIDropdownMouseOut}
-                        >                          <button
-                            className="flex items-center justify-between w-full px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
-                            aria-expanded={isAIDropdownOpen}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setIsAIDropdownOpen(!isAIDropdownOpen);
-                            }}
+                        <motion.div variants={dropdownItemVariants}>
+                          <Link
+                            to="/AI-Medical-Lead-Platform"
+                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
                           >
-                            <div className="flex items-center">
-                              <FaRobot className="mr-3 text-purple-300" size={18} />
-                              <span>AI Solutions</span>
-                            </div>
-                            {isAIDropdownOpen ? (
-                              <MdExpandLess size={18} />
-                            ) : (
-                              <MdExpandMore size={18} />
-                            )}
-                          </button>
-                            <AnimatePresence>
-                            {isAIDropdownOpen && (                              <motion.div
-                                variants={dropdownVariants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                className="absolute left-0 md:left-full ml-1 top-0 md:top-0 w-full md:w-72 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden z-10"
-                              >
-                                <div className="p-2">
-                                  <motion.div variants={dropdownItemVariants}>
-                                    <Link
-                                      to="/AI-Enterprise-Data-Solution"
-                                      className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
-                                      onClick={() => {
-                                        setIsAIDropdownOpen(false);
-                                        setIsSolutionsOpen(false);
-                                        setIsOpen(false);
-                                      }}
-                                    >
-                                      <BsLightning className="mr-3 text-amber-300" size={18} />
-                                      <span>AI Enterprise Data Solution</span>
-                                    </Link>
-                                  </motion.div>
-                                  <motion.div variants={dropdownItemVariants}>
-                                    <Link
-                                      to="/AI-Medical-Lead-Platform"
-                                      className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
-                                      onClick={() => {
-                                        setIsAIDropdownOpen(false);
-                                        setIsSolutionsOpen(false);
-                                        setIsOpen(false);
-                                      }}
-                                    >
-                                      <BsLightning className="mr-3 text-red-300" size={18} />
-                                      <span>AI Medical Lead Platform</span>
-                                    </Link>
-                                  </motion.div>
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
+                            <IoMdAnalytics className="mr-3 text-purple-300" size={18} />
+                            <span>AI Medical Lead Platform</span>
+                          </Link>
                         </motion.div>
+
                       </div>
                     </motion.div>
                   )}

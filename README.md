@@ -371,8 +371,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👥 Contact
 
 For any queries or support, please contact:
-- Website: [easy2work.in](https://easy2work.in)
-- Email: [contact@easy2work.in](mailto:contact@easy2work.in)
+- Email: [sales@esy2work.in](mailto:sales@esy2work.in)
+- LinkedIn: [https://www.linkedin.com/company/easy2work-india/](https://www.linkedin.com/company/easy2work-india/)
 
 ## 📚 Third-Party Libraries & Components
 

@@ -38,7 +38,6 @@ import { FlipWordslead } from './components/Flipwordslead';
 // IBMS/ILMS (our solutions)
 import IBMS from './components/IBMS';
 import ILMS from './components/ILMS';
-import AIEnterpriseSolution from './components/AI-Enterprise-Data-Solution';
 import AIMedicalLeadPlatform from './components/AI-Medical-Lead-Platform';
 
 // new components
@@ -147,9 +146,7 @@ function App() {
        {/* ILMS page */}
        <Route path="/ILMS" element={<>
           <ILMS/></>} />
-       {/* AI Enterprise Data Solution page */}
-       <Route path="/AI-Enterprise-Data-Solution" element={<>
-          <AIEnterpriseSolution/></>} />
+       
        {/* AI Medical Lead Platform page */}
        <Route path="/AI-Medical-Lead-Platform" element={<>
           <AIMedicalLeadPlatform/></>} />

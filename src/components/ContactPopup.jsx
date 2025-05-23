@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { AiOutlineClose, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { MdOutlineMessage } from 'react-icons/md';
-import { IoCallSharp } from "react-icons/io5";
-import { FaWhatsapp } from "react-icons/fa";
+// Communication icons removed
 
 
 const ContactPopup = () => {
@@ -37,14 +36,20 @@ const ContactPopup = () => {
       setFormData({ ...formData, [name]: value });
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Update form data to include the website lead subject
+    const updatedFormData = {
+      ...formData,
+      to_email: 'sales@esy2work.in',
+      subject: 'WEBSITE LEAD'
+    };
 
     emailjs.send(
       'service_yq1c62d',
       'template_t1rxszr',
-      formData,
+      updatedFormData,
       'ywtm-2mqEWbpTQIux'
     )
     .then((response) => {
@@ -161,15 +166,8 @@ const ContactPopup = () => {
             </button>
             {formStatus && <p className="text-center text-[#18c4b8] text-xs">{formStatus}</p>}
           </form>
-        </div>
-      ) : (
+        </div>      ) : (
         <div className="flex items-center space-x-2">
-          <a href="tel:+919600878113" className="bg-[#18c4b8] p-3 rounded-full shadow hover:bg-[#087ea2] transition-colors">
-            <IoCallSharp className="text-white" />
-          </a>
-          <a href="https://wa.me/9566031113" className="bg-[#25D366] p-3 rounded-full shadow hover:bg-green-500">
-            <FaWhatsapp className="text-white" />
-          </a>
           <button
             onClick={togglePopup}
             className="bg-[#05a7be] text-white p-3 rounded-full shadow hover:bg-[#087ea2] transition-colors"

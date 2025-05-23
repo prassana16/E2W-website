@@ -124,15 +124,14 @@ const Footer = () => {
   const solutions = [
     { name: "IBMS", path: "/IBMS" },
     { name: "ILMS", path: "/ILMS" },
-    { name: "AI Enterprise Data Solution", path: "/AI-Enterprise-Data-Solution" },
     { name: "AI Medical Lead Platform", path: "/AI-Medical-Lead-Platform" },
-  ];
-
+  ];  // Only LinkedIn as social media as per requirement
   const socialMedia = [
-    { icon: <FaFacebookF />, url: "https://facebook.com", name: "Facebook", ariaLabel: "Visit our Facebook page" },
-    { icon: <FaTwitter />, url: "https://twitter.com", name: "Twitter", ariaLabel: "Visit our Twitter profile" },
-    { icon: <FaLinkedinIn />, url: "https://linkedin.com", name: "LinkedIn", ariaLabel: "Visit our LinkedIn profile" },
-    { icon: <FaInstagram />, url: "https://instagram.com", name: "Instagram", ariaLabel: "Visit our Instagram profile" },
+    { 
+      icon: <FaLinkedinIn />, 
+      name: "LinkedIn", 
+      url: "https://www.linkedin.com/company/easy2work-india/" 
+    }
   ];
 
   return (
@@ -177,29 +176,25 @@ const Footer = () => {
                 Easy2Work
               </h3>
             </div>
-            
-            <p className="text-gray-300 mb-6">
+              <p className="text-gray-300 mb-6">
               Transforming businesses with intelligent software solutions. We create innovative enterprise applications, websites, and mobile apps to help your business thrive in the digital world.
             </p>
-            
-            {/* Social Media Icons */}
+            {/* Only LinkedIn social media as per requirement */}
             <div className="flex space-x-4">
-              {socialMedia.map((social, index) => (
+              {socialMedia.map((item, index) => (
                 <motion.a
                   key={index}
-                  href={social.url}
+                  href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={social.ariaLabel}
-                  className="bg-white/10 hover:bg-white/20 p-2.5 rounded-lg text-white transition-all duration-300"
-                  variants={iconVariants}
+                  aria-label={item.name}
                   custom={index}
+                  variants={iconVariants}
                   initial="initial"
                   whileHover="hover"
-                  onMouseEnter={() => setHoveredIcon(index)}
-                  onMouseLeave={() => setHoveredIcon(null)}
+                  className="bg-white/10 text-white hover:bg-white/20 rounded-full p-2.5 transition-colors duration-300"
                 >
-                  {social.icon}
+                  {item.icon}
                 </motion.a>
               ))}
             </div>
@@ -266,19 +261,11 @@ const Footer = () => {
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-3 text-purple-400" />
                 <span className="text-gray-300">123 Tech Plaza, Innovation District, San Francisco, CA 94105</span>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="mr-3 text-purple-400" />
-                <a href="mailto:info@easy2work.in" className="text-gray-300 hover:text-white transition-colors">
-                  info@easy2work.in
+              </li>              <li className="flex items-center">                <FaEnvelope className="mr-3 text-purple-400" />
+                <a href="mailto:sales@esy2work.in" className="text-gray-300 hover:text-white transition-colors">
+                  sales@esy2work.in
                 </a>
-              </li>
-              <li className="flex items-center">
-                <FaPhone className="mr-3 text-purple-400" />
-                <a href="tel:+1234567890" className="text-gray-300 hover:text-white transition-colors">
-                  +1 (234) 567-890
-                </a>
-              </li>
+              </li>{/* Phone number removed */}
               <li className="flex items-center">
                 <FaGlobe className="mr-3 text-purple-400" />
                 <span className="text-gray-300">Global Presence</span>

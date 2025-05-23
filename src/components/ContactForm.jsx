@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaRegPaperPlane, FaCheck, FaExclamationTriangle, FaMapMarkerAlt, FaEnvelope, FaPhone, FaGlobe } from "react-icons/fa";
+import { FaRegPaperPlane, FaCheck, FaExclamationTriangle, FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   // Main color scheme based on the design system
@@ -133,7 +134,6 @@ const ContactForm = () => {
     
     setFormErrors(errors);
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -141,11 +141,21 @@ const ContactForm = () => {
     
     setFormStatus(prev => ({ ...prev, isLoading: true }));
     
-    try {
-      // Simulate API call with a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+    try {      // Send email to sales@esy2work.in using emailjs
+      const updatedFormData = {
+        ...formData,
+        to_email: 'sales@esy2work.in',
+        subject: 'WEBSITE LEAD',
+      };
       
-      // Success simulation - in production this would be a real API call
+      // Use emailjs to send the form data
+      await emailjs.send(
+        'service_yq1c62d',
+        'template_t1rxszr',
+        updatedFormData,
+        'ywtm-2mqEWbpTQIux'
+      );
+      
       setFormStatus({
         submitted: true,
         success: true,
@@ -183,18 +193,11 @@ const ContactForm = () => {
       icon: <FaMapMarkerAlt className="text-purple-400" />,
       title: "Our Office",
       content: "123 Tech Plaza, Innovation District, San Francisco, CA 94105",
-    },
-    {
+    },    {
       icon: <FaEnvelope className="text-purple-400" />,
       title: "Email Us",
-      content: "info@easy2work.in",
-      link: "mailto:info@easy2work.in"
-    },
-    {
-      icon: <FaPhone className="text-purple-400" />,
-      title: "Call Us",
-      content: "+1 (234) 567-890",
-      link: "tel:+1234567890"
+      content: "sales@esy2work.in",
+      link: "mailto:sales@esy2work.in"
     },
     {
       icon: <FaGlobe className="text-purple-400" />,
