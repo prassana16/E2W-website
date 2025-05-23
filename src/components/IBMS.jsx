@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaCheckCircle, FaCog, FaChartLine, FaUsers, FaDatabase, FaUserShield, FaGlobe } from "react-icons/fa";
 import SEO from './SEO';
 
 const IBMS = () => {
   const [activeTab, setActiveTab] = useState('features');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const controls = useAnimation();
   const [ref, inView] = useInView({ 
     threshold: 0.1,
@@ -32,15 +34,26 @@ const IBMS = () => {
     },
     "featureList": "Process Automation, Business Intelligence, Enterprise Resource Planning, Customer Relationship Management, Supply Chain Management, Human Resource Management"
   };
-
   useEffect(() => {
-    const timer = setTimeout(() => {
+    console.log("IBMS component mounted");
+    try {
+      // Set a shorter timeout to ensure it loads
+      // Load immediately without timeout to prevent blank screens
       setLoading(false);
-    }, 1000);
+      
+      // Fallback timer in case something goes wrong
+      const fallbackTimer = setTimeout(() => {
+        console.log("Fallback timer: Setting loading to false");
+        setLoading(false);
+      }, 1000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(fallbackTimer);
+    } catch (err) {
+      console.error("Error in IBMS loading:", err);
+      setError(err);
+      setLoading(false);
+    }
   }, []);
-
   useEffect(() => {
     if (inView) {
       controls.start('visible');
@@ -129,6 +142,20 @@ const IBMS = () => {
     "Telecommunications",
     "Transportation & Logistics",
   ];
+  if (error) {
+    return (
+      <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-[#2D1B69] to-[#5B0737] text-white p-4">
+        <h2 className="text-2xl font-bold mb-4">Something went wrong</h2>
+        <p className="mb-4">We're having trouble loading the IBMS page. Please try again.</p>
+        <button 
+          onClick={() => window.location.reload()}
+          className="bg-white text-[#620078] px-6 py-2 rounded-lg"
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -138,7 +165,9 @@ const IBMS = () => {
     );
   }
 
-  return (
+  // Wrap the entire return in a try-catch to prevent blank screens
+  try {
+    return (
     <section className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       {/* SEO Component */}
       <SEO
@@ -356,10 +385,24 @@ const IBMS = () => {
               Request a Demo
             </button>
           </motion.div>
-        </div>
-      </section>
+        </div>      </section>
     </section>
   );
+  } catch (err) {
+    console.error("Error rendering IBMS component:", err);
+    return (
+      <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-[#2D1B69] to-[#5B0737] text-white p-4">
+        <h2 className="text-2xl font-bold mb-4">Something went wrong</h2>
+        <p className="mb-4">We're having trouble displaying the IBMS page. Please try again.</p>
+        <button 
+          onClick={() => window.location.reload()}
+          className="bg-white text-[#620078] px-6 py-2 rounded-lg"
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
 };
 
 export default IBMS;

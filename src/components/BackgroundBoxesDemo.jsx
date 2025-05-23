@@ -130,14 +130,24 @@ export function BackgroundBoxesDemo() {
       controlsButton.start({ opacity: 0, y: 30 });
     }
   }, [inView, controlsLogo, controlsText, controlsTagline, controlsLocations, controlsButton]);
-
-  // Change tagline with smooth transitions
+  // Change tagline with smooth transitions and better responsiveness
   useEffect(() => {
+    // Make sure taglines fit properly on different screen sizes
+    const handleResize = () => {
+      // Force a re-render to update the layout when screen size changes
+      setCurrentTagline(currentTagline => currentTagline);
+    };
+
+    window.addEventListener('resize', handleResize);
+    
     const interval = setInterval(() => {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
     }, 4000);
     
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   }, [taglines.length]);
 
   // Advanced gradient animation for background
@@ -293,13 +303,12 @@ export function BackgroundBoxesDemo() {
           <TextGenerateEffect words={words} />
         </motion.div>
         
-        {/* Enhanced animated tagline with smoother transitions */}
-        <motion.div 
+        {/* Enhanced animated tagline with smoother transitions */}        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={controlsTagline}
-          className="text-center mb-12"
+          className="text-center mb-12 w-full"
         >
-          <div className="relative h-12" aria-live="polite">
+          <div className="relative h-16 sm:h-14 md:h-12" aria-live="polite">
             <AnimatePresence mode="wait">
               <AnimatedTagline key={currentTagline} tagline={taglines[currentTagline]} />
             </AnimatePresence>
@@ -349,20 +358,7 @@ export function BackgroundBoxesDemo() {
             </motion.button>
           </Link>
           
-          <Link to="/AboutE2w" aria-label="Learn more about Easy2Work">
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.15)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 bg-transparent border border-white/40 text-white rounded-full 
-                        font-medium hover:bg-white/10 transition-all duration-300
-                        focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-1 focus:ring-offset-transparent"
-            >
-              Discover More
-            </motion.button>
-          </Link>
+         
         </motion.div>
       </div>
       
@@ -405,15 +401,15 @@ export function BackgroundBoxesDemo() {
 }
 
 // Enhanced component for animated tagline with better transitions
-const AnimatedTagline = ({ tagline }) => {
-  return (
+const AnimatedTagline = ({ tagline }) => {  return (
     <motion.p
       key={tagline}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      className="text-xl md:text-2xl text-white/90 font-light absolute left-0 right-0"
+      className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 font-light absolute left-0 right-0 px-4 mx-auto"
+      style={{ maxWidth: '100%', overflowWrap: 'break-word', hyphens: 'auto' }}
     >
       {tagline}
     </motion.p>

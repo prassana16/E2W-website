@@ -39,9 +39,9 @@ const content = [
   {
     title: "Our IBMS Software",
     description: [
-      <li>Customizable workflows.</li>,
-      <li>Manage clients and orders.</li>,
-      <li>User-friendly design.</li>,
+      <li key="ibms-1">Customizable workflows.</li>,
+      <li key="ibms-2">Manage clients and orders.</li>,
+      <li key="ibms-3">User-friendly design.</li>,
     ],
     content: (
         <div className="h-full w-full flex flex-col sm:flex-row items-center justify-center text-white">
@@ -66,9 +66,9 @@ const content = [
   {
     title: "Client Manager",
     description: [
-      <li>Add client details.</li>,
-      <li>Secure cloud storage.</li>,
-      <li>Quick client search.</li>,    ],
+      <li key="client-1">Add client details.</li>,
+      <li key="client-2">Secure cloud storage.</li>,
+      <li key="client-3">Quick client search.</li>,    ],
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         {/* Desktop View Image */}
@@ -91,9 +91,9 @@ const content = [
   {
     title: "Quote Sender",
     description: [
-      <li>Send quotes easily.</li>,
-      <li>Slab-wise pricing.</li>,
-      <li>Adjust margins quickly.</li>,
+      <li key="quote-1">Send quotes easily.</li>,
+      <li key="quote-2">Slab-wise pricing.</li>,
+      <li key="quote-3">Adjust margins quickly.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -116,9 +116,9 @@ const content = [
   {
     title: "Order Manager",
     description: [
-      <li>Track orders.</li>,
-      <li>Organize clients.</li>,
-      <li>Fast and secure search.</li>,
+      <li key="order-1">Track orders.</li>,
+      <li key="order-2">Organize clients.</li>,
+      <li key="order-3">Fast and secure search.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -141,10 +141,10 @@ const content = [
   {
     title: "Finance Manager",
     description: [
-      <li>Track revenue.</li>,
-      <li>Track expenses.</li>,
-      <li>Real-time insights.</li>,
-      <li>Monitor performance.</li>,
+      <li key="finance-1">Track revenue.</li>,
+      <li key="finance-2">Track expenses.</li>,
+      <li key="finance-3">Real-time insights.</li>,
+      <li key="finance-4">Monitor performance.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -167,9 +167,9 @@ const content = [
   {
     title: "Rate Manager",
     description: [
-      <li>Simplify rate management.</li>,
-      <li>Add slab-wise pricing.</li>,
-      <li>Define service duration.</li>,
+      <li key="rate-1">Simplify rate management.</li>,
+      <li key="rate-2">Add slab-wise pricing.</li>,
+      <li key="rate-3">Define service duration.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -192,9 +192,9 @@ const content = [
   {
     title: "Rate Validation",
     description: [
-      <li>Ensure pricing.</li>,
-      <li>Maintain accuracy.</li>,
-      <li>Avoid errors.</li>,
+      <li key="validation-1">Ensure pricing.</li>,
+      <li key="validation-2">Maintain accuracy.</li>,
+      <li key="validation-3">Avoid errors.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -217,9 +217,9 @@ const content = [
   {
     title: "Order Report",
     description: [
-      <li>Track order progress.</li>,
-      <li>Optimize processes.</li>,
-      <li>Enhance satisfaction.</li>,
+      <li key="order-report-1">Track order progress.</li>,
+      <li key="order-report-2">Optimize processes.</li>,
+      <li key="order-report-3">Enhance satisfaction.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -242,9 +242,9 @@ const content = [
   {
     title: "Finance Report",
     description: [
-      <li>View revenue breakdown.</li>,
-      <li>Track expenses.</li>,
-      <li>Analyze metrics.</li>
+      <li key="finance-report-1">View revenue breakdown.</li>,
+      <li key="finance-report-2">Track expenses.</li>,
+      <li key="finance-report-3">Analyze metrics.</li>
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -267,9 +267,9 @@ const content = [
   {
     title: "Consultant Report",
     description: [
-      <li>Track performance.</li>,
-      <li>Analyze productivity.</li>,
-      <li>View contributions.</li>,
+      <li key="consultant-report-1">Track performance.</li>,
+      <li key="consultant-report-2">Analyze productivity.</li>,
+      <li key="consultant-report-3">View contributions.</li>,
     ],
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
@@ -293,9 +293,9 @@ const content = [
   {
     title: "User Manager",
     description: [
-      <li>Manage roles and access.</li>,
-      <li>Track user activity.</li>,
-      <li>Ensure security.</li>,
+      <li key="user-manager-1">Manage roles and access.</li>,
+      <li key="user-manager-2">Track user activity.</li>,
+      <li key="user-manager-3">Ensure security.</li>,
     ],
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
@@ -318,9 +318,9 @@ const content = [
   {
     title: "Consultant Manager",
     description: [
-      <li>Manage consultants.</li>,
-      <li>Track performance.</li>,
-      <li>Enhance collaboration.</li>,
+      <li key="consultant-manager-1">Manage consultants.</li>,
+      <li key="consultant-manager-2">Track performance.</li>,
+      <li key="consultant-manager-3">Enhance collaboration.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -343,9 +343,9 @@ const content = [
   {
     title: "Appointment Manager",
     description: [
-      <li>Schedule appointments.</li>,
-      <li>Send invites.</li>,
-      <li>Follow up with clients.</li>,
+      <li key="appointment-1">Schedule appointments.</li>,
+      <li key="appointment-2">Send invites.</li>,
+      <li key="appointment-3">Follow up with clients.</li>,
     ],  
     content: (
       <div className="h-full w-full flex items-center justify-center text-white">
@@ -368,9 +368,9 @@ const content = [
   {
     title: "Payment Milestones",
     description: [
-      <li>Track milestones.</li>,
-      <li>Improve communication.</li>,
-      <li>Meet delivery timelines.</li>,
+      <li key="payment-1">Track milestones.</li>,
+      <li key="payment-2">Improve communication.</li>,
+      <li key="payment-3">Meet delivery timelines.</li>,
     ],
     content: (
         <div className="h-full w-full  flex items-center justify-center text-white">
@@ -393,9 +393,9 @@ const content = [
   {
     title: "Conclusion",
     description: [
-      <li>Simplify operations.</li>,
-      <li>Boost efficiency.</li>,
-      <li>Maximize productivity.</li>,
+      <li key="conclusion-1">Simplify operations.</li>,
+      <li key="conclusion-2">Boost efficiency.</li>,
+      <li key="conclusion-3">Maximize productivity.</li>,
     ],
       content: (
         <div className="h-full w-full  flex items-center justify-center text-white">

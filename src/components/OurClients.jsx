@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Gracescans from '../assets/images/Grace-Scans.png';
@@ -6,6 +6,7 @@ import Baleen from '../assets/images/thumbnail.png';
 import BajajAuto from '../assets/images/bajaj Auto.png';
 import BajajFinance from '../assets/images/Bajaj.png';
 import { FaHandshake, FaChartLine, FaUsers, FaStar } from 'react-icons/fa';
+import { preloadImages } from '../utils/imagePreloader';
 
 function OurClients() {
   const controls = useAnimation();
@@ -13,6 +14,23 @@ function OurClients() {
     triggerOnce: false,
     threshold: 0.1,
   });
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload images on component mount
+  useEffect(() => {
+    const imageSources = [
+      Gracescans,
+      Baleen,
+      BajajAuto,
+      BajajFinance
+    ];
+    
+    preloadImages(imageSources)
+      .then(() => {
+        console.log('Client images preloaded successfully');
+        setImagesLoaded(true);
+      });
+  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -158,35 +176,7 @@ function OurClients() {
             </p>
           </motion.div>
 
-          {/* Trusted Clients */}
-          <motion.div variants={itemVariants} className="mb-20">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-Tinos font-bold text-white text-center mb-10">
-                Our Esteemed Clients
-              </h3>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                {trustedClients.map((client, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex flex-col items-center"
-                    whileHover={{ y: -5, scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="h-24 w-full flex items-center justify-center mb-3 bg-white/5 rounded-xl p-4">
-                      <img 
-                        src={client.logo} 
-                        alt={`${client.name} logo`}
-                        className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-                      />
-                    </div>
-                    <p className="text-white text-center font-medium">{client.name}</p>
-                    <p className="text-white/60 text-xs text-center">{client.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        
 
           {/* Revenue Sharing Model */}
           <motion.div variants={itemVariants}>
@@ -239,12 +229,15 @@ function OurClients() {
                 <motion.div 
                   className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-colors"
                   whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
-                >
-                  <div className="h-48 overflow-hidden">
+                >                  <div className="h-48 overflow-hidden">
                     <img 
                       src={Gracescans} 
                       alt="Grace Scans"
                       className="w-full h-full object-cover object-center"
+                      onError={(e) => {
+                        console.log("Failed to load Grace Scans image");
+                        e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="300" height="150" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="300" height="150" fill="%23333"%3E%3C/rect%3E%3Ctext x="150" y="75" font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EGrace Scans%3C/text%3E%3C/svg%3E';
+                      }}
                     />
                   </div>
                   <div className="p-6">
@@ -265,12 +258,15 @@ function OurClients() {
                 <motion.div 
                   className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-colors"
                   whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
-                >
-                  <div className="h-48 overflow-hidden">
+                >                  <div className="h-48 overflow-hidden">
                     <img 
                       src={Baleen} 
                       alt="Baleen Media"
                       className="w-full h-full object-cover object-center"
+                      onError={(e) => {
+                        console.log("Failed to load Baleen Media image");
+                        e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="300" height="150" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="300" height="150" fill="%23333"%3E%3C/rect%3E%3Ctext x="150" y="75" font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EBaleen Media%3C/text%3E%3C/svg%3E';
+                      }}
                     />
                   </div>
                   <div className="p-6">
@@ -288,16 +284,7 @@ function OurClients() {
                 </motion.div>
               </div>
               
-              {/* CTA button */}
-              <div className="text-center mt-12">
-                <motion.button
-                  className="px-8 py-3 bg-white text-[#2D1B69] rounded-full font-medium hover:bg-white/90 transition-colors shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Explore Partnership Options
-                </motion.button>
-              </div>
+
             </div>
           </motion.div>
         </motion.div>

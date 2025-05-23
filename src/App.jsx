@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import Preloader from './components/Preloader';
 import Intro from './components/Intro';
 import Testimonials from './components/Testimonials';
 import OurClients from './components/OurClients';
@@ -52,19 +53,32 @@ import SEO from './components/SEO';
 // Google form
 import GoogleForm from './components/GoogleForm';
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Preload critical resources
+    const preloadTimeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Force finish loading after 2 seconds if not complete
+    
+    return () => clearTimeout(preloadTimeout);
+  }, []);
+
   return (
     <HelmetProvider> 
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={
-          <>
-          {/* Home page SEO */}
-          <SEO 
-                title="Easy2Work - IBMS & ILMS Solutions | Software Development Company"
-                description="Easy2Work offers enterprise-grade IBMS, ILMS, and custom software development services for businesses in USA, Canada, UK, and India. Innovative IT solutions tailored to your needs."
-                keywords="Easy2Work, IBMS, ILMS, software development, IT services, web development, mobile apps, USA, Canada, UK, India"
-              />
+      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+            {/* Home page SEO */}
+            <SEO 
+                  title="Easy2Work - IBMS & ILMS Solutions | Software Development Company"
+                  description="Easy2Work offers enterprise-grade IBMS, ILMS, and custom software development services for businesses in USA, Canada, UK, and India. Innovative IT solutions tailored to your needs."
+                  keywords="Easy2Work, IBMS, ILMS, software development, IT services, web development, mobile apps, USA, Canada, UK, India"
+                />
           <BackgroundBoxesDemo />
           <AboutE2w />
           <Banner />
