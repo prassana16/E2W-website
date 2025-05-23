@@ -258,10 +258,9 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <h4 className="text-lg font-semibold mb-6 font-Tinos">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start">
-                <FaMapMarkerAlt className="mt-1 mr-3 text-purple-400" />
-                <span className="text-gray-300">123 Tech Plaza, Innovation District, San Francisco, CA 94105</span>
-              </li>              <li className="flex items-center">                <FaEnvelope className="mr-3 text-purple-400" />
+              <li className="flex items-start">                <FaMapMarkerAlt className="mt-1 mr-3 text-purple-400" />
+                <span className="text-gray-300">No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020</span>
+              </li>              <li className="flex items-center"><FaEnvelope className="mr-3 text-purple-400" />
                 <a href="mailto:sales@esy2work.in" className="text-gray-300 hover:text-white transition-colors">
                   sales@esy2work.in
                 </a>

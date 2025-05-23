@@ -186,13 +186,13 @@ const ContactForm = () => {
   const clearStatus = () => {
     setFormStatus(prev => ({ ...prev, submitted: false, message: "" }));
   };
-  
-  // Contact information items for display
+    // Contact information items for display
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt className="text-purple-400" />,
       title: "Our Office",
-      content: "123 Tech Plaza, Innovation District, San Francisco, CA 94105",
+      content: "No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020",
+      link: "https://maps.google.com/maps?q=Easy2Work+No.32+3rd+Cross+St+Kasturba+Nagar+Adyar+Chennai+Tamil+Nadu+600020&t=&z=13&ie=UTF8&iwloc=&output=embed"
     },    {
       icon: <FaEnvelope className="text-purple-400" />,
       title: "Email Us",
@@ -275,12 +275,16 @@ const ContactForm = () => {
                     </motion.div>
                   ))}
                 </div>
-                
-                {/* Map or image could be added here */}
-                <div className="mt-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 h-48">
-                  <div className="h-full w-full flex items-center justify-center text-gray-400">
-                    <p className="text-center px-4">Interactive map could be embedded here</p>
-                  </div>
+                  {/* Google Map */}
+                <div className="mt-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 h-64">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=Easy2Work+No.32+3rd+Cross+St+Kasturba+Nagar+Adyar+Chennai+Tamil+Nadu+600020&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    className="h-full w-full border-0"
+                    title="Easy2Work Chennai Office Location"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    aria-label="Easy2Work office location map"
+                  ></iframe>
                 </div>
               </div>
             </motion.div>

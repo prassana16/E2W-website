@@ -500,15 +500,14 @@ const Navbar = () => {
                 </AnimatePresence>
               </motion.div>
               
-              {/* Additional nav items */}
-              <motion.div 
+              {/* Additional nav items */}              <motion.div 
                 custom={4} 
                 variants={menuItemVariants}
                 className="relative"
               >
                 <Link
                   to="/ContactForm"
-                  className={`flex items-center px-3 py-2 text-sm font-medium ${isActive("/ContactForm")} hover:text-white transition-colors duration-200`}
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
                 >
                   <MdSupportAgent className="mr-1" size={18} />
                   Contact Us
