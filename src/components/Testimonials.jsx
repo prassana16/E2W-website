@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft, FaStar, FaStarHalfAlt, FaGlobeAmericas, FaArrowLeft, FaArrowRight, FaUserCircle } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-
+import Gracescans from '../assets/images/Grace-Scans.png';
+import Baleen from '../assets/images/thumbnail.png';
+import BajajAuto from '../assets/images/bajaj Auto.png';
+import BajajFinance from '../assets/images/Bajaj.png';
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
@@ -22,59 +25,35 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      position: "Marketing Director",
-      company: "TechInnovate",
-      location: "New York, USA",
-      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      name: "Baleen Media",
+      company: "Advertising Agency",
+      image: Baleen,
+      location: "Chennai, India",
       rating: 5,
-      text: "Working with Easy2Work has been transformative for our business. Their AI-powered IBMS solution streamlined our operations and increased our productivity by 35%. The team's expertise and support throughout the implementation process made the transition seamless across our global offices.",
-      project: "Enterprise IBMS Implementation",
+      text: "The Easy2Work platform has become a core part of our daily business operations. From managing client tasks to team communication, the Easy2Work application delivers performance and accessibility that helps us stay efficient and organized. We’ve seen a clear improvement in productivity since adopting it.",
+      project: "Easy2work IBMS Implementation",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      position: "CTO",
-      company: "Future Systems",
-      location: "Singapore",
-      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      name: "Grace Scans",
+      company: "Medical Scan Center",
+      location: "Theni, India",
+      image: Gracescans,
       rating: 5,
       text: "The quality of Easy2Work's solutions exceeded our expectations. Their attention to detail and understanding of our industry-specific needs resulted in a custom solution that perfectly addresses our challenges across APAC markets. I highly recommend their services.",
-      project: "Custom Web Application Development",
+      project: "Easy2work IBMS Implementation",
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      position: "Operations Manager",
-      company: "Global Connect",
-      location: "Toronto, Canada",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      name: "Namma Bajaj Auto",
+      company: "Automobile dealership",
+      location: "Chennai, India",
+      image: BajajAuto,
       rating: 4.5,
-      text: "Easy2Work's IBMS has revolutionized how we manage our logistics across North America. The platform is intuitive, powerful, and adaptable to our changing needs. Their customer support team is responsive and always ready to help with any questions or issues.",
-      project: "Logistics Management Platform",
+      text: "Easy2Work’s Meta Ads services have streamlined our digital marketing in Chennai. The platform is easy to use, results-driven, and flexible to our needs. Their local support team is responsive and always ready to help. We've seen better reach, higher conversions, and real growth.",
+      project: "Digital marketing",
     },
-    {
-      id: 4,
-      name: "David Mueller",
-      position: "CEO",
-      company: "Innovate Solutions",
-      location: "Berlin, Germany",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      rating: 5,
-      text: "We partnered with Easy2Work for our mobile app development, and the results have been outstanding. Their team delivered a polished, high-performance app that has been instrumental in growing our European market share. The quality of their code and design is exceptional.",
-      project: "Mobile App Development",
-    },
-    {
-      id: 5,
-      name: "Aisha Patel",
-      position: "Head of Digital",
-      company: "Next Gen Healthcare",
-      location: "Dubai, UAE",
-      image: "https://randomuser.me/api/portraits/women/45.jpg",
-      rating: 5,
-      text: "Easy2Work's AI Medical Lead Platform has transformed how we connect with patients and manage healthcare services. The implementation was smooth, and the platform's efficiency has significantly improved our patient engagement metrics. Their team's understanding of healthcare technology is impressive.",
-      project: "AI Medical Lead Platform Integration",
-    },
+    
   ];
 
   // Reset autoplay timeout when component unmounts or when autoplay state changes

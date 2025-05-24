@@ -238,58 +238,7 @@ const AIMedicalLeadPlatform = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-8 md:mb-0">
-              <div className="flex items-center mb-4">
-                <div className="h-10 w-10 rounded-lg bg-blue-600 mr-3 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E2W</span>
-                </div>
-                <span className="text-white font-semibold">Easy2Work</span>
-              </div>
-              <p className="text-sm max-w-xs">
-                AI-powered lead generation and intelligence platform for medical businesses.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              <div>
-                <h4 className="text-white font-medium mb-4">Platform</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-medium mb-4">Company</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-medium mb-4">Legal</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">HIPAA Compliance</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">GDPR Statement</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">            <p className="text-sm">© 2025 Easy2Work. All rights reserved.</p>
-            {/* Social media icons removed */}
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 };

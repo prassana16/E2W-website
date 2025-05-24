@@ -151,7 +151,7 @@ const Footer = () => {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 bg-white text-[#2D1B69] p-3 rounded-full shadow-lg z-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D1B69]"
+            className="fixed bottom-4 left-2 bg-white text-[#2D1B69] p-3 rounded-full shadow-lg z-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D1B69]"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="text-xl" />

@@ -16,9 +16,9 @@ function AboutPWA() {
           <motion.div
             key={i}
             className="h-[2px] w-full"
-            style={{ background: 'linear-gradient(to bottom, #05a7be, #1ed7cd)' }}
+            style={{ background: 'linear-gradient(to bottom, #077da0, #077da0)' }}
             initial={{ scaleY: 1 }}
-            animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
+            animate={{ scaleY: [1,1.5,2,2.5, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2,1.5, 1] }}
             transition={{
               duration: 2,
               repeat: Infinity,

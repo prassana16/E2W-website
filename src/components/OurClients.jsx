@@ -212,81 +212,87 @@ function OurClients() {
             </div>
           </motion.div>
           
-          {/* Revenue Sharing Clients */}
-          <motion.div variants={itemVariants} className="mt-10">
-            <div className="bg-gradient-to-br from-white/5 to-purple-900/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-Tinos font-bold text-white text-center mb-6">
-                Revenue Sharing Success Stories
-              </h3>
-              
-              <p className="text-white/80 text-center max-w-3xl mx-auto mb-10">
-                Easy2Work collaborates with forward-thinking organizations under our Revenue Share Model, fostering 
-                partnerships that go beyond traditional client relationships.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Grace Scans */}
-                <motion.div 
-                  className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-colors"
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
-                >                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={Gracescans} 
-                      alt="Grace Scans"
-                      className="w-full h-full object-cover object-center"
-                      onError={(e) => {
-                        console.log("Failed to load Grace Scans image");
-                        e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="300" height="150" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="300" height="150" fill="%23333"%3E%3C/rect%3E%3Ctext x="150" y="75" font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EGrace Scans%3C/text%3E%3C/svg%3E';
-                      }}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-medium text-white mb-2">Grace Scans</h4>
-                    <p className="text-white/70 mb-4">
-                      A revolutionary healthcare diagnostics platform leveraging AI to optimize patient care and operational efficiency.
-                    </p>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-purple-300">Healthcare Technology</span>
-                      <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
-                        Active Partnership
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                {/* Baleen Media */}
-                <motion.div 
-                  className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-colors"
-                  whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
-                >                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={Baleen} 
-                      alt="Baleen Media"
-                      className="w-full h-full object-cover object-center"
-                      onError={(e) => {
-                        console.log("Failed to load Baleen Media image");
-                        e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="300" height="150" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="300" height="150" fill="%23333"%3E%3C/rect%3E%3Ctext x="150" y="75" font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EBaleen Media%3C/text%3E%3C/svg%3E';
-                      }}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-medium text-white mb-2">Baleen Media</h4>
-                    <p className="text-white/70 mb-4">
-                      A dynamic digital media agency specializing in content creation, marketing strategy, and brand development.
-                    </p>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-purple-300">Digital Marketing</span>
-                      <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
-                        Active Partnership
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              
+         {/* Revenue Sharing Clients */}
+<motion.div variants={itemVariants} className="mt-10">
+  <div className="bg-gradient-to-br from-white/5 to-purple-900/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+    <h3 className="text-2xl font-Tinos font-bold text-white text-center mb-6">
+      Revenue Sharing Success Stories
+    </h3>
 
+    <p className="text-white/80 text-center max-w-3xl mx-auto mb-10">
+      Easy2Work collaborates with forward-thinking organizations under our Revenue Share Model, fostering
+      partnerships that go beyond traditional client relationships.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Grace Scans */}
+      <motion.div
+        className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors"
+        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
+      >
+        <div className="flex items-start gap-4">
+          <div className="w-16 h-10 rounded-full overflow-hidden bg-white/20 border border-white/30">
+            <img
+              src={Gracescans}
+              alt="Grace Scans"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                console.log("Failed to load Grace Scans image");
+                e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="64" height="64" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="64" height="64" fill="%23333"/%3E%3Ctext x="32" y="37" font-size="10" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EGrace%3C/text%3E%3C/svg%3E';
+              }}
+            />
+          </div>
+          <div>
+            <h4 className="text-xl font-medium text-white mb-2">Grace Scans</h4>
+            <p className="text-white/70 mb-4">
+              A revolutionary healthcare diagnostics platform leveraging AI to optimize patient care and operational efficiency.
+            </p>
+            <div className="flex justify-between items-center text-sm">
+              <span className="text-purple-300">Healthcare Technology</span>
+              <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+                Active Partnership
+              </span>
             </div>
-          </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Baleen Media */}
+      <motion.div
+        className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors"
+        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
+      >
+        <div className="flex items-start gap-4">
+          <div className="w-16  rounded-full overflow-hidden bg-white/20 border border-white/30">
+            <img
+              src={Baleen}
+              alt="Baleen Media"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                console.log("Failed to load Baleen Media image");
+                e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg width="64" height="64" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="64" height="64" fill="%23333"/%3E%3Ctext x="32" y="37" font-size="10" text-anchor="middle" alignment-baseline="middle" font-family="Arial, sans-serif" fill="%23FFFFFF"%3EBaleen%3C/text%3E%3C/svg%3E';
+              }}
+            />
+          </div>
+          <div>
+            <h4 className="text-xl font-medium text-white mb-2">Baleen Media</h4>
+            <p className="text-white/70 mb-4">
+              A dynamic digital media agency specializing in content creation, marketing strategy, and brand development.
+            </p>
+            <div className="flex justify-between items-center text-sm">
+              <span className="text-purple-300">Digital Marketing</span>
+              <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+                Active Partnership
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</motion.div>
+
+
         </motion.div>
       </div>
     </section>

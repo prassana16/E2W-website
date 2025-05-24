@@ -39,7 +39,7 @@ const Faq = () => {
       <motion.div
         key={i}
         className="h-[2px] w-full"
-        style={{ background: 'linear-gradient(to bottom, #f3f4f6, #f3f4f6)' }}
+        style={{ background: 'linear-gradient(to bottom, #e0f2f8, #e0f2f8)' }}
         initial={{ scaleY: 1 }}
         animate={{ scaleY: [1, 2, 4, 6, 8, 10, 12, 12, 10, 8, 6, 4, 2, 1] }}
         transition={{
