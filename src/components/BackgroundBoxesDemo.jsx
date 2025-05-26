@@ -328,9 +328,8 @@ export function BackgroundBoxesDemo() {
                 scale: 1.05, 
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 transition: { duration: 0.2 }
-              }}
-              className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium 
-                        border border-white/20 transition-all duration-300 shadow-lg shadow-purple-900/20"
+              }}              className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium 
+                        border border-cyan/20 transition-all duration-300 shadow-lg shadow-cyan/20"
             >
               {location}
             </motion.div>
@@ -344,15 +343,14 @@ export function BackgroundBoxesDemo() {
           className="flex flex-col md:flex-row gap-4"
         >
           <Link to="/ContactForm" aria-label="Contact Us">
-            <motion.button
-              whileHover={{ 
+            <motion.button              whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(98, 0, 120, 0.4)"
+                boxShadow: "0 10px 25px -5px rgba(5, 244, 249, 0.4)"
               }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 bg-white text-[#2D1B69] rounded-full font-medium 
+              className="px-8 py-3 bg-white text-black rounded-full font-medium 
                         shadow-lg hover:shadow-xl transition-all duration-300 
-                        focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2D1B69]"
+                        focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan"
             >
               Get in Touch
             </motion.button>

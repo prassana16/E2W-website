@@ -1,0 +1,120 @@
+/* animation.css - Elegant animations using our strict color palette */
+
+/* Cyan pulse animation */
+@keyframes cyan-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(5, 244, 249, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(5, 244, 249, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(5, 244, 249, 0);
+  }
+}
+
+.animate-cyan-pulse {
+  animation: cyan-pulse 2s infinite;
+}
+
+/* Elegant text shimmer effect for headings */
+@keyframes text-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-shimmer-cyan {
+  background: linear-gradient(90deg, #000000, #05f4f9, #000000);
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 3s linear infinite;
+}
+
+.text-shimmer-white {
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), #ffffff, rgba(255,255,255,0.8));
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 3s linear infinite;
+}
+
+/* Animated border effect */
+@keyframes border-pulse {
+  0% {
+    border-color: rgba(5, 244, 249, 0.3);
+  }
+  50% {
+    border-color: rgba(5, 244, 249, 1);
+  }
+  100% {
+    border-color: rgba(5, 244, 249, 0.3);
+  }
+}
+
+.animate-border-pulse {
+  border: 1px solid rgba(5, 244, 249, 0.3);
+  animation: border-pulse 2s infinite;
+}
+
+/* Subtle background pulse */
+@keyframes bg-pulse {
+  0% {
+    background-color: rgba(5, 244, 249, 0);
+  }
+  50% {
+    background-color: rgba(5, 244, 249, 0.05);
+  }
+  100% {
+    background-color: rgba(5, 244, 249, 0);
+  }
+}
+
+.animate-bg-pulse {
+  animation: bg-pulse 3s infinite;
+}
+
+/* Float animation for cards and elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Elegant typing cursor effect */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-cursor::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  color: #05f4f9;
+}

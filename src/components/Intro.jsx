@@ -12,9 +12,8 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-const Intro = () => {
-  return (    <section className="py-20 md:py-28" id="intro" style={{ 
-      background: `linear-gradient(135deg, #ffffff, #f8f8f8)`,
+const Intro = () => {  return (    <section className="py-20 md:py-28" id="intro" style={{ 
+      background: `linear-gradient(135deg, #ffffff, rgba(5, 244, 249, 0.05))`,
       overflow: 'hidden'
     }}>
       <div className="container mx-auto px-6">
@@ -137,18 +136,17 @@ const Intro = () => {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-          >
-            <motion.div
+          >            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="mb-6"
             >
-              <IoOptionsOutline className="text-5xl text-[#087ea2]" />
+              <IoOptionsOutline className="text-5xl text-cyan" />
             </motion.div>
-            <h3 className="text-2xl font-bold text-[#017598] mb-4">Enterprise-Grade</h3>
-            <p className="text-gray-700 leading-relaxed">
+            <h3 className="text-2xl font-bold text-black mb-4">Enterprise-Grade</h3>
+            <p className="text-black/80 leading-relaxed">
               Benefit from robust, secure, and reliable solutions designed to meet the demanding requirements of enterprise-level operations and compliance standards.
             </p>
           </motion.div>          {/* Card 6: Multi-Platform */}

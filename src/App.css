@@ -5,6 +5,14 @@
   --cyan: #05f4f9;
   --black: #000000;
   --white: #ffffff;
+  
+  /* Shades for gradients and overlays */
+  --cyan-light: rgba(5, 244, 249, 0.2);
+  --cyan-medium: rgba(5, 244, 249, 0.5);
+  --cyan-dark: rgba(5, 244, 249, 0.8);
+  --black-light: rgba(0, 0, 0, 0.2);
+  --black-medium: rgba(0, 0, 0, 0.5);
+  --black-dark: rgba(0, 0, 0, 0.8);
 }
 
 /* Global styling */
@@ -18,22 +26,26 @@ body {
   background-color: var(--cyan);
   color: var(--black);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px var(--cyan-light);
 }
 
 .btn-primary:hover {
   background-color: var(--black);
   color: var(--cyan);
+  box-shadow: 0 4px 15px var(--cyan-medium);
 }
 
 .btn-secondary {
   background-color: var(--black);
   color: var(--white);
   transition: all 0.3s ease;
+  border: 1px solid var(--cyan);
 }
 
 .btn-secondary:hover {
   background-color: var(--cyan);
   color: var(--black);
+  box-shadow: 0 4px 10px var(--cyan-light);
 }
 
 .btn-outline {
@@ -46,6 +58,7 @@ body {
 .btn-outline:hover {
   background-color: var(--cyan);
   color: var(--black);
+  box-shadow: 0 4px 10px var(--cyan-light);
 }
 
 /* Text accent colors */
@@ -62,31 +75,77 @@ body {
   background: linear-gradient(135deg, var(--cyan) 0%, var(--black) 100%);
 }
 
+/* Elegant gradients for modern UI */
+.bg-elegant-gradient {
+  background: linear-gradient(to right, var(--black) 0%, var(--black-medium) 50%, var(--black) 100%);
+  position: relative;
+}
+
+.bg-elegant-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cyan), transparent);
+}
+
+.bg-elegant-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cyan), transparent);
+}
+
 /* Card styling */
 .card {
   background-color: var(--white);
-  border: 1px solid rgba(5, 244, 249, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--cyan-light);
+  box-shadow: 0 4px 20px var(--black-light);
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 8px 30px rgba(5, 244, 249, 0.2);
+  box-shadow: 0 8px 30px var(--cyan-light);
   transform: translateY(-5px);
+  border: 1px solid var(--cyan);
 }
 
 /* Section dividers */
 .divider {
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, var(--cyan), transparent);
   margin: 3rem auto;
   width: 80%;
+  position: relative;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  background-color: var(--cyan);
+  border-radius: 50%;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Image styling */
 .img-highlight {
   border: 2px solid var(--cyan);
-  box-shadow: 0 5px 15px rgba(5, 244, 249, 0.3);
+  box-shadow: 0 5px 15px var(--cyan-light);
+  transition: all 0.3s ease;
+}
+
+.img-highlight:hover {
+  border: 2px solid var(--cyan);
+  box-shadow: 0 10px 25px var(--cyan-medium);
 }
 
 /* Animations */
@@ -106,6 +165,39 @@ body {
   animation: glow 2s infinite;
 }
 
+@keyframes subtle-pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite;
+}
+
+@keyframes border-glow {
+  0% {
+    border-color: var(--cyan-light);
+  }
+  50% {
+    border-color: var(--cyan);
+  }
+  100% {
+    border-color: var(--cyan-light);
+  }
+}
+
+.animate-border {
+  border: 1px solid var(--cyan-light);
+  animation: border-glow 3s infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -121,5 +213,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #04c3c7;
+  background: var(--black);
 }

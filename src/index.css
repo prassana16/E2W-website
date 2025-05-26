@@ -11,6 +11,20 @@
     --color-cyan: 5 244 249;    /* #05f4f9 */
     --color-black: 0 0 0;       /* #000000 */
     --color-white: 255 255 255; /* #ffffff */
+    
+    color-scheme: light;
+    --bg-primary: 255 255 255;  /* white */
+    --bg-secondary: 245 245 245; /* slightly off-white */
+    --text-primary: 0 0 0;      /* black */
+    --text-secondary: 0 0 0 / 0.7; /* black with transparency */
+  }
+  
+  .dark {
+    color-scheme: dark;
+    --bg-primary: 0 0 0;       /* black */
+    --bg-secondary: 20 20 20;  /* slightly off-black */
+    --text-primary: 255 255 255; /* white */
+    --text-secondary: 255 255 255 / 0.7; /* white with transparency */
   }
 }
 

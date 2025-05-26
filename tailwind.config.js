@@ -15,31 +15,19 @@ const config = {
         Tinos: ['Tinos', 'sans'],
         RozhaOne: ['RozhaOne', 'serif'],
       },      colors: {
-        'primary': {
-          100: '#d4fcfd', // Lightest cyan
-          200: '#b0f9fb', // Light cyan
-          300: '#8cf7f9', // Medium-light cyan
-          400: '#67f4f7', // Medium cyan
-          500: '#05f4f9', // Our main cyan color #05f4f9
-          600: '#04c3c7', // Dark cyan
-          700: '#039295', // Deeper cyan
-          800: '#026163', // Very dark cyan
-          900: '#013132', // Deepest cyan
-        },
-        'accent': {
-          100: '#ffffff', // White
-          200: '#f5f5f5', // Off-white
-          300: '#e0e0e0', // Light gray
-          400: '#c0c0c0', // Silver
-          500: '#909090', // Gray
-          600: '#606060', // Dark gray
-          700: '#303030', // Darker gray
-          800: '#181818', // Very dark gray
-          900: '#000000', // Black
-        },
+        'primary': '#05f4f9', // Our main cyan color
+        'secondary': '#000000', // Black
+        'background': '#ffffff', // White
         'cyan': '#05f4f9',
         'black': '#000000',
         'white': '#ffffff',
+        // Shades of our colors for gradients and variations
+        'cyan-light': 'rgba(5, 244, 249, 0.2)',
+        'cyan-medium': 'rgba(5, 244, 249, 0.5)',
+        'cyan-dark': 'rgba(5, 244, 249, 0.8)',
+        'black-light': 'rgba(0, 0, 0, 0.2)',
+        'black-medium': 'rgba(0, 0, 0, 0.5)',
+        'black-dark': 'rgba(0, 0, 0, 0.8)',
       },
     },
   },

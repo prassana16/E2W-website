@@ -46,10 +46,9 @@ export const SparklesCore = (props) => {
           id={id || generatedId}
           className={cn("h-full w-full")}
           particlesLoaded={particlesLoaded}
-          options={{
-            background: {
+          options={{            background: {
               color: {
-                value: background || "#0d47a1",
+                value: background || "#000000",
               },
             },
             fullScreen: {
@@ -379,11 +378,10 @@ export const SparklesCore = (props) => {
                   value: 45,
                 },
                 width: 1,
-              },
-              links: {
+              },              links: {
                 blink: false,
                 color: {
-                  value: "#fff",
+                  value: "#ffffff",
                 },
                 consent: false,
                 distance: 100,

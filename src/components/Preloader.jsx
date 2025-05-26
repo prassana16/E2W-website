@@ -27,10 +27,9 @@ function Preloader({ onComplete }) {
 
     return () => clearInterval(timer);
   }, [onComplete]);
-
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-[#2D1B69] to-[#5B0737]"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
       animate={{ 
         opacity: isComplete ? 0 : 1,
         pointerEvents: isComplete ? 'none' : 'auto'
@@ -41,9 +40,8 @@ function Preloader({ onComplete }) {
         <motion.div
           className="absolute inset-0 rounded-full border-4 border-white/20"
         />
-        
-        <motion.div
-          className="absolute inset-0 rounded-full border-t-4 border-white"
+          <motion.div
+          className="absolute inset-0 rounded-full border-t-4 border-cyan"
           style={{ 
             rotate: `${progress * 3.6}deg`,
             transformOrigin: 'center'

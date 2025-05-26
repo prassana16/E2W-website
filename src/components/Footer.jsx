@@ -148,9 +148,8 @@ const Footer = () => {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            onClick={scrollToTop}
-            className="fixed bottom-4 left-2 bg-white text-[#2D1B69] p-3 rounded-full shadow-lg z-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D1B69]"
+            transition={{ duration: 0.3, ease: "easeOut" }}            onClick={scrollToTop}
+            className="fixed bottom-4 left-2 bg-white text-black p-3 rounded-full shadow-lg z-50 hover:bg-cyan focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan"
             aria-label="Scroll to top"
           >
             <FaArrowUp className="text-xl" />
@@ -170,12 +169,10 @@ const Footer = () => {
           {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-4">
             <div className="flex items-center mb-6">
-              <img src={logo} alt="Easy2Work Logo" className="h-12 w-12 mr-3" />
-              <h3 className="text-2xl font-bold font-Tinos bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+              <img src={logo} alt="Easy2Work Logo" className="h-12 w-12 mr-3" />              <h3 className="text-2xl font-bold font-Tinos bg-clip-text text-transparent bg-gradient-to-r from-white to-cyan">
                 Easy2Work
               </h3>
-            </div>
-              <p className="text-gray-300 mb-6">
+            </div>              <p className="text-white/80 mb-6">
               Transforming businesses with intelligent software solutions. We create innovative enterprise applications, websites, and mobile apps to help your business thrive in the digital world.
             </p>
             {/* Only LinkedIn social media as per requirement */}
@@ -204,12 +201,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 font-Tinos">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
+                <li key={index}>                  <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                    className="text-white/80 hover:text-cyan transition-colors duration-300 flex items-center group"
                   >
-                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
+                    <FaChevronRight className="mr-2 text-xs text-cyan group-hover:translate-x-1 transition-transform duration-300" />
                     {link.name}
                   </Link>
                 </li>
@@ -222,12 +218,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 font-Tinos">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
-                <li key={index}>
-                  <Link
+                <li key={index}>                  <Link
                     to={service.path}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                    className="text-white/80 hover:text-cyan transition-colors duration-300 flex items-center group"
                   >
-                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
+                    <FaChevronRight className="mr-2 text-xs text-cyan group-hover:translate-x-1 transition-transform duration-300" />
                     {service.name}
                   </Link>
                 </li>
@@ -240,12 +235,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 font-Tinos">Our Solutions</h4>
             <ul className="space-y-3">
               {solutions.map((solution, index) => (
-                <li key={index}>
-                  <Link
+                <li key={index}>                  <Link
                     to={solution.path}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                    className="text-white/80 hover:text-cyan transition-colors duration-300 flex items-center group"
                   >
-                    <FaChevronRight className="mr-2 text-xs text-purple-400 group-hover:translate-x-1 transition-transform duration-300" />
+                    <FaChevronRight className="mr-2 text-xs text-cyan group-hover:translate-x-1 transition-transform duration-300" />
                     {solution.name}
                   </Link>
                 </li>
@@ -256,17 +250,16 @@ const Footer = () => {
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <h4 className="text-lg font-semibold mb-6 font-Tinos">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start">                <FaMapMarkerAlt className="mt-1 mr-3 text-purple-400" />
-                <span className="text-gray-300">No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020</span>
-              </li>              <li className="flex items-center"><FaEnvelope className="mr-3 text-purple-400" />
-                <a href="mailto:sales@esy2work.in" className="text-gray-300 hover:text-white transition-colors">
+            <ul className="space-y-4">              <li className="flex items-start">                <FaMapMarkerAlt className="mt-1 mr-3 text-cyan" />
+                <span className="text-white/80">No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020</span>
+              </li>              <li className="flex items-center"><FaEnvelope className="mr-3 text-cyan" />
+                <a href="mailto:sales@esy2work.in" className="text-white/80 hover:text-cyan transition-colors">
                   sales@esy2work.in
                 </a>
               </li>{/* Phone number removed */}
               <li className="flex items-center">
-                <FaGlobe className="mr-3 text-purple-400" />
-                <span className="text-gray-300">Global Presence</span>
+                <FaGlobe className="mr-3 text-cyan" />
+                <span className="text-white/80">Global Presence</span>
               </li>
             </ul>
           </motion.div>
@@ -278,9 +271,8 @@ const Footer = () => {
           className="border-t border-white/10 pt-8 pb-12 mt-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <p className="text-center md:text-left text-gray-300 text-sm">
-                &copy; {currentYear} Easy2Work. All rights reserved. Made with <FaHeart className="inline-block text-red-400 mx-1" /> for innovation.
+            <div>              <p className="text-center md:text-left text-white/80 text-sm">
+                &copy; {currentYear} Easy2Work. All rights reserved. Made with <FaHeart className="inline-block text-cyan mx-1" /> for innovation.
               </p>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-400">

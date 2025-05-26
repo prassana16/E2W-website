@@ -23,13 +23,12 @@ import cms from "../assets/images/cms.png";
 
 import Navbar from "./Navbar";
 
-const Banner = () => {
-  const slides = [    {
+const Banner = () => {  const slides = [    {
       title: "Web Application Development",
       description:
         "Building robust, scalable, and AI-enabled web applications tailored to meet your global business needs with cutting-edge technology.",
       image: cms,
-      bgColor: "from-black to-accent-700",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/WebAppDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
@@ -38,7 +37,7 @@ const Banner = () => {
       description:
         "Creating responsive, SEO-optimized websites with international market focus that drive engagement and enhance your global digital presence.",
       image: portfolioSite,
-      bgColor: "from-black to-accent-800",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/WebsiteDevelopment",
       icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },
@@ -47,14 +46,14 @@ const Banner = () => {
       description:
         "Designing intuitive cross-platform mobile applications that deliver exceptional user experiences for global audiences.",
       image: pwaApp,
-      bgColor: "from-accent-900 to-black",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/MobileAppDevelopment",
-      icon: <FaLaptopCode className="text-4xl mb-4" />,
+      icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },    {      title: "AI-Powered Solutions",
       description:
         "Leveraging artificial intelligence to create intelligent, adaptive applications that transform data into actionable insights.",
       image: localSEO,
-      bgColor: "from-black to-accent-900",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/SEOServices",
       icon: <FaRobot className="text-4xl mb-4 text-cyan" />,
     },
@@ -62,14 +61,14 @@ const Banner = () => {
       description:
         "Developing scalable, secure cloud-native applications designed for global operations with high availability and performance.",
       image: microservices,
-      bgColor: "from-accent-900 to-black",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/CloudNativeAppDevelopment",
       icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },    {
       title: "SaaS Development",
       description:
         "Building enterprise-grade SaaS solutions that streamline operations and enhance efficiency for businesses worldwide.",      image: e2w,
-      bgColor: "from-black to-accent-900",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/SaaSDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
@@ -77,14 +76,14 @@ const Banner = () => {
       title: "UI/UX Design",
       description:
         "Creating intuitive, culturally-adaptive user interfaces that provide exceptional digital experiences across global markets.",      image: prototyping,
-      bgColor: "from-accent-900 to-black",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/UIUXDesign",
       icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },    {
       title: "Quality Assurance",
       description:
         "Ensuring software meets the highest international standards through comprehensive testing and validation processes.",      image: bugTracking,
-      bgColor: "from-black to-accent-900",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/QualityAssurance",
       icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
@@ -92,7 +91,7 @@ const Banner = () => {
       title: "Staff Augmentation",
       description:
         "Providing skilled global professionals to help you scale your team and achieve your technology goals efficiently.",      image: teamCollaboration,
-      bgColor: "from-accent-900 to-black",
+      bgColor: "from-black to-black-medium",
       learnMoreLink: "/StaffAugmentation",
       icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },

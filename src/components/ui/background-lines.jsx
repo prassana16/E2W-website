@@ -8,9 +8,8 @@ export const BackgroundLines = ({
   className,
   svgOptions
 }) => {
-  return (
-    (<div
-      className={cn("h-[20rem] md:h-screen w-full   ", className)} style={{ background: 'radial-gradient(ellipse at center, #05a7be, #017598)' }}>
+  return (    (<div
+      className={cn("h-[20rem] md:h-screen w-full   ", className)} style={{ background: 'radial-gradient(ellipse at center, #05f4f9, #000000)' }}>
       <SVG svgOptions={svgOptions} />
       {children}
     </div>)

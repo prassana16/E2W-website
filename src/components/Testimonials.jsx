@@ -167,11 +167,10 @@ const Testimonials = () => {
     if (hasHalfStar) {
       stars.push(<FaStarHalfAlt key="half-star" className="text-cyan" />);
     }
-    
-    // Add empty stars to make total of 5
+      // Add empty stars to make total of 5
     const emptyStars = 5 - stars.length;
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<FaStar key={`empty-star-${i}`} className="text-gray-300 dark:text-accent-600" />);
+      stars.push(<FaStar key={`empty-star-${i}`} className="text-black/20 dark:text-white/20" />);
     }
     
     return stars;
@@ -364,34 +363,31 @@ const Testimonials = () => {
                   {/* Right side with content */}
                   <div className="lg:w-3/5 p-8 lg:p-10">
                     <div className="h-full flex flex-col justify-between">
-                      <div>
-                        {/* Project/Service tag */}
-                        <div className="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-[#620078] dark:text-purple-400 text-xs font-semibold mb-4">
+                      <div>                        {/* Project/Service tag */}
+                        <div className="inline-block px-3 py-1 rounded-full bg-black/10 dark:bg-black text-black dark:text-cyan text-xs font-semibold mb-4 border border-cyan/30">
                           {testimonials[activeIndex].project}
                         </div>
                         
                         {/* Testimonial text */}
-                        <blockquote className="text-gray-700 dark:text-gray-200 text-lg leading-relaxed mb-6">
+                        <blockquote className="text-black dark:text-white text-lg leading-relaxed mb-6">
                           "{testimonials[activeIndex].text}"
                         </blockquote>
                       </div>
                       
-                      <div>
-                        {/* Rating */}
+                      <div>                        {/* Rating */}
                         <div className="flex items-center mb-4">
                           <div className="flex space-x-1">
                             {renderRatingStars(testimonials[activeIndex].rating)}
                           </div>
-                          <span className="ml-2 text-gray-500 dark:text-gray-400 text-sm">
+                          <span className="ml-2 text-black/60 dark:text-white/60 text-sm">
                             {testimonials[activeIndex].rating}/5
                           </span>
                         </div>
-                        
-                        {/* Author info */}
+                          {/* Author info */}
                         <div>
-                          <h4 className="text-gray-900 dark:text-white text-lg font-medium">{testimonials[activeIndex].name}</h4>
-                          <p className="text-gray-500 dark:text-gray-400">
-                            {testimonials[activeIndex].position}, {testimonials[activeIndex].company}
+                          <h4 className="text-black dark:text-white text-lg font-medium">{testimonials[activeIndex].name}</h4>
+                          <p className="text-black/60 dark:text-white/60">
+                            {testimonials[activeIndex].position ? `${testimonials[activeIndex].position}, ` : ''}{testimonials[activeIndex].company}
                           </p>
                         </div>
                       </div>

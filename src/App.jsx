@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
+import ThemeToggle from './components/ui/ThemeToggle';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Preloader from './components/Preloader';
@@ -62,12 +63,12 @@ function App() {
     
     return () => clearTimeout(preloadTimeout);
   }, []);
-
   return (
     <HelmetProvider> 
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       <Router>
+        <ThemeToggle />
         <Navbar />
         <Routes>
           <Route path="/" element={

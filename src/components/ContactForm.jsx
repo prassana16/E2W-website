@@ -198,22 +198,20 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
       content: "sales@esy2work.in",
       link: "mailto:sales@esy2work.in"
     },
-    {
-      icon: <FaGlobe className="text-purple-400" />,
+    {      icon: <FaGlobe className="text-cyan" />,
       title: "Global Presence",
       content: "USA, Canada, Germany, Singapore, Dubai",
     }
   ];
 
-  return (
-    <div ref={ref} className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  return (    <div ref={ref} className="relative py-16 lg:py-24 bg-gradient-to-br from-white to-white dark:from-black dark:to-black">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute right-0 top-0 w-1/3 h-1/3 opacity-20 dark:opacity-10 bg-gradient-to-b from-purple-300 to-purple-600 blur-3xl rounded-full transform -translate-y-1/2 translate-x-1/4"
+          className="absolute right-0 top-0 w-1/3 h-1/3 opacity-20 dark:opacity-10 bg-gradient-to-b from-cyan to-cyan blur-3xl rounded-full transform -translate-y-1/2 translate-x-1/4"
         ></div>
         <div 
-          className="absolute left-0 bottom-0 w-1/4 h-1/4 opacity-20 dark:opacity-10 bg-gradient-to-t from-purple-400 to-pink-600 blur-3xl rounded-full transform translate-y-1/3 -translate-x-1/4"
+          className="absolute left-0 bottom-0 w-1/4 h-1/4 opacity-20 dark:opacity-10 bg-gradient-to-t from-cyan to-black blur-3xl rounded-full transform translate-y-1/3 -translate-x-1/4"
         ></div>
       </div>
       
@@ -294,7 +292,7 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
               variants={itemVariants}
               className="lg:w-2/3"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 lg:p-8">
+              <div className="bg-white dark:bg-black rounded-2xl shadow-xl p-6 lg:p-8 border border-cyan/20">
                 {/* Form status messages */}
                 <AnimatePresence>
                   {formStatus.submitted && (
