@@ -24,85 +24,78 @@ import cms from "../assets/images/cms.png";
 import Navbar from "./Navbar";
 
 const Banner = () => {
-  const slides = [
-    {
+  const slides = [    {
       title: "Web Application Development",
       description:
         "Building robust, scalable, and AI-enabled web applications tailored to meet your global business needs with cutting-edge technology.",
       image: cms,
-      bgColor: "from-[#017598] to-[#05a7be]",
+      bgColor: "from-black to-accent-700",
       learnMoreLink: "/WebAppDevelopment",
-      icon: <FaLaptopCode className="text-4xl mb-4" />,
+      icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
     {
       title: "Website Development",
       description:
         "Creating responsive, SEO-optimized websites with international market focus that drive engagement and enhance your global digital presence.",
       image: portfolioSite,
-      bgColor: "from-[#05a7be] to-[#18c4b8]",
+      bgColor: "from-black to-accent-800",
       learnMoreLink: "/WebsiteDevelopment",
-      icon: <FaGlobeAmericas className="text-4xl mb-4" />,
+      icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },
     {
       title: "Mobile App Development",
       description:
         "Designing intuitive cross-platform mobile applications that deliver exceptional user experiences for global audiences.",
       image: pwaApp,
-      bgColor: "from-[#18c4b8] to-[#1ed7cd]",
+      bgColor: "from-accent-900 to-black",
       learnMoreLink: "/MobileAppDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
     },
-    {
-      title: "AI-Powered Solutions",
+    {      title: "AI-Powered Solutions",
       description:
         "Leveraging artificial intelligence to create intelligent, adaptive applications that transform data into actionable insights.",
       image: localSEO,
-      bgColor: "linear-gradient(135deg, #05a7be, #087ea2)",
+      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
       learnMoreLink: "/SEOServices",
       icon: <FaRobot className="text-4xl mb-4" />,
     },
-    {
-      title: "Cloud-Native Applications",
+    {      title: "Cloud-Native Applications",
       description:
         "Developing scalable, secure cloud-native applications designed for global operations with high availability and performance.",
       image: microservices,
-      bgColor: "linear-gradient(135deg, #087ea2, #017598)",
+      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
       learnMoreLink: "/CloudNativeAppDevelopment",
       icon: <FaGlobeAmericas className="text-4xl mb-4" />,
     },
     {
       title: "SaaS Development",
       description:
-        "Building enterprise-grade SaaS solutions that streamline operations and enhance efficiency for businesses worldwide.",
-      image: e2w,
-      bgColor: "linear-gradient(135deg, #017598, #05a7be)",
+        "Building enterprise-grade SaaS solutions that streamline operations and enhance efficiency for businesses worldwide.",      image: e2w,
+      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
       learnMoreLink: "/SaaSDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
     },
     {
       title: "UI/UX Design",
       description:
-        "Creating intuitive, culturally-adaptive user interfaces that provide exceptional digital experiences across global markets.",
-      image: prototyping,
-      bgColor: "linear-gradient(135deg, #05a7be, #18c4b8)",
+        "Creating intuitive, culturally-adaptive user interfaces that provide exceptional digital experiences across global markets.",      image: prototyping,
+      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
       learnMoreLink: "/UIUXDesign",
       icon: <FaGlobeAmericas className="text-4xl mb-4" />,
     },
     {
       title: "Quality Assurance",
       description:
-        "Ensuring software meets the highest international standards through comprehensive testing and validation processes.",
-      image: bugTracking,
-      bgColor: "linear-gradient(135deg, #18c4b8, #1ed7cd)",
+        "Ensuring software meets the highest international standards through comprehensive testing and validation processes.",      image: bugTracking,
+      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
       learnMoreLink: "/QualityAssurance",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
     },
     {
       title: "Staff Augmentation",
       description:
-        "Providing skilled global professionals to help you scale your team and achieve your technology goals efficiently.",
-      image: teamCollaboration,
-      bgColor: "linear-gradient(135deg, #05a7be, #087ea2)",
+        "Providing skilled global professionals to help you scale your team and achieve your technology goals efficiently.",      image: teamCollaboration,
+      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
       learnMoreLink: "/StaffAugmentation",
       icon: <FaGlobeAmericas className="text-4xl mb-4" />,
     },

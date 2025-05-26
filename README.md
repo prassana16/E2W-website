@@ -7,34 +7,21 @@ A modern, responsive website built with React, showcasing Easy2Work's enterprise
 ### Color Themes
 
 #### Main Website Theme
-- Primary: `#2D1B69` (Deep Purple)
-- Secondary: `#5B0737` (Dark Burgundy)
-- Accent: `#620078` (Bright Purple)
+- Primary: `#05f4f9` (Bright Cyan)
+- Secondary: `#000000` (Black)
+- Accent: `#ffffff` (White)
 - Background Gradients: 
-  - `from-[#2D1B69] to-[#1A103F]`
-  - `from-[#620078] to-[#3b095a]`
+  - `from-[#000000] to-[#292929]`
+  - `from-[#05f4f9] to-[#026163]`
 
-#### Product-Specific Themes
+#### Unified Product Themes
 
-1. **IBMS Theme**
-- Primary: `#1E085A` (Deep Blue-Purple)
-- Secondary: `#5B0737` (Dark Burgundy)
-- Accent: `#4b0661` (Medium Purple)
+All product themes now use the same elegant color scheme:
 
-2. **ILMS Theme**
-- Primary: `#0d3627` (Dark Green)
-- Secondary: `#071e14` (Forest Green)
-- Accent: `#15803d` (Emerald)
-
-3. **AI Enterprise Data Solution Theme**
-- Primary: `#FF8C00` (Dark Orange)
-- Secondary: `#8B4513` (Saddle Brown)
-- Gradients: `from-purple-50 to-white`
-
-4. **AI Medical Lead Platform Theme**
-- Primary: `#DC143C` (Crimson)
-- Secondary: `#800000` (Dark Red)
-- Accent: `#A52A2A` (Brown)
+- Primary: `#05f4f9` (Bright Cyan)
+- Secondary: `#000000` (Black)
+- Accent: `#ffffff` (White)
+- Gradients: Various shades of the above colors
 
 ### Typography
 

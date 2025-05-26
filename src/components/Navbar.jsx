@@ -474,7 +474,7 @@ const Navbar = () => {
                           </Link>
                         </motion.div>
 
-                        {/* <motion.div variants={dropdownItemVariants}>
+                        <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/ILMS"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
@@ -483,7 +483,7 @@ const Navbar = () => {
                             <span>ILMS</span>
                           </Link>
                         </motion.div>
-
+ {/*
                         <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/AI-Medical-Lead-Platform"

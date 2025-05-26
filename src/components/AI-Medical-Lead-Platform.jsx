@@ -23,9 +23,8 @@ const medicalLeadSchema = {
 };
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
-    <div className="flex items-center mb-4">      <div className="bg-[#2D1B69]/10 p-3 rounded-lg mr-4">
-        <Icon className="text-[#2D1B69]" size={24} />
+  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all hover:shadow-md">    <div className="flex items-center mb-4">      <div className="bg-[#05f4f9]/10 p-3 rounded-lg mr-4">
+        <Icon className="text-[#05f4f9]" size={24} />
       </div>
       <h3 className="font-semibold text-lg text-gray-900">{title}</h3>
     </div>

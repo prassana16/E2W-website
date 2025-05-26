@@ -14,30 +14,32 @@ const config = {
         Mauline: ['Mauline', 'serif'],
         Tinos: ['Tinos', 'sans'],
         RozhaOne: ['RozhaOne', 'serif'],
-      },
-      colors: {
+      },      colors: {
         'primary': {
-          100: '#f6c5e2', // Lightest magenta
-          200: '#ef9dcf', // Light magenta
-          300: '#e072bd', // Medium-light magenta
-          400: '#d048ab', // Medium magenta
-          500: '#b81d99', // Medium-dark magenta
-          600: '#961989', // Dark magenta
-          700: '#77157a', // Deeper magenta
-          800: '#590f6a', // Very dark magenta
-          900: '#3b095a', // Deepest purple/magenta
+          100: '#d4fcfd', // Lightest cyan
+          200: '#b0f9fb', // Light cyan
+          300: '#8cf7f9', // Medium-light cyan
+          400: '#67f4f7', // Medium cyan
+          500: '#05f4f9', // Our main cyan color #05f4f9
+          600: '#04c3c7', // Dark cyan
+          700: '#039295', // Deeper cyan
+          800: '#026163', // Very dark cyan
+          900: '#013132', // Deepest cyan
         },
         'accent': {
-          100: '#e6c9f4', // Lightest purple
-          200: '#d3a6ed', // Light purple
-          300: '#c182e6', // Medium-light purple
-          400: '#ae5fde', // Medium purple
-          500: '#9c3cd7', // Medium-dark purple
-          600: '#8130b0', // Dark purple
-          700: '#672589', // Deeper purple
-          800: '#4d1a62', // Very dark purple
-          900: '#33103c', // Deepest purple
+          100: '#ffffff', // White
+          200: '#f5f5f5', // Off-white
+          300: '#e0e0e0', // Light gray
+          400: '#c0c0c0', // Silver
+          500: '#909090', // Gray
+          600: '#606060', // Dark gray
+          700: '#303030', // Darker gray
+          800: '#181818', // Very dark gray
+          900: '#000000', // Black
         },
+        'cyan': '#05f4f9',
+        'black': '#000000',
+        'white': '#ffffff',
       },
     },
   },
