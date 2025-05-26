@@ -154,25 +154,24 @@ const Testimonials = () => {
     // Resume autoplay after interaction
     setAutoplay(true);
   };
-  
-  // Generate an array of rating stars
+    // Generate an array of rating stars
   const renderRatingStars = (rating) => {
     const stars = [];
     const roundedRating = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
     
     for (let i = 0; i < roundedRating; i++) {
-      stars.push(<FaStar key={`star-${i}`} className="text-amber-400" />);
+      stars.push(<FaStar key={`star-${i}`} className="text-cyan" />);
     }
     
     if (hasHalfStar) {
-      stars.push(<FaStarHalfAlt key="half-star" className="text-amber-400" />);
+      stars.push(<FaStarHalfAlt key="half-star" className="text-cyan" />);
     }
     
     // Add empty stars to make total of 5
     const emptyStars = 5 - stars.length;
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<FaStar key={`empty-star-${i}`} className="text-gray-300 dark:text-gray-600" />);
+      stars.push(<FaStar key={`empty-star-${i}`} className="text-gray-300 dark:text-accent-600" />);
     }
     
     return stars;
@@ -234,11 +233,10 @@ const Testimonials = () => {
       }
     }
   };
-
   return (
     <section 
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
+      className="py-16 md:py-24 bg-white dark:bg-black border-t border-b border-cyan/10 overflow-hidden"
     >
       <motion.div 
         ref={containerRef}
@@ -246,14 +244,13 @@ const Testimonials = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         className="container mx-auto px-4"
-      >
-        {/* Section header */}
+      >        {/* Section header */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h5 className="text-[#620078] dark:text-purple-400 font-medium mb-2">Testimonials</h5>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-Tinos font-bold mb-4 text-gray-800 dark:text-white">
+          <h5 className="text-cyan font-medium mb-2">Testimonials</h5>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-Tinos font-bold mb-4 text-black">
             What Our Clients Say
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+          <p className="max-w-2xl mx-auto text-black/80">
             Don't just take our word for it. Here's what our partners and clients around the world have to say about working with Easy2Work.
           </p>
         </motion.div>
@@ -274,17 +271,16 @@ const Testimonials = () => {
           }}
         >
           {/* Left/Right navigation buttons for desktop */}
-          <div className="hidden md:block">
-            <button
+          <div className="hidden md:block">            <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow-lg z-10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all hover:scale-105"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black text-cyan hover:bg-cyan hover:text-black p-3 rounded-full shadow-lg z-10 focus:outline-none border border-cyan/30 transform transition-all hover:scale-105 elegant-shadow"
               aria-label="Previous testimonial"
             >
               <FaArrowLeft />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow-lg z-10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all hover:scale-105"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black text-cyan hover:bg-cyan hover:text-black p-3 rounded-full shadow-lg z-10 focus:outline-none border border-cyan/30 transform transition-all hover:scale-105 elegant-shadow"
               aria-label="Next testimonial"
             >
               <FaArrowRight />
@@ -306,18 +302,17 @@ const Testimonials = () => {
                 variants={slideVariants}
                 initial="enter"
                 animate="center"
-                exit="exit"
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+                exit="exit"                className="bg-white dark:bg-black rounded-2xl shadow-xl overflow-hidden border border-cyan/20 elegant-shadow"
               >
                 <div className="lg:flex">
                   {/* Left decoration side with image */}
-                  <div className="relative lg:w-2/5 bg-gradient-to-br from-[#2D1B69] to-[#5B0737] p-8 flex flex-col justify-between">
+                  <div className="relative lg:w-2/5 bg-black p-8 flex flex-col justify-between border-r border-cyan/20">
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-10">
                       <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <defs>
                           <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" />
+                            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#05f4f9" strokeWidth="0.5" />
                           </pattern>
                         </defs>
                         <rect width="100" height="100" fill="url(#grid)" />
@@ -405,9 +400,7 @@ const Testimonials = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
-
-          {/* Pagination indicators */}
+          </div>          {/* Pagination indicators */}
           <div className="flex justify-center mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
@@ -415,8 +408,8 @@ const Testimonials = () => {
                 onClick={() => goToSlide(index)}
                 className={`h-2.5 rounded-full transition-all ${
                   index === activeIndex 
-                    ? "w-8 bg-[#620078] dark:bg-purple-500" 
-                    : "w-2.5 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600"
+                    ? "w-8 bg-cyan" 
+                    : "w-2.5 bg-gray-300 dark:bg-accent-700 hover:bg-cyan/40"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
                 aria-current={index === activeIndex ? "true" : "false"}

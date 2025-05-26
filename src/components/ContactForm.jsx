@@ -4,12 +4,11 @@ import { useInView } from "react-intersection-observer";
 import { FaRegPaperPlane, FaCheck, FaExclamationTriangle, FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 import emailjs from 'emailjs-com';
 
-const ContactForm = () => {
-  // Main color scheme based on the design system
+const ContactForm = () => {  // Main color scheme based on the updated design system
   const colors = {
-    primary: "#2D1B69", // Deep Purple
-    secondary: "#5B0737", // Dark Burgundy
-    accent: "#620078", // Bright Purple
+    primary: "#000000", // Black
+    secondary: "#05f4f9", // Cyan
+    accent: "#ffffff", // White
   };
 
   const [formData, setFormData] = useState({
@@ -186,15 +185,15 @@ const ContactForm = () => {
   const clearStatus = () => {
     setFormStatus(prev => ({ ...prev, submitted: false, message: "" }));
   };
-    // Contact information items for display
+  // Contact information items for display
   const contactInfo = [
     {
-      icon: <FaMapMarkerAlt className="text-purple-400" />,
+      icon: <FaMapMarkerAlt className="text-cyan" />,
       title: "Our Office",
       content: "No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020",
       link: "https://maps.google.com/maps?q=Easy2Work+No.32+3rd+Cross+St+Kasturba+Nagar+Adyar+Chennai+Tamil+Nadu+600020&t=&z=13&ie=UTF8&iwloc=&output=embed"
     },    {
-      icon: <FaEnvelope className="text-purple-400" />,
+      icon: <FaEnvelope className="text-cyan" />,
       title: "Email Us",
       content: "sales@esy2work.in",
       link: "mailto:sales@esy2work.in"
@@ -225,16 +224,18 @@ const ContactForm = () => {
           animate={inView ? "visible" : "hidden"}
           className="max-w-6xl mx-auto"
         >
-          {/* Section header */}
-          <motion.div 
+          {/* Section header */}          <motion.div 
             variants={itemVariants}
             className="text-center mb-12"
           >
-            <h5 className="text-purple-600 dark:text-purple-400 font-medium mb-2">Get in Touch</h5>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-Tinos font-bold mb-4 text-gray-800 dark:text-white">
-              Contact Us
+            <h5 className="text-cyan font-medium mb-2">Get in Touch</h5>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-Tinos font-bold mb-4 text-black dark:text-white">
+              <span className="relative">
+                <span className="relative z-10">Contact Us</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-cyan/20"></span>
+              </span>
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+            <p className="max-w-2xl mx-auto text-black/80 dark:text-white/80">
               Have questions or want to discuss how we can help your business grow? 
               Reach out to our team and we'll get back to you shortly.
             </p>
@@ -245,9 +246,8 @@ const ContactForm = () => {
             <motion.div 
               variants={itemVariants} 
               className="lg:w-1/3"
-            >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 lg:p-8 h-full">
-                <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+            >              <div className="bg-white dark:bg-black rounded-2xl shadow-xl p-6 lg:p-8 h-full border border-cyan/20 elegant-shadow">
+                <h3 className="text-xl font-bold mb-6 text-black dark:text-white">Contact Information</h3>
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
                     <motion.div 
@@ -256,15 +256,15 @@ const ContactForm = () => {
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mr-4">
+                      <div className="bg-black dark:bg-black/30 p-3 rounded-lg mr-4 border border-cyan/30">
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-800 dark:text-white">{item.title}</h4>
+                        <h4 className="font-medium text-black dark:text-white">{item.title}</h4>
                         {item.link ? (
                           <a 
                             href={item.link} 
-                            className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                            className="text-black/70 dark:text-gray-300 hover:text-cyan dark:hover:text-cyan transition-colors"
                           >
                             {item.content}
                           </a>
@@ -327,17 +327,15 @@ const ContactForm = () => {
                       </button>
                     </motion.div>
                   )}
-                </AnimatePresence>
-
-                <form onSubmit={handleSubmit}>
+                </AnimatePresence>                <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {/* Name field */}
                     <div>
                       <label 
                         htmlFor="name" 
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-sm font-medium text-black dark:text-white mb-1"
                       >
-                        Full Name <span className="text-red-500">*</span>
+                        Full Name <span className="text-cyan">*</span>
                       </label>
                       <input
                         type="text"
@@ -402,12 +400,11 @@ const ContactForm = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="+1 (234) 567-8910"
-                        className={`w-full px-4 py-3 rounded-lg border ${
+                        placeholder="+1 (234) 567-8910"                        className={`w-full px-4 py-3 rounded-lg border ${
                           formErrors.phone && formTouched.phone
                             ? "border-red-500 dark:border-red-400"
-                            : "border-gray-300 dark:border-gray-600"
-                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                            : "border-gray-300 dark:border-cyan/20"
+                        } focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan dark:bg-black dark:text-white`}
                         aria-invalid={formErrors.phone ? "true" : "false"}
                       />
                       {formErrors.phone && formTouched.phone && (
@@ -430,7 +427,7 @@ const ContactForm = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="What is your inquiry about?"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-cyan/20 focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan dark:bg-black dark:text-white"
                       />
                     </div>
 
@@ -464,13 +461,12 @@ const ContactForm = () => {
                   </div>
 
                   {/* Submit button */}
-                  <div className="flex justify-end">
-                    <motion.button
+                  <div className="flex justify-end">                    <motion.button
                       type="submit"
                       disabled={formStatus.isLoading}
-                      className={`px-6 py-3 bg-gradient-to-r from-[#2D1B69] to-[#620078] text-white rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                        formStatus.isLoading ? "opacity-80 cursor-not-allowed" : "hover:from-[#3f2b85] hover:to-[#7a0d92]"
-                      }`}
+                      className={`px-6 py-3 bg-cyan text-black rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:bg-black hover:text-cyan elegant-transition ${
+                        formStatus.isLoading ? "opacity-80 cursor-not-allowed" : ""
+                      } border border-cyan/20`}
                       whileHover={{ scale: formStatus.isLoading ? 1 : 1.03 }}
                       whileTap={{ scale: formStatus.isLoading ? 1 : 0.98 }}
                     >

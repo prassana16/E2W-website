@@ -270,12 +270,11 @@ const Navbar = () => {
     return location.pathname === path ? "text-white" : "text-gray-100/90";
   };
 
-  return (
-    <nav 
+  return (    <nav 
       ref={navbarRef}
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
         scrolled ? 
-          'bg-gradient-to-r from-[#2D1B69]/95 to-[#5B0737]/95 py-2 shadow-lg backdrop-blur-md' : 
+          'bg-black py-2 shadow-lg backdrop-blur-md border-b border-cyan/20' : 
           'bg-transparent py-4'
       }`}
       aria-label="Main navigation"
@@ -291,7 +290,7 @@ const Navbar = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 0 8px #05f4f9)" }}
               whileTap={{ scale: 0.98 }}
             />
             <motion.span 
@@ -353,34 +352,32 @@ const Navbar = () => {
                 </button>
 
                 <AnimatePresence>
-                  {isServicesOpen && (
-                    <motion.div
+                  {isServicesOpen && (                    <motion.div
                       variants={dropdownVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute left-0 mt-1 w-64 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden"
+                      className="absolute left-0 mt-1 w-64 bg-black backdrop-blur-lg rounded-xl shadow-xl border border-cyan/20 overflow-hidden elegant-shadow"
                     >
                       <div className="p-2">
                         {/* Services dropdown content */}
                         <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/WebAppDevelopment"
-                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                            className="flex items-center px-4 py-2.5 text-sm text-white hover:bg-cyan hover:text-black rounded-lg transition-colors duration-200"
                           >
-                            <VscFileCode className="mr-3 text-purple-300" size={18} />
+                            <VscFileCode className="mr-3 text-cyan" size={18} />
                             <span>Web Application Development</span>
                           </Link>
                         </motion.div>
 
                         {/* Additional service items... (can be expanded in full implementation) */}
-                        
-                        <motion.div variants={dropdownItemVariants}>
+                          <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/MobileAppDevelopment"
-                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                            className="flex items-center px-4 py-2.5 text-sm text-white hover:bg-cyan hover:text-black rounded-lg transition-colors duration-200"
                           >
-                            <FaMobile className="mr-3 text-purple-300" size={18} />
+                            <FaMobile className="mr-3 text-cyan" size={18} />
                             <span>Mobile App Development</span>
                           </Link>
                         </motion.div>
@@ -388,9 +385,9 @@ const Navbar = () => {
                         <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/WebsiteDevelopment"
-                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                            className="flex items-center px-4 py-2.5 text-sm text-white hover:bg-cyan hover:text-black rounded-lg transition-colors duration-200"
                           >
-                            <FaGlobe className="mr-3 text-purple-300" size={18} />
+                            <FaGlobe className="mr-3 text-cyan" size={18} />
                             <span>Website Development</span>
                           </Link>
                         </motion.div>
@@ -398,7 +395,7 @@ const Navbar = () => {
                         <motion.div variants={dropdownItemVariants}>
                           <Link
                             to="/SEOServices"
-                            className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
+                            className="flex items-center px-4 py-2.5 text-sm text-white hover:bg-cyan hover:text-black rounded-lg transition-colors duration-200"
                           >
                             <FaSearch className="mr-3 text-purple-300" size={18} />
                             <span>SEO Services</span>
@@ -552,11 +549,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
+        {isOpen && (          <motion.div
             id="mobile-menu"
             key="mobile-menu"
-            className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-gradient-to-b from-[#2D1B69] to-[#5B0737] shadow-xl z-50 lg:hidden overflow-y-auto"
+            className="fixed inset-y-0 right-0 w-[80%] max-w-sm bg-black border-l border-cyan/20 shadow-xl z-50 lg:hidden overflow-y-auto"
             initial="closed"
             animate="open"
             exit="closed"
@@ -570,11 +566,11 @@ const Navbar = () => {
               <div className="flex items-center justify-between mb-8">
                 <Link to="/" className="flex items-center space-x-2" onClick={toggleMenu}>
                   <img src={logo} alt="Easy2Work Logo" className="h-10 w-10 object-contain" />
-                  <span className="font-Tinos text-lg font-bold text-white">Easy2Work</span>
+                  <span className="font-Tinos text-lg font-bold text-cyan">Easy2Work</span>
                 </Link>
                 <motion.button
                   onClick={toggleMenu}
-                  className="p-2 text-white"
+                  className="p-2 text-cyan"
                   whileTap={{ scale: 0.9 }}
                   aria-label="Close menu"
                 >
@@ -582,14 +578,13 @@ const Navbar = () => {
                 </motion.button>
               </div>
 
-              <div className="space-y-1">
-                <motion.div variants={mobileMenuItemVariants}>
+              <div className="space-y-1">                <motion.div variants={mobileMenuItemVariants}>
                   <Link
                     to="/"
                     onClick={toggleMenu}
-                    className="flex items-center px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                    className="flex items-center px-3 py-3 text-white hover:bg-cyan hover:text-black rounded-lg transition-all duration-300"
                   >
-                    <RiHome5Line className="mr-3" size={18} />
+                    <RiHome5Line className="mr-3 text-cyan" size={18} />
                     Home
                   </Link>
                 </motion.div>
@@ -598,9 +593,9 @@ const Navbar = () => {
                   <Link
                     to="/AboutE2w"
                     onClick={toggleMenu}
-                    className="flex items-center px-3 py-3 text-white hover:bg-white/10 rounded-lg"
+                    className="flex items-center px-3 py-3 text-white hover:bg-cyan hover:text-black rounded-lg transition-all duration-300"
                   >
-                    <BsBuilding className="mr-3" size={18} />
+                    <BsBuilding className="mr-3 text-cyan" size={18} />
                     About Us
                   </Link>
                 </motion.div>

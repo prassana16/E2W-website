@@ -50,54 +50,51 @@ const Banner = () => {
       bgColor: "from-accent-900 to-black",
       learnMoreLink: "/MobileAppDevelopment",
       icon: <FaLaptopCode className="text-4xl mb-4" />,
-    },
-    {      title: "AI-Powered Solutions",
+    },    {      title: "AI-Powered Solutions",
       description:
         "Leveraging artificial intelligence to create intelligent, adaptive applications that transform data into actionable insights.",
       image: localSEO,
-      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
+      bgColor: "from-black to-accent-900",
       learnMoreLink: "/SEOServices",
-      icon: <FaRobot className="text-4xl mb-4" />,
+      icon: <FaRobot className="text-4xl mb-4 text-cyan" />,
     },
     {      title: "Cloud-Native Applications",
       description:
         "Developing scalable, secure cloud-native applications designed for global operations with high availability and performance.",
       image: microservices,
-      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
+      bgColor: "from-accent-900 to-black",
       learnMoreLink: "/CloudNativeAppDevelopment",
-      icon: <FaGlobeAmericas className="text-4xl mb-4" />,
-    },
-    {
+      icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
+    },    {
       title: "SaaS Development",
       description:
         "Building enterprise-grade SaaS solutions that streamline operations and enhance efficiency for businesses worldwide.",      image: e2w,
-      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
+      bgColor: "from-black to-accent-900",
       learnMoreLink: "/SaaSDevelopment",
-      icon: <FaLaptopCode className="text-4xl mb-4" />,
+      icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
     {
       title: "UI/UX Design",
       description:
         "Creating intuitive, culturally-adaptive user interfaces that provide exceptional digital experiences across global markets.",      image: prototyping,
-      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
+      bgColor: "from-accent-900 to-black",
       learnMoreLink: "/UIUXDesign",
-      icon: <FaGlobeAmericas className="text-4xl mb-4" />,
-    },
-    {
+      icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
+    },    {
       title: "Quality Assurance",
       description:
         "Ensuring software meets the highest international standards through comprehensive testing and validation processes.",      image: bugTracking,
-      bgColor: "linear-gradient(135deg, #000000, #05f4f9)",
+      bgColor: "from-black to-accent-900",
       learnMoreLink: "/QualityAssurance",
-      icon: <FaLaptopCode className="text-4xl mb-4" />,
+      icon: <FaLaptopCode className="text-4xl mb-4 text-cyan" />,
     },
     {
       title: "Staff Augmentation",
       description:
         "Providing skilled global professionals to help you scale your team and achieve your technology goals efficiently.",      image: teamCollaboration,
-      bgColor: "linear-gradient(135deg, #05f4f9, #000000)",
+      bgColor: "from-accent-900 to-black",
       learnMoreLink: "/StaffAugmentation",
-      icon: <FaGlobeAmericas className="text-4xl mb-4" />,
+      icon: <FaGlobeAmericas className="text-4xl mb-4 text-cyan" />,
     },
   ];
 
@@ -232,8 +229,7 @@ const Banner = () => {
           variants={slideVariants}
           initial="hidden"
           animate="visible"
-          exit="exit"
-          className={`absolute inset-0 flex flex-col md:flex-row items-center w-full h-screen bg-gradient-to-br ${slides[currentIndex].bgColor}`}
+          exit="exit"          className={`absolute inset-0 flex flex-col md:flex-row items-center w-full h-screen bg-gradient-to-r ${slides[currentIndex].bgColor}`}
         >
           {/* Content section */}
           <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
@@ -243,7 +239,7 @@ const Banner = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block p-4 bg-white/10 backdrop-blur-md rounded-xl mb-4"
+                className="inline-block p-4 border border-cyan/30 backdrop-blur-md rounded-xl mb-4 elegant-shadow"
               >
                 {slides[currentIndex].icon}
               </motion.div>
@@ -273,10 +269,9 @@ const Banner = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-              >
-                <Link
+              >                <Link
                   to={slides[currentIndex].learnMoreLink}
-                  className="inline-block px-8 py-4 mt-6 bg-white text-[#017598] rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-block px-8 py-4 mt-6 bg-cyan text-black rounded-full font-semibold hover:bg-black hover:text-cyan elegant-transition border border-cyan/20 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   Learn More
                 </Link>
@@ -294,36 +289,35 @@ const Banner = () => {
                 <img
                   src={slides[currentIndex].image}
                   alt={slides[currentIndex].title}
-                  className="object-contain max-h-[70vh] max-w-full rounded-lg shadow-2xl"
+                  className="object-contain max-h-[70vh] max-w-full rounded-lg shadow-2xl border border-cyan/30 elegant-shadow"
                 />
                 
                 {/* Decorative elements */}
-                <div className="absolute -z-10 w-60 h-60 bg-white/10 rounded-full blur-3xl top-1/4 -left-20"></div>
-                <div className="absolute -z-10 w-80 h-80 bg-white/5 rounded-full blur-3xl -bottom-10 -right-10"></div>
+                <div className="absolute -z-10 w-60 h-60 bg-cyan/10 rounded-full blur-3xl top-1/4 -left-20"></div>
+                <div className="absolute -z-10 w-80 h-80 bg-cyan/5 rounded-full blur-3xl -bottom-10 -right-10"></div>
               </motion.div>
             </div>
           </div>
         </motion.div>
       </AnimatePresence>
-      
-      {/* Navigation arrows */}
+        {/* Navigation arrows */}
       <div className="absolute bottom-10 left-0 right-0 flex justify-center items-center space-x-6 z-20">
         <button
           onClick={goToPreviousSlide}
-          className="p-2 text-white/70 hover:text-white transition-colors duration-300"
+          className="p-2 text-cyan/70 hover:text-cyan transition-all duration-300 hover:scale-110"
           aria-label="Previous slide"
         >
           <FaRegArrowAltCircleLeft className="w-8 h-8" />
         </button>
         
         {/* Indicator dots */}
-        <div className="flex space-x-2">
+        <div className="flex space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
+                index === currentIndex ? "bg-cyan scale-125" : "bg-cyan/40 hover:bg-cyan/70"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -332,7 +326,7 @@ const Banner = () => {
         
         <button
           onClick={goToNextSlide}
-          className="p-2 text-white/70 hover:text-white transition-colors duration-300"
+          className="p-2 text-cyan/70 hover:text-cyan transition-all duration-300 hover:scale-110"
           aria-label="Next slide"
         >
           <FaRegArrowAltCircleRight className="w-8 h-8" />

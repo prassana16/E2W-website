@@ -1,9 +1,38 @@
 /* src/index.css */
+@import './App.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* In src/index.css or src/App.css */
+/* Custom color scheme */
+@layer base {
+  :root {
+    --color-cyan: 5 244 249;    /* #05f4f9 */
+    --color-black: 0 0 0;       /* #000000 */
+    --color-white: 255 255 255; /* #ffffff */
+  }
+}
+
+@layer components {
+  .elegant-shadow {
+    box-shadow: 0 10px 30px rgba(5, 244, 249, 0.2);
+  }
+  
+  .elegant-border {
+    border: 1px solid rgba(5, 244, 249, 0.3);
+  }
+  
+  .elegant-transition {
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  }
+
+  .cyan-glow {
+    text-shadow: 0 0 5px rgba(5, 244, 249, 0.7);
+  }
+}
+
+/* Font definitions */
 @font-face {
     font-family: 'Destine';
     src: url('src/fonts/DestinePersonalUseRegular-6YAev.otf') format('opentype');

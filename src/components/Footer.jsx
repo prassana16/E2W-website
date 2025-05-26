@@ -133,13 +133,12 @@ const Footer = () => {
       url: "https://www.linkedin.com/company/easy2work-india/" 
     }
   ];
-
   return (
-    <footer className="relative bg-gradient-to-b from-[#1A103F] to-[#2D1B69] text-white pt-16 overflow-hidden">
+    <footer className="relative bg-black text-white pt-16 overflow-hidden border-t border-cyan/20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-[-10%] w-[30%] h-[30%] rounded-full opacity-10 bg-gradient-to-br from-purple-400 to-purple-600 blur-3xl"></div>
-        <div className="absolute bottom-0 right-[-5%] w-[25%] h-[25%] rounded-full opacity-10 bg-gradient-to-tr from-pink-400 to-purple-600 blur-3xl"></div>
+        <div className="absolute top-0 left-[-10%] w-[30%] h-[30%] rounded-full opacity-10 bg-cyan blur-3xl"></div>
+        <div className="absolute bottom-0 right-[-5%] w-[25%] h-[25%] rounded-full opacity-10 bg-cyan blur-3xl"></div>
       </div>
 
       {/* Scroll to top button with enhanced animation */}
