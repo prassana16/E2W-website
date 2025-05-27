@@ -62,7 +62,7 @@ const UIUXDesign = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #05a7be, #087ea2)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #05f4f9)', color: 'white' }}
       >
         <img
           src={wireframing}
@@ -121,7 +121,7 @@ const UIUXDesign = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
           Why Choose Our UI/UX Design Services?

@@ -43,7 +43,7 @@ export const StickyScroll = ({
   return (
     <motion.div
   style={{
-    background: "radial-gradient(ellipse at center, #6c008100, #6c008100)",
+    background: "radial-gradient(ellipse at center, #00000000, #00000000)",
     position: "relative" // Adding position relative to fix framer-motion warning
   }}
   className="h-[50vh] md:h-[100vh] flex justify-between md:justify-around relative space-x-1 md:space-x-10 p-4 md:p-10"

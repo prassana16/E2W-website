@@ -166,7 +166,7 @@ function OurClients() {
         >
           {/* Section header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h5 className="text-purple-300 font-medium mb-3">Our Partnerships</h5>
+            <h5 className="text-cyan font-medium mb-3">Our Partnerships</h5>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-Tinos mb-6">
               Trusted by Industry Leaders
             </h2>
@@ -182,8 +182,8 @@ function OurClients() {
           <motion.div variants={itemVariants}>
             <div className="bg-gradient-to-br from-white/10 to-purple-900/20 backdrop-blur-md rounded-2xl p-8 border border-white/10 overflow-hidden relative">
               {/* Background decoration */}
-              <div className="absolute -right-20 -bottom-20 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl"></div>
-              <div className="absolute -left-20 -top-20 w-40 h-40 rounded-full bg-pink-500/10 blur-3xl"></div>
+              <div className="absolute -right-20 -bottom-20 w-64 h-64 rounded-full bg-black blur-3xl"></div>
+              <div className="absolute -left-20 -top-20 w-40 h-40 rounded-full bg-black blur-3xl"></div>
               
               <h3 className="text-2xl md:text-3xl font-Tinos font-bold text-white text-center mb-3">
                 Revenue Sharing Model
@@ -248,8 +248,8 @@ function OurClients() {
               A revolutionary healthcare diagnostics platform leveraging AI to optimize patient care and operational efficiency.
             </p>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-purple-300">Healthcare Technology</span>
-              <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+              <span className="text-cyan">Healthcare Technology</span>
+              <span className="bg-cyan text-cyan px-3 py-1 rounded-full">
                 Active Partnership
               </span>
             </div>
@@ -280,8 +280,8 @@ function OurClients() {
               A dynamic digital media agency specializing in content creation, marketing strategy, and brand development.
             </p>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-purple-300">Digital Marketing</span>
-              <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+              <span className="text-cyan">Digital Marketing</span>
+              <span className="bg-cyan text-cyan px-3 py-1 rounded-full">
                 Active Partnership
               </span>
             </div>

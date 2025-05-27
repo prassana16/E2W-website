@@ -67,16 +67,16 @@ const ContactPopup = () => {
   return (
     <div className="fixed bottom-4 right-4 z-50">
     {isOpen ? (
-      <div className="w-80 bg-[#18c4b8]/10 rounded-xl shadow-lg overflow-hidden flex flex-col border border-[#18c4b8]/30">
-        <div className="flex justify-between items-center p-4 bg-[#087ea2] text-white">
+      <div className="w-80 bg-[#05f4f9]/10 rounded-xl shadow-lg overflow-hidden flex flex-col border border-[#05f4f9]/30">
+        <div className="flex justify-between items-center p-4 bg-[#05f4f9] text-white">
           <h3 className="text-lg font-semibold">Enquire Now</h3> 
           <button onClick={togglePopup}>
             <AiOutlineClose size={20} />
           </button>
         </div>
         <form onSubmit={handleSubmit} className="p-4 space-y-3 bg-white">
-          <div className="flex items-center border border-[#18c4b8]/50 p-2 rounded">
-            <AiOutlineUser className="text-[#087ea2] mr-2" />
+          <div className="flex items-center border border-[#05f4f9]/50 p-2 rounded">
+            <AiOutlineUser className="text-[#05f4f9] mr-2" />
             <input
               type="text"
               name="name"
@@ -84,11 +84,11 @@ const ContactPopup = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="bg-transparent outline-none text-sm w-full text-[#087ea2]"
+              className="bg-transparent outline-none text-sm w-full text-[#05f4f9]"
             />
           </div>
-          <div className="flex items-center border border-[#18c4b8]/50 p-2 rounded">
-            <AiOutlineMail className="text-[#087ea2] mr-2" />
+          <div className="flex items-center border border-[#05f4f9]/50 p-2 rounded">
+            <AiOutlineMail className="text-[#05f4f9] mr-2" />
             <input
               type="email"
               name="email"
@@ -96,11 +96,11 @@ const ContactPopup = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="bg-transparent outline-none text-sm w-full text-[#087ea2]"
+              className="bg-transparent outline-none text-sm w-full text-[#05f4f9]"
             />
           </div>
-          <div className="flex items-center border border-[#18c4b8]/50 p-2 rounded">
-            <AiOutlinePhone className="text-[#087ea2] mr-2" />
+          <div className="flex items-center border border-[#05f4f9]/50 p-2 rounded">
+            <AiOutlinePhone className="text-[#05f4f9] mr-2" />
             <input
               type="tel"
               name="phone"
@@ -108,30 +108,30 @@ const ContactPopup = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="bg-transparent outline-none text-sm w-full text-[#087ea2]"
+              className="bg-transparent outline-none text-sm w-full text-[#05f4f9]"
             />
           </div>
-          <div className="flex items-start border border-[#18c4b8]/50 p-2 rounded">
-            <MdOutlineMessage className="text-[#087ea2] mr-2 mt-1" />
+          <div className="flex items-start border border-[#05f4f9]/50 p-2 rounded">
+            <MdOutlineMessage className="text-[#05f4f9] mr-2 mt-1" />
             <textarea
               name="message"
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
               required
-              className="bg-transparent outline-none text-sm w-full h-20 resize-none text-[#087ea2]"
+              className="bg-transparent outline-none text-sm w-full h-20 resize-none text-[#05f4f9]"
             ></textarea>
           </div>
           <div>
             <button
               type="button"
               onClick={() => setShowDropdown(!showDropdown)}
-              className="w-full text-sm bg-[#087ea2] text-white py-2 rounded hover:bg-[#05a7be] transition"
+              className="w-full text-sm bg-[#05f4f9] text-white py-2 rounded hover:bg-[#05f4f9] transition"
             >
               Select Services
             </button>
             {showDropdown && (
-              <div className="mt-2 bg-white border border-[#18c4b8]/50 rounded shadow max-h-32 overflow-y-auto text-[#087ea2]">
+              <div className="mt-2 bg-white border border-[#05f4f9]/50 rounded shadow max-h-32 overflow-y-auto text-[#05f4f9]">
                 {[
                   "Web Application Development",
                   "Website Development",
@@ -150,7 +150,7 @@ const ContactPopup = () => {
                       value={service}
                       onChange={handleChange}
                       checked={formData.services.includes(service)}
-                      className="mr-2 accent-[#18c4b8]"
+                      className="mr-2 accent-[#05f4f9]"
                     />
                     {service}
                   </label>
@@ -160,17 +160,17 @@ const ContactPopup = () => {
           </div>
             <button
               type="submit"
-              className="w-full bg-[#05a7be] text-white py-2 rounded font-semibold hover:bg-[#087ea2] transition text-sm"
+              className="w-full bg-[#05f4f9] text-white py-2 rounded font-semibold hover:bg-[#05f4f9] transition text-sm"
             >
               Submit
             </button>
-            {formStatus && <p className="text-center text-[#18c4b8] text-xs">{formStatus}</p>}
+            {formStatus && <p className="text-center text-[#05f4f9] text-xs">{formStatus}</p>}
           </form>
         </div>      ) : (
         <div className="flex items-center space-x-2">
           <button
             onClick={togglePopup}
-            className="bg-[#05a7be] text-white p-3 rounded-full shadow hover:bg-[#087ea2] transition-colors"
+            className="bg-[#05f4f9] text-white p-3 rounded-full shadow hover:bg-[#05f4f9] transition-colors"
           >
             Enquire
           </button>

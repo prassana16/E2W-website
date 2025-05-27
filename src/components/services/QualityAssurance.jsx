@@ -148,7 +148,7 @@ const QualityAssurance = () => {
         <p className="text-lg md:text-xl leading-relaxed mb-8">
           Partner with us to ensure your software meets the highest quality standards and exceeds user expectations.
         </p>
-        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-black text-lg rounded-lg hover:bg-cyan transition duration-300 ease-in-out">
           Contact Us
         </button></a>
       </motion.div>

@@ -275,7 +275,7 @@ const Footer = () => {
                 &copy; {currentYear} Easy2Work. All rights reserved. Made with <FaHeart className="inline-block text-cyan mx-1" /> for innovation.
               </p>
             </div>
-            <div className="flex items-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-6 text-sm text-white">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
               <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>

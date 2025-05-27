@@ -81,13 +81,13 @@ export default function ILMS() {
 const HeroSection = () => {  return (
     <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 overflow-hidden">
       {/* Background Image (replacing video) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#2D1B69] z-0">
+      <div className="absolute top-0 left-0 w-full h-full bg-[#000000] z-0">
         {/* Gradient background as fallback for removed video */}
-        <div className="w-full h-full bg-gradient-to-b from-[#2D1B69] to-[#5B0737] opacity-80"></div>
+        <div className="w-full h-full bg-gradient-to-b from-[#000000] to-[#05f4f9] opacity-80"></div>
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-0 z-10"></div>
 
       {/* Content */}
       <motion.div 
@@ -114,7 +114,7 @@ const HeroSection = () => {  return (
         </motion.h1>
         
         <motion.p 
-          className="text-lg md:text-xl mb-8 text-gray-300 max-w-3xl mx-auto"
+          className="text-lg md:text-xl mb-8 text-white max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -146,7 +146,7 @@ const HeroSection = () => {  return (
           className="mt-12"
         >
           <div className="flex flex-wrap justify-center gap-8">
-            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#000000] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -154,14 +154,14 @@ const HeroSection = () => {  return (
               </div>
               <span>Lead Tracking</span>
             </div>
-            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#000000] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
               <span>Automated Follow-ups</span>
             </div>
-            <div className="flex items-center">              <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center mr-3">
+            <div className="flex items-center">              <div className="w-12 h-12 bg-[#000000] rounded-full flex items-center justify-center mr-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -185,7 +185,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('features')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${              activeTab === 'features' 
                 ? 'bg-[#05f4f9] text-black' 
-                : 'text-gray-400 hover:text-white'
+                : 'text-white hover:text-white'
             }`}
           >
             Key Features
@@ -194,7 +194,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('modules')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${              activeTab === 'modules' 
                 ? 'bg-[#05f4f9] text-black' 
-                : 'text-gray-400 hover:text-white'
+                : 'text-white hover:text-white'
             }`}
           >
             Core Modules
@@ -203,7 +203,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('benefits')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${              activeTab === 'benefits' 
                 ? 'bg-[#05f4f9] text-black' 
-                : 'text-gray-400 hover:text-white'
+                : 'text-white hover:text-white'
             }`}
           >
             Sales Benefits
@@ -212,7 +212,7 @@ const TabsSection = ({ activeTab, setActiveTab }) => {
             onClick={() => setActiveTab('demo')}
             className={`px-6 py-2 mx-2 rounded-full whitespace-nowrap transition-all ${              activeTab === 'demo' 
                 ? 'bg-[#05f4f9] text-black' 
-                : 'text-gray-400 hover:text-white'
+                : 'text-white hover:text-white'
             }`}
           >
             Request Demo
@@ -292,7 +292,7 @@ const FeaturesSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">Powerful Features for Modern Sales Teams</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Our Intelligent Lead Management Software delivers the tools you need to convert more prospects into customers.
           </p>
         </motion.div>
@@ -338,11 +338,11 @@ const FeatureCard = ({ feature, index }) => {
       ref={ref}
       initial="hidden"
       animate={controls}
-      variants={variants}      className="bg-gradient-to-br from-[#2D1B69] to-[#5B0737] p-8 rounded-xl shadow-lg border border-[#2D1B69]/30 hover:border-[#5B0737]/50 transition-all duration-300 hover:shadow-[#2D1B69]/10 h-full"
+      variants={variants}      className="bg-gradient-to-br from-[#000000] to-[#05f4f9] p-8 rounded-xl shadow-lg border border-[#000000]/30 hover:border-[#05f4f9]/50 transition-all duration-300 hover:shadow-[#000000]/10 h-full"
     >
       <div className="text-white mb-4">{feature.icon}</div>
       <h3 className="text-xl text-white font-bold mb-3">{feature.title}</h3>
-      <p className="text-gray-400">{feature.description}</p>
+      <p className="text-white">{feature.description}</p>
     </motion.div>
   );
 };
@@ -383,14 +383,14 @@ const ModuleItem = ({ title, description,  isReversed, index }) => {
     >
       <div className="w-full md:w-1/2 mb-8 md:mb-0 md:px-8">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">{title}</h2>
-        <p className="text-lg text-gray-300 mb-6">{description}</p>
-        <div className="flex space-x-4">          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#2D1B69] text-white">
+        <p className="text-lg text-white mb-6">{description}</p>
+        <div className="flex space-x-4">          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#000000] text-white">
             <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             User-Friendly
           </span>
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#5B0737] text-white">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#05f4f9] text-white">
             <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
@@ -399,7 +399,7 @@ const ModuleItem = ({ title, description,  isReversed, index }) => {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 md:px-8">        <div className="bg-gradient-to-r from-[#2D1B69] to-[#5B0737] rounded-lg overflow-hidden shadow-xl h-64 flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02]">
+      <div className="w-full md:w-1/2 md:px-8">        <div className="bg-gradient-to-r from-[#000000] to-[#05f4f9] rounded-lg overflow-hidden shadow-xl h-64 flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02]">
           {/* Image placeholder replacing video */}
           <div className="flex flex-col items-center justify-center p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -448,7 +448,7 @@ const ModulesSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">ILMS Core Modules</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Explore our suite of tools designed to make your lead management smarter, faster, and more efficient.
           </p>
         </motion.div>
@@ -538,7 +538,7 @@ const BenefitsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">Sales Benefits</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Discover how ILMS transforms your sales process and drives measurable results for your business.
           </p>
         </motion.div>
@@ -585,18 +585,18 @@ const BenefitCard = ({ benefit, index }) => {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="bg-gradient-to-br from-[#0d3627] to-[#071e14] p-8 rounded-xl shadow-lg hover:shadow-green-900/20 transition-all duration-300 border border-green-900/20 hover:border-green-600/30"
+      className="bg-gradient-to-br from-[#000000] to-[#05f4f9] p-8 rounded-xl shadow-lg hover:shadow-black transition-all duration-300 border border-cyan hover:border-cyan"
     >
-      <div className="text-green-500 mb-4">{benefit.icon}</div>
+      <div className="text-cyan mb-4">{benefit.icon}</div>
       <h3 className="text-xl text-white font-bold mb-3">{benefit.title}</h3>
-      <p className="text-gray-400">{benefit.description}</p>
+      <p className="text-white">{benefit.description}</p>
     </motion.div>
   );
 };
 
 // Stats Section Component
 const StatsSection = () => {
-  return (    <section className="py-16 px-4 bg-gradient-to-r from-[#2D1B69]/30 to-[#5B0737]/30">
+  return (    <section className="py-16 px-4 bg-gradient-to-r from-[#000000]/30 to-[#05f4f9]/30">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <StatItem 
@@ -673,11 +673,11 @@ const StatItem = ({ value, label, icon }) => {
       animate={controls}
       variants={variants}
       className="text-center p-6"
-    >      <div className="inline-flex items-center justify-center w-16 h-16 bg-[#5B0737] text-white rounded-full mb-4">
+    >      <div className="inline-flex items-center justify-center w-16 h-16 bg-[#05f4f9] text-white rounded-full mb-4">
         {icon}
       </div>
       <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{value}</h3>
-      <p className="text-purple-300">{label}</p>
+      <p className="text-cyan">{label}</p>
     </motion.div>
   );
 };
@@ -714,55 +714,55 @@ const DemoSection = () => {
           initial="hidden"
           animate={controls}
           variants={variants}
-          className="bg-gradient-to-r from-[#2D1B69]/40 to-[#5B0737]/40 rounded-2xl p-8 md:p-12 shadow-xl border border-[#2D1B69]/20"
+          className="bg-gradient-to-r from-[#000000]/40 to-[#05f4f9]/40 rounded-2xl p-8 md:p-12 shadow-xl border border-[#000000]/20"
         >
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">See ILMS in Action</h2>
-              <p className="text-lg text-gray-300 mb-6">
+              <p className="text-lg text-white mb-6">
                 Experience how our Intelligent Lead Management Software can transform your sales process. 
                 Schedule a personalized demo tailored to your specific business needs.
               </p>
               <ul className="mb-8 space-y-3">
                 <li className="flex items-start">
-                  <svg className="h-6 w-6 text-green-500 mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-6 w-6 text-cyan mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-300">Customized demo for your industry</span>
+                  <span className="text-white">Customized demo for your industry</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="h-6 w-6 text-green-500 mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-6 w-6 text-cyan mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-300">Live walkthrough of key modules</span>
+                  <span className="text-white">Live walkthrough of key modules</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="h-6 w-6 text-green-500 mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-6 w-6 text-cyan mr-2 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-gray-300">Implementation and pricing discussion</span>
+                  <span className="text-white">Implementation and pricing discussion</span>
                 </li>
               </ul>
-              <a href="#contact">                <button className="bg-[#5B0737] hover:bg-[#4A0629] text-white px-8 py-3 rounded-lg font-medium transition duration-300">
+              <a href="#contact">                <button className="bg-[#05f4f9] hover:bg-[#000000] text-white px-8 py-3 rounded-lg font-medium transition duration-300">
                   Request Your Demo
                 </button>
               </a>
             </div>
-            <div className="w-full md:w-1/3">              <div className="bg-[#2D1B69]/30 rounded-xl p-6 border border-[#5B0737]/20">
+            <div className="w-full md:w-1/3">              <div className="bg-[#000000]/30 rounded-xl p-6 border border-[#05f4f9]/20">
                 <div className="text-center mb-4">
-                  <div className="inline-block p-3 bg-[#5B0737] rounded-full mb-2">
+                  <div className="inline-block p-3 bg-[#05f4f9] rounded-full mb-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white">Live Demo</h3>
-                  <p className="text-gray-400 text-sm">30-45 minutes</p>
+                  <p className="text-white text-sm">30-45 minutes</p>
                 </div>
-                <p className="text-gray-300 text-center mb-4 text-sm">
+                <p className="text-white text-center mb-4 text-sm">
                   Our product specialists will guide you through the platform and answer all your questions.
                 </p>
                 <div className="text-center">
-                  <span className="text-green-400 flex items-center justify-center">
+                  <span className="text-cyan flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m-1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -802,7 +802,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-[#0a2a1f] to-[#071a14]">
+    <section className="py-20 px-4 bg-gradient-to-b from-[#000000] to-[#05f4f9]">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-16"
@@ -811,7 +811,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Hear from businesses that have transformed their sales process with our ILMS solution.
           </p>
         </motion.div>
@@ -858,13 +858,13 @@ const TestimonialCard = ({ testimonial, index }) => {
       initial="hidden"
       animate={controls}
       variants={variants}
-      className="bg-gradient-to-br from-[#0d3626] to-[#071a12] p-8 rounded-xl shadow-lg"
+      className="bg-gradient-to-br from-[#000000] to-[#05f4f9] p-8 rounded-xl shadow-lg"
     >
       <div className="mb-6">
-        <svg className="h-8 w-8 text-green-500 mb-2" fill="currentColor" viewBox="0 0 32 32">
+        <svg className="h-8 w-8 text-cyan mb-2" fill="currentColor" viewBox="0 0 32 32">
           <path d="M10 8c-2.2 0-4 1.8-4 4v10c0 2.2 1.8 4 4 4h12c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4H10zm0 2h12c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H10c-1.1 0-2-.9-2-2V12c0-1.1.9-2 2-2zm2 3c-.5 0-1 .5-1 1s.5 1 1 1 1-.5 1-1-.5-1-1-1zm3 0c-.5 0-1 .5-1 1s.5 1 1 1 1-.5 1-1-.5-1-1-1zm3 0c-.5 0-1 .5-1 1s.5 1 1 1 1-.5 1-1-.5-1-1-1zm-6 4c-.6 0-1 .4-1 1v1c0 2.2 1.8 4 4 4s4-1.8 4-4v-1c0-.6-.4-1-1-1h-6z" />
         </svg>
-        <p className="text-gray-300 italic mb-4">"{testimonial.quote}"</p>
+        <p className="text-white italic mb-4">"{testimonial.quote}"</p>
       </div>
       <div className="flex items-center">
         <img
@@ -874,7 +874,7 @@ const TestimonialCard = ({ testimonial, index }) => {
         />
         <div>
           <h4 className="text-white font-bold">{testimonial.name}</h4>
-          <p className="text-green-400 text-sm">{testimonial.position}</p>
+          <p className="text-cyan text-sm">{testimonial.position}</p>
         </div>
       </div>
     </motion.div>
@@ -980,9 +980,9 @@ const TamilNaduLeadGenSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-1 bg-green-700 text-white text-sm rounded-full mb-4">Tamil Nadu Specialized Features</span>
+          <span className="inline-block px-4 py-1 bg-cyan text-white text-sm rounded-full mb-4">Tamil Nadu Specialized Features</span>
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">Advanced Lead Generation for Tamil Nadu Businesses</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Our ILMS is optimized for Tamil Nadu's unique business landscape, with specialized features to capture, analyze, and convert leads across Chennai, Coimbatore, Madurai, and beyond.
           </p>
         </motion.div>
@@ -992,9 +992,9 @@ const TamilNaduLeadGenSection = () => {
           <h3 className="text-2xl text-white font-bold mb-8 text-center">Regional Intelligence</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {tamilNaduRegions.map((region, index) => (
-              <div key={index} className="bg-gradient-to-br from-green-900/40 to-green-800/20 p-4 rounded-lg border border-green-500/20 text-center">
+              <div key={index} className="bg-gradient-to-br from-black to-black p-4 rounded-lg border border-cyan text-center">
                 <h4 className="text-white font-bold mb-2">{region.name}</h4>
-                <p className="text-green-300 text-sm">{region.industries}</p>
+                <p className="text-cyan text-sm">{region.industries}</p>
               </div>
             ))}
           </div>
@@ -1021,25 +1021,25 @@ const TamilNaduLeadGenSection = () => {
         </div>
 
         {/* Tamil Nadu Specific Case Study */}
-        <div className="mt-20 bg-gradient-to-r from-green-900/30 to-green-800/30 rounded-xl p-8 border border-green-500/20">
+        <div className="mt-20 bg-gradient-to-r from-black to-black rounded-xl p-8 border border-cyan">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
               <h3 className="text-2xl text-white font-bold mb-4">Success in Tamil Nadu</h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-white mb-4">
                 A leading healthcare provider in Chennai saw a 62% increase in qualified leads and a 40% reduction in lead acquisition cost after implementing our Tamil Nadu-optimized ILMS solution.
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">Chennai</span>
-                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">Healthcare</span>
-                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">62% More Leads</span>
-                <span className="inline-block px-3 py-1 bg-green-800/50 text-green-200 rounded-full text-sm">40% Cost Reduction</span>
+                <span className="inline-block px-3 py-1 bg-cyan text-black rounded-full text-sm">Chennai</span>
+                <span className="inline-block px-3 py-1 bg-cyan text-black rounded-full text-sm">Healthcare</span>
+                <span className="inline-block px-3 py-1 bg-cyan text-black rounded-full text-sm">62% More Leads</span>
+                <span className="inline-block px-3 py-1 bg-cyan text-black rounded-full text-sm">40% Cost Reduction</span>
               </div>
             </div>
             <div className="w-full md:w-1/3 flex justify-center">
-              <div className="rounded-full h-48 w-48 bg-green-700/20 flex items-center justify-center border-4 border-green-500/30">
+              <div className="rounded-full h-48 w-48 bg-cyan/20 flex items-center justify-center border-4 border-green-500/30">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-white">62%</div>
-                  <div className="text-green-300">More Leads</div>
+                  <div className="text-cyan">More Leads</div>
                 </div>
               </div>
             </div>
@@ -1049,11 +1049,11 @@ const TamilNaduLeadGenSection = () => {
         {/* Tamil Nadu Specific CTA */}
         <div className="mt-16 text-center">
           <a href="#demo">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+            <button className="bg-green-600 hover:bg-cyan text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Get Tamil Nadu Optimized ILMS Demo
             </button>
           </a>
-          <p className="mt-4 text-green-400 text-sm">
+          <p className="mt-4 text-cyan text-sm">
             Specialized solutions for Chennai, Coimbatore, Madurai, and all Tamil Nadu regions
           </p>
         </div>
@@ -1093,19 +1093,19 @@ const CTASection = () => {
         initial="hidden"
         animate={controls}
         variants={variants}
-        className="max-w-5xl mx-auto bg-gradient-to-r from-[#2D1B69]/40 to-[#5B0737]/40 rounded-2xl p-10 shadow-xl text-center border border-[#2D1B69]/20"
+        className="max-w-5xl mx-auto bg-gradient-to-r from-[#000000]/40 to-[#05f4f9]/40 rounded-2xl p-10 shadow-xl text-center border border-[#000000]/20"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Boost Your Sales Performance?</h2>
-        <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-lg text-white mb-8 max-w-3xl mx-auto">
           Join hundreds of successful businesses that have transformed their lead management and sales process with our ILMS solution.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#demo">            <button className="bg-[#5B0737] hover:bg-[#4A0629] text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+          <a href="#demo">            <button className="bg-[#05f4f9] hover:bg-[#000000] text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Request a Demo
             </button>
           </a>
           <a href="https://easy2work.in/contact" target="_blank" rel="noopener noreferrer">
-            <button className="border border-[#2D1B69] hover:bg-[#2D1B69]/20 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
+            <button className="border border-[#000000] hover:bg-[#000000]/20 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg">
               Contact Sales
             </button>
           </a>

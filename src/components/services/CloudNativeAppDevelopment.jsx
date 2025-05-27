@@ -236,7 +236,7 @@ const CloudNativeAppDevelopment = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #4caeff, #0176c4)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
           Why Choose Our Cloud-Native Services?
@@ -267,7 +267,7 @@ const CloudNativeAppDevelopment = () => {
         <p className="text-lg md:text-xl leading-relaxed mb-8">
           Leverage our expertise in cloud-native development to create scalable and future-ready applications. Contact us today!
         </p>
-        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-black text-lg rounded-lg hover:bg-cyan transition duration-300 ease-in-out">
           Contact Us
         </button></a>
       </motion.div>

@@ -99,7 +99,7 @@ const SEOServices = () => {
       <motion.div
         className="w-full h-full py-20"
         style={{
-          background: "linear-gradient(135deg, #6b46c1, #4c51bf)",
+          background: "linear-gradient(135deg, #05f4f9, #000000)",
           color: "white",
         }}
         initial={{ opacity: 0, y: 20 }}
@@ -172,7 +172,7 @@ const SEOServices = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
       >
         <img
           src={offPageSEO}
@@ -237,7 +237,7 @@ const SEOServices = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
           Why Choose Our SEO Services?
@@ -270,7 +270,7 @@ const SEOServices = () => {
           Partner with us for tailored SEO solutions that deliver measurable
           results. Contact our team today to get started!
         </p>
-        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-purple-900 text-lg rounded-lg hover:bg-purple-200 transition duration-300 ease-in-out">
+        <a href="/ContactForm"><button className="px-8 py-3 bg-white text-black text-lg rounded-lg hover:bg-cyan transition duration-300 ease-in-out">
           Contact Us
         </button></a>
       </motion.div>

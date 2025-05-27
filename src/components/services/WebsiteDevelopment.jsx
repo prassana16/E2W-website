@@ -338,19 +338,19 @@ const WebsiteDevelopment = () => {
       <p className="text-xl text-center mb-6">Starts at ₹20,000</p>
       <ul className="space-y-4 text-base md:text-lg">
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Custom website design.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Fully responsive design.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-red-400 text-xl">✖</span>
+          <span className="text-cyan text-xl">✖</span>
           SEO not included.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Free maintenance for 3 months.
         </li>
       </ul>
@@ -369,15 +369,15 @@ const WebsiteDevelopment = () => {
       <p className="text-xl text-center mb-6">Contact Us for Pricing</p>
       <ul className="space-y-4 text-base md:text-lg">
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           All features of the Basic plan.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           SEO optimization for higher visibility.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Performance optimization.
         </li>
       </ul>
@@ -397,19 +397,19 @@ const WebsiteDevelopment = () => {
       <p className="text-xl text-center mb-6">Customized Pricing Available</p>
       <ul className="space-y-4 text-base md:text-lg">
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           All features of the Advance plan.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           E-commerce integration.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Advanced analytics and monitoring.
         </li>
         <li className="flex items-center gap-4">
-          <span className="text-green-400 text-xl">✔</span>
+          <span className="text-cyan text-xl">✔</span>
           Free maintenance for 6 months.
         </li>
       </ul>
@@ -460,8 +460,8 @@ const WebsiteDevelopment = () => {
     target="_blank"
     rel="noopener noreferrer"
   >
-    <button className="mt-4 px-4 py-2 bg-purple-8
-    00 text-white text-md md:text-lg rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
+    <button className="mt-4 px-4 py-2 bg-black
+    00 text-white text-md md:text-lg rounded-lg hover:bg-cyan transition duration-300 ease-in-out">
       View Website
     </button>
   </a>
@@ -494,8 +494,8 @@ const WebsiteDevelopment = () => {
     target="_blank"
     rel="noopener noreferrer"
   >
-    <button className="mt-4 px-4 py-2 bg-purple-8
-    00 text-white text-md md:text-lg rounded-lg hover:bg-purple-700 transition duration-300 ease-in-out">
+    <button className="mt-4 px-4 py-2 bg-black
+    00 text-white text-md md:text-lg rounded-lg hover:bg-cyan transition duration-300 ease-in-out">
       View Website
     </button>
   </a>
@@ -518,7 +518,7 @@ const WebsiteDevelopment = () => {
             Let us help you create a stunning website that drives results. Contact our team today to get started!
           </p>
           <a href="/ContactForm">
-            <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#05f4f9] transition duration-300 ease-in-out">
+            <button className="px-8 py-3 bg-[#ffffff] text-black text-lg rounded-lg shadow-md hover:bg-[#05f4f9] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </a>

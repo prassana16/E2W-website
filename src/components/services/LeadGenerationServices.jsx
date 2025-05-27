@@ -164,37 +164,37 @@ const LeadGenerationServices = () => {
                 <h4 className="text-lg md:text-2xl font-semibold mb-3">Our Lead Generation Process</h4>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">1</span>
                     </div>
                     <p>Identify target audience & create buyer personas</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">2</span>
                     </div>
                     <p>Design tailored lead generation campaigns</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">3</span>
                     </div>
                     <p>Implement multi-channel marketing strategies</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">4</span>
                     </div>
                     <p>Capture & qualify leads with scoring systems</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">5</span>
                     </div>
                     <p>Nurture leads through automated follow-up</p>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="bg-purple-600 rounded-full p-2 flex-shrink-0">
+                    <div className="bg-cyan rounded-full p-2 flex-shrink-0">
                       <span className="text-white font-bold">6</span>
                     </div>
                     <p>Analyze, optimize, and scale successful strategies</p>
@@ -231,19 +231,19 @@ const LeadGenerationServices = () => {
         <div className="md:w-1/2 bg-white/10 p-6 rounded-xl">
           <h4 className="text-xl font-semibold mb-4 text-center">Digital Lead Generation Channels</h4>
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-purple-800/30 p-4 rounded-lg text-center">
+            <div className="bg-black p-4 rounded-lg text-center">
               <h5 className="font-semibold mb-2">Search Engines</h5>
               <p className="text-sm">Google, Bing, Yahoo</p>
             </div>
-            <div className="bg-purple-800/30 p-4 rounded-lg text-center">
+            <div className="bg-black p-4 rounded-lg text-center">
               <h5 className="font-semibold mb-2">Social Media</h5>
               <p className="text-sm">Facebook, LinkedIn, Instagram</p>
             </div>
-            <div className="bg-purple-800/30 p-4 rounded-lg text-center">
+            <div className="bg-black p-4 rounded-lg text-center">
               <h5 className="font-semibold mb-2">Content Marketing</h5>
               <p className="text-sm">Blogs, Guides, Webinars</p>
             </div>
-            <div className="bg-purple-800/30 p-4 rounded-lg text-center">
+            <div className="bg-black p-4 rounded-lg text-center">
               <h5 className="font-semibold mb-2">Email Marketing</h5>
               <p className="text-sm">Newsletters, Sequences</p>
             </div>
@@ -262,15 +262,15 @@ const LeadGenerationServices = () => {
         <div className="md:w-1/2 bg-white/10 p-6 rounded-xl">
           <h4 className="text-xl font-semibold mb-4 text-center">B2B Lead Generation Strategies</h4>
           <div className="space-y-4">
-            <div className="bg-purple-800/30 p-4 rounded-lg">
+            <div className="bg-black p-4 rounded-lg">
               <h5 className="font-semibold mb-2">LinkedIn Targeting</h5>
               <p className="text-sm">Connect with decision-makers through highly targeted LinkedIn campaigns and InMail messaging.</p>
             </div>
-            <div className="bg-purple-800/30 p-4 rounded-lg">
+            <div className="bg-black p-4 rounded-lg">
               <h5 className="font-semibold mb-2">Account-Based Marketing</h5>
               <p className="text-sm">Personalized marketing strategies focused on high-value accounts and key stakeholders.</p>
             </div>
-            <div className="bg-purple-800/30 p-4 rounded-lg">
+            <div className="bg-black p-4 rounded-lg">
               <h5 className="font-semibold mb-2">Industry Events & Webinars</h5>
               <p className="text-sm">Capture leads through virtual and in-person events tailored to your industry.</p>
             </div>
@@ -321,7 +321,7 @@ const LeadGenerationServices = () => {
                 Basic lead capture forms
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Monthly performance reports
               </li>
               <li className="flex items-center gap-4">
@@ -344,19 +344,19 @@ const LeadGenerationServices = () => {
             <p className="text-xl text-center mb-6">Starts at ₹45,000/month</p>
             <ul className="space-y-4 text-base md:text-lg">
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Multi-channel lead generation
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Custom landing pages
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Lead nurturing sequences
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Basic lead scoring
               </li>
             </ul>
@@ -376,19 +376,19 @@ const LeadGenerationServices = () => {
             <p className="text-xl text-center mb-6">Contact for Custom Pricing</p>
             <ul className="space-y-4 text-base md:text-lg">
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 All Growth plan features
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Advanced lead scoring & qualification
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 CRM integration & automation
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Dedicated lead generation strategist
               </li>
             </ul>

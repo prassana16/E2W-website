@@ -42,11 +42,11 @@ const WebAppDevelopment = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}>
+    <section className="min-h-screen flex flex-col items-center font-mono justify-center" style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}>
       {/* E-commerce Platforms Section */}
       <motion.div
         className="w-full h-full py-20"
-        style={{ background: "linear-gradient(135deg, #087ea2, #017598)", color: "white" }}
+        style={{ background: "linear-gradient(135deg, #05f4f9, #000000)", color: "white" }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -128,7 +128,7 @@ const WebAppDevelopment = () => {
 
       <motion.div
         className="flex flex-col items-center justify-center gap-6 w-full p-6 md:md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -154,7 +154,7 @@ const WebAppDevelopment = () => {
       {/* CRM Section */}
       <motion.div
         className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
@@ -176,7 +176,7 @@ const WebAppDevelopment = () => {
       {/* Enterprise Solutions Section */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -199,7 +199,7 @@ const WebAppDevelopment = () => {
       {/* LMS Section */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-6 w-full p-8 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
@@ -225,7 +225,7 @@ const WebAppDevelopment = () => {
       {/* Social Networking Apps Section */}
       <motion.div
         className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-8 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
@@ -255,12 +255,12 @@ const WebAppDevelopment = () => {
           {/* Wellness Section */}
           <motion.div
             className="p-6 shadow-lg text-center"
-            style={{ background: 'linear-gradient(138deg, #017598, #014066)', color: 'white' }}
+            style={{ background: 'linear-gradient(138deg, #000000, #000000)', color: 'white' }}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl md:text-5xl text-gray-100 font-semibold text-center mb-6">
+            <h3 className="text-xl md:text-5xl text-white font-semibold text-center mb-6">
               Our Portfolio
             </h3>
             <div className="flex justify-center mb-4">
@@ -281,7 +281,7 @@ const WebAppDevelopment = () => {
           {/* Easy2Work Section */}
           <motion.div
             className="p-6 shadow-lg text-center"
-            style={{ background: 'linear-gradient(138deg, #087ea2, #017598)', color: 'white' }}
+            style={{ background: 'linear-gradient(138deg, #05f4f9, #000000)', color: 'white' }}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -307,7 +307,7 @@ const WebAppDevelopment = () => {
       <div className="w-full">
         <motion.div
           className="p-10 shadow-lg text-center flex flex-col items-center"
-          style={{ background: 'linear-gradient(to bottom, #05a7be, #017598)' }}
+          style={{ background: 'linear-gradient(to bottom, #05f4f9, #000000)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}

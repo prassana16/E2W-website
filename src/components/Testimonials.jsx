@@ -347,7 +347,7 @@ const Testimonials = () => {
                         ) : (
                           <FaUserCircle className="w-full h-full text-white/80" />
                         )}                        <div 
-                          className="absolute inset-0 items-center justify-center bg-gray-200 text-gray-500 hidden"
+                          className="absolute inset-0 items-center justify-center bg-black text-white hidden"
                           style={{ display: 'none' }}
                         >
                           <FaUserCircle className="w-3/4 h-3/4" />

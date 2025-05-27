@@ -372,7 +372,7 @@ const MobileAppDevelopment = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-bold">Healthcare App for Indian Market</h3>
-                    <span className="bg-green-500/20 text-green-300 text-xs px-3 py-1 rounded-full">Completed</span>
+                    <span className="bg-cyan text-black text-xs px-3 py-1 rounded-full">Completed</span>
                   </div>
                   <p className="mb-4">Developed a telemedicine app optimized for rural India with low-bandwidth video calling and offline prescription management. Achieved 150,000+ downloads in 6 months.</p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -391,7 +391,7 @@ const MobileAppDevelopment = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-bold">E-commerce Platform for Tier-2 Cities</h3>
-                    <span className="bg-green-500/20 text-green-300 text-xs px-3 py-1 rounded-full">Completed</span>
+                    <span className="bg-cyan text-black text-xs px-3 py-1 rounded-full">Completed</span>
                   </div>
                   <p className="mb-4">Created a lightweight e-commerce app for Tier-2 and Tier-3 Indian cities with vernacular language support and integrated with popular Indian payment solutions.</p>
                   <div className="flex flex-wrap gap-2 mb-4">

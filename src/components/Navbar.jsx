@@ -475,7 +475,7 @@ const Navbar = () => {
                             to="/AI-Medical-Lead-Platform"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
                           >
-                            <IoMdAnalytics className="mr-3 text-purple-300" size={18} />
+                            <IoMdAnalytics className="mr-3 text-cyan" size={18} />
                             <span>AI Medical Lead Platform</span>
                           </Link>
                         </motion.div> */}
@@ -493,7 +493,7 @@ const Navbar = () => {
               >
                 <Link
                   to="/ContactForm"
-                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-white hover:text-white transition-colors duration-200`}
                 >
                   <MdSupportAgent className="mr-1" size={18} />
                   Contact Us
@@ -714,7 +714,7 @@ const Navbar = () => {
                                     onClick={toggleMenu}
                                     className="flex items-center px-3 py-2 text-xs text-white/80 hover:bg-white/10 hover:text-white rounded-lg"
                                   >
-                                    <BsLightning className="mr-3 text-amber-300" size={14} />
+                                    <BsLightning className="mr-3 text-cyan" size={14} />
                                     AI Enterprise Data Solution
                                   </Link>
                                   <Link

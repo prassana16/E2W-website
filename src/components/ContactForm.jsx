@@ -262,19 +262,19 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         {item.link ? (
                           <a 
                             href={item.link} 
-                            className="text-black/70 dark:text-gray-300 hover:text-cyan dark:hover:text-cyan transition-colors"
+                            className="text-black/70 dark:text-white hover:text-cyan dark:hover:text-cyan transition-colors"
                           >
                             {item.content}
                           </a>
                         ) : (
-                          <p className="text-gray-600 dark:text-gray-300">{item.content}</p>
+                          <p className="text-white dark:text-white">{item.content}</p>
                         )}
                       </div>
                     </motion.div>
                   ))}
                 </div>
                   {/* Google Map */}
-                <div className="mt-8 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700 h-64">
+                <div className="mt-8 rounded-lg overflow-hidden bg-black dark:bg-black h-64">
                   <iframe 
                     src="https://maps.google.com/maps?q=Easy2Work+No.32+3rd+Cross+St+Kasturba+Nagar+Adyar+Chennai+Tamil+Nadu+600020&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     className="h-full w-full border-0"
@@ -302,13 +302,13 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                       exit={{ opacity: 0, y: -20 }}
                       className={`mb-6 p-4 rounded-lg flex items-start ${
                         formStatus.success 
-                          ? "bg-green-50 text-green-800 dark:bg-green-900/30 dark:text-green-200" 
+                          ? "bg-white text-black dark:bg-black dark:text-white" 
                           : "bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-200"
                       }`}
                     >
                       <div className="mr-3 mt-0.5">
                         {formStatus.success ? (
-                          <FaCheck className="text-green-500 dark:text-green-400" />
+                          <FaCheck className="text-cyan dark:text-cyan" />
                         ) : (
                           <FaExclamationTriangle className="text-red-500 dark:text-red-400" />
                         )}
@@ -318,7 +318,7 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                       </div>
                       <button 
                         onClick={clearStatus}
-                        className="ml-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                        className="ml-3 text-black hover:text-cyan dark:text-white dark:hover:text-cyan"
                         aria-label="Close message"
                       >
                         &times;
@@ -342,12 +342,11 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         value={formData.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="John Doe"
-                        className={`w-full px-4 py-3 rounded-lg border ${
+                        placeholder="John Doe"                        className={`w-full px-4 py-3 rounded-lg border ${
                           formErrors.name && formTouched.name
                             ? "border-red-500 dark:border-red-400"
-                            : "border-gray-300 dark:border-gray-600"
-                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                            : "border-black dark:border-cyan"
+                        } focus:outline-none focus:ring-2 focus:ring-cyan dark:focus:ring-cyan dark:bg-black dark:text-white`}
                         aria-invalid={formErrors.name ? "true" : "false"}
                       />
                       {formErrors.name && formTouched.name && (
@@ -356,10 +355,9 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                     </div>
 
                     {/* Email field */}
-                    <div>
-                      <label 
+                    <div>                      <label 
                         htmlFor="email" 
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-sm font-medium text-black dark:text-white mb-1"
                       >
                         Email Address <span className="text-red-500">*</span>
                       </label>
@@ -370,12 +368,11 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         value={formData.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="john@example.com"
-                        className={`w-full px-4 py-3 rounded-lg border ${
+                        placeholder="john@example.com"                        className={`w-full px-4 py-3 rounded-lg border ${
                           formErrors.email && formTouched.email
                             ? "border-red-500 dark:border-red-400"
-                            : "border-gray-300 dark:border-gray-600"
-                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                            : "border-black dark:border-cyan"
+                        } focus:outline-none focus:ring-2 focus:ring-cyan dark:focus:ring-cyan dark:bg-black dark:text-white`}
                         aria-invalid={formErrors.email ? "true" : "false"}
                       />
                       {formErrors.email && formTouched.email && (
@@ -384,12 +381,11 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                     </div>
                     
                     {/* Phone field */}
-                    <div>
-                      <label 
+                    <div>                      <label 
                         htmlFor="phone" 
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-sm font-medium text-black dark:text-white mb-1"
                       >
-                        Phone Number <span className="text-gray-500 dark:text-gray-400 font-normal">(Optional)</span>
+                        Phone Number <span className="text-black dark:text-white font-normal">(Optional)</span>
                       </label>
                       <input
                         type="tel"
@@ -401,7 +397,7 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         placeholder="+1 (234) 567-8910"                        className={`w-full px-4 py-3 rounded-lg border ${
                           formErrors.phone && formTouched.phone
                             ? "border-red-500 dark:border-red-400"
-                            : "border-gray-300 dark:border-cyan/20"
+                            : "border-black dark:border-cyan"
                         } focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan dark:bg-black dark:text-white`}
                         aria-invalid={formErrors.phone ? "true" : "false"}
                       />
@@ -411,12 +407,11 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                     </div>
 
                     {/* Subject field */}
-                    <div>
-                      <label 
+                    <div>                      <label 
                         htmlFor="subject" 
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-sm font-medium text-black dark:text-white mb-1"
                       >
-                        Subject <span className="text-gray-500 dark:text-gray-400 font-normal">(Optional)</span>
+                        Subject <span className="text-black dark:text-white font-normal">(Optional)</span>
                       </label>
                       <input
                         type="text"
@@ -425,7 +420,7 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="What is your inquiry about?"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-cyan/20 focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan dark:bg-black dark:text-white"
+                        className="w-full px-4 py-3 rounded-lg border border-black dark:border-cyan focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan dark:bg-black dark:text-white"
                       />
                     </div>
 
@@ -433,7 +428,7 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                     <div className="md:col-span-2">
                       <label 
                         htmlFor="message" 
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                        className="block text-sm font-medium text-black dark:text-white mb-1"
                       >
                         Message <span className="text-red-500">*</span>
                       </label>
@@ -448,8 +443,8 @@ const ContactForm = () => {  // Main color scheme based on the updated design sy
                         className={`w-full px-4 py-3 rounded-lg border ${
                           formErrors.message && formTouched.message
                             ? "border-red-500 dark:border-red-400"
-                            : "border-gray-300 dark:border-gray-600"
-                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-gray-700 dark:text-white`}
+                            : "border-black dark:border-cyan"
+                        } focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 dark:bg-black dark:text-white`}
                         aria-invalid={formErrors.message ? "true" : "false"}
                       ></textarea>
                       {formErrors.message && formTouched.message && (

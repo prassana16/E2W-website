@@ -37,9 +37,8 @@ export default function ClientSlider() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  return (
-    <div className="py-16 md:py-20 rounded-md flex flex-col antialiased bg-[#f3f4f6] dark:bg-black items-center justify-center relative overflow-hidden">
-      <h2 className='text-2xl md:text-5xl text-[#00264c] text-center font-Tinos mb-6 md:mb-24'>
+  return (    <div className="py-16 md:py-20 rounded-md flex flex-col antialiased bg-white dark:bg-black items-center justify-center relative overflow-hidden">
+      <h2 className='text-2xl md:text-5xl text-black dark:text-white text-center font-Tinos mb-6 md:mb-24'>
         Our Clients
       </h2>
 
@@ -56,7 +55,7 @@ export default function ClientSlider() {
           {duplicatedTestimonials.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-white rounded-md md:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 mx-4 flex items-center justify-center border md:border-2 border-purple-800"
+              className="flex-shrink-0 bg-white rounded-md md:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 mx-4 flex items-center justify-center border md:border-2 border-black dark:border-cyan"
               style={{ width: cardWidth }}
             >
               <img
@@ -68,23 +67,22 @@ export default function ClientSlider() {
             </div>
           ))}
         </motion.div>
-        
-        {/* Gradient overlays */}
-        <div className="absolute inset-y-0 left-0 md:w-94 w-20  bg-gradient-to-r from-[#f3f4f6] to-transparent dark:from-black z-10" />
-        <div className="absolute inset-y-0 right-0 md:w-94 w-20  bg-gradient-to-l from-[#f3f4f6] to-transparent dark:from-black z-10" />
+          {/* Gradient overlays */}
+        <div className="absolute inset-y-0 left-0 md:w-94 w-20  bg-gradient-to-r from-white to-transparent dark:from-black z-10" />
+        <div className="absolute inset-y-0 right-0 md:w-94 w-20  bg-gradient-to-l from-white to-transparent dark:from-black z-10" />
       </div>
 
       {/* Decorative lines */}
-      <div className="bg-[#00264c] h-[1px] mt-8 w-8"></div>
-  <div className="bg-[#00264c] h-[2px]  w-2/3 "></div>
-  <div className="bg-[#00264c] h-[2px]  w-8"></div>
-  <div className="bg-[#00264c] h-[2px]  w-7"></div>
-  <div className="bg-[#00264c] h-[2px]  w-6"></div>
-  <div className="bg-[#00264c] h-[2px]  w-5"></div>
-  <div className="bg-[#00264c] h-[2px]  w-4"></div>
-  <div className="bg-[#00264c] h-[2px]  w-3"></div>
-  <div className="bg-[#00264c] h-[2px]  w-2"></div>
-  <div className="bg-[#00264c] h-[2px]  w-1"></div>
+      <div className="bg-black dark:bg-cyan h-[1px] mt-8 w-8"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-2/3 "></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-8"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-7"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-6"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-5"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-4"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-3"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-2"></div>
+  <div className="bg-black dark:bg-cyan h-[2px]  w-1"></div>
     </div>
   );
 }
