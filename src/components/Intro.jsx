@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 import { IoOptionsOutline } from "react-icons/io5";
 import { SiGooglecloudcomposer } from "react-icons/si";
 import { BiSolidCustomize } from "react-icons/bi";
@@ -9,15 +9,15 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 
 const cardVariants = {
   hidden: { scale: 0, y: 30 },
-  visible: { scale: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { scale: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
 const Intro = () => {
   return (
     <section className="py-20 md:py-28" id="intro" style={{ 
-      background: "#000000",
-      borderBottom: "2px solid #05f4f9",
-      overflow: "hidden"
+      background: `#000000`,
+      borderBottom: '2px solid #05f4f9',
+      overflow: 'hidden'
     }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
