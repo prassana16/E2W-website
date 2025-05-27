@@ -54,7 +54,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,#ffffff_20%,#ffffff_80%,transparent)]",
         className
       )}
     >
@@ -69,9 +69,8 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             key={idx}
-            className="w-[350px] max-w-full flex items-center gap-4 relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-            style={{
-              background: "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
+            className="w-[350px] max-w-full flex items-center gap-4 relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"            style={{
+              background: "linear-gradient(180deg, #000000, #05f4f9)",
             }}
           >
             <div className="flex items-center">
@@ -79,8 +78,7 @@ export const InfiniteMovingCards = ({
                 src={item.image}
                 alt={`${item.title}'s logo`}
                 className="w-12 h-12 rounded-full object-cover"
-              />
-              <span className="text-sm md:text-base text-gray-100 font-medium ml-4">
+              />              <span className="text-sm md:text-base text-white font-medium ml-4">
                 {item.title}
               </span>
             </div>

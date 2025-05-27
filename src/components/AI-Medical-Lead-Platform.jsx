@@ -23,24 +23,24 @@ const medicalLeadSchema = {
 };
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all hover:shadow-md">    <div className="flex items-center mb-4">      <div className="bg-[#05f4f9]/10 p-3 rounded-lg mr-4">
+  <div className="bg-white p-6 rounded-xl shadow-sm border border-black transition-all hover:shadow-md">    <div className="flex items-center mb-4">      <div className="bg-cyan p-3 rounded-lg mr-4">
         <Icon className="text-[#05f4f9]" size={24} />
       </div>
-      <h3 className="font-semibold text-lg text-gray-900">{title}</h3>
+      <h3 className="font-semibold text-lg text-black">{title}</h3>
     </div>
-    <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+    <p className="text-black text-sm leading-relaxed">{description}</p>
   </div>
 );
 
 const BenefitItem = ({ children }) => (
   <li className="flex items-center space-x-3 mb-3">
     <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
-    <span className="text-gray-700">{children}</span>
+    <span className="text-black">{children}</span>
   </li>
 );
 
 const CompetitorBadge = ({ name }) => (
-  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+  <span className="bg-black text-black px-3 py-1 rounded-full text-sm font-medium">
     {name}
   </span>
 );
@@ -62,17 +62,16 @@ const AIMedicalLeadPlatform = () => {
       <header className="container mx-auto px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl mx-auto text-center">
           <span className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">Healthcare Lead Generation</span>
-          <h1 className="mt-6 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h1 className="mt-6 text-4xl md:text-5xl font-bold text-black leading-tight">
             AI-Powered Medical Lead Generation & Intelligence Platform
           </h1>
-          <p className="mt-6 text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-6 text-xl text-black leading-relaxed max-w-2xl mx-auto">
             Our platform offers hyper-targeted lead generation, smart prioritization, and automated outreach for medical businesses—all while ensuring full HIPAA and GDPR compliance.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">            <button className="bg-cyan text-black px-6 py-3 rounded-lg font-medium hover:bg-black hover:text-white transition-colors flex items-center justify-center">
               Get Started <ChevronRight size={20} className="ml-2" />
             </button>
-            <button className="bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
+            <button className="bg-white text-black border border-cyan px-6 py-3 rounded-lg font-medium hover:bg-cyan transition-colors flex items-center justify-center">
               Download Brochure <Download size={20} className="ml-2" />
             </button>
           </div>
@@ -82,24 +81,24 @@ const AIMedicalLeadPlatform = () => {
       {/* Trusted By Section */}
       <section className="bg-white py-10">
         <div className="container mx-auto px-4 md:px-6">
-          <p className="text-center text-gray-500 font-medium mb-8">Trusted by leading healthcare providers</p>
+          <p className="text-center text-black font-medium mb-8">Trusted by leading healthcare providers</p>
           <div className="flex justify-center flex-wrap gap-8 opacity-70">
             {/* Placeholder logos - in a real implementation you would use actual company logos */}
-            <div className="h-12 w-24 bg-gray-200 rounded"></div>
-            <div className="h-12 w-32 bg-gray-200 rounded"></div>
-            <div className="h-12 w-28 bg-gray-200 rounded"></div>
-            <div className="h-12 w-36 bg-gray-200 rounded"></div>
-            <div className="h-12 w-24 bg-gray-200 rounded"></div>
+            <div className="h-12 w-24 bg-black rounded"></div>
+            <div className="h-12 w-32 bg-black rounded"></div>
+            <div className="h-12 w-28 bg-black rounded"></div>
+            <div className="h-12 w-36 bg-black rounded"></div>
+            <div className="h-12 w-24 bg-black rounded"></div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 md:py-24 bg-gray-50">
+      <section id="features" className="py-16 md:py-24 bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-gray-900">Powerful Features for Healthcare Lead Generation</h2>
-            <p className="mt-4 text-lg text-gray-600">Our comprehensive suite of features helps medical businesses streamline lead generation, nurture relationships, and ensure compliance.</p>
+            <h2 className="text-3xl font-bold text-black">Powerful Features for Healthcare Lead Generation</h2>
+            <p className="mt-4 text-lg text-black">Our comprehensive suite of features helps medical businesses streamline lead generation, nurture relationships, and ensure compliance.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,7 +156,7 @@ const AIMedicalLeadPlatform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Why Choose Our AI Medical Lead Platform?</h2>
+              <h2 className="text-3xl font-bold text-black mb-8">Why Choose Our AI Medical Lead Platform?</h2>
               
               <ul className="space-y-4">
                 <BenefitItem>
@@ -185,10 +184,10 @@ const AIMedicalLeadPlatform = () => {
             </div>
             
             <div className="md:w-1/2 bg-blue-50 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Compare with the Competition</h3>
+              <h3 className="text-xl font-semibold text-black mb-6">Compare with the Competition</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-3">We compete with:</h4>
+                  <h4 className="font-medium text-black mb-3">We compete with:</h4>
                   <div className="flex flex-wrap gap-2">
                     <CompetitorBadge name="Healthgrades" />
                     <CompetitorBadge name="Doximity" />
@@ -198,16 +197,16 @@ const AIMedicalLeadPlatform = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-3">Our advantage:</h4>
+                  <h4 className="font-medium text-black mb-3">Our advantage:</h4>
                   <div className="space-y-3">
-                    <p className="text-gray-600 text-sm flex items-start">
+                    <p className="text-black text-sm flex items-start">
                       <CheckCircle className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
                       <span>Purpose-built for medical lead generation with healthcare-specific AI models</span>
-                    </p>                    <p className="text-gray-600 text-sm flex items-start">
+                    </p>                    <p className="text-black text-sm flex items-start">
                       <CheckCircle className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
                       <span>Integrated multi-channel approach (email)</span>
                     </p>
-                    <p className="text-gray-600 text-sm flex items-start">
+                    <p className="text-black text-sm flex items-start">
                       <CheckCircle className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
                       <span>Superior compliance features designed for healthcare regulations</span>
                     </p>

@@ -66,11 +66,11 @@ const ThemeToggle = () => {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: isHovered ? 0.8 : 0, scale: isHovered ? 1.5 : 0.6 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 rounded-full"
-          style={{
+          className="absolute inset-0 rounded-full"          style={{
             background: theme === 'light' 
-              ? 'radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 70%)' 
-              : 'radial-gradient(circle, rgba(5,244,249,0.2) 0%, rgba(5,244,249,0) 70%)',
+              ? '#000000' 
+              : '#05f4f9',
+            opacity: 0.15,
             zIndex: -1,
           }}
         />

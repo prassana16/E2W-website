@@ -319,12 +319,12 @@ export function BackgroundBoxesDemo() {
         >
           {locations.map((location, index) => (
             <motion.div 
-              key={index}
-              whileHover={{ 
+              key={index}              whileHover={{ 
                 scale: 1.05, 
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
+                backgroundColor: "#05f4f9",
+                color: "#000000",
                 transition: { duration: 0.2 }
-              }}              className="px-4 py-2 bg-black rounded-full text-white text-sm font-medium 
+              }}className="px-4 py-2 bg-black rounded-full text-white text-sm font-medium 
                         border border-cyan transition-all duration-300"
             >
               {location}

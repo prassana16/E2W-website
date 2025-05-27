@@ -120,10 +120,9 @@ const SEOServices = () => {
             className="flex justify-center items-center h-full py-8"
           >
             <div
-              className="text-black text-center px-6 py-12 rounded-xl"
-              style={{
-                background: "radial-gradient( #7a4cff, #5906cc)",
-                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              className="text-black text-center px-6 py-12 rounded-xl"              style={{
+                background: "radial-gradient(#05f4f9, #000000)",
+                boxShadow: "0 8px 20px #000000",
               }}
             >
               <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>

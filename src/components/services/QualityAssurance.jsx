@@ -55,14 +55,13 @@ const QualityAssurance = () => {
         </div>
       </motion.div>
 
-      {/* Automation Testing Section */}
-      <motion.div
+      {/* Automation Testing Section */}      <motion.div
         className="flex flex-col md:flex-row-reverse items-center gap-8 px-6 md:px-16 py-12"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
       >
         <img
           src={automationTesting}
@@ -112,14 +111,13 @@ const QualityAssurance = () => {
         </div>
       </motion.div>
 
-      {/* Why Choose Us Section */}
-      <motion.div
+      {/* Why Choose Us Section */}      <motion.div
         className="text-center px-6 md:px-16 py-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        style={{ background: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
           Why Choose Our Quality Assurance Services?

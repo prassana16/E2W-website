@@ -91,14 +91,13 @@ const SaaSDevelopment = () => {
     ],
   };
 
-  return (
-    <section className="min-h-screen w-full  bg-gradient-to-r from-blue-600 to-indigo-500 text-white">
+  return (    <section className="min-h-screen w-full bg-black text-white">
       {/* Introduction */}
       <motion.div
          className="w-full h-full py-20"
          style={{
-           background: "linear-gradient(135deg, #3182ce, #5a67d8)",
-           color: "white",
+           background: "linear-gradient(135deg, #000000, #05f4f9)",
+           color: "#ffffff",
          }}
          initial={{ opacity: 0, y: 20 }}
          animate={{ opacity: 1, y: 0 }}
@@ -125,11 +124,10 @@ const SaaSDevelopment = () => {
             className="flex justify-center items-center h-full py-8"
           >
             <div
-              className="text-black text-center px-6 py-12 rounded-xl"
-              style={{
-                background: "radial-gradient( #3182ce, #5a67d8 70%)",
-                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
-                color: "white",
+              className="text-black text-center px-6 py-12 rounded-xl"              style={{
+                background: "radial-gradient(#05f4f9, #000000 70%)",
+                boxShadow: "0 8px 20px #000000",
+                color: "#ffffff",
               }}
             >
               <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
@@ -180,7 +178,7 @@ const SaaSDevelopment = () => {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  style={{ background: 'linear-gradient(135deg, #312e81, #6366f1)', color: 'white' }}
+  style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
 >
   <h3 className="text-3xl md:text-5xl font-bold mb-6">
     Key Features of Our SaaS Solutions
@@ -189,45 +187,40 @@ const SaaSDevelopment = () => {
     Our SaaS applications are built with the latest technology stack, designed to provide unmatched performance and flexibility.
   </p>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    {/* Feature 1 */}
-    <div className="bg-white p-6 rounded-lg shadow-lg">
+    {/* Feature 1 */}    <div className="bg-white p-6 rounded-lg shadow-lg">
       <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Customizable Modules</h4>
-      <p className="leading-relaxed text-gray-700">
+      <p className="leading-relaxed text-black">
         Tailor the software to fit your industry-specific needs with easy-to-configure modules.
       </p>
     </div>
     {/* Feature 2 */}
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Progressive Web App (PWA)</h4>
-      <p className="leading-relaxed text-gray-700">
+    <div className="bg-white p-6 rounded-lg shadow-lg">      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Progressive Web App (PWA)</h4>
+      <p className="leading-relaxed text-black">
         Enjoy the best of web and mobile applications with our PWA technology that works offline and provides a seamless user experience.
       </p>
     </div>
     {/* Feature 3 */}
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Multi-Industry Usability</h4>
-      <p className="leading-relaxed text-gray-700">
+    <div className="bg-white p-6 rounded-lg shadow-lg">      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Multi-Industry Usability</h4>
+      <p className="leading-relaxed text-black">
         Designed to cater to diverse industries like logistics, healthcare, education, retail, and more.
       </p>
     </div>
     {/* Feature 4 */}
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Scalability</h4>
-      <p className="leading-relaxed text-gray-700">
+    <div className="bg-white p-6 rounded-lg shadow-lg">      <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Scalability</h4>
+      <p className="leading-relaxed text-black">
         Scale your operations effortlessly as your business grows, without compromising performance.
       </p>
     </div>
     {/* Feature 5 */}
     <div className="bg-white p-6 rounded-lg shadow-lg">
       <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Security</h4>
-      <p className="leading-relaxed text-gray-700">
+      <p className="leading-relaxed text-black">
         Protect your data with enterprise-grade security measures, including encryption and role-based access controls.
       </p>
     </div>
-    {/* Feature 6 */}
-    <div className="bg-white p-6 rounded-lg shadow-lg">
+    {/* Feature 6 */}    <div className="bg-white p-6 rounded-lg shadow-lg">
       <h4 className="text-2xl font-semibold mb-4 text-black font-sans">Seamless Integration</h4>
-      <p className="leading-relaxed text-gray-700">
+      <p className="leading-relaxed text-black">
         Integrate with third-party tools and APIs effortlessly, ensuring a smooth workflow across your systems.
       </p>
     </div>

@@ -119,11 +119,10 @@ const LeadGenerationServices = () => {
               className="flex justify-center items-center h-full py-8"
             >
               <div
-                className="text-white text-center px-6 py-12 rounded-xl"
-                style={{
-                  background: "rgba(255, 255, 255, 0.1)",
+                className="text-white text-center px-6 py-12 rounded-xl"                style={{
+                  background: "#000000",
                   backdropFilter: "blur(10px)",
-                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+                  boxShadow: "0 8px 20px #000000",
                 }}
               >
                 <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
@@ -255,7 +254,7 @@ const LeadGenerationServices = () => {
       {/* B2B Lead Generation Section */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+        style={{ background: 'linear-gradient(135deg, #05f4f9, #000000)', color: 'white' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
@@ -301,9 +300,8 @@ const LeadGenerationServices = () => {
         transition={{ delay: 0.1 }}
       >
         {/* Section Title */}
-        <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Rate Card</h2>
-          <p className="text-base md:text-lg text-gray-200">
+        <div className="text-center">          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Rate Card</h2>
+          <p className="text-base md:text-lg text-white">
             Choose the right lead generation package for your business goals and budget.
           </p>
         </div>
@@ -311,16 +309,15 @@ const LeadGenerationServices = () => {
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 w-full max-w-6xl">
           {/* Basic Plan */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-black text-white rounded-2xl p-8 shadow-lg border border-cyan">
             <h3 className="text-2xl md:text-4xl font-semibold mb-4 text-center">Starter</h3>
             <p className="text-xl text-center mb-6">Starts at ₹25,000/month</p>
-            <ul className="space-y-4 text-base md:text-lg">
-              <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+            <ul className="space-y-4 text-base md:text-lg">              <li className="flex items-center gap-4">
+                <span className="text-cyan text-xl">✔</span>
                 Single channel lead generation
               </li>
               <li className="flex items-center gap-4">
-                <span className="text-green-400 text-xl">✔</span>
+                <span className="text-cyan text-xl">✔</span>
                 Basic lead capture forms
               </li>
               <li className="flex items-center gap-4">
@@ -332,9 +329,8 @@ const LeadGenerationServices = () => {
                 Advanced lead scoring
               </li>
             </ul>
-            <div className="mt-6 text-center">
-              <button
-                className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+            <div className="mt-6 text-center">              <button
+                className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
                 onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
               >
                 Select Plan
@@ -366,7 +362,7 @@ const LeadGenerationServices = () => {
             </ul>
             <div className="mt-6 text-center">
               <button
-                className="px-6 py-3 bg-white text-indigo-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+                className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
                 onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
               >
                 Select Plan
@@ -398,7 +394,7 @@ const LeadGenerationServices = () => {
             </ul>
             <div className="mt-6 text-center">
               <button
-                className="px-6 py-3 bg-white text-teal-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+                className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
                 onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
               >
                 Select Plan

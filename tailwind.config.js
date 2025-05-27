@@ -15,9 +15,9 @@ const config = {
         Tinos: ['Tinos', 'sans'],
         RozhaOne: ['RozhaOne', 'serif'],
       },      colors: {
-        'primary': '#05f4f9', // Our main cyan color
-        'secondary': '#000000', // Black
-        'background': '#ffffff', // White
+        'primary': '#05f4f9', // Primary Accent
+        'secondary': '#000000', // Base Color (Black)
+        'background': '#ffffff', // Contrast Color (White)
         'cyan': '#05f4f9',
         'black': '#000000',
         'white': '#ffffff',

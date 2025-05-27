@@ -325,7 +325,7 @@ const WebsiteDevelopment = () => {
   {/* Section Title */}
   <div className="text-center">
     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Rate Card</h2>
-    <p className="text-base md:text-lg text-gray-200">
+    <p className="text-base md:text-lg text-white">
       Choose the right plan for your business. From essentials to advanced solutions, we have you covered.
     </p>
   </div>
@@ -354,9 +354,8 @@ const WebsiteDevelopment = () => {
           Free maintenance for 3 months.
         </li>
       </ul>
-      <div className="mt-6 text-center">
-        <button
-          className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+      <div className="mt-6 text-center">        <button
+          className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
          onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
         >
           Select Plan
@@ -384,7 +383,7 @@ const WebsiteDevelopment = () => {
       </ul>
       <div className="mt-6 text-center">
         <button
-          className="px-6 py-3 bg-white text-indigo-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+          className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
          onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
         >
           Select Plan
@@ -416,7 +415,7 @@ const WebsiteDevelopment = () => {
       </ul>
       <div className="mt-6 text-center">
         <button
-          className="px-6 py-3 bg-white text-teal-900 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all"
+          className="px-6 py-3 bg-white text-black rounded-lg font-bold text-lg hover:bg-cyan transition-all"
          onClick={() => window.open('https://www.easy2work.in/ContactForm', '_blank')}
         >
           Select Plan
@@ -434,12 +433,12 @@ const WebsiteDevelopment = () => {
     {/* Wellness Section */}
     <motion.div
       className="p-6 shadow-lg text-center"
-      style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
+      style={{ background: 'linear-gradient(138deg, #000000, #05f4f9)', color: '#ffffff' }}
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h3 className="text-xl md:text-5xl text-gray-100 font-semibold text-center mb-6">
+      <h3 className="text-xl md:text-5xl text-white font-semibold text-center mb-6">
         Our Portfolio
       </h3>
       <div className="flex justify-center mb-4">
@@ -471,7 +470,7 @@ const WebsiteDevelopment = () => {
     {/* Easy2Work Section */}
     <motion.div
   className="p-6 shadow-lg text-center"
-  style={{ background: 'linear-gradient(138deg, rgb(22 0 85), rgb(89, 6, 204))', color: 'white' }}
+  style={{ background: 'linear-gradient(138deg, #000000, #05f4f9)', color: '#ffffff' }}
   initial={{ opacity: 0, x: 50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.6 }}
@@ -509,7 +508,7 @@ const WebsiteDevelopment = () => {
       <div className="w-full">
         <motion.div
           className="p-10 shadow-lg text-center flex flex-col items-center"
-          style={{ background: 'linear-gradient(to bottom, #001831, #59257c )' }}
+          style={{ background: 'linear-gradient(to bottom, #000000, #05f4f9 )' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -519,11 +518,11 @@ const WebsiteDevelopment = () => {
             Let us help you create a stunning website that drives results. Contact our team today to get started!
           </p>
           <a href="/ContactForm">
-            <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#1e7c32] transition duration-300 ease-in-out">
+            <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#05f4f9] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </a>
-          <div className="border-b border-[#f8d996] pt-16 md:w-[85%] w-full text-center"></div>
+          <div className="border-b border-[#05f4f9] pt-16 md:w-[85%] w-full text-center"></div>
         </motion.div>
       </div>
     </section>

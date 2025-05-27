@@ -228,7 +228,7 @@ function OurClients() {
       {/* Grace Scans */}
       <motion.div
         className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors"
-        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
+        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px #000000' }}
       >
         <div className="flex items-start gap-4">
           <div className="w-16 h-10 rounded-full overflow-hidden bg-white/20 border border-white/30">
@@ -260,7 +260,7 @@ function OurClients() {
       {/* Baleen Media */}
       <motion.div
         className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors"
-        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
+        whileHover={{ y: -5, boxShadow: '0 10px 25px -5px #000000' }}
       >
         <div className="flex items-start gap-4">
           <div className="w-16  rounded-full overflow-hidden bg-white/20 border border-white/30">

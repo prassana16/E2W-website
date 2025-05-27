@@ -173,7 +173,7 @@ const MobileAppDevelopment = () => {
         {/* Why Choose Us for Mobile App Development in India */}
         <motion.div
           className="w-full py-16 px-6"
-          style={{ background: 'linear-gradient(135deg, #032f3e, #054254)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -219,12 +219,10 @@ const MobileAppDevelopment = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-
-        {/* Native Apps Section */}
+        </motion.div>        {/* Native Apps Section */}
         <motion.div
           className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-          style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -244,10 +242,9 @@ const MobileAppDevelopment = () => {
           </div>
         </motion.div>
 
-        {/* Our Technology Stack */}
-        <motion.div
+        {/* Our Technology Stack */}        <motion.div
           className="w-full py-16 px-6"
-          style={{ background: 'linear-gradient(135deg, #05a7be, #087ea2)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -315,10 +312,9 @@ const MobileAppDevelopment = () => {
           </div>
         </motion.div>
 
-        {/* Hybrid Apps Section */}
-        <motion.div
+        {/* Hybrid Apps Section */}        <motion.div
           className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-          style={{ background: 'linear-gradient(135deg, #05a7be, #087ea2)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -338,10 +334,9 @@ const MobileAppDevelopment = () => {
           <img src={hybridApp} alt="Hybrid Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
         </motion.div>
 
-        {/* Progressive Web Apps Section */}
-        <motion.div
+        {/* Progressive Web Apps Section */}        <motion.div
           className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-          style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -361,10 +356,9 @@ const MobileAppDevelopment = () => {
           </div>
         </motion.div>
 
-        {/* Success Stories/Case Studies - Indian Specific */}
-        <motion.div
+        {/* Success Stories/Case Studies - Indian Specific */}        <motion.div
           className="w-full py-16 px-6"
-          style={{ background: 'linear-gradient(135deg, #017598, #054254)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
@@ -414,10 +408,9 @@ const MobileAppDevelopment = () => {
           </div>
         </motion.div>
 
-        {/* Social Networking Apps Section */}
-        <motion.div
+        {/* Social Networking Apps Section */}        <motion.div
           className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-          style={{ background: 'linear-gradient(135deg, #05a7be, #18c4b8)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
@@ -437,10 +430,9 @@ const MobileAppDevelopment = () => {
           <img src={socialApp} alt="Social Networking Apps" className="w-full md:w-1/2 rounded-lg shadow-lg" />
         </motion.div>
 
-        {/* Enterprise Mobile Apps Section */}
-        <motion.div
+        {/* Enterprise Mobile Apps Section */}        <motion.div
           className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-          style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
@@ -460,10 +452,9 @@ const MobileAppDevelopment = () => {
           </div>
         </motion.div>
 
-        {/* Indian Market Compliance */}
-        <motion.div
+        {/* Indian Market Compliance */}        <motion.div
           className="w-full py-16 px-6"
-          style={{ background: 'linear-gradient(135deg, #05a7be, #087ea2)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
@@ -499,9 +490,8 @@ const MobileAppDevelopment = () => {
         {/* Enhanced Call-to-Action Card */}
         <div className="w-full">
           <motion.div
-            className="p-10 shadow-lg text-center flex flex-col items-center"
-            style={{ 
-              background: 'linear-gradient(to bottom, #05a7be, #017598)',
+            className="p-10 shadow-lg text-center flex flex-col items-center"          style={{
+              background: 'linear-gradient(to bottom, #000000, #05f4f9)',
               backgroundImage: "url('../../assets/images/india-pattern-light.png')",
               backgroundBlendMode: "overlay",
               backgroundSize: "cover"
@@ -542,10 +532,9 @@ const MobileAppDevelopment = () => {
           </motion.div>
         </div>
 
-        {/* FAQ Section - Focused on Indian Context */}
-        <motion.div
+        {/* FAQ Section - Focused on Indian Context */}        <motion.div
           className="w-full py-16 px-6"
-          style={{ background: 'linear-gradient(135deg, #017598, #054254)', color: 'white' }}
+          style={{ background: 'linear-gradient(135deg, #000000, #05f4f9)', color: '#ffffff' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
