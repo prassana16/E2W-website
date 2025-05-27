@@ -72,19 +72,17 @@ const MobileAppDevelopment = () => {
           `}
         </script>
       </Helmet>
-      
-      <section
+        <section
         className="min-h-screen flex flex-col items-center font-mono justify-center"
-        style={{ background: 'linear-gradient(135deg, #087ea2, #017598)', color: 'white' }}
+        style={{ background: '#000000', color: 'white' }}
       >
         {/* Hero Section with Indian Market Focus */}
-        <motion.div
-          className="w-full h-full py-20"
+        <motion.div          className="w-full h-full py-20"
           style={{
-            background: "linear-gradient(to bottom, #017598, #087ea2)",
-            backgroundImage: "url('../../assets/images/india-tech-pattern.png')",
-            backgroundBlendMode: "overlay",
-            backgroundSize: "cover"
+            background: "#000000",
+            backgroundSize: "cover",
+            borderTop: "2px solid #05f4f9",
+            borderBottom: "2px solid #05f4f9"
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

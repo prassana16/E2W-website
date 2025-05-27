@@ -14,27 +14,27 @@
     
     color-scheme: light;
     --bg-primary: 255 255 255;  /* white */
-    --bg-secondary: 245 245 245; /* slightly off-white */
+    --bg-secondary: 0 0 0;      /* black */
     --text-primary: 0 0 0;      /* black */
-    --text-secondary: 0 0 0 / 0.7; /* black with transparency */
+    --text-secondary: 5 244 249; /* cyan */
   }
   
   .dark {
     color-scheme: dark;
     --bg-primary: 0 0 0;       /* black */
-    --bg-secondary: 20 20 20;  /* slightly off-black */
+    --bg-secondary: 0 0 0;     /* black */
     --text-primary: 255 255 255; /* white */
-    --text-secondary: 255 255 255 / 0.7; /* white with transparency */
+    --text-secondary: 5 244 249; /* cyan */
   }
 }
 
 @layer components {
   .elegant-shadow {
-    box-shadow: 0 10px 30px rgba(5, 244, 249, 0.2);
+    outline: 2px solid #05f4f9;
   }
   
   .elegant-border {
-    border: 1px solid rgba(5, 244, 249, 0.3);
+    border: 2px solid #05f4f9;
   }
   
   .elegant-transition {
@@ -42,7 +42,7 @@
   }
 
   .cyan-glow {
-    text-shadow: 0 0 5px rgba(5, 244, 249, 0.7);
+    outline: 1px solid #05f4f9;
   }
 }
 

@@ -254,7 +254,7 @@ const Footer = () => {
                 <span className="text-white/80">No.32, 3rd Cross St, Kasturba Nagar, Adyar, Chennai, Tamil Nadu 600020</span>
               </li>              <li className="flex items-center"><FaEnvelope className="mr-3 text-cyan" />
                 <a href="mailto:sales@esy2work.in" className="text-white/80 hover:text-cyan transition-colors">
-                  sales@esy2work.in
+                  sales@easy2work.in
                 </a>
               </li>{/* Phone number removed */}
               <li className="flex items-center">

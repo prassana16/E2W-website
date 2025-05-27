@@ -171,12 +171,11 @@ const Navbar = () => {
       setIsAIDropdownOpen(false);
     }, 150);
   };
-  
-  // Animation variants for menu items
+    // Animation variants for menu items
   const menuItemVariants = {
-    hidden: { opacity: 0, y: -10 },
+    hidden: { scale: 0, y: -10 },
     visible: (i) => ({ 
-      opacity: 1, 
+      scale: 1, 
       y: 0,
       transition: { 
         delay: i * 0.05,
@@ -185,17 +184,16 @@ const Navbar = () => {
       }
     }),
   };
-
   // Enhanced dropdown animation variants
   const dropdownVariants = {
     hidden: { 
-      opacity: 0, 
+      scale: 0, 
       y: -5,
       scaleY: 0.95,
       transformOrigin: "top",
     },
     visible: { 
-      opacity: 1, 
+      scale: 1, 
       y: 0,
       scaleY: 1,
       transition: { 
@@ -206,7 +204,7 @@ const Navbar = () => {
       }
     },
     exit: {
-      opacity: 0,
+      scale: 0,
       y: -5,
       scaleY: 0.95,
       transition: { 
@@ -215,11 +213,10 @@ const Navbar = () => {
       }
     }
   };
-  
-  const dropdownItemVariants = {
-    hidden: { opacity: 0, y: -5 },
+    const dropdownItemVariants = {
+    hidden: { scale: 0, y: -5 },
     visible: { 
-      opacity: 1, 
+      scale: 1, 
       y: 0,
       transition: { 
         duration: 0.25,
@@ -252,11 +249,10 @@ const Navbar = () => {
       }
     }
   };
-
   const mobileMenuItemVariants = {
-    closed: { opacity: 0, x: 20 },
+    closed: { scale: 0, x: 20 },
     open: { 
-      opacity: 1, 
+      scale: 1, 
       x: 0, 
       transition: { 
         duration: 0.4,
@@ -267,15 +263,14 @@ const Navbar = () => {
   
   // Navigation links with active state styling
   const isActive = (path) => {
-    return location.pathname === path ? "text-white" : "text-gray-100/90";
+    return location.pathname === path ? "text-white" : "text-white";
   };
 
   return (    <nav 
       ref={navbarRef}
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? 
-          'bg-black py-2 shadow-lg backdrop-blur-md border-b border-cyan/20' : 
-          'bg-transparent py-4'
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${        scrolled ? 
+          'bg-black py-2 backdrop-blur-md border-b border-cyan' : 
+          'bg-black py-4'
       }`}
       aria-label="Main navigation"
     >
@@ -286,17 +281,15 @@ const Navbar = () => {
             <motion.img
               src={logo}
               alt="Easy2Work Logo"
-              className="h-10 w-10 object-contain"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="h-10 w-10 object-contain"              initial={{ scale: 0, x: -20 }}
+              animate={{ scale: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.05, filter: "drop-shadow(0 0 8px #05f4f9)" }}
               whileTap={{ scale: 0.98 }}
             />
             <motion.span 
-              className="hidden sm:block font-Tinos text-lg lg:text-xl font-bold text-white tracking-wider"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="hidden sm:block font-Tinos text-lg lg:text-xl font-bold text-white tracking-wider"              initial={{ scale: 0, x: -10 }}
+              animate={{ scale: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               Easy2Work
@@ -335,9 +328,8 @@ const Navbar = () => {
                 ref={servicesRef}
                 onMouseEnter={handleServicesMouseOver}
                 onMouseLeave={handleServicesMouseOut}
-              >
-                <button
-                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
+              >                <button
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-white hover:text-cyan transition-colors duration-200`}
                   aria-expanded={isServicesOpen}
                   aria-haspopup="true"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -357,7 +349,7 @@ const Navbar = () => {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute left-0 mt-1 w-64 bg-black backdrop-blur-lg rounded-xl shadow-xl border border-cyan/20 overflow-hidden elegant-shadow"
+                      className="absolute left-0 mt-1 w-64 bg-black backdrop-blur-lg rounded-xl border border-cyan overflow-hidden"
                     >
                       <div className="p-2">
                         {/* Services dropdown content */}
@@ -397,7 +389,7 @@ const Navbar = () => {
                             to="/SEOServices"
                             className="flex items-center px-4 py-2.5 text-sm text-white hover:bg-cyan hover:text-black rounded-lg transition-colors duration-200"
                           >
-                            <FaSearch className="mr-3 text-purple-300" size={18} />
+                            <FaSearch className="mr-3 text-cyan" size={18} />
                             <span>SEO Services</span>
                           </Link>
                         </motion.div>
@@ -407,7 +399,7 @@ const Navbar = () => {
                             to="/CloudNativeAppDevelopment"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
                           >
-                            <FaCloud className="mr-3 text-purple-300" size={18} />
+                            <FaCloud className="mr-3 text-cyan" size={18} />
                             <span>Cloud Native Development</span>
                           </Link>
                         </motion.div>
@@ -417,7 +409,7 @@ const Navbar = () => {
                             to="/UIUXDesign"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
                           >
-                            <FaPalette className="mr-3 text-purple-300" size={18} />
+                            <FaPalette className="mr-3 text-cyan" size={18} />
                             <span>UI/UX Design</span>
                           </Link>
                         </motion.div>
@@ -435,9 +427,8 @@ const Navbar = () => {
                 ref={solutionsRef}
                 onMouseEnter={handleSolutionsMouseOver}
                 onMouseLeave={handleSolutionsMouseOut}
-              >
-                <button
-                  className={`flex items-center px-3 py-2 text-sm font-medium text-gray-100/90 hover:text-white transition-colors duration-200`}
+              >                <button
+                  className={`flex items-center px-3 py-2 text-sm font-medium text-white hover:text-cyan transition-colors duration-200`}
                   aria-expanded={isSolutionsOpen}
                   aria-haspopup="true"
                   onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
@@ -458,15 +449,14 @@ const Navbar = () => {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute left-0 mt-1 w-64 bg-gradient-to-b from-[#2D1B69]/95 to-[#5B0737]/95 backdrop-blur-lg rounded-xl shadow-xl shadow-purple-900/20 border border-white/10 overflow-hidden"
+                      className="absolute left-0 mt-1 w-64 bg-black rounded-xl border border-cyan overflow-hidden"
                     >
                       <div className="p-2">
-                        <motion.div variants={dropdownItemVariants}>
-                          <Link
+                        <motion.div variants={dropdownItemVariants}>                          <Link
                             to="/IBMS"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
                           >
-                            <FaCogs className="mr-3 text-purple-300" size={18} />
+                            <FaCogs className="mr-3 text-cyan" size={18} />
                             <span>IBMS</span>
                           </Link>
                         </motion.div>
@@ -475,8 +465,7 @@ const Navbar = () => {
                           <Link
                             to="/ILMS"
                             className="flex items-center px-4 py-2.5 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg transition-colors duration-200"
-                          >
-                            <IoMdAnalytics className="mr-3 text-purple-300" size={18} />
+                          >                            <IoMdAnalytics className="mr-3 text-cyan" size={18} />
                             <span>ILMS</span>
                           </Link>
                         </motion.div>
@@ -520,7 +509,7 @@ const Navbar = () => {
             >
               <Link 
                 to="/ContactForm" 
-                className="px-4 py-2 bg-white hover:bg-white/90 text-[#2D1B69] rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="px-4 py-2 bg-white hover:bg-cyan text-black rounded-full text-sm font-medium transition-all duration-300"
               >
                 Get Started
               </Link>
@@ -626,23 +615,21 @@ const Navbar = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         className="pl-4 overflow-hidden"
-                      >
-                        <div className="border-l-2 border-white/20 pl-4 py-2 space-y-1">
+                      >                        <div className="border-l-2 border-cyan pl-4 py-2 space-y-1">
                           {/* Mobile menu service links */}
                           <Link
                             to="/WebAppDevelopment"
                             onClick={toggleMenu}
-                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                            className="flex items-center px-3 py-2 text-sm text-white hover:bg-cyan hover:text-black rounded-lg"
                           >
-                            <VscFileCode className="mr-3 text-purple-300" size={16} />
+                            <VscFileCode className="mr-3 text-cyan" size={16} />
                             Web Application Development
                           </Link>
                           <Link
                             to="/MobileAppDevelopment"
-                            onClick={toggleMenu}
-                            className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
+                            onClick={toggleMenu}                            className="flex items-center px-3 py-2 text-sm text-white hover:bg-cyan hover:text-black rounded-lg"
                           >
-                            <FaMobile className="mr-3 text-purple-300" size={16} />
+                            <FaMobile className="mr-3 text-cyan" size={16} />
                             Mobile App Development
                           </Link>
                           {/* More mobile service links would be added here */}
@@ -685,7 +672,7 @@ const Navbar = () => {
                             onClick={toggleMenu}
                             className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
                           >
-                            <FaCogs className="mr-3 text-purple-300" size={16} />
+                            <FaCogs className="mr-3 text-cyan" size={16} />
                             IBMS
                           </Link>
                           <Link
@@ -693,7 +680,7 @@ const Navbar = () => {
                             onClick={toggleMenu}
                             className="flex items-center px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
                           >
-                            <IoMdAnalytics className="mr-3 text-purple-300" size={16} />
+                            <IoMdAnalytics className="mr-3 text-cyan" size={16} />
                             ILMS
                           </Link>
                           {/* AI Products in mobile menu */}
@@ -702,7 +689,7 @@ const Navbar = () => {
                             className="flex items-center justify-between w-full px-3 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white rounded-lg"
                           >
                             <div className="flex items-center">
-                              <FaRobot className="mr-3 text-purple-300" size={16} />
+                              <FaRobot className="mr-3 text-cyan" size={16} />
                               AI Solutions
                             </div>
                             {isAIDropdownOpen ? (
@@ -768,7 +755,7 @@ const Navbar = () => {
                 <Link
                   to="/ContactForm"
                   onClick={toggleMenu}
-                  className="flex items-center justify-center px-4 py-3 bg-white text-[#2D1B69] rounded-xl text-sm font-medium w-full"
+                  className="flex items-center justify-center px-4 py-3 bg-white text-black rounded-xl text-sm font-medium w-full"
                 >
                   Get Started
                 </Link>

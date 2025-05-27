@@ -191,12 +191,8 @@ export function BackgroundBoxesDemo() {
       {/* Enhanced gradient background with improved colors and animation */}
       <div 
         ref={bgRef}
-        className="absolute inset-0 z-0"
-        style={{
-          background: `radial-gradient(ellipse at 50% 50%, 
-            rgba(45,27,105,1) 0%, 
-            rgba(77,14,72,0.95) 45%, 
-            rgba(98,0,120,0.9) 100%)`,
+        className="absolute inset-0 z-0"        style={{
+          background: `#000000`,
           backgroundSize: "200% 200%",
           transition: "background-position 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)",
         }}
@@ -328,8 +324,8 @@ export function BackgroundBoxesDemo() {
                 scale: 1.05, 
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 transition: { duration: 0.2 }
-              }}              className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium 
-                        border border-cyan/20 transition-all duration-300 shadow-lg shadow-cyan/20"
+              }}              className="px-4 py-2 bg-black rounded-full text-white text-sm font-medium 
+                        border border-cyan transition-all duration-300"
             >
               {location}
             </motion.div>
@@ -342,10 +338,11 @@ export function BackgroundBoxesDemo() {
           animate={controlsButton}
           className="flex flex-col md:flex-row gap-4"
         >
-          <Link to="/ContactForm" aria-label="Contact Us">
-            <motion.button              whileHover={{ 
+          <Link to="/ContactForm" aria-label="Contact Us">            <motion.button              whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(5, 244, 249, 0.4)"
+                outlineColor: "#05f4f9",
+                outlineWidth: "2px",
+                outlineStyle: "solid"
               }}
               whileTap={{ scale: 0.98 }}
               className="px-8 py-3 bg-white text-black rounded-full font-medium 

@@ -3,13 +3,13 @@
 /* Cyan pulse animation */
 @keyframes cyan-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(5, 244, 249, 0.7);
+    outline: 3px solid #05f4f9;
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(5, 244, 249, 0);
+    outline: 0px solid #05f4f9;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(5, 244, 249, 0);
+    outline: 0px solid #05f4f9;
   }
 }
 
@@ -31,17 +31,15 @@
   background: linear-gradient(90deg, #000000, #05f4f9, #000000);
   background-size: 200% auto;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: text-shimmer 3s linear infinite;
 }
 
 .text-shimmer-white {
-  background: linear-gradient(90deg, rgba(255,255,255,0.8), #ffffff, rgba(255,255,255,0.8));
+  background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff);
   background-size: 200% auto;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: text-shimmer 3s linear infinite;
@@ -50,31 +48,31 @@
 /* Animated border effect */
 @keyframes border-pulse {
   0% {
-    border-color: rgba(5, 244, 249, 0.3);
+    border-color: #000000;
   }
   50% {
-    border-color: rgba(5, 244, 249, 1);
+    border-color: #05f4f9;
   }
   100% {
-    border-color: rgba(5, 244, 249, 0.3);
+    border-color: #000000;
   }
 }
 
 .animate-border-pulse {
-  border: 1px solid rgba(5, 244, 249, 0.3);
+  border: 1px solid #000000;
   animation: border-pulse 2s infinite;
 }
 
 /* Subtle background pulse */
 @keyframes bg-pulse {
   0% {
-    background-color: rgba(5, 244, 249, 0);
+    background-color: #000000;
   }
   50% {
-    background-color: rgba(5, 244, 249, 0.05);
+    background-color: #05f4f9;
   }
   100% {
-    background-color: rgba(5, 244, 249, 0);
+    background-color: #000000;
   }
 }
 

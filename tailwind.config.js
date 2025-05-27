@@ -21,13 +21,6 @@ const config = {
         'cyan': '#05f4f9',
         'black': '#000000',
         'white': '#ffffff',
-        // Shades of our colors for gradients and variations
-        'cyan-light': 'rgba(5, 244, 249, 0.2)',
-        'cyan-medium': 'rgba(5, 244, 249, 0.5)',
-        'cyan-dark': 'rgba(5, 244, 249, 0.8)',
-        'black-light': 'rgba(0, 0, 0, 0.2)',
-        'black-medium': 'rgba(0, 0, 0, 0.5)',
-        'black-dark': 'rgba(0, 0, 0, 0.8)',
       },
     },
   },

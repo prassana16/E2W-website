@@ -90,13 +90,13 @@ const LeadGenerationServices = () => {
     ],
   };
 
-  return (
-    <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-purple-950" >
+  return (    <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-black" >
       {/* Introduction Section */}
       <motion.div
         className="w-full h-full py-20"
         style={{
-          background: "linear-gradient(135deg, #6b46c1, #44337a)",
+          background: "#000000",
+          borderTop: "2px solid #05f4f9",
           color: "white",
         }}
         initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ const LeadGenerationServices = () => {
       {/* Lead Generation Strategy Section */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+        style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -210,7 +210,7 @@ const LeadGenerationServices = () => {
       {/* Service Types Section */}
       <motion.div
         className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-        style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+        style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -412,7 +412,7 @@ const LeadGenerationServices = () => {
       <div className="w-full">
         <motion.div
           className="p-10 shadow-lg text-center flex flex-col items-center"
-          style={{ background: 'linear-gradient(to bottom, #001831, #59257c )' }}
+          style={{ background: '#000000', borderTop: '2px solid #05f4f9' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -422,11 +422,11 @@ const LeadGenerationServices = () => {
             Let our expert team help you create and implement a lead generation strategy that drives growth for your business.
           </p>
           <a href="/ContactForm">
-            <button className="px-8 py-3 bg-[#ffffff] text-purple-900 text-lg rounded-lg shadow-md hover:bg-[#1e7c32] transition duration-300 ease-in-out">
+            <button className="px-8 py-3 bg-[#ffffff] text-black text-lg rounded-lg hover:bg-[#05f4f9] transition duration-300 ease-in-out">
               Contact Us
             </button>
           </a>
-          <div className="border-b border-[#f8d996] pt-16 md:w-[85%] w-full text-center"></div>
+          <div className="border-b border-[#05f4f9] pt-16 md:w-[85%] w-full text-center"></div>
         </motion.div>
       </div>
     </section>

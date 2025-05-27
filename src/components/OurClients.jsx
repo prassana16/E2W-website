@@ -103,7 +103,7 @@ function OurClients() {
       className="relative overflow-hidden py-20"
     >
       {/* Modern gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2D1B69] via-[#3a1e75] to-[#5B0737] opacity-95"></div>
+      <div className="absolute inset-0 bg-black"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -198,10 +198,10 @@ function OurClients() {
                   <motion.div
                     key={index}
                     className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors"
-                    whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(98, 0, 120, 0.2)' }}
+                    whileHover={{ y: -5, outlineColor: '#05f4f9', outlineWidth: '2px', outlineStyle: 'solid' }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-purple-500/20 text-purple-300 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-xl">
+                    <div className="bg-black text-cyan w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-xl">
                       {benefit.icon}
                     </div>
                     <h4 className="text-white font-medium text-lg mb-2">{benefit.title}</h4>

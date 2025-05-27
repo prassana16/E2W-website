@@ -55,7 +55,7 @@ export default function ILMS() {
     "featureList": "Tamil Nadu Lead Generation, Local Business Intelligence, Multi-Platform Lead Fetching, Smart Source Detection, Duplicate Lead Detection, High-Conversion Region Mapping for Tamil Nadu"
   };
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#000000] to-[#026163] text-white">
+    <div className="min-h-screen bg-black text-white">
       <SEO 
         title="ILMS - Intelligent Lead Management Software for Tamil Nadu | Easy2Work"
         description="Advanced Intelligent Lead Management Software (ILMS) by Easy2Work with Tamil Nadu-optimized features. Convert prospects, optimize sales processes, and increase revenue with specialized lead generation for Chennai, Coimbatore, Madurai and other Tamil Nadu regions."
@@ -101,7 +101,7 @@ const HeroSection = () => {  return (
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 1 }}
           className="mb-6"
-        >          <span className="inline-block px-4 py-1 bg-[#05f4f9] text-black text-sm rounded-full mb-4">Sales Automation Solution</span>
+        >          <span className="inline-block px-4 py-1 bg-cyan text-black text-sm rounded-full mb-4">Sales Automation Solution</span>
         </motion.div>
         
         <motion.h1 
@@ -128,12 +128,12 @@ const HeroSection = () => {  return (
           transition={{ delay: 0.9, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >          <a href="#modules">
-            <button className="bg-[#05f4f9] hover:bg-[#026163] text-black px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
+            <button className="bg-cyan hover:bg-black text-black hover:text-cyan px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
               Explore ILMS
             </button>
           </a>
           <a href="#demo">
-            <button className="border border-[#000000] hover:bg-[#000000]/20 text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
+            <button className="border border-cyan hover:bg-black text-white px-8 py-3 rounded-lg font-medium transition duration-300 w-full sm:w-auto">
               Request Demo
             </button>
           </a>

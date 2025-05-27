@@ -99,13 +99,13 @@ const WebsiteDevelopment = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-purple-950" >
+    <section className="min-h-screen flex flex-col items-center font-mono justify-center bg-black" >
       {/* Introduction Section */}
       <motion.div
-  className="w-full h-full py-20"
-  style={{
-    background: "linear-gradient(135deg, #6b46c1, #44337a)",
+  className="w-full h-full py-20"  style={{
+    background: "#000000",
     color: "white",
+    borderTop: "2px solid #05f4f9"
   }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -128,11 +128,9 @@ const WebsiteDevelopment = () => {
             className="flex justify-center items-center h-full py-8"
           >
             <div
-              className="text-white text-center px-6 py-12 rounded-xl"
-              style={{
-                background: "rgba(255, 255, 255, 0.1)",
-                backdropFilter: "blur(10px)",
-                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+              className="text-white text-center px-6 py-12 rounded-xl"              style={{
+                background: "#000000",
+                border: "1px solid #05f4f9"
               }}
             >
               <h3 className="text-lg md:text-3xl font-bold mb-4">{card.title}</h3>
@@ -148,7 +146,7 @@ const WebsiteDevelopment = () => {
 {/* Portfolio Website Section */}
 <motion.div
   className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.1 }}
@@ -185,7 +183,7 @@ const WebsiteDevelopment = () => {
       {/* News Websites Section */}
 <motion.div
   className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.2 }}
@@ -216,7 +214,7 @@ const WebsiteDevelopment = () => {
 {/* Community Forums Section */}
 <motion.div
   className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3 }}
@@ -243,7 +241,7 @@ const WebsiteDevelopment = () => {
      {/* Blog Websites Section */}
 <motion.div
   className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.4 }}
@@ -269,7 +267,7 @@ const WebsiteDevelopment = () => {
       {/* Business Websites Section */}
 <motion.div
   className="flex flex-col md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #7a4cff, #5906cc)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5 }}
@@ -295,7 +293,7 @@ const WebsiteDevelopment = () => {
       {/* Personal Websites Section */}
 <motion.div
   className="flex flex-col-reverse md:flex-row items-center gap-6 w-full p-6 md:h-screen"
-  style={{ background: 'linear-gradient(135deg, #6c49ff, #5022c2)', color: 'white' }}
+  style={{ background: '#000000', color: 'white', borderTop: '2px solid #05f4f9' }}
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
