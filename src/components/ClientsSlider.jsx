@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// Replace these imports with your actual image paths
-import Baleen from '../assets/images/Baleen Media 2.png';
+// Client company logos
+import Baleen from '../assets/images/Baleen media 2.png';
 import Gracescans from '../assets/images/Grace Scans 2.png';
 import Preschool from '../assets/images/Preschool4.png';
 import Bajaj from '../assets/images/bajaj Auto.png';

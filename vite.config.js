@@ -7,6 +7,16 @@ export default defineConfig({
   base: '/E2W-website/',
   server: {
     host: true
+  },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          utils: ['framer-motion', 'react-router-dom']
+        }
+      }
+    }
   }
-  
 })
